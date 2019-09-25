@@ -14,12 +14,23 @@
   SelectAllAttributes="false"
   PageIterMode="Full">
   <ViewAccessor
-    Name="Cluster_Name_LOV1"
-    ViewObjectName="model.LOV.Cluster_Name_LOV"
-    RowLevelBinds="true"/>
+    Name="Cluster_ID_Depen_Phase_ID_LOV1"
+    ViewObjectName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV"
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="Cluster_ID_Depen_Phase_ID_LOVCriteria"
+      FullName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV.Cluster_ID_Depen_Phase_ID_LOVCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="getphaseID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[MmpPhaseId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_ClusterId"
-    ListVOName="Cluster_Name_LOV1"
+    ListVOName="Cluster_ID_Depen_Phase_ID_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -31,13 +42,32 @@
       <Item Value="ClusterId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
+      <Item Value="ClusterNo"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
     Name="MmpMonSchDetail"
     Entity="model.EO.MmpMonSchDetail"/>
+  <EntityUsage
+    Name="MmpMonSchMaster"
+    Entity="model.EO.MmpMonSchMaster"
+    Association="model.EO.FkMmpMonSchDetailMasterAssoc"
+    AssociationEnd="model.EO.FkMmpMonSchDetailMasterAssoc.MmpMonSchMaster"
+    SourceUsage="model.VO.MmpMonSchDetailView.MmpMonSchDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.MmpMonSchMaster.MmpMonSchMasterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.MmpMonSchDetail.MmpMonSchMasterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="MmpMonSchDetailId"
     IsNotNull="true"
@@ -95,4 +125,19 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="MmpMonSchDetail"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="MmpPhaseId"
+    PrecisionRule="true"
+    EntityAttrName="MmpPhaseId"
+    EntityUsage="MmpMonSchMaster"
+    AliasName="MMP_PHASE_ID"/>
+  <ViewAttribute
+    Name="MmpMonSchMasterId1"
+    PrecisionRule="true"
+    EntityAttrName="MmpMonSchMasterId"
+    EntityUsage="MmpMonSchMaster"
+    AliasName="MMP_MON_SCH_MASTER_ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="MmpMonSchDetailId"/>
+  </AttrArray>
 </ViewObject>

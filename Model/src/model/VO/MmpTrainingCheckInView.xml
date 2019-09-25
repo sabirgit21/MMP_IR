@@ -6,20 +6,42 @@
   Name="MmpTrainingCheckInView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="MmpTrainingCheckIn.MMP_TRAINING_CHECK_IN_ID, 
+       MmpTrainingCheckIn.CLUSTER_ID, 
+       MmpTrainingCheckIn.DATED, 
+       MmpTrainingCheckIn.TRAINING_STARTED, 
+       MmpTrainingCheckIn.REMARKS, 
+       MmpTrainingCheckIn.LATITUDE, 
+       MmpTrainingCheckIn.LONGITUDE, 
+       MmpTrainingCheckIn.CREATED_DATE, 
+       MmpTrainingCheckIn.CREATED_BY, 
+       MmpTrainingCheckIn.UPDATED_DATE, 
+       MmpTrainingCheckIn.UPDATED_BY, 
+       MmpTrainingCheckIn.MEMBER_REG_ID"
+  FromList="MMP_TRAINING_CHECK_IN MmpTrainingCheckIn"
+  Where="MmpTrainingCheckIn.MEMBER_REG_ID = :sessMemID">
+  <Variable
+    Name="sessMemID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="MmpTrainingCheckInView"/>
+  </Variable>
   <ViewAccessor
-    Name="Cluster_Name_LOV1"
-    ViewObjectName="model.LOV.Cluster_Name_LOV"
+    Name="Member_Depn_Cluster_LOV1"
+    ViewObjectName="model.LOV.Member_Depn_Cluster_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Session_Member_ID_LOV1"
+    ViewObjectName="model.LOV.Session_Member_ID_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ClusterId"
-    ListVOName="Cluster_Name_LOV1"
+    ListVOName="Member_Depn_Cluster_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -27,11 +49,34 @@
       <Item Value="ClusterId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Dated"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ClusterId"/>
+      <Item Value="Dated"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
+      <Item Value="Dated"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MemberRegId"
+    ListVOName="Session_Member_ID_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MemberRegId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MemberRegId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -113,4 +158,22 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="MmpTrainingCheckIn"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="MemberRegId"
+    PrecisionRule="true"
+    EntityAttrName="MemberRegId"
+    EntityUsage="MmpTrainingCheckIn"
+    AliasName="MEMBER_REG_ID"
+    LOVName="LOV_MemberRegId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

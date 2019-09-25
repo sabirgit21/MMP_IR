@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Mmp_Map_Sch_Detail_Att"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.VO.Mmp_Map_Sch_Detail_Att_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery><![CDATA[SELECT Distinct         
+CLUSTER_ID, LATITUDE,LONGITUDE, Col_Flag,DATED, Cluster_No,count(Farmer_Reg_ID) Farmer_Reg_ID,Sum(Land) Land,          
+Sum(LUO) LandUnderOrchard ,'Total Farmers: '||count(Farmer_Reg_ID)||' Total Area Under Training: '||Sum(LUO) Tot_Sum       
+FROM         
+(         
+(         
+SELECT  TSD.CLUSTER_ID, TSD.LATITUDE, TSD.LONGITUDE, 0 Col_Flag, TSD.DATED_D  DATED, TC.Cluster_No,         
+TFR.Farmer_Reg_ID, TFRL.Land_Acre Land, TFRL.LAND_UNDER_ORCH LUO         
+FROM TBL_TRAINING_SCH_DETAIL TSD, Tbl_Cluster TC ,TBL_FARMER_REG TFR, Tbl_farmer_Reg_Land TFRL         
+Where TC.Cluster_ID=TSD.Cluster_ID         
+AND TFR.CLUSTER_ID=TSD.CLUSTER_ID         
+AND TFRL.FARMER_REG_ID=TFR.FARMER_REG_ID         
+)         
+UNION ALL         
+(         
+SELECT  CAM.CLUSTER_ID, CAM.LATITUDE, CAM.LONGITUDE, 1 Col_Flag,CAM.DATED, TC.Cluster_No,CAD.Farmer_Reg_ID,         
+TFRL.Land_Acre Land, TFRL.LAND_UNDER_ORCH LUO         
+FROM TBL_CLUSTER_ATT_MASTER CAM,EMFP.TBL_CLUSTER_ATT_Detail CAD ,Tbl_Cluster TC, Tbl_farmer_Reg_Land TFRL         
+Where         
+(CAD.CLUSTER_ATT_MASTER_ID=CAM.CLUSTER_ATT_MASTER_ID )         
+AND         
+(TC.Cluster_ID=CAM.Cluster_ID)         
+AND TFRL.FARMER_REG_ID=CAD.FARMER_REG_ID         
+)  
+UNION ALL         
+(         
+SELECT  MTMC.CLUSTER_ID, MTMC.LATITUDE, MTMC.LONGITUDE, 2 Col_Flag,MTMC.DATED, TC.Cluster_No,0 Farmer_Reg_ID,         
+0 Land, 0 LUO         
+FROM MMP_Training_Check_In MTMC,Tbl_Cluster TC 
+Where         
+(TC.Cluster_ID=MTMC.Cluster_ID)         
+) 
+)         
+WHERE         
+((LATITUDE>0) AND (LONGITUDE>0))         
+AND TRUNC(DATED)= TRUNC(SYSDATE)        
+group by CLUSTER_ID, Col_Flag,DATED, Cluster_No,LATITUDE,LONGITUDE         
+order by col_flag,farmer_reg_id]]></SQLQuery>
+  <ViewAttribute
+    Name="ClusterId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CLUSTER_ID"
+    Expression="CLUSTER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Latitude"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LATITUDE"
+    Expression="LATITUDE"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Longitude"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LONGITUDE"
+    Expression="LONGITUDE"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ColFlag"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="COL_FLAG"
+    Expression="COL_FLAG"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Dated"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    AliasName="DATED"
+    Expression="DATED"
+    SQLType="DATE"/>
+  <ViewAttribute
+    Name="ClusterNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="20"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CLUSTER_NO"
+    Expression="CLUSTER_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FarmerRegId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FARMER_REG_ID"
+    Expression="FARMER_REG_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Land"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LAND"
+    Expression="LAND"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Landunderorchard"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LANDUNDERORCHARD"
+    Expression="LANDUNDERORCHARD"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="TotSum"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="123"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="TOT_SUM"
+    Expression="TOT_SUM"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="123"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

@@ -88,6 +88,16 @@
                       <af:convertDateTime pattern="#{bindings.MmpMonSchMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
+                  <af:column headerText="#{bindings.MmpMonSchMasterView1.hints.MemberRegId.label}" id="c6">
+                    <af:selectOneChoice value="#{row.bindings.MemberRegId.inputValue}"
+                                        label="#{row.bindings.MemberRegId.label}"
+                                        required="#{bindings.MmpMonSchMasterView1.hints.MemberRegId.mandatory}"
+                                        shortDesc="#{bindings.MmpMonSchMasterView1.hints.MemberRegId.tooltip}"
+                                        id="soc3">
+                      <f:selectItems value="#{row.bindings.MemberRegId.items}" id="si3"/>
+                      <f:validator binding="#{row.bindings.MemberRegId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>

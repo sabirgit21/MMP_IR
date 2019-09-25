@@ -13,6 +13,50 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Ver_Source_LOV1"
+    ViewObjectName="model.LOV.Ver_Source_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_FarmerStatus"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FarmerStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_VerSource"
+    ListVOName="Ver_Source_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="VerSource"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbSource"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="viewSource"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="MmpTrainingMonFarmer"
     Entity="model.EO.MmpTrainingMonFarmer"/>
@@ -32,6 +76,25 @@
       </AttrArray>
       <AttrArray Name="_srcAttributes">
         <Item Value="model.EO.MmpTrainingMonFarmer.FarmerRegId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblFarmerRegLand"
+    Entity="model.EO.TblFarmerRegLand"
+    Association="model.EO.FkTblFarmerRegLandFkAssoc"
+    AssociationEnd="model.EO.FkTblFarmerRegLandFkAssoc.TblFarmerRegLand"
+    SourceUsage="model.VO.MmpTrainingMonFarmerView.TblFarmerReg"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblFarmerRegLand.FarmerRegId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblFarmerReg.FarmerRegId"/>
       </AttrArray>
     </DesignTime>
   </EntityUsage>
@@ -59,7 +122,16 @@
     PrecisionRule="true"
     EntityAttrName="FarmerStatus"
     EntityUsage="MmpTrainingMonFarmer"
-    AliasName="FARMER_STATUS"/>
+    AliasName="FARMER_STATUS"
+    LOVName="LOV_FarmerStatus"
+    DefaultValue="N">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
@@ -117,6 +189,40 @@
     EntityAttrName="FarmerRegId"
     EntityUsage="TblFarmerReg"
     AliasName="FARMER_REG_ID1"/>
+  <ViewAttribute
+    Name="VerSource"
+    PrecisionRule="true"
+    EntityAttrName="VerSource"
+    EntityUsage="MmpTrainingMonFarmer"
+    AliasName="VER_SOURCE"
+    LOVName="LOV_VerSource">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LandAcre"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LandAcre"
+    EntityUsage="TblFarmerRegLand"
+    AliasName="LAND_ACRE"/>
+  <ViewAttribute
+    Name="LandUnderOrch"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LandUnderOrch"
+    EntityUsage="TblFarmerRegLand"
+    AliasName="LAND_UNDER_ORCH"/>
+  <ViewAttribute
+    Name="FarmerRegLandId"
+    PrecisionRule="true"
+    EntityAttrName="FarmerRegLandId"
+    EntityUsage="TblFarmerRegLand"
+    AliasName="FARMER_REG_LAND_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingMonFarmerId"/>
   </AttrArray>

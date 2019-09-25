@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Session_Member_ID_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="MmpMemberReg.MEMBER_REG_ID, 
+       MmpMemberReg.NAME"
+  FromList="MMP_MEMBER_REG MmpMemberReg"
+  Where="MmpMemberReg.MEMBER_REG_ID = :getSessMemID">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Session_Member_ID_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="getSessMemID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Session_Member_ID_LOV"/>
+  </Variable>
+  <EntityUsage
+    Name="MmpMemberReg"
+    Entity="model.EO.MmpMemberReg"/>
+  <ViewAttribute
+    Name="MemberRegId"
+    PrecisionRule="true"
+    EntityAttrName="MemberRegId"
+    EntityUsage="MmpMemberReg"
+    AliasName="MEMBER_REG_ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="MmpMemberReg"
+    AliasName="NAME"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

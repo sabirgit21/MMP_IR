@@ -35,19 +35,7 @@ public class Login {
     // generating static variables to use in different scopes
     private static String role_master_id;
     private static String user_master_id;
-    private static String role_detail_pages_id;
-    private static String role_detail_modules_id;
-    private static String role_master_name;
-    private static String pages_id;
-    private static String page_name;
-    private static String module_menu_id;
-    private static String module_name;
-    private static String view_rights;
-    private static String module_view_rights;
-    private static String add_rights;
-    private static String edit_rights;
-    private static String delete_rights;
-    private static String save_rights;
+    private static String member_reg_id;
     private static String sessUName;
 
 
@@ -153,19 +141,22 @@ public class Login {
                 //getting data against column from table
                 role_master_id = (rset.getString("mmp_role_master_id")).toString();
                 user_master_id = (rset.getString("mmp_user_master_id")).toString();
+                member_reg_id = (rset.getString("member_reg_id")).toString();
                 //Storing value in session username from input text field and role_master_id from DB
 
                 System.out.println(".........MMP_User Name stored in session is :..." + username + "...");
                 System.out.println(".........MMP_User Password stored in session is :..." + password + "...");
                 System.out.println(".........MMP_User Role stored in session is :..." + role_master_id + "...");
                 System.out.println(".........MMP_User Master ID stored in session is :..." + user_master_id + "...");
+                System.out.println(".........Member Registration ID stored in session is :..." + member_reg_id + "...");
 
                 //Redirecting to home page after successfull authentication
                 //System.out.println("....... here we go /// you are redirecting now to DASHBOARD ......");
                 //                return "good";
 //                get_module_view_rights();
-                
-                storeOnSession("sessUID", role_master_id);
+                                
+                storeOnSession("sessUID", role_master_id);                
+                storeOnSession("sessMemID", member_reg_id);
                 
                 conn.close();
                 return "/faces/Main_Pages/Dashboard.jsf?faces-redirect=true";

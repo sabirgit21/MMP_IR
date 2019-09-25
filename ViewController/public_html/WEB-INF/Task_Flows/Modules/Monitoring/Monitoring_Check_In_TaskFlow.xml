@@ -10,6 +10,11 @@
       <managed-bean-class>view.USERS_CRUD</managed-bean-class>
       <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>
+    <managed-bean id="__4">
+      <managed-bean-name>getLocationBean</managed-bean-name>
+      <managed-bean-class>view.getLocation</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
     <view id="Monitoring_Check_In">
       <page>/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Check_In.jsff</page>
     </view>

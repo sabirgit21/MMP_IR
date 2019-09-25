@@ -1,0 +1,12 @@
+//Groovy Scripts for model.LOV.Session_Member_ID_LOV
+
+package model.LOV
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="getSessMemID")
+def getSessMemID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessMemID')
+}
+

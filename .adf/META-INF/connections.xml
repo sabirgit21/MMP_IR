@@ -24,4 +24,24 @@
       </StringRefAddr>
     </RefAddresses>
   </Reference>
+  <Reference name="MapUrl" className="oracle.adf.model.connection.url.HttpURLConnection" xmlns="">
+    <Factory className="oracle.adf.model.connection.url.URLConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="MapUrl">
+        <Contents>
+          <urlconnection name="MapUrl" url="http://elocation.oracle.com/mapviewer"/>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="GeoUrl" className="oracle.adf.model.connection.url.HttpURLConnection" xmlns="">
+    <Factory className="oracle.adf.model.connection.url.URLConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="GeoUrl">
+        <Contents>
+          <urlconnection name="GeoUrl" url="http://elocation.oracle.com/geocoder/gcserver"/>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
 </References>

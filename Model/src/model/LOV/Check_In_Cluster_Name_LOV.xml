@@ -66,6 +66,12 @@
     EntityAttrName="ClusterId"
     EntityUsage="TblCluster"
     AliasName="CLUSTER_ID1"/>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="MmpTrainingCheckIn"
+    AliasName="DATED"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingCheckInId"/>
   </AttrArray>

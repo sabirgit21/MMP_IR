@@ -1,2 +1,19 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <af:panelAccordion discloseMany="false" id="pa1">
+    <af:showDetailItem id="pane1" text="Panel Label 1">
+      <dvt:mapToolbar mapId="map" id="mt2"/>
+      <dvt:map summary="Google Map" id="map" startingX="0.0" mapServerConfigId="mapConfig1" baseMapName="ELOCATION.WORLD_MAP" mapZoom="0"
+              inlineStyle="width:1101px; height:745px;" startingY="0.0" autoZoomThemeId="mt1">
+        <dvt:mapPointTheme id="mt1" value="#{bindings.Mmp_Map_Sch_Detail_Att1.geoMapModel}"
+                           clickListener="#{bindings.Mmp_Map_Sch_Detail_Att1.geoMapModel.processClickAction}"
+                           selectionListener="#{bindings.Mmp_Map_Sch_Detail_Att1.geoMapModel.processSelection}">
+                       <dvt:mapPointStyleItem itemValue="0" builtInImage="Bubble_Orange"/>
+                       <dvt:mapPointStyleItem itemValue="1" builtInImage="Flag_Red"/>
+                       <dvt:mapPointStyleItem itemValue="2" builtInImage="Hexagon_Purple"/>
+                       </dvt:mapPointTheme>
+      </dvt:map>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

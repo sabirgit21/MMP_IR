@@ -40,7 +40,9 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_MON_INSP"/>
+    TableName="MMP_TRAINING_MON_INSP"
+    IsEffectiveStartDate="true"
+    IsEffectiveDateSequenceFlag="true"/>
   <Attribute
     Name="EndTraining"
     ColumnName="END_TRAINING"

@@ -148,6 +148,9 @@
           <Item Value="Mobile"/>
           <Item Value="Name"/>
           <Item Value="FarmerNo"/>
+          <Item Value="LandAcre"/>
+          <Item Value="LandUnderOrch"/>
+          <Item Value="VerSource"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

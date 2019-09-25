@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="MapPageDef"
+                Package="Fragments.Modules.Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Mmp_Map_Sch_Detail_Att1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="Mmp_Map_Sch_Detail_Att1Iterator"/>
+  </executables>
+  <bindings>
+    <mapTheme IterBinding="Mmp_Map_Sch_Detail_Att1Iterator" id="Mmp_Map_Sch_Detail_Att1"
+              xmlns="http://xmlns.oracle.com/adfm/dvt">
+      <mapThemeDataMap convert="false" mapThemeType="point">
+        <data>
+          <item value="ClusterNo" label="Cluster"/>
+        </data>
+        <item type="lat_long" longitude="Longitude" latitude="Latitude" label="ClusterNo"/>
+        <item type="category" value="ColFlag"/>
+      </mapThemeDataMap>
+    </mapTheme>
+  </bindings>
+</pageDefinition>

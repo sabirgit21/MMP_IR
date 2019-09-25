@@ -169,6 +169,9 @@
   <ViewUsage
     Name="MmpUserMasterView1"
     ViewObjectName="model.Users_Roles.MmpUserMasterView"/>
+  <ViewUsage
+    Name="Mmp_Map_Sch_Detail_Att1"
+    ViewObjectName="model.VO.Mmp_Map_Sch_Detail_Att"/>
   <ViewLinkUsage
     Name="FkMmpMemberRegDepLink1"
     ViewLinkObjectName="model.VO.FkMmpMemberRegDepLink"

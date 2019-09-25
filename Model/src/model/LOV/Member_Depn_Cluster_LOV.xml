@@ -13,15 +13,28 @@
        MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID, 
        MmpMonSchDetail.DATED, 
        TblCluster.CLUSTER_NO, 
-       TblCluster.CLUSTER_ID AS CLUSTER_ID1"
-  FromList="MMP_MON_SCH_DETAIL MmpMonSchDetail, TBL_CLUSTER TblCluster"
-  Where="MmpMonSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID">
+       TblCluster.CLUSTER_ID AS CLUSTER_ID1, 
+       MmpMonSchMaster.MEMBER_REG_ID, 
+       MmpMonSchMaster.MMP_MON_SCH_MASTER_ID"
+  FromList="MMP_MON_SCH_DETAIL MmpMonSchDetail, TBL_CLUSTER TblCluster, MMP_MON_SCH_MASTER MmpMonSchMaster"
+  Where="(MmpMonSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID)   
+AND (MmpMonSchDetail.MMP_MON_SCH_MASTER_ID = MmpMonSchMaster.MMP_MON_SCH_MASTER_ID(+))  
+AND MmpMonSchMaster.MEMBER_REG_ID = :mmRegID">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
         ResId="model.LOV.Member_Depn_Cluster_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
+  <Variable
+    Name="mmRegID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Member_Depn_Cluster_LOV"/>
+  </Variable>
   <EntityUsage
     Name="MmpMonSchDetail"
     Entity="model.EO.MmpMonSchDetail"/>
@@ -41,6 +54,25 @@
       </AttrArray>
       <AttrArray Name="_srcAttributes">
         <Item Value="model.EO.MmpMonSchDetail.ClusterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="MmpMonSchMaster"
+    Entity="model.EO.MmpMonSchMaster"
+    Association="model.EO.FkMmpMonSchDetailMasterAssoc"
+    AssociationEnd="model.EO.FkMmpMonSchDetailMasterAssoc.MmpMonSchMaster"
+    SourceUsage="model.LOV.Member_Depn_Cluster_LOV.MmpMonSchDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.MmpMonSchMaster.MmpMonSchMasterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.MmpMonSchDetail.MmpMonSchMasterId"/>
       </AttrArray>
     </DesignTime>
   </EntityUsage>
@@ -77,6 +109,18 @@
     EntityAttrName="ClusterId"
     EntityUsage="TblCluster"
     AliasName="CLUSTER_ID1"/>
+  <ViewAttribute
+    Name="MemberRegId"
+    PrecisionRule="true"
+    EntityAttrName="MemberRegId"
+    EntityUsage="MmpMonSchMaster"
+    AliasName="MEMBER_REG_ID"/>
+  <ViewAttribute
+    Name="MmpMonSchMasterId"
+    PrecisionRule="true"
+    EntityAttrName="MmpMonSchMasterId"
+    EntityUsage="MmpMonSchMaster"
+    AliasName="MMP_MON_SCH_MASTER_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpMonSchDetailId"/>
   </AttrArray>

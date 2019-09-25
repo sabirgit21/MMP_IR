@@ -13,10 +13,6 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
-  <ViewAccessor
-    Name="Member_Depn_Cluster_LOV1"
-    ViewObjectName="model.LOV.Member_Depn_Cluster_LOV"
-    RowLevelBinds="true"/>
 
   <ViewAccessor
     Name="Crop_Name_LOV1"
@@ -274,11 +270,16 @@
       <Item Value="ClusterId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="Dated"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ClusterId"/>
+      <Item Value="Dated"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
+      <Item Value="Dated"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

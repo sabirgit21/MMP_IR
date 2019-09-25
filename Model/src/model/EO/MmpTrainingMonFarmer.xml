@@ -76,6 +76,20 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_MON_FARMER"/>
+  <Attribute
+    Name="VerSource"
+    Precision="3"
+    ColumnName="VER_SOURCE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="MMP_TRAINING_MON_FARMER"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="MmpTrainingMonInsp"
     Association="model.EO.FkMmpTrainingMonFarmerInspAssoc"
