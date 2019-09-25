@@ -6,7 +6,7 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl1"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="MmpRoleMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="MmpRoleMasterView1" RangeSize="8" DataControl="AppModuleDataControl1"
               id="MmpRoleMasterView1Iterator"/>
     <searchRegion Binds="MmpRoleMasterView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpRoleMasterView1Query"/>
@@ -14,15 +14,15 @@
               id="MmpUserMasterView2Iterator"/>
     <searchRegion Binds="MmpUserMasterView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpUserMasterView2Query"/>
-    <iterator Binds="MmpRoleDetailModulesView2" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="MmpRoleDetailModulesView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="MmpRoleDetailModulesView2Iterator"/>
     <searchRegion Binds="MmpRoleDetailModulesView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpRoleDetailModulesView2Query"/>
-    <iterator Binds="MmpRoleDetailPagesView3" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="MmpRoleDetailPagesView3" RangeSize="8" DataControl="AppModuleDataControl1"
               id="MmpRoleDetailPagesView3Iterator"/>
     <searchRegion Binds="MmpRoleDetailPagesView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpRoleDetailPagesView3Query"/>
-    <iterator Binds="MmpRoleDetailReportsView2" RangeSize="25" DataControl="AppModuleDataControl1"
+    <iterator Binds="MmpRoleDetailReportsView2" RangeSize="8" DataControl="AppModuleDataControl1"
               id="MmpRoleDetailReportsView2Iterator"/>
     <searchRegion Binds="MmpRoleDetailReportsView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpRoleDetailReportsView2Query"/>
