@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.11.57" id="DataBindings"
              SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
   <pageMap>
     <page path="/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Member.jsff" usageId="view_Monitoring_MemberPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Schedule.jsff"
@@ -17,6 +22,10 @@
           usageId="view_UserRoles_TaskFlow_UserRoles_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Management/Map_TaskFlow.xml#Map_TaskFlow@ExecuteWithParams"
           usageId="view_Map_TaskFlow_Map_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Dashboard.jsff" usageId="view_DashboardPageDef"/>
+    <page path="/Main_Pages/Modules/Monitoring/Monitoring.jsf" usageId="view_MonitoringPageDef"/>
+    <page path="/Main_Pages/Dashboard.jsf" usageId="view_DashboardPageDef1"/>
+    <page path="/Main_Pages/Modules/Management/Management.jsf" usageId="view_ManagementPageDef"/>
   </pageMap>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"
@@ -44,5 +53,9 @@
           path="Task_Flows.Modules.Management.UserRoles_TaskFlow_UserRoles_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Map_TaskFlow_Map_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Management.Map_TaskFlow_Map_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_DashboardPageDef" path="Main_Pages.DashboardPageDef"/>
+    <page id="view_MonitoringPageDef" path="Main_Pages.Modules.Monitoring.MonitoringPageDef"/>
+    <page id="view_DashboardPageDef1" path="Main_Pages.DashboardPageDef1"/>
+    <page id="view_ManagementPageDef" path="Main_Pages.Modules.Management.ManagementPageDef"/>
   </pageDefinitionUsages>
 </Application>

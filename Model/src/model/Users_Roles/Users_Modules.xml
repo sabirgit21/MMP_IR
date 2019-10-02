@@ -18,19 +18,28 @@
         ResId="model.Users_Roles.Users_Modules_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
-  <SQLQuery><![CDATA[SELECT                 
-MM.MMP_MODULE_MENU_ID MODULE_MENU_ID, MM.MMP_MODULE_MENU_NAME MODULE_MENU_NAME, MM.MMP_MODULE_MENU_LINK MODULE_MENU_LINK, MM.MMP_MODULE_MENU_DESC MODULE_MENU_DESC, MM.MMP_MODULE_MENU_ICON MODULE_MENU_ICON, MM.AST AST,     
-RDM.MMP_ROLE_MASTER_ID ROLE_MASTER_ID, MM.MMP_sr_no sr_no    
-FROM                 
-MMP_ROLE_DETAIL_MODULES RDM , MMP_MODULE_MENU MM               
-Where                 
-MM.MMP_MODULE_MENU_ID = RDM.MMP_MODULE_MENU_ID                
-AND                
-RDM.MMP_R_VIEW = 'Y'                
-AND               
-MM.AST = 'Y'                
-AND                
-RDM.MMP_ROLE_MASTER_ID = :GETROLEMASTERID]]></SQLQuery>
+  <Variable
+    Name="getRoleMastID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Users_Modules"/>
+  </Variable>
+  <SQLQuery><![CDATA[SELECT                   
+MM.MMP_MODULE_MENU_ID MODULE_MENU_ID, MM.MMP_MODULE_MENU_NAME MODULE_MENU_NAME, MM.MMP_MODULE_MENU_LINK MODULE_MENU_LINK, MM.MMP_MODULE_MENU_DESC MODULE_MENU_DESC, MM.MMP_MODULE_MENU_ICON MODULE_MENU_ICON, MM.AST AST,       
+RDM.MMP_ROLE_MASTER_ID ROLE_MASTER_ID, MM.MMP_sr_no sr_no      
+FROM                   
+MMP_ROLE_DETAIL_MODULES RDM , MMP_MODULE_MENU MM                 
+Where                   
+MM.MMP_MODULE_MENU_ID = RDM.MMP_MODULE_MENU_ID                  
+AND                  
+RDM.MMP_R_VIEW = 'Y'                  
+AND                 
+MM.AST = 'Y'                  
+AND                  
+RDM.MMP_ROLE_MASTER_ID = :getRoleMastID]]></SQLQuery>
   <ViewAttribute
     Name="ModuleMenuId"
     IsUpdateable="false"
@@ -111,7 +120,7 @@ RDM.MMP_ROLE_MASTER_ID = :GETROLEMASTERID]]></SQLQuery>
     ColumnType="CHAR"
     AliasName="AST"
     Expression="AST"
-    SQLType="CHAR">
+    SQLType="VARCHAR">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>

@@ -13,4 +13,10 @@
   <ViewUsage
     Name="USERS_CRUD_OPERATIONS1"
     ViewObjectName="model.Users_Roles.USERS_CRUD_OPERATIONS"/>
+  <ViewUsage
+    Name="Management_Pages1"
+    ViewObjectName="model.Users_Roles.Management_Pages"/>
+  <ViewUsage
+    Name="Monitoring_Pages1"
+    ViewObjectName="model.Users_Roles.Monitoring_Pages"/>
 </AppModule>

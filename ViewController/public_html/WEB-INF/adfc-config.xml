@@ -1,2 +1,24 @@
 <?xml version="1.0" encoding="windows-1252" ?>
-<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2"></adfc-config>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <managed-bean id="__1">
+    <managed-bean-name>backing_Main_Pages_Login</managed-bean-name>
+    <managed-bean-class>view.backing.Main_Pages.Login</managed-bean-class>
+    <managed-bean-scope>backingBean</managed-bean-scope>
+    <!--oracle-jdev-comment:managed-bean-jsp-link:1Main_Pages/Login.jsf-->
+  </managed-bean>
+  <managed-bean id="__2">
+    <managed-bean-name>USERS_CRUD_BEAN</managed-bean-name>
+    <managed-bean-class>view.USERS_CRUD</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>MonitoringSidebarBean</managed-bean-name>
+    <managed-bean-class>view.MonitoringSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__4">
+    <managed-bean-name>ManagementSidebarBean</managed-bean-name>
+    <managed-bean-class>view.ManagementSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

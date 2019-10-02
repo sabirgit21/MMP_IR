@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Management_Pages"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.Users_Roles.Management_Pages_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="mangRoleMastID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Management_Pages"/>
+  </Variable>
+  <SQLQuery><![CDATA[SELECT             
+TP.MMP_PAGES_NAME, TP.AST, TP.MMP_PAGE_ICON, TP.MMP_PAGE_LINK, TP.MMP_SR_NO,    
+RDP.MMP_ROLE_MASTER_ID, RDP.MMP_PAGES_ID, RDP.MMP_ROLE_MASTER_ID, RDP.MMP_R_VIEW, RDP.MMP_R_ADD, RDP.MMP_R_EDIT, RDP.MMP_R_DELETE, RDP.MMP_R_PRINT            
+FROM             
+MMP_PAGES TP, MMP_ROLE_DETAIL_PAGES RDP           
+Where             
+TP.MMP_PAGES_ID = RDP.MMP_PAGES_ID            
+AND            
+RDP.MMP_R_VIEW = 'Y'            
+AND            
+TP.AST = 'Y'            
+AND            
+TP.MMP_MODULE_MENU_ID = 1        
+AND            
+RDP.MMP_ROLE_MASTER_ID = :mangRoleMastID  
+ORDER BY TP.MMP_SR_NO ASC]]></SQLQuery>
+  <ViewAttribute
+    Name="MmpPagesName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MMP_PAGES_NAME"
+    Expression="MMP_PAGES_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Ast"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="AST"
+    Expression="AST"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpPageIcon"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MMP_PAGE_ICON"
+    Expression="MMP_PAGE_ICON"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpPageLink"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MMP_PAGE_LINK"
+    Expression="MMP_PAGE_LINK"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpSrNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="MMP_SR_NO"
+    Expression="MMP_SR_NO"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="MmpRoleMasterId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="MMP_ROLE_MASTER_ID"
+    Expression="MMP_ROLE_MASTER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="MmpPagesId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="MMP_PAGES_ID"
+    Expression="MMP_PAGES_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="MmpRoleMasterId1"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="MMP_ROLE_MASTER_ID"
+    Expression="MMP_ROLE_MASTER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="MmpRView"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="MMP_R_VIEW"
+    Expression="MMP_R_VIEW"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpRAdd"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="MMP_R_ADD"
+    Expression="MMP_R_ADD"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpREdit"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="MMP_R_EDIT"
+    Expression="MMP_R_EDIT"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpRDelete"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="MMP_R_DELETE"
+    Expression="MMP_R_DELETE"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpRPrint"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="MMP_R_PRINT"
+    Expression="MMP_R_PRINT"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="MmpPagesId"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

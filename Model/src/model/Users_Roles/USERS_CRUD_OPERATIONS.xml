@@ -24,7 +24,7 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="untrusted"
+      trustMode="trusted"
       CodeSourceName="USERS_CRUD_OPERATIONS"/>
   </Variable>
   <Variable

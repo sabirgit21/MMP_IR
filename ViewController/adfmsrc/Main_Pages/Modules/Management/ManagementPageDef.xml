@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="ManagementPageDef"
+                Package="Main_Pages.Modules.Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Management_Pages1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="Management_Pages1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.ManagementSidebarBean.dynamicTaskFlowId}"
+              activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Management_Pages1Iterator" id="Management_Pages1">
+      <nodeDefinition DefName="model.Users_Roles.Management_Pages" Name="Management_Pages10">
+        <AttrNames>
+          <Item Value="MmpPagesName"/>
+          <Item Value="Ast"/>
+          <Item Value="MmpPageIcon"/>
+          <Item Value="MmpPageLink"/>
+          <Item Value="MmpSrNo"/>
+          <Item Value="MmpRoleMasterId"/>
+          <Item Value="MmpPagesId"/>
+          <Item Value="MmpRoleMasterId1"/>
+          <Item Value="MmpRView"/>
+          <Item Value="MmpRAdd"/>
+          <Item Value="MmpREdit"/>
+          <Item Value="MmpRDelete"/>
+          <Item Value="MmpRPrint"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

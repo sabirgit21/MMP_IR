@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="DashboardPageDef"
+                Package="Main_Pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Users_Modules1" RangeSize="25" DataControl="AppModuleDataControl1" id="Users_Modules1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Users_Modules1Iterator" id="Users_Modules1">
+      <nodeDefinition DefName="model.Users_Roles.Users_Modules" Name="Users_Modules10">
+        <AttrNames>
+          <Item Value="ModuleMenuId"/>
+          <Item Value="ModuleMenuName"/>
+          <Item Value="ModuleMenuLink"/>
+          <Item Value="ModuleMenuDesc"/>
+          <Item Value="ModuleMenuIcon"/>
+          <Item Value="Ast"/>
+          <Item Value="RoleMasterId"/>
+          <Item Value="SrNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

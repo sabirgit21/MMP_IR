@@ -1,0 +1,12 @@
+//Groovy Scripts for model.Users_Roles.Monitoring_Pages
+
+package model.Users_Roles
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="moniRoleMasID")
+def moniRoleMasID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessUID')
+}
+
