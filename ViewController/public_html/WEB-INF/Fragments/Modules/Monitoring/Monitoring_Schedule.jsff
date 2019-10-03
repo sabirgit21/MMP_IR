@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+<af:panelAccordion discloseMany="false" id="pa1">
+    <af:showDetailItem id="pane1" text="Panel Label 1">
+      <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+        <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1">
+          <af:resetActionListener/>
+        </af:button>
+        <af:spacer width="10" height="10" id="s9"/>
+        <af:button actionListener="#{bindings.Commit.execute}" text="Save All" disabled="#{!bindings.Commit.enabled}"
+                   id="b10"/>
+        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+      <af:panelGridLayout id="pgl1">
+        <af:gridRow marginTop="5px" height="auto" id="gr1">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr2">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+            <af:panelTabbed position="above" id="pt1" inlineStyle="width:1270px;">
+              <af:showDetailItem id="tab1" text="Tab Label 1">
+                <af:table value="#{bindings.MmpMonSchMasterView1.collectionModel}" var="row"
+                          rows="#{bindings.MmpMonSchMasterView1.rangeSize}"
+                          emptyText="#{bindings.MmpMonSchMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.MmpMonSchMasterView1.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.MmpMonSchMasterView1.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.MmpMonSchMasterView1.rangeSize}"
+                          filterModel="#{bindings.MmpMonSchMasterView1Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.MmpMonSchMasterView1Query.processQuery}" varStatus="vs" id="t1"
+                          partialTriggers="::b2 ::b3 ::b4 ::b5">
+                  <af:column sortProperty="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.label}" id="c1">
+                    <af:inputText value="#{row.bindings.MmpMonSchMasterId.inputValue}"
+                                  label="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.label}"
+                                  required="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.mandatory}"
+                                  columns="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.displayWidth}"
+                                  maximumLength="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.precision}"
+                                  shortDesc="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.tooltip}" id="it1">
+                      <f:validator binding="#{row.bindings.MmpMonSchMasterId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.label}"
+                             id="c2">
+                    <af:inputText value="#{row.bindings.MmpPhaseId.inputValue}"
+                                  label="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.label}"
+                                  required="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.mandatory}"
+                                  columns="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.displayWidth}"
+                                  maximumLength="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.precision}"
+                                  shortDesc="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.tooltip}" id="it2">
+                      <f:validator binding="#{row.bindings.MmpPhaseId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MmpMonSchMasterView1.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.MmpMonSchMasterView1.hints.Dated.label}" id="c3">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.MmpMonSchMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id1">
+                        <af:convertDateTime pattern="#{bindings.MmpMonSchMasterView1.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.MmpMonSchMasterView1.hints.Dated.label}"
+                                  required="#{bindings.MmpMonSchMasterView1.hints.Dated.mandatory}"
+                                  columns="#{bindings.MmpMonSchMasterView1.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.MmpMonSchMasterView1.hints.Dated.tooltip}" id="id2">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.MmpMonSchMasterView1.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MmpMonSchMasterView1.hints.MemberRegId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.MmpMonSchMasterView1.hints.MemberRegId.label}"
+                             id="c4">
+                    <af:inputText value="#{row.bindings.MemberRegId.inputValue}"
+                                  label="#{bindings.MmpMonSchMasterView1.hints.MemberRegId.label}"
+                                  required="#{bindings.MmpMonSchMasterView1.hints.MemberRegId.mandatory}"
+                                  columns="#{bindings.MmpMonSchMasterView1.hints.MemberRegId.displayWidth}"
+                                  maximumLength="#{bindings.MmpMonSchMasterView1.hints.MemberRegId.precision}"
+                                  shortDesc="#{bindings.MmpMonSchMasterView1.hints.MemberRegId.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.MemberRegId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.MmpMonSchMasterView1.hints.MemberRegId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+                <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
+                           disabled="#{!bindings.Execute.enabled}" id="b2"/>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr3">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+            <af:panelGroupLayout id="pgl2">
+              <af:spacer width="100" height="10" id="s2"/>
+              <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                         disabled="#{!bindings.CreateInsert.enabled}" id="b3"/>
+              <af:spacer width="10" height="10" id="s3"/>
+              <af:button actionListener="#{bindings.Execute.execute}" text="Edit"
+                         disabled="#{!bindings.Execute.enabled}" id="b4"/>
+              <af:spacer width="10" height="10" id="s4"/>
+              <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                         disabled="#{!bindings.Delete.enabled}" id="b5"/>
+            </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr4">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+            <af:panelTabbed position="above" id="pt2" inlineStyle="width:1253px;">
+              <af:showDetailItem id="tab2" text="Tab Label 2">
+                <af:table value="#{bindings.MmpMonSchDetailView2.collectionModel}" var="row"
+                          rows="#{bindings.MmpMonSchDetailView2.rangeSize}"
+                          emptyText="#{bindings.MmpMonSchDetailView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0"
+                          selectedRowKeys="#{bindings.MmpMonSchDetailView2.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.MmpMonSchDetailView2.collectionModel.makeCurrent}"
+                          rowSelection="single" fetchSize="#{bindings.MmpMonSchDetailView2.rangeSize}"
+                          filterModel="#{bindings.MmpMonSchDetailView2Query.queryDescriptor}" filterVisible="true"
+                          queryListener="#{bindings.MmpMonSchDetailView2Query.processQuery}" varStatus="vs" id="t2"
+                          partialTriggers="::b6 ::b7 ::b8 ::b9">
+                  <af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.label}" id="c5">
+                    <af:inputText value="#{row.bindings.MmpMonSchDetailId.inputValue}"
+                                  label="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.label}"
+                                  required="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.mandatory}"
+                                  columns="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.displayWidth}"
+                                  maximumLength="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.precision}"
+                                  shortDesc="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.tooltip}" id="it4">
+                      <f:validator binding="#{row.bindings.MmpMonSchDetailId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchMasterId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchMasterId.label}" id="c6">
+                    <af:inputText value="#{row.bindings.MmpMonSchMasterId.inputValue}"
+                                  label="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchMasterId.label}"
+                                  required="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchMasterId.mandatory}"
+                                  columns="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchMasterId.displayWidth}"
+                                  maximumLength="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchMasterId.precision}"
+                                  shortDesc="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchMasterId.tooltip}" id="it5">
+                      <f:validator binding="#{row.bindings.MmpMonSchMasterId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchMasterId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.ClusterId.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.MmpMonSchDetailView2.hints.ClusterId.label}"
+                             id="c7">
+                    <af:inputText value="#{row.bindings.ClusterId.inputValue}"
+                                  label="#{bindings.MmpMonSchDetailView2.hints.ClusterId.label}"
+                                  required="#{bindings.MmpMonSchDetailView2.hints.ClusterId.mandatory}"
+                                  columns="#{bindings.MmpMonSchDetailView2.hints.ClusterId.displayWidth}"
+                                  maximumLength="#{bindings.MmpMonSchDetailView2.hints.ClusterId.precision}"
+                                  shortDesc="#{bindings.MmpMonSchDetailView2.hints.ClusterId.tooltip}" id="it6">
+                      <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.MmpMonSchDetailView2.hints.ClusterId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.Dated.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.MmpMonSchDetailView2.hints.Dated.label}" id="c8">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.MmpMonSchDetailView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                    id="id3">
+                        <af:convertDateTime pattern="#{bindings.MmpMonSchDetailView2.hints.Dated.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                                  label="#{bindings.MmpMonSchDetailView2.hints.Dated.label}"
+                                  required="#{bindings.MmpMonSchDetailView2.hints.Dated.mandatory}"
+                                  columns="#{bindings.MmpMonSchDetailView2.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.MmpMonSchDetailView2.hints.Dated.tooltip}" id="id4">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.MmpMonSchDetailView2.hints.Dated.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                </af:table>
+                <af:button actionListener="#{bindings.Execute1.execute}" text="Refresh"
+                           disabled="#{!bindings.Execute1.enabled}" id="b9"/>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr5">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+            <af:panelGroupLayout id="pgl3">
+              <af:spacer width="100" height="10" id="s5"/>
+              <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add"
+                         disabled="#{!bindings.CreateInsert1.enabled}" id="b6"/>
+              <af:spacer width="10" height="10" id="s6"/>
+              <af:button actionListener="#{bindings.Execute1.execute}" text="Edit"
+                         disabled="#{!bindings.Execute1.enabled}" id="b7"/>
+              <af:spacer width="10" height="10" id="s7"/>
+              <af:button actionListener="#{bindings.Delete1.execute}" text="Delete"
+                         disabled="#{!bindings.Delete1.enabled}" id="b8"/>
+            </af:panelGroupLayout>
+          </af:gridCell>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" id="gr6">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"/>
+        </af:gridRow>
+        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7"/>
+        </af:gridRow>
+      </af:panelGridLayout>
+    </af:showDetailItem>
+  </af:panelAccordion>
+</ui:composition>

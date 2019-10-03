@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblTeamFormation"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TBL_TEAM_FORMATION"
+  AliasName="TblTeamFormation"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="TeamFormationId"
+    IsNotNull="true"
+    ColumnName="TEAM_FORMATION_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_TEAM_FORMATION"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="TrainerId"
+    IsNotNull="true"
+    ColumnName="TRAINER_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_TEAM_FORMATION"/>
+  <Attribute
+    Name="TeamId"
+    IsNotNull="true"
+    ColumnName="TEAM_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_TEAM_FORMATION"/>
+  <Attribute
+    Name="Ast"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="TBL_TEAM_FORMATION"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TrainerType"
+    Precision="20"
+    ColumnName="TRAINER_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_TEAM_FORMATION">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_TEAM_FORMATION"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_TEAM_FORMATION"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="TBL_TEAM_FORMATION"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_TEAM_FORMATION"/>
+  <AccessorAttribute
+    Name="TblTeam"
+    Association="model.EO.Fk2TblTeamFormationFkAssoc"
+    AssociationEnd="model.EO.Fk2TblTeamFormationFkAssoc.TblTeam"
+    AssociationOtherEnd="model.EO.Fk2TblTeamFormationFkAssoc.TblTeamFormation"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblTrainer"
+    Association="model.EO.FkTblTeamFormationFkAssoc"
+    AssociationEnd="model.EO.FkTblTeamFormationFkAssoc.TblTrainer"
+    AssociationOtherEnd="model.EO.FkTblTeamFormationFkAssoc.TblTeamFormation"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblTrainingSchMaster"
+    Association="model.EO.TblTrainingSchMasterFk1122Assoc"
+    AssociationEnd="model.EO.TblTrainingSchMasterFk1122Assoc.TblTrainingSchMaster"
+    AssociationOtherEnd="model.EO.TblTrainingSchMasterFk1122Assoc.TblTeamFormation"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkTblTeamFormationPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_TBL_TEAM_FORMATION_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblTeamFormation.TeamFormationId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="Fk2TblTeamFormationFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_TEAM_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK2_TBL_TEAM_FORMATION_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblTeamFormation.TeamId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkTblTeamFormationFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_TRAINER_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_TEAM_FORMATION_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblTeamFormation.TrainerId"/>
+    </AttrArray>
+  </Key>
+</Entity>

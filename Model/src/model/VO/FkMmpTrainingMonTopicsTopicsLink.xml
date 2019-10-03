@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkMmpTrainingMonTopicsTopicsLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkMmpTrainingMonTopicsTopicsAssoc">
+  <ViewLinkDefEnd
+    Name="TblTopicsView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblTopicsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblTopicsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblTopicsView.TopicsId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="MmpTrainingMonTopicsView"
+    Cardinality="-1"
+    Owner="model.VO.MmpTrainingMonTopicsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="MmpTrainingMonTopicsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.MmpTrainingMonTopicsView.TopicsId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

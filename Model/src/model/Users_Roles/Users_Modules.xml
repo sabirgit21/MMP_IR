@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Users_Modules"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.Users_Roles.Users_Modules_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery><![CDATA[SELECT                 
+MM.MMP_MODULE_MENU_ID MODULE_MENU_ID, MM.MMP_MODULE_MENU_NAME MODULE_MENU_NAME, MM.MMP_MODULE_MENU_LINK MODULE_MENU_LINK, MM.MMP_MODULE_MENU_DESC MODULE_MENU_DESC, MM.MMP_MODULE_MENU_ICON MODULE_MENU_ICON, MM.AST AST,     
+RDM.MMP_ROLE_MASTER_ID ROLE_MASTER_ID, MM.MMP_sr_no sr_no    
+FROM                 
+MMP_ROLE_DETAIL_MODULES RDM , MMP_MODULE_MENU MM               
+Where                 
+MM.MMP_MODULE_MENU_ID = RDM.MMP_MODULE_MENU_ID                
+AND                
+RDM.MMP_R_VIEW = 'Y'                
+AND               
+MM.AST = 'Y'                
+AND                
+RDM.MMP_ROLE_MASTER_ID = :GETROLEMASTERID]]></SQLQuery>
+  <ViewAttribute
+    Name="ModuleMenuId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="MODULE_MENU_ID"
+    Expression="MODULE_MENU_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="ModuleMenuName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MODULE_MENU_NAME"
+    Expression="MODULE_MENU_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ModuleMenuLink"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MODULE_MENU_LINK"
+    Expression="MODULE_MENU_LINK"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ModuleMenuDesc"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MODULE_MENU_DESC"
+    Expression="MODULE_MENU_DESC"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ModuleMenuIcon"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MODULE_MENU_ICON"
+    Expression="MODULE_MENU_ICON"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Ast"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="AST"
+    Expression="AST"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="RoleMasterId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="ROLE_MASTER_ID"
+    Expression="ROLE_MASTER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="SrNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="SR_NO"
+    Expression="SR_NO"
+    SQLType="NUMERIC"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="ModuleMenuId"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

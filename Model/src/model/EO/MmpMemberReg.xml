@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MmpMemberReg"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="MMP_MEMBER_REG"
+  AliasName="MmpMemberReg"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="MemberRegId"
+    IsNotNull="true"
+    ColumnName="MEMBER_REG_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_MEMBER_REG"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Name"
+    IsNotNull="true"
+    Precision="150"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_MEMBER_REG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FatherName"
+    IsNotNull="true"
+    Precision="150"
+    ColumnName="FATHER_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_MEMBER_REG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Ast"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="MMP_MEMBER_REG"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MarStatus"
+    Precision="1"
+    ColumnName="MAR_STATUS"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="MMP_MEMBER_REG"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Dob"
+    ColumnName="DOB"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="MMP_MEMBER_REG"/>
+  <Attribute
+    Name="Doj"
+    ColumnName="DOJ"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="MMP_MEMBER_REG"/>
+  <Attribute
+    Name="Ntn"
+    Precision="25"
+    ColumnName="NTN"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_MEMBER_REG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PassNo"
+    IsUnique="true"
+    Precision="25"
+    ColumnName="PASS_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_MEMBER_REG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Cnic"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="25"
+    ColumnName="CNIC"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_MEMBER_REG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DrLicNo"
+    Precision="25"
+    ColumnName="DR_LIC_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_MEMBER_REG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Telephone"
+    Precision="15"
+    ColumnName="TELEPHONE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_MEMBER_REG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="15"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Mobile"
+    Precision="20"
+    ColumnName="MOBILE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_MEMBER_REG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Email"
+    IsUnique="true"
+    Precision="50"
+    ColumnName="EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_MEMBER_REG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Url"
+    Precision="50"
+    ColumnName="URL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_MEMBER_REG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PreAddress"
+    Precision="300"
+    ColumnName="PRE_ADDRESS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_MEMBER_REG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PerAddress"
+    IsNotNull="true"
+    Precision="300"
+    ColumnName="PER_ADDRESS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_MEMBER_REG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="300"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Image"
+    Precision="100"
+    ColumnName="IMAGE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_MEMBER_REG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MemberNo"
+    Precision="20"
+    ColumnName="MEMBER_NO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_MEMBER_REG">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="MMP_MEMBER_REG"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_MEMBER_REG"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="MMP_MEMBER_REG"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_MEMBER_REG"/>
+  <AccessorAttribute
+    Name="MmpMemberRegDep"
+    Association="model.EO.FkMmpMemberRegDepAssoc"
+    AssociationEnd="model.EO.FkMmpMemberRegDepAssoc.MmpMemberRegDep"
+    AssociationOtherEnd="model.EO.FkMmpMemberRegDepAssoc.MmpMemberReg"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="MmpMonSchMaster"
+    Association="model.EO.FkMmpMonSchMasterMemberRegIdAssoc"
+    AssociationEnd="model.EO.FkMmpMonSchMasterMemberRegIdAssoc.MmpMonSchMaster"
+    AssociationOtherEnd="model.EO.FkMmpMonSchMasterMemberRegIdAssoc.MmpMemberReg"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="PkMmpMemberReg"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_MMP_MEMBER_REG"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.MmpMemberReg.MemberRegId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UkMmpMemberReg">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="UK_MMP_MEMBER_REG"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.MmpMemberReg.Cnic"/>
+      <Item Value="model.EO.MmpMemberReg.PassNo"/>
+      <Item Value="model.EO.MmpMemberReg.Email"/>
+    </AttrArray>
+  </Key>
+</Entity>

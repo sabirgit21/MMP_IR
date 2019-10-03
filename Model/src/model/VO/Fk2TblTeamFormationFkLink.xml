@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Fk2TblTeamFormationFkLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.Fk2TblTeamFormationFkAssoc">
+  <ViewLinkDefEnd
+    Name="TblTeamView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblTeamView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="TblTeamView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblTeamView.TeamId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TblTeamFormationView"
+    Cardinality="-1"
+    Owner="model.VO.TblTeamFormationView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblTeamFormationView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblTeamFormationView.TeamId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

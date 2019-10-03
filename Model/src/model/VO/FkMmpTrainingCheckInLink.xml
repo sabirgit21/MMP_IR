@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkMmpTrainingCheckInLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkMmpTrainingCheckInAssoc">
+  <ViewLinkDefEnd
+    Name="TblClusterView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.TblClusterView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TblClusterView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.TblClusterView.ClusterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="MmpTrainingCheckInView"
+    Cardinality="-1"
+    Owner="model.VO.MmpTrainingCheckInView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="MmpTrainingCheckInView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.MmpTrainingCheckInView.ClusterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

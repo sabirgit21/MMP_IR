@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Monitoring_MemberPageDef"
+                Package="Fragments.Modules.Monitoring">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MmpMemberRegView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MmpMemberRegView1Iterator"/>
+    <searchRegion Binds="MmpMemberRegView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpMemberRegView1Query"/>
+    <iterator Binds="MmpMemberRegDepView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MmpMemberRegDepView2Iterator"/>
+    <searchRegion Binds="MmpMemberRegDepView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpMemberRegDepView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="MmpMemberRegView1Iterator" id="MmpMemberRegView1">
+      <nodeDefinition DefName="model.VO.MmpMemberRegView" Name="MmpMemberRegView10">
+        <AttrNames>
+          <Item Value="MemberRegId"/>
+          <Item Value="Name"/>
+          <Item Value="FatherName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="MemberRegId">
+      <AttrNames>
+        <Item Value="MemberRegId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="FatherName">
+      <AttrNames>
+        <Item Value="FatherName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="Ast">
+      <AttrNames>
+        <Item Value="Ast"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="MarStatus">
+      <AttrNames>
+        <Item Value="MarStatus"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="Dob">
+      <AttrNames>
+        <Item Value="Dob"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="Doj">
+      <AttrNames>
+        <Item Value="Doj"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="Ntn">
+      <AttrNames>
+        <Item Value="Ntn"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="PassNo">
+      <AttrNames>
+        <Item Value="PassNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="Cnic">
+      <AttrNames>
+        <Item Value="Cnic"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="DrLicNo">
+      <AttrNames>
+        <Item Value="DrLicNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="Telephone">
+      <AttrNames>
+        <Item Value="Telephone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="Mobile">
+      <AttrNames>
+        <Item Value="Mobile"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="Url">
+      <AttrNames>
+        <Item Value="Url"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="PreAddress">
+      <AttrNames>
+        <Item Value="PreAddress"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="PerAddress">
+      <AttrNames>
+        <Item Value="PerAddress"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="Image">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="MemberNo">
+      <AttrNames>
+        <Item Value="MemberNo"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="MmpMemberRegView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="MmpMemberRegView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="MmpMemberRegView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="MmpMemberRegView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="MmpMemberRegView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="MmpMemberRegView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="MmpMemberRegView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="MmpMemberRegDepView2Iterator" id="MmpMemberRegDepView2">
+      <nodeDefinition DefName="model.VO.MmpMemberRegDepView" Name="MmpMemberRegDepView20">
+        <AttrNames>
+          <Item Value="MemberRegDepId"/>
+          <Item Value="MemberRegId"/>
+          <Item Value="Name"/>
+          <Item Value="FatherName"/>
+          <Item Value="Dob"/>
+          <Item Value="Cnic"/>
+          <Item Value="Telephone"/>
+          <Item Value="Mobile"/>
+          <Item Value="Relation"/>
+          <Item Value="Religion"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="MmpMemberRegDepView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="MmpMemberRegDepView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="MmpMemberRegDepView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

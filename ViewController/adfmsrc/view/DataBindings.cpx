@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.11.57" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Member.jsff" usageId="view_Monitoring_MemberPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Schedule.jsff"
+          usageId="view_Monitoring_SchedulePageDef"/>
+  </pageMap>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+  <pageDefinitionUsages>
+    <page id="view_Monitoring_MemberPageDef" path="Fragments.Modules.Monitoring.Monitoring_MemberPageDef"/>
+    <page id="view_Monitoring_SchedulePageDef" path="Fragments.Modules.Monitoring.Monitoring_SchedulePageDef"/>
+  </pageDefinitionUsages>
+</Application>

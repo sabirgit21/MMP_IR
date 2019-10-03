@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MmpTrainingCheckIn"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="MMP_TRAINING_CHECK_IN"
+  AliasName="MmpTrainingCheckIn"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="MmpTrainingCheckInId"
+    IsNotNull="true"
+    ColumnName="MMP_TRAINING_CHECK_IN_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_TRAINING_CHECK_IN"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ClusterId"
+    ColumnName="CLUSTER_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_TRAINING_CHECK_IN"/>
+  <Attribute
+    Name="Dated"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="MMP_TRAINING_CHECK_IN"/>
+  <Attribute
+    Name="TrainingStarted"
+    Precision="1"
+    ColumnName="TRAINING_STARTED"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="MMP_TRAINING_CHECK_IN"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Remarks"
+    Precision="250"
+    ColumnName="REMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_TRAINING_CHECK_IN">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Latitude"
+    ColumnName="LATITUDE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_TRAINING_CHECK_IN"/>
+  <Attribute
+    Name="Longitude"
+    ColumnName="LONGITUDE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_TRAINING_CHECK_IN"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="MMP_TRAINING_CHECK_IN"/>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_TRAINING_CHECK_IN"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="MMP_TRAINING_CHECK_IN"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_TRAINING_CHECK_IN"/>
+  <AccessorAttribute
+    Name="TblCluster"
+    Association="model.EO.FkMmpTrainingCheckInAssoc"
+    AssociationEnd="model.EO.FkMmpTrainingCheckInAssoc.TblCluster"
+    AssociationOtherEnd="model.EO.FkMmpTrainingCheckInAssoc.MmpTrainingCheckIn"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkMmpTrainingCheckIn"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_MMP_TRAINING_CHECK_IN"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.MmpTrainingCheckIn.MmpTrainingCheckInId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkMmpTrainingCheckIn">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_CLUSTER_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_MMP_TRAINING_CHECK_IN"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.MmpTrainingCheckIn.ClusterId"/>
+    </AttrArray>
+  </Key>
+</Entity>
