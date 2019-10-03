@@ -10,4 +10,7 @@
   <ViewUsage
     Name="Users_Modules1"
     ViewObjectName="model.Users_Roles.Users_Modules"/>
+  <ViewUsage
+    Name="USERS_CRUD_OPERATIONS1"
+    ViewObjectName="model.Users_Roles.USERS_CRUD_OPERATIONS"/>
 </AppModule>

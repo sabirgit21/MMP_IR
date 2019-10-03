@@ -30,7 +30,7 @@
                           rowSelection="single" fetchSize="#{bindings.MmpMonSchMasterView1.rangeSize}"
                           filterModel="#{bindings.MmpMonSchMasterView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MmpMonSchMasterView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4 ::b5">
+                          partialTriggers="::b2">
                   <af:column sortProperty="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.label}" id="c1">
@@ -99,17 +99,18 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-            <af:panelGroupLayout id="pgl2">
-              <af:spacer width="100" height="10" id="s2"/>
-              <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
-                         disabled="#{!bindings.CreateInsert.enabled}" id="b3"/>
-              <af:spacer width="10" height="10" id="s3"/>
-              <af:button actionListener="#{bindings.Execute.execute}" text="Edit"
-                         disabled="#{!bindings.Execute.enabled}" id="b4"/>
-              <af:spacer width="10" height="10" id="s4"/>
-              <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
-                         disabled="#{!bindings.Delete.enabled}" id="b5"/>
-            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl3" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s4"/>
+                            <af:iterator id="i2" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s5"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr4">
@@ -125,7 +126,7 @@
                           rowSelection="single" fetchSize="#{bindings.MmpMonSchDetailView2.rangeSize}"
                           filterModel="#{bindings.MmpMonSchDetailView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MmpMonSchDetailView2Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers="::b6 ::b7 ::b8 ::b9">
+                          partialTriggers="::b9">
                   <af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.label}" id="c5">
@@ -194,17 +195,18 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr5">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
-            <af:panelGroupLayout id="pgl3">
-              <af:spacer width="100" height="10" id="s5"/>
-              <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add"
-                         disabled="#{!bindings.CreateInsert1.enabled}" id="b6"/>
-              <af:spacer width="10" height="10" id="s6"/>
-              <af:button actionListener="#{bindings.Execute1.execute}" text="Edit"
-                         disabled="#{!bindings.Execute1.enabled}" id="b7"/>
-              <af:spacer width="10" height="10" id="s7"/>
-              <af:button actionListener="#{bindings.Delete1.execute}" text="Delete"
-                         disabled="#{!bindings.Delete1.enabled}" id="b8"/>
-            </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl2" layout="horizontal">
+                            <af:spacer width="190" height="10" id="s3"/>
+                            <af:iterator id="i1" var="index" varStatus="status"
+                                         value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
+                                <af:button id="btn#{status.index+1}" text="#{index.Operation}"
+                                           icon="/ViewController/faces/javax.faces.resource/#{index.bindings.icon.inputValue}?ln=images"
+                                           actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
+                                    <f:attribute name="AcLslink" value="#{index.bindings.Bindingname.inputValue}1"/>
+                                </af:button>
+                                <af:spacer width="5" height="10" id="s2"/>
+                            </af:iterator>
+                        </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr6">

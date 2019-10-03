@@ -5,9 +5,26 @@
     <page path="/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Member.jsff" usageId="view_Monitoring_MemberPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Schedule.jsff"
           usageId="view_Monitoring_SchedulePageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Check_In.jsff"
+          usageId="view_Monitoring_Check_InPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Monitoring/Monitoring_Schedule_TaskFlow.xml#Monitoring_Schedule_TaskFlow@ExecuteWithParams"
+          usageId="view_Monitoring_Schedule_TaskFlow_Monitoring_Schedule_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Monitoring/Monitoring_Member_TaskFlow.xml#Monitoring_Member_TaskFlow@ExecuteWithParams"
+          usageId="view_Monitoring_Member_TaskFlow_Monitoring_Member_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Monitoring/Monitoring_Check_In_TaskFlow.xml#Monitoring_Check_In_TaskFlow@ExecuteWithParams"
+          usageId="view_Monitoring_Check_In_TaskFlow_Monitoring_Check_In_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Management/UserRoles_TaskFlow.xml#UserRoles_TaskFlow@ExecuteWithParams"
+          usageId="view_UserRoles_TaskFlow_UserRoles_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Management/Map_TaskFlow.xml#Map_TaskFlow@ExecuteWithParams"
+          usageId="view_Map_TaskFlow_Map_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageMap>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="AppModuleDataControl1" Package="model.Users_Roles"
                      FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
                      SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
                      SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
@@ -16,5 +33,16 @@
   <pageDefinitionUsages>
     <page id="view_Monitoring_MemberPageDef" path="Fragments.Modules.Monitoring.Monitoring_MemberPageDef"/>
     <page id="view_Monitoring_SchedulePageDef" path="Fragments.Modules.Monitoring.Monitoring_SchedulePageDef"/>
+    <page id="view_Monitoring_Check_InPageDef" path="Fragments.Modules.Monitoring.Monitoring_Check_InPageDef"/>
+    <page id="view_Monitoring_Schedule_TaskFlow_Monitoring_Schedule_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Monitoring.Monitoring_Schedule_TaskFlow_Monitoring_Schedule_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Monitoring_Member_TaskFlow_Monitoring_Member_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Monitoring.Monitoring_Member_TaskFlow_Monitoring_Member_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Monitoring_Check_In_TaskFlow_Monitoring_Check_In_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Monitoring.Monitoring_Check_In_TaskFlow_Monitoring_Check_In_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_UserRoles_TaskFlow_UserRoles_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Management.UserRoles_TaskFlow_UserRoles_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Map_TaskFlow_Map_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Management.Map_TaskFlow_Map_TaskFlow_ExecuteWithParamsPageDef"/>
   </pageDefinitionUsages>
 </Application>
