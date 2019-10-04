@@ -4,11 +4,11 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="MmpMemberRegView1" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="MmpMemberRegView1" RangeSize="8" DataControl="AppModuleDataControl"
               id="MmpMemberRegView1Iterator"/>
     <searchRegion Binds="MmpMemberRegView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpMemberRegView1Query"/>
-    <iterator Binds="MmpMemberRegDepView2" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="MmpMemberRegDepView2" RangeSize="8" DataControl="AppModuleDataControl"
               id="MmpMemberRegDepView2Iterator"/>
     <searchRegion Binds="MmpMemberRegDepView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpMemberRegDepView2Query"/>
@@ -23,6 +23,8 @@
           <Item Value="Name"/>
           <Item Value="FatherName"/>
           <Item Value="Ast"/>
+          <Item Value="MemberNo"/>
+          <Item Value="Cnic"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -116,16 +118,10 @@
         <Item Value="Image"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="MmpMemberRegView1Iterator" id="MemberNo">
-      <AttrNames>
-        <Item Value="MemberNo"/>
-      </AttrNames>
-    </attributeValues>
     <action IterBinding="MmpMemberRegView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
     <action IterBinding="MmpMemberRegView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
     <action IterBinding="MmpMemberRegView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
     <action IterBinding="MmpMemberRegView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
-    <action IterBinding="MmpMemberRegView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
     <action IterBinding="MmpMemberRegView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
     <action IterBinding="MmpMemberRegView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
@@ -147,8 +143,6 @@
     </tree>
     <action IterBinding="MmpMemberRegDepView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <action IterBinding="MmpMemberRegDepView2Iterator" id="Execute1" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
     <action IterBinding="MmpMemberRegDepView2Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>

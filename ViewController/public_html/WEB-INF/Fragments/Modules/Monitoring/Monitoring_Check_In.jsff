@@ -39,7 +39,7 @@
                              headerText="Training CheckIn ID" id="c1" align="center" width="60">
                              <f:facet name="filter">
                                                                        <af:inputText value="#{vs.filterCriteria.MmpTrainingCheckInId}"
-                                                                                     shortDesc="Search ID" id="id4" >
+                                                                                     placeholder="Search ID" id="id4" >
                                                                        </af:inputText>
                                                                    </f:facet>
                     <af:inputText value="#{row.bindings.MmpTrainingCheckInId.inputValue}"
@@ -61,7 +61,7 @@
                             headerText="Cluster" id="c2" width="200">
                             <f:facet name="filter">
                                                                        <af:inputText value="#{vs.filterCriteria.ClusterId}"
-                                                                                     shortDesc="Search Cluster" id="it2" >
+                                                                                     placeholder="Search Cluster" id="it2" >
                                                                        </af:inputText>
                                                                    </f:facet>
                     <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
@@ -97,7 +97,7 @@
                              width="100">
                               <f:facet name="filter">
                                                                        <af:inputText value="#{vs.filterCriteria.TrainingStarted}"
-                                                                                     shortDesc="Search Status"
+                                                                                     placeholder="Search Status"
                                                                                      id="it7" >
                                                                        </af:inputText>
                                                                    </f:facet>
@@ -116,7 +116,7 @@
                              id="c5" width="200">
                              <f:facet name="filter">
                                                                        <af:inputText value="#{vs.filterCriteria.Remarks}"
-                                                                                     shortDesc="Search Remarks"
+                                                                                     placeholder="Search Remarks"
                                                                                      id="it8" >
                                                                        </af:inputText>
                                                                    </f:facet>

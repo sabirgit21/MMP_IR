@@ -2,7 +2,7 @@
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
   <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Panel Label 1">
+    <af:showDetailItem id="pane1" text="Monitoring Member">
       <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
         <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1">
@@ -20,7 +20,7 @@
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Tab Label 1">
+              <af:showDetailItem id="tab1" text="Monitoring Member">
                 <af:table value="#{bindings.MmpMemberRegView1.collectionModel}" var="row"
                           rows="#{bindings.MmpMemberRegView1.rangeSize}"
                           emptyText="#{bindings.MmpMemberRegView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -30,22 +30,54 @@
                           rowSelection="single" fetchSize="#{bindings.MmpMemberRegView1.rangeSize}"
                           filterModel="#{bindings.MmpMemberRegView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MmpMemberRegView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4 ::b5 ::b7">
-                  <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.MemberRegId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMemberRegView1.hints.MemberRegId.label}" id="c1">
+                          partialTriggers="::b2 ::b3 ::b4 ::b5"
+                          scrollPolicy="page" autoHeightRows="0">
+                  <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.MemberRegId.name}" 
+                             filterable="true" sortable="true" 
+                             headerText="Member ID" id="c1" align="center" width="60">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MemberRegId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.MemberRegId.inputValue}"
                                   label="#{bindings.MmpMemberRegView1.hints.MemberRegId.label}"
                                   required="#{bindings.MmpMemberRegView1.hints.MemberRegId.mandatory}"
                                   columns="#{bindings.MmpMemberRegView1.hints.MemberRegId.displayWidth}"
                                   maximumLength="#{bindings.MmpMemberRegView1.hints.MemberRegId.precision}"
-                                  shortDesc="#{bindings.MmpMemberRegView1.hints.MemberRegId.tooltip}" id="it1">
+                                  shortDesc="#{bindings.MmpMemberRegView1.hints.MemberRegId.tooltip}" 
+                                  id="it1" readOnly="true" 
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.MemberRegId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpMemberRegView1.hints.MemberRegId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMemberRegView1.hints.Name.label}" id="c2">
+                  <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.MemberNo.name}" 
+                             filterable="true" sortable="true" 
+                             headerText="Member No." id="c15" align="center" width="100">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MemberNo}"
+                                          id="it27" placeholder="Search Member No.">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.MemberNo.inputValue}"
+                                  label="#{bindings.MmpMemberRegView1.hints.MemberNo.label}"
+                                  required="#{bindings.MmpMemberRegView1.hints.MemberNo.mandatory}"
+                                  columns="#{bindings.MmpMemberRegView1.hints.MemberNo.displayWidth}"
+                                  maximumLength="#{bindings.MmpMemberRegView1.hints.MemberNo.precision}"
+                                  shortDesc="#{bindings.MmpMemberRegView1.hints.MemberNo.tooltip}" 
+                                  id="it20" contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.MemberNo.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.Name.name}" 
+                             filterable="true" sortable="true" headerText="Member" id="c2" width="300">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it28" placeholder="Search Member">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.MmpMemberRegView1.hints.Name.label}"
                                   required="#{bindings.MmpMemberRegView1.hints.Name.mandatory}"
@@ -55,8 +87,13 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.FatherName.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMemberRegView1.hints.FatherName.label}" id="c3">
+                  <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.FatherName.name}" 
+                             filterable="true" sortable="true" headerText="Father" id="c3" width="300">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FatherName}"
+                                          id="it30" placeholder="Search Father">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FatherName.inputValue}"
                                   label="#{bindings.MmpMemberRegView1.hints.FatherName.label}"
                                   required="#{bindings.MmpMemberRegView1.hints.FatherName.mandatory}"
@@ -66,8 +103,32 @@
                       <f:validator binding="#{row.bindings.FatherName.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.Ast.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMemberRegView1.hints.Ast.label}" id="c4">
+                  <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.Cnic.name}" 
+                             filterable="true" sortable="true"
+                             headerText="CNIC" id="c16" align="center" width="100">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Cnic}"
+                                          id="it29" placeholder="Search CNIC">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.Cnic.inputValue}"
+                                  label="#{bindings.MmpMemberRegView1.hints.Cnic.label}"
+                                  required="#{bindings.MmpMemberRegView1.hints.Cnic.mandatory}"
+                                  columns="#{bindings.MmpMemberRegView1.hints.Cnic.displayWidth}"
+                                  maximumLength="#{bindings.MmpMemberRegView1.hints.Cnic.precision}"
+                                  shortDesc="#{bindings.MmpMemberRegView1.hints.Cnic.tooltip}" 
+                                  id="it11" contentStyle='text-align: center'>
+                                  <f:validateRegex pattern="(^[0-9]{5}-[0-9]{7}-[0-9]$)"/>
+                                  <f:validator binding="#{row.bindings.Cnic.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.Ast.name}" 
+                             filterable="true" sortable="true" headerText="Active" id="c4" width="60">
+                    <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Ast}"
+                                          id="it31" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Ast.inputValue}"
                                   label="#{bindings.MmpMemberRegView1.hints.Ast.label}"
                                   required="#{bindings.MmpMemberRegView1.hints.Ast.mandatory}"
@@ -78,8 +139,6 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.Execute.execute}" text="Refresh"
-                           disabled="#{!bindings.Execute.enabled}" id="b7"/>
               </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
@@ -90,108 +149,94 @@
         <af:gridRow marginTop="5px" height="auto" id="gr4">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab2" text="Tab Label 2">
+              <af:showDetailItem id="tab2" text="Monitoring Member">
                 <af:panelFormLayout id="pfl1" maxColumns="3" rows="3">
-                  <af:inputText value="#{bindings.MarStatus.inputValue}" label="#{bindings.MarStatus.hints.label}"
+                  <af:inputText value="#{bindings.MarStatus.inputValue}" label="Marital Status"
                                 required="#{bindings.MarStatus.hints.mandatory}"
                                 columns="#{bindings.MarStatus.hints.displayWidth}"
                                 maximumLength="#{bindings.MarStatus.hints.precision}"
                                 shortDesc="#{bindings.MarStatus.hints.tooltip}" id="it8">
                     <f:validator binding="#{bindings.MarStatus.validator}"/>
                   </af:inputText>
-                  <af:inputDate value="#{bindings.Dob.inputValue}" label="#{bindings.Dob.hints.label}"
+                  <af:inputDate value="#{bindings.Dob.inputValue}" label="DOB"
                                 required="#{bindings.Dob.hints.mandatory}" columns="#{bindings.Dob.hints.displayWidth}"
                                 shortDesc="#{bindings.Dob.hints.tooltip}" id="id3">
                     <f:validator binding="#{bindings.Dob.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Dob.format}"/>
                   </af:inputDate>
-                  <af:inputDate value="#{bindings.Doj.inputValue}" label="#{bindings.Doj.hints.label}"
+                  <af:inputDate value="#{bindings.Doj.inputValue}" label="DOJ"
                                 required="#{bindings.Doj.hints.mandatory}" columns="#{bindings.Doj.hints.displayWidth}"
-                                shortDesc="#{bindings.Doj.hints.tooltip}" id="id4">
+                                shortDesc="#{bindings.Doj.hints.tooltip}" id="id5">
                     <f:validator binding="#{bindings.Doj.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Doj.format}"/>
                   </af:inputDate>
-                  <af:inputText value="#{bindings.Ntn.inputValue}" label="#{bindings.Ntn.hints.label}"
+                  <af:inputText value="#{bindings.Ntn.inputValue}" label="NTN"
                                 required="#{bindings.Ntn.hints.mandatory}" columns="#{bindings.Ntn.hints.displayWidth}"
                                 maximumLength="#{bindings.Ntn.hints.precision}"
                                 shortDesc="#{bindings.Ntn.hints.tooltip}" id="it9">
                     <f:validator binding="#{bindings.Ntn.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.PassNo.inputValue}" label="#{bindings.PassNo.hints.label}"
+                  <af:inputText value="#{bindings.PassNo.inputValue}" label="Passport Number"
                                 required="#{bindings.PassNo.hints.mandatory}"
                                 columns="#{bindings.PassNo.hints.displayWidth}"
                                 maximumLength="#{bindings.PassNo.hints.precision}"
                                 shortDesc="#{bindings.PassNo.hints.tooltip}" id="it10">
                     <f:validator binding="#{bindings.PassNo.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.Cnic.inputValue}" label="#{bindings.Cnic.hints.label}"
-                                required="#{bindings.Cnic.hints.mandatory}"
-                                columns="#{bindings.Cnic.hints.displayWidth}"
-                                maximumLength="#{bindings.Cnic.hints.precision}"
-                                shortDesc="#{bindings.Cnic.hints.tooltip}" id="it11">
-                    <f:validator binding="#{bindings.Cnic.validator}"/>
-                  </af:inputText>
-                  <af:inputText value="#{bindings.DrLicNo.inputValue}" label="#{bindings.DrLicNo.hints.label}"
+                  <af:inputText value="#{bindings.DrLicNo.inputValue}" label="License No."
                                 required="#{bindings.DrLicNo.hints.mandatory}"
                                 columns="#{bindings.DrLicNo.hints.displayWidth}"
                                 maximumLength="#{bindings.DrLicNo.hints.precision}"
                                 shortDesc="#{bindings.DrLicNo.hints.tooltip}" id="it12">
                     <f:validator binding="#{bindings.DrLicNo.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.Telephone.inputValue}" label="#{bindings.Telephone.hints.label}"
+                  <af:inputText value="#{bindings.Telephone.inputValue}" label="Telephone"
                                 required="#{bindings.Telephone.hints.mandatory}"
                                 columns="#{bindings.Telephone.hints.displayWidth}"
                                 maximumLength="#{bindings.Telephone.hints.precision}"
                                 shortDesc="#{bindings.Telephone.hints.tooltip}" id="it13">
                     <f:validator binding="#{bindings.Telephone.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.Mobile.inputValue}" label="#{bindings.Mobile.hints.label}"
+                  <af:inputText value="#{bindings.Mobile.inputValue}" label="Mobile"
                                 required="#{bindings.Mobile.hints.mandatory}"
                                 columns="#{bindings.Mobile.hints.displayWidth}"
                                 maximumLength="#{bindings.Mobile.hints.precision}"
                                 shortDesc="#{bindings.Mobile.hints.tooltip}" id="it14">
                     <f:validator binding="#{bindings.Mobile.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
+                  <af:inputText value="#{bindings.Email.inputValue}" label="Email"
                                 required="#{bindings.Email.hints.mandatory}"
                                 columns="#{bindings.Email.hints.displayWidth}"
                                 maximumLength="#{bindings.Email.hints.precision}"
                                 shortDesc="#{bindings.Email.hints.tooltip}" id="it15">
                     <f:validator binding="#{bindings.Email.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.Url.inputValue}" label="#{bindings.Url.hints.label}"
+                  <af:inputText value="#{bindings.Url.inputValue}" label="URL"
                                 required="#{bindings.Url.hints.mandatory}" columns="#{bindings.Url.hints.displayWidth}"
                                 maximumLength="#{bindings.Url.hints.precision}"
                                 shortDesc="#{bindings.Url.hints.tooltip}" id="it16">
                     <f:validator binding="#{bindings.Url.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.PreAddress.inputValue}" label="#{bindings.PreAddress.hints.label}"
+                  <af:inputText value="#{bindings.PreAddress.inputValue}" label="Present Address"
                                 required="#{bindings.PreAddress.hints.mandatory}"
                                 columns="#{bindings.PreAddress.hints.displayWidth}"
                                 maximumLength="#{bindings.PreAddress.hints.precision}"
                                 shortDesc="#{bindings.PreAddress.hints.tooltip}" id="it17">
                     <f:validator binding="#{bindings.PreAddress.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.PerAddress.inputValue}" label="#{bindings.PerAddress.hints.label}"
+                  <af:inputText value="#{bindings.PerAddress.inputValue}" label="Permanent Address"
                                 required="#{bindings.PerAddress.hints.mandatory}"
                                 columns="#{bindings.PerAddress.hints.displayWidth}"
                                 maximumLength="#{bindings.PerAddress.hints.precision}"
                                 shortDesc="#{bindings.PerAddress.hints.tooltip}" id="it18">
                     <f:validator binding="#{bindings.PerAddress.validator}"/>
                   </af:inputText>
-                  <af:inputText value="#{bindings.Image.inputValue}" label="#{bindings.Image.hints.label}"
+                  <af:inputText value="#{bindings.Image.inputValue}" label="Image"
                                 required="#{bindings.Image.hints.mandatory}"
                                 columns="#{bindings.Image.hints.displayWidth}"
                                 maximumLength="#{bindings.Image.hints.precision}"
                                 shortDesc="#{bindings.Image.hints.tooltip}" id="it19">
                     <f:validator binding="#{bindings.Image.validator}"/>
-                  </af:inputText>
-                  <af:inputText value="#{bindings.MemberNo.inputValue}" label="#{bindings.MemberNo.hints.label}"
-                                required="#{bindings.MemberNo.hints.mandatory}"
-                                columns="#{bindings.MemberNo.hints.displayWidth}"
-                                maximumLength="#{bindings.MemberNo.hints.precision}"
-                                shortDesc="#{bindings.MemberNo.hints.tooltip}" id="it20">
-                    <f:validator binding="#{bindings.MemberNo.validator}"/>
                   </af:inputText>
                   <f:facet name="footer">
                     <af:panelGroupLayout layout="vertical" id="pgl2">
@@ -227,7 +272,7 @@
                   </f:facet>
                 </af:panelFormLayout>
               </af:showDetailItem>
-              <af:showDetailItem text="showDetailItem 3" id="sdi1">
+              <af:showDetailItem text="Monitoring Member Dependent" id="sdi1">
                 <af:table value="#{bindings.MmpMemberRegDepView2.collectionModel}" var="row"
                           rows="#{bindings.MmpMemberRegDepView2.rangeSize}"
                           emptyText="#{bindings.MmpMemberRegDepView2.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -237,37 +282,37 @@
                           rowSelection="single" fetchSize="#{bindings.MmpMemberRegDepView2.rangeSize}"
                           filterModel="#{bindings.MmpMemberRegDepView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MmpMemberRegDepView2Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers=" ::b14">
+                          partialTriggers=" ::b14"
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.MemberRegDepId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMemberRegDepView2.hints.MemberRegDepId.label}"
-                             id="c5">
+                             sortable="true" headerText="Member Dependend ID"
+                             id="c5" align="center" width="68">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MemberRegDepId}"
+                                          id="it32" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+                             
                     <af:inputText value="#{row.bindings.MemberRegDepId.inputValue}"
                                   label="#{bindings.MmpMemberRegDepView2.hints.MemberRegDepId.label}"
                                   required="#{bindings.MmpMemberRegDepView2.hints.MemberRegDepId.mandatory}"
                                   columns="#{bindings.MmpMemberRegDepView2.hints.MemberRegDepId.displayWidth}"
                                   maximumLength="#{bindings.MmpMemberRegDepView2.hints.MemberRegDepId.precision}"
-                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.MemberRegDepId.tooltip}" id="it5">
+                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.MemberRegDepId.tooltip}" 
+                                  id="it5" readOnly="true" 
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.MemberRegDepId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpMemberRegDepView2.hints.MemberRegDepId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.MemberRegId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMemberRegDepView2.hints.MemberRegId.label}"
-                             id="c6">
-                    <af:inputText value="#{row.bindings.MemberRegId.inputValue}"
-                                  label="#{bindings.MmpMemberRegDepView2.hints.MemberRegId.label}"
-                                  required="#{bindings.MmpMemberRegDepView2.hints.MemberRegId.mandatory}"
-                                  columns="#{bindings.MmpMemberRegDepView2.hints.MemberRegId.displayWidth}"
-                                  maximumLength="#{bindings.MmpMemberRegDepView2.hints.MemberRegId.precision}"
-                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.MemberRegId.tooltip}" id="it6">
-                      <f:validator binding="#{row.bindings.MemberRegId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.MmpMemberRegDepView2.hints.MemberRegId.format}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMemberRegDepView2.hints.Name.label}" id="c7">
+                             sortable="true" headerText="Member Dependend " id="c7" width="160">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it6" placeholder="Search Member Dependend">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.MmpMemberRegDepView2.hints.Name.label}"
                                   required="#{bindings.MmpMemberRegDepView2.hints.Name.mandatory}"
@@ -278,8 +323,13 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.FatherName.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMemberRegDepView2.hints.FatherName.label}"
-                             id="c8">
+                             sortable="true" headerText="Father"
+                             id="c8" width="160">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FatherName}"
+                                          id="it33" placeholder="Search Father">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FatherName.inputValue}"
                                   label="#{bindings.MmpMemberRegDepView2.hints.FatherName.label}"
                                   required="#{bindings.MmpMemberRegDepView2.hints.FatherName.mandatory}"
@@ -289,8 +339,26 @@
                       <f:validator binding="#{row.bindings.FatherName.validator}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.Cnic.name}" filterable="true"
+                             sortable="true" headerText="CNIC" id="c10" align="center" width="90">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Cnic}"
+                                          id="it34" placeholder="Search CNIC">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.Cnic.inputValue}"
+                                  label="#{bindings.MmpMemberRegDepView2.hints.Cnic.label}"
+                                  required="#{bindings.MmpMemberRegDepView2.hints.Cnic.mandatory}"
+                                  columns="#{bindings.MmpMemberRegDepView2.hints.Cnic.displayWidth}"
+                                  maximumLength="#{bindings.MmpMemberRegDepView2.hints.Cnic.precision}"
+                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.Cnic.tooltip}" 
+                                  id="it22" contentStyle='text-align: center'>
+                      <f:validateRegex pattern="(^[0-9]{5}-[0-9]{7}-[0-9]$)"/>
+                      <f:validator binding="#{row.bindings.Cnic.validator}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.Dob.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMemberRegDepView2.hints.Dob.label}" id="c9">
+                             sortable="true" headerText="DOB" id="c9" align="center" width="80">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.MmpMemberRegDepView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dob.value}"
                                     id="id1">
@@ -301,72 +369,85 @@
                                   label="#{bindings.MmpMemberRegDepView2.hints.Dob.label}"
                                   required="#{bindings.MmpMemberRegDepView2.hints.Dob.mandatory}"
                                   columns="#{bindings.MmpMemberRegDepView2.hints.Dob.displayWidth}"
-                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.Dob.tooltip}" id="id2">
+                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.Dob.tooltip}" 
+                                  id="id2" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Dob.validator}"/>
                       <af:convertDateTime pattern="#{bindings.MmpMemberRegDepView2.hints.Dob.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.Cnic.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMemberRegDepView2.hints.Cnic.label}" id="c10">
-                    <af:inputText value="#{row.bindings.Cnic.inputValue}"
-                                  label="#{bindings.MmpMemberRegDepView2.hints.Cnic.label}"
-                                  required="#{bindings.MmpMemberRegDepView2.hints.Cnic.mandatory}"
-                                  columns="#{bindings.MmpMemberRegDepView2.hints.Cnic.displayWidth}"
-                                  maximumLength="#{bindings.MmpMemberRegDepView2.hints.Cnic.precision}"
-                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.Cnic.tooltip}" id="it22">
-                      <f:validator binding="#{row.bindings.Cnic.validator}"/>
-                    </af:inputText>
-                  </af:column>
+                  
                   <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.Telephone.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMemberRegDepView2.hints.Telephone.label}"
-                             id="c11">
+                             sortable="true" headerText="Telephone"
+                             id="c11" align="center" width="80">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Telephone}"
+                                          id="it35" placeholder="Search Telephone">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Telephone.inputValue}"
                                   label="#{bindings.MmpMemberRegDepView2.hints.Telephone.label}"
                                   required="#{bindings.MmpMemberRegDepView2.hints.Telephone.mandatory}"
                                   columns="#{bindings.MmpMemberRegDepView2.hints.Telephone.displayWidth}"
                                   maximumLength="#{bindings.MmpMemberRegDepView2.hints.Telephone.precision}"
-                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.Telephone.tooltip}" id="it23">
+                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.Telephone.tooltip}" 
+                                  id="it23" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Telephone.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.Mobile.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMemberRegDepView2.hints.Mobile.label}" id="c12">
+                             sortable="true" headerText="Mobile" id="c12" width="80" align="center">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Mobile}"
+                                          id="it36" placeholder="Search Mobile">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Mobile.inputValue}"
                                   label="#{bindings.MmpMemberRegDepView2.hints.Mobile.label}"
                                   required="#{bindings.MmpMemberRegDepView2.hints.Mobile.mandatory}"
                                   columns="#{bindings.MmpMemberRegDepView2.hints.Mobile.displayWidth}"
                                   maximumLength="#{bindings.MmpMemberRegDepView2.hints.Mobile.precision}"
-                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.Mobile.tooltip}" id="it24">
+                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.Mobile.tooltip}" 
+                                  id="it24" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Mobile.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.Relation.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMemberRegDepView2.hints.Relation.label}"
-                             id="c13">
+                             sortable="true" headerText="Relation"
+                             id="c13" align="center" width="80">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Relation}"
+                                          id="it37" placeholder="Search Relation">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Relation.inputValue}"
                                   label="#{bindings.MmpMemberRegDepView2.hints.Relation.label}"
                                   required="#{bindings.MmpMemberRegDepView2.hints.Relation.mandatory}"
                                   columns="#{bindings.MmpMemberRegDepView2.hints.Relation.displayWidth}"
                                   maximumLength="#{bindings.MmpMemberRegDepView2.hints.Relation.precision}"
-                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.Relation.tooltip}" id="it25">
+                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.Relation.tooltip}" 
+                                  id="it25" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Relation.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.Religion.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMemberRegDepView2.hints.Religion.label}"
-                             id="c14">
+                             sortable="true" headerText="Religion"
+                             id="c14" align="center" width="80">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Religion}"
+                                          id="it38" placeholder="Search Religion">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Religion.inputValue}"
                                   label="#{bindings.MmpMemberRegDepView2.hints.Religion.label}"
                                   required="#{bindings.MmpMemberRegDepView2.hints.Religion.mandatory}"
                                   columns="#{bindings.MmpMemberRegDepView2.hints.Religion.displayWidth}"
                                   maximumLength="#{bindings.MmpMemberRegDepView2.hints.Religion.precision}"
-                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.Religion.tooltip}" id="it26">
+                                  shortDesc="#{bindings.MmpMemberRegDepView2.hints.Religion.tooltip}" 
+                                  id="it26" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Religion.validator}"/>
                     </af:inputText>
                   </af:column>
                 </af:table>
-                <af:button actionListener="#{bindings.Execute1.execute}" text="Refresh"
-                           disabled="#{!bindings.Execute1.enabled}" id="b14"/>
                 <af:panelGroupLayout id="pgl5" layout="horizontal">
                             <af:spacer width="190" height="10" id="s10"/>
                             <af:iterator id="i1" var="index" varStatus="status"

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Phase_Name_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectList="TblPhase.PHASE_ID, 
+       TblPhase.NAME, 
+       TblPhase.AST"
+  FromList="TBL_PHASE TblPhase"
+  Where="AST='Y'"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Phase_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="TblPhase"
+    Entity="model.EO.TblPhase"/>
+  <ViewAttribute
+    Name="PhaseId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PhaseId"
+    EntityUsage="TblPhase"
+    AliasName="PHASE_ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblPhase"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="Ast"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ast"
+    EntityUsage="TblPhase"
+    AliasName="AST"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

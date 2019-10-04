@@ -2,7 +2,7 @@
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
 <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Panel Label 1">
+    <af:showDetailItem id="pane1" text="Monitoring Schedule">
       <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
         <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
                    disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1">
@@ -30,37 +30,48 @@
                           rowSelection="single" fetchSize="#{bindings.MmpMonSchMasterView1.rangeSize}"
                           filterModel="#{bindings.MmpMonSchMasterView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MmpMonSchMasterView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2">
+                          partialTriggers=""
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.name}"
                              filterable="true" sortable="true"
-                             headerText="Monitoring Schedule Master ID" id="c1" align="center">
+                             headerText="Monitoring Schedule Master ID" id="c1" align="center" width="80">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MmpMonSchMasterId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:inputText value="#{row.bindings.MmpMonSchMasterId.inputValue}"
                                   label="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.label}"
                                   required="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.mandatory}"
                                   columns="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.displayWidth}"
                                   maximumLength="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.precision}"
-                                  shortDesc="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.tooltip}" id="it1">
+                                  shortDesc="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.tooltip}" 
+                                  id="it1" readOnly="true" 
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.MmpMonSchMasterId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.name}" filterable="true"
-                             sortable="true" headerText="Phase"
-                             id="c2">
-                    <af:inputText value="#{row.bindings.MmpPhaseId.inputValue}"
-                                  label="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.label}"
-                                  required="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.mandatory}"
-                                  columns="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.displayWidth}"
-                                  maximumLength="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.precision}"
-                                  shortDesc="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.tooltip}" id="it2">
+                  <af:column sortProperty="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.name}"
+                             filterable="true" sortable="true"
+                             headerText="Phase" id="c2" width="100">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MmpPhaseId}"
+                                          id="it2" placeholder="Search Phase">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.MmpPhaseId.inputValue}"
+                                        label="#{row.bindings.MmpPhaseId.label}"
+                                        required="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.mandatory}"
+                                        shortDesc="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.MmpPhaseId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.MmpPhaseId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.MmpMonSchMasterView1.hints.MmpPhaseId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMonSchMasterView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c3">
+                             sortable="true" headerText="Date" id="c3" align="center" width="100">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.MmpMonSchMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id1">
@@ -71,7 +82,8 @@
                                   label="#{bindings.MmpMonSchMasterView1.hints.Dated.label}"
                                   required="#{bindings.MmpMonSchMasterView1.hints.Dated.mandatory}"
                                   columns="#{bindings.MmpMonSchMasterView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.MmpMonSchMasterView1.hints.Dated.tooltip}" id="id2">
+                                  shortDesc="#{bindings.MmpMonSchMasterView1.hints.Dated.tooltip}" 
+                                  id="id2"  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.MmpMonSchMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -110,38 +122,49 @@
                           rowSelection="single" fetchSize="#{bindings.MmpMonSchDetailView2.rangeSize}"
                           filterModel="#{bindings.MmpMonSchDetailView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MmpMonSchDetailView2Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers="::b9">
+                          partialTriggers="" 
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.name}"
                              filterable="true" sortable="true"
-                             headerText="Monitoring Schedule Detai ID" id="c5" align="center" width="84">
+                             headerText="Monitoring Schedule Detai ID" id="c5" align="center" width="80">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MmpMonSchDetailId}"
+                                          id="it3" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:inputText value="#{row.bindings.MmpMonSchDetailId.inputValue}"
                                   label="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.label}"
                                   required="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.mandatory}"
                                   columns="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.displayWidth}"
                                   maximumLength="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.precision}"
-                                  shortDesc="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.tooltip}" id="it4">
+                                  shortDesc="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.tooltip}" 
+                                  id="it4" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.MmpMonSchDetailId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.ClusterId.name}" filterable="true"
-                             sortable="true" headerText="Cluster"
-                             id="c7" width="100">
-                    <af:inputText value="#{row.bindings.ClusterId.inputValue}"
-                                  label="#{bindings.MmpMonSchDetailView2.hints.ClusterId.label}"
-                                  required="#{bindings.MmpMonSchDetailView2.hints.ClusterId.mandatory}"
-                                  columns="#{bindings.MmpMonSchDetailView2.hints.ClusterId.displayWidth}"
-                                  maximumLength="#{bindings.MmpMonSchDetailView2.hints.ClusterId.precision}"
-                                  shortDesc="#{bindings.MmpMonSchDetailView2.hints.ClusterId.tooltip}" id="it6">
+                  <af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.ClusterId.name}"
+                             filterable="true" sortable="true"
+                             headerText="Cluster" id="c4" width="300">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ClusterId}"
+                                          id="it5" placeholder="Search Cluster">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
+                                        label="#{row.bindings.ClusterId.label}"
+                                        required="#{bindings.MmpMonSchDetailView2.hints.ClusterId.mandatory}"
+                                        shortDesc="#{bindings.MmpMonSchDetailView2.hints.ClusterId.tooltip}" id="soc2">
+                      <f:selectItems value="#{row.bindings.ClusterId.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.ClusterId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.MmpMonSchDetailView2.hints.ClusterId.format}"/>
-                    </af:inputText>
+                    </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.Dated.name}" filterable="true"
                              sortable="true" headerText="Date" id="c8"
-                             width="100">
+                             width="100" align="center">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.MmpMonSchDetailView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id3">
@@ -152,7 +175,8 @@
                                   label="#{bindings.MmpMonSchDetailView2.hints.Dated.label}"
                                   required="#{bindings.MmpMonSchDetailView2.hints.Dated.mandatory}"
                                   columns="#{bindings.MmpMonSchDetailView2.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.MmpMonSchDetailView2.hints.Dated.tooltip}" id="id4">
+                                  shortDesc="#{bindings.MmpMonSchDetailView2.hints.Dated.tooltip}" 
+                                  id="id5" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.MmpMonSchDetailView2.hints.Dated.format}"/>
                     </af:inputDate>
