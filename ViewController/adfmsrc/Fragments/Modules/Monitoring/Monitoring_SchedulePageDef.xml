@@ -26,8 +26,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action IterBinding="MmpMonSchMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
     <action IterBinding="MmpMonSchMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
     <action IterBinding="MmpMonSchMasterView1Iterator" id="Delete" RequiresUpdateModel="false"
@@ -44,8 +42,6 @@
     </tree>
     <action IterBinding="MmpMonSchDetailView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
             Action="createInsertRow"/>
-    <action IterBinding="MmpMonSchDetailView2Iterator" id="Execute1" RequiresUpdateModel="true"
-            Action="iteratorExecute"/>
     <action IterBinding="MmpMonSchDetailView2Iterator" id="Delete1" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>

@@ -6,6 +6,10 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl1"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="MmpTrainingCheckInView1" RangeSize="8" DataControl="AppModuleDataControl"
+              id="MmpTrainingCheckInView1Iterator"/>
+    <searchRegion Binds="MmpTrainingCheckInView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpTrainingCheckInView1Query"/>
   </executables>
   <bindings>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
@@ -18,6 +22,19 @@
           <Item Value="MmpIcon"/>
           <Item Value="MmpBindingname"/>
           <Item Value="MmpBtndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="MmpTrainingCheckInView1Iterator" id="MmpTrainingCheckInView1">
+      <nodeDefinition DefName="model.VO.MmpTrainingCheckInView" Name="MmpTrainingCheckInView10">
+        <AttrNames>
+          <Item Value="MmpTrainingCheckInId"/>
+          <Item Value="ClusterId"/>
+          <Item Value="Dated"/>
+          <Item Value="TrainingStarted"/>
+          <Item Value="Remarks"/>
+          <Item Value="Latitude"/>
+          <Item Value="Longitude"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
