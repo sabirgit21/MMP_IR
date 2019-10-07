@@ -36,7 +36,7 @@
       </AttrNames>
     </attributeValues>
     <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ClusterId" id="ClusterId"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_CropId" id="CropId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_CityLibrDetail"
@@ -49,5 +49,11 @@
           id="TehsilLibrDetail" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_PhaseId" id="PhaseId"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="MmpTrainingMonInspView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="MmpTrainingMonInspView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="MmpTrainingMonInspView1Iterator" id="Delete" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
