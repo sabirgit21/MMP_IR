@@ -111,7 +111,113 @@
                   </af:selectOneChoice>
                 </af:panelFormLayout>
               </af:showDetailItem>
-              <af:showDetailItem text="Technical Detail" id="sdi1"/>
+              <af:showDetailItem text="Technical Detail" id="sdi1">
+                <af:panelFormLayout id="pfl2" maxColumns="2" rows="7">
+                  <af:inputDate value="#{bindings.StartTraining.inputValue}"
+                                label="#{bindings.StartTraining.hints.label}"
+                                required="#{bindings.StartTraining.hints.mandatory}"
+                                columns="#{bindings.StartTraining.hints.displayWidth}"
+                                shortDesc="#{bindings.StartTraining.hints.tooltip}" id="id1">
+                    <f:validator binding="#{bindings.StartTraining.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.StartTraining.format}"/>
+                  </af:inputDate>
+                  <af:inputDate value="#{bindings.EndTraining.inputValue}" label="#{bindings.EndTraining.hints.label}"
+                                required="#{bindings.EndTraining.hints.mandatory}"
+                                columns="#{bindings.EndTraining.hints.displayWidth}"
+                                shortDesc="#{bindings.EndTraining.hints.tooltip}" id="id2">
+                    <f:validator binding="#{bindings.EndTraining.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.EndTraining.format}"/>
+                  </af:inputDate>
+                  <af:selectOneChoice value="#{bindings.TotTrainer.inputValue}" label="#{bindings.TotTrainer.label}"
+                                      required="#{bindings.TotTrainer.hints.mandatory}"
+                                      shortDesc="#{bindings.TotTrainer.hints.tooltip}" id="soc9">
+                    <f:selectItems value="#{bindings.TotTrainer.items}" id="si9"/>
+                    <f:validator binding="#{bindings.TotTrainer.validator}"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.AgendaDay.inputValue}" label="#{bindings.AgendaDay.label}"
+                                      required="#{bindings.AgendaDay.hints.mandatory}"
+                                      shortDesc="#{bindings.AgendaDay.hints.tooltip}" id="soc10">
+                    <f:selectItems value="#{bindings.AgendaDay.items}" id="si10"/>
+                    <f:validator binding="#{bindings.AgendaDay.validator}"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.ReciteQuran.inputValue}" label="#{bindings.ReciteQuran.label}"
+                                      required="#{bindings.ReciteQuran.hints.mandatory}"
+                                      shortDesc="#{bindings.ReciteQuran.hints.tooltip}" id="soc11">
+                    <f:selectItems value="#{bindings.ReciteQuran.items}" id="si11"/>
+                    <f:validator binding="#{bindings.ReciteQuran.validator}"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.PlanModule.inputValue}" label="#{bindings.PlanModule.label}"
+                                      required="#{bindings.PlanModule.hints.mandatory}"
+                                      shortDesc="#{bindings.PlanModule.hints.tooltip}" id="soc12">
+                    <f:selectItems value="#{bindings.PlanModule.items}" id="si12"/>
+                    <f:validator binding="#{bindings.PlanModule.validator}"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.EcoSystem.inputValue}" label="#{bindings.EcoSystem.label}"
+                                      required="#{bindings.EcoSystem.hints.mandatory}"
+                                      shortDesc="#{bindings.EcoSystem.hints.tooltip}" id="soc13">
+                    <f:selectItems value="#{bindings.EcoSystem.items}" id="si13"/>
+                    <f:validator binding="#{bindings.EcoSystem.validator}"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.RevLastTraining.inputValue}"
+                                      label="#{bindings.RevLastTraining.label}"
+                                      required="#{bindings.RevLastTraining.hints.mandatory}"
+                                      shortDesc="#{bindings.RevLastTraining.hints.tooltip}" id="soc14">
+                    <f:selectItems value="#{bindings.RevLastTraining.items}" id="si14"/>
+                    <f:validator binding="#{bindings.RevLastTraining.validator}"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.QASess.inputValue}" label="#{bindings.QASess.label}"
+                                      required="#{bindings.QASess.hints.mandatory}"
+                                      shortDesc="#{bindings.QASess.hints.tooltip}" id="soc15">
+                    <f:selectItems value="#{bindings.QASess.items}" id="si15"/>
+                    <f:validator binding="#{bindings.QASess.validator}"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.SummDay.inputValue}" label="#{bindings.SummDay.label}"
+                                      required="#{bindings.SummDay.hints.mandatory}"
+                                      shortDesc="#{bindings.SummDay.hints.tooltip}" id="soc16">
+                    <f:selectItems value="#{bindings.SummDay.items}" id="si16"/>
+                    <f:validator binding="#{bindings.SummDay.validator}"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.AnyIec.inputValue}" label="#{bindings.AnyIec.label}"
+                                      required="#{bindings.AnyIec.hints.mandatory}"
+                                      shortDesc="#{bindings.AnyIec.hints.tooltip}" id="soc17">
+                    <f:selectItems value="#{bindings.AnyIec.items}" id="si17"/>
+                    <f:validator binding="#{bindings.AnyIec.validator}"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.ToolsAdopt.inputValue}" label="#{bindings.ToolsAdopt.label}"
+                                      required="#{bindings.ToolsAdopt.hints.mandatory}"
+                                      shortDesc="#{bindings.ToolsAdopt.hints.tooltip}" id="soc18">
+                    <f:selectItems value="#{bindings.ToolsAdopt.items}" id="si18"/>
+                    <f:validator binding="#{bindings.ToolsAdopt.validator}"/>
+                  </af:selectOneChoice>
+                  <af:inputText value="#{bindings.IssChlRec.inputValue}" label="#{bindings.IssChlRec.hints.label}"
+                                required="#{bindings.IssChlRec.hints.mandatory}"
+                                columns="#{bindings.IssChlRec.hints.displayWidth}"
+                                maximumLength="#{bindings.IssChlRec.hints.precision}"
+                                shortDesc="#{bindings.IssChlRec.hints.tooltip}" id="it2">
+                    <f:validator binding="#{bindings.IssChlRec.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.DetailAboutOutcome.inputValue}"
+                                label="#{bindings.DetailAboutOutcome.hints.label}"
+                                required="#{bindings.DetailAboutOutcome.hints.mandatory}"
+                                columns="#{bindings.DetailAboutOutcome.hints.displayWidth}"
+                                maximumLength="#{bindings.DetailAboutOutcome.hints.precision}"
+                                shortDesc="#{bindings.DetailAboutOutcome.hints.tooltip}" id="it3">
+                    <f:validator binding="#{bindings.DetailAboutOutcome.validator}"/>
+                  </af:inputText>
+                  <f:facet name="footer">
+                    <af:panelGroupLayout layout="horizontal" id="pgl2">
+                      <af:button actionListener="#{bindings.First.execute}" text="First"
+                                 disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
+                      <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                 disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
+                      <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                 disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
+                      <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                 disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelFormLayout>
+              </af:showDetailItem>
               <af:showDetailItem text="Farmers" id="sdi2"/>
               <af:showDetailItem text="Training Topics" id="sdi3"/>
             </af:panelTabbed>
