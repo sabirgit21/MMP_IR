@@ -13,9 +13,183 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Member_Depn_Cluster_LOV1"
+    ViewObjectName="model.LOV.Member_Depn_Cluster_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Crop_Name_LOV1"
+    ViewObjectName="model.LOV.Crop_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="City_Name_LOV1"
+    ViewObjectName="model.LOV.City_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="District_Name_LOV1"
+    ViewObjectName="model.LOV.District_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Mauza_Name_LOV1"
+    ViewObjectName="model.LOV.Mauza_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Tehsil_Name_LOV1"
+    ViewObjectName="model.LOV.Tehsil_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Phase_Name_LOV1"
+    ViewObjectName="model.LOV.Phase_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ClusterId"
+    ListVOName="Member_Depn_Cluster_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClusterId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ClusterId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ClusterNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CropId"
+    ListVOName="Crop_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CropId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CropId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CityLibrDetail"
+    ListVOName="City_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CityLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DistrictLibrDetail"
+    ListVOName="District_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DistrictLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MauzaLibrDetail"
+    ListVOName="Mauza_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MauzaLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TehsilLibrDetail"
+    ListVOName="Tehsil_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TehsilLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PhaseId"
+    ListVOName="Phase_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PhaseId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="PhaseId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="MmpTrainingMonInsp"
     Entity="model.EO.MmpTrainingMonInsp"/>
+  <EntityUsage
+    Name="TblCluster"
+    Entity="model.EO.TblCluster"
+    Association="model.EO.FkMmpTrainingMonInspClusterAssoc"
+    AssociationEnd="model.EO.FkMmpTrainingMonInspClusterAssoc.TblCluster"
+    SourceUsage="model.VO.MmpTrainingMonInspView.MmpTrainingMonInsp"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblCluster.ClusterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.MmpTrainingMonInsp.ClusterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="MmpTrainingMonInspId"
     IsNotNull="true"
@@ -28,7 +202,15 @@
     PrecisionRule="true"
     EntityAttrName="ClusterId"
     EntityUsage="MmpTrainingMonInsp"
-    AliasName="CLUSTER_ID"/>
+    AliasName="CLUSTER_ID"
+    LOVName="LOV_ClusterId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Dated"
     PrecisionRule="true"
@@ -143,6 +325,102 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="CropId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CropId"
+    EntityUsage="TblCluster"
+    AliasName="CROP_ID"
+    LOVName="LOV_CropId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ClusterId1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClusterId"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_ID1"/>
+  <ViewAttribute
+    Name="CityLibrDetail"
+    PrecisionRule="true"
+    EntityAttrName="CityLibrDetail"
+    EntityUsage="TblCluster"
+    AliasName="CITY_LIBR_DETAIL"
+    LOVName="LOV_CityLibrDetail">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DistrictLibrDetail"
+    PrecisionRule="true"
+    EntityAttrName="DistrictLibrDetail"
+    EntityUsage="TblCluster"
+    AliasName="DISTRICT_LIBR_DETAIL"
+    LOVName="LOV_DistrictLibrDetail">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MauzaLibrDetail"
+    PrecisionRule="true"
+    EntityAttrName="MauzaLibrDetail"
+    EntityUsage="TblCluster"
+    AliasName="MAUZA_LIBR_DETAIL"
+    LOVName="LOV_MauzaLibrDetail">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TehsilLibrDetail"
+    PrecisionRule="true"
+    EntityAttrName="TehsilLibrDetail"
+    EntityUsage="TblCluster"
+    AliasName="TEHSIL_LIBR_DETAIL"
+    LOVName="LOV_TehsilLibrDetail">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="PhaseId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="PhaseId"
+    EntityUsage="TblCluster"
+    AliasName="PHASE_ID"
+    LOVName="LOV_PhaseId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="MmpTrainingMonInspId"/>
+  </AttrArray>
   <ViewLinkAccessor
     Name="MmpTrainingMonFarmerView"
     ViewLink="model.VO.FkMmpTrainingMonFarmerInspLink"

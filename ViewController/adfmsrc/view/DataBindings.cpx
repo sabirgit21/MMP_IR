@@ -26,6 +26,10 @@
     <page path="/Main_Pages/Modules/Monitoring/Monitoring.jsf" usageId="view_MonitoringPageDef"/>
     <page path="/Main_Pages/Dashboard.jsf" usageId="view_DashboardPageDef1"/>
     <page path="/Main_Pages/Modules/Management/Management.jsf" usageId="view_ManagementPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Monitoring/Monitoring_Inspection_TaskFlow.xml#Monitoring_Inspection_TaskFlow@ExecuteWithParams"
+          usageId="view_Monitoring_Inspection_TaskFlow_Monitoring_Inspection_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Inspection.jsff"
+          usageId="view_Monitoring_InspectionPageDef"/>
   </pageMap>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"
@@ -57,5 +61,8 @@
     <page id="view_MonitoringPageDef" path="Main_Pages.Modules.Monitoring.MonitoringPageDef"/>
     <page id="view_DashboardPageDef1" path="Main_Pages.DashboardPageDef1"/>
     <page id="view_ManagementPageDef" path="Main_Pages.Modules.Management.ManagementPageDef"/>
+    <page id="view_Monitoring_Inspection_TaskFlow_Monitoring_Inspection_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Monitoring.Monitoring_Inspection_TaskFlow_Monitoring_Inspection_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Monitoring_InspectionPageDef" path="Fragments.Modules.Monitoring.Monitoring_InspectionPageDef"/>
   </pageDefinitionUsages>
 </Application>

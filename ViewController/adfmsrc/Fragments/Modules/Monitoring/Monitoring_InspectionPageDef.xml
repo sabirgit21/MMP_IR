@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Monitoring_InspectionPageDef"
+                Package="Fragments.Modules.Monitoring">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="MmpTrainingMonInspView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MmpTrainingMonInspView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.Users_Roles.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="MmpCrudid"/>
+          <Item Value="MmpOperation"/>
+          <Item Value="MmpIcon"/>
+          <Item Value="MmpBindingname"/>
+          <Item Value="MmpBtndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" ListOperMode="navigation"
+          ListIter="MmpTrainingMonInspView1Iterator" id="MmpTrainingMonInspView1" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="ClusterId"/>
+      </AttrNames>
+    </list>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="MmpTrainingMonInspId">
+      <AttrNames>
+        <Item Value="MmpTrainingMonInspId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ClusterId" id="ClusterId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_CropId" id="CropId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_CityLibrDetail"
+          id="CityLibrDetail" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_DistrictLibrDetail"
+          id="DistrictLibrDetail" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_MauzaLibrDetail"
+          id="MauzaLibrDetail" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_TehsilLibrDetail"
+          id="TehsilLibrDetail" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_PhaseId" id="PhaseId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

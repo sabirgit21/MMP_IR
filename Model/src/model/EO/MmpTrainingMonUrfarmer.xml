@@ -12,13 +12,14 @@
   BindingStyle="OracleName">
   <Attribute
     Name="MmpTrainingMonUrfarmerId"
-    IsNotNull="true"
     ColumnName="MMP_TRAINING_MON_URFARMER_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_MON_URFARMER"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="MmpTrainingMonInspId"
     ColumnName="MMP_TRAINING_MON_INSP_ID"

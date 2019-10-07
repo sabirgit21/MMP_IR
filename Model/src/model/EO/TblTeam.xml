@@ -12,13 +12,14 @@
   BindingStyle="OracleName">
   <Attribute
     Name="TeamId"
-    IsNotNull="true"
     ColumnName="TEAM_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_TEAM"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="Name"
     IsUnique="true"
