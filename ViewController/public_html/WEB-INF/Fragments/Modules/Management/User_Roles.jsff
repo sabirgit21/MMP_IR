@@ -653,7 +653,7 @@
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc14"/>
                         </af:gridRow>
                     </af:panelGridLayout>
-                </af:showDetailItem>
+                            </af:showDetailItem>
             </af:panelTabbed>
                     </af:gridCell>
                 </af:gridRow>

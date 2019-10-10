@@ -28,8 +28,6 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpRoleDetailReportsView2Query"/>
   </executables>
   <bindings>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
       <nodeDefinition DefName="model.Users_Roles.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
         <AttrNames>
@@ -122,5 +120,7 @@
             Action="iteratorExecute"/>
     <action IterBinding="MmpRoleDetailReportsView2Iterator" id="Execute4" RequiresUpdateModel="true"
             Action="iteratorExecute"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl1"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl1"/>
   </bindings>
 </pageDefinition>
