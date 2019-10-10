@@ -163,6 +163,9 @@
   <ViewUsage
     Name="TblClusterAttMasterView4"
     ViewObjectName="model.VO.TblClusterAttMasterView"/>
+  <ViewUsage
+    Name="TblClusterView3"
+    ViewObjectName="model.VO.TblClusterView"/>
   <ViewLinkUsage
     Name="FkMmpMemberRegDepLink1"
     ViewLinkObjectName="model.VO.FkMmpMemberRegDepLink"
@@ -336,5 +339,11 @@
     ViewLinkObjectName="model.VO.TblClusterAttMasterFk1Link"
     SrcViewUsageName="model.AppModule.TblTrainingSchDetailView1"
     DstViewUsageName="model.AppModule.TblClusterAttMasterView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKMmpTrainingMonInspFkLink2_1"
+    ViewLinkObjectName="model.VO.FKMmpTrainingMonInspFkLink2"
+    SrcViewUsageName="model.AppModule.MmpTrainingMonInspView1"
+    DstViewUsageName="model.AppModule.TblClusterView3"
     Reversed="false"/>
 </AppModule>

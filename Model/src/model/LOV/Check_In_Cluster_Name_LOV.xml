@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Check_In_Cluster_Name_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Check_In_Cluster_Name_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="MmpTrainingCheckIn"
+    Entity="model.EO.MmpTrainingCheckIn"/>
+  <EntityUsage
+    Name="TblCluster"
+    Entity="model.EO.TblCluster"
+    Association="model.EO.FkMmpTrainingCheckInAssoc"
+    AssociationEnd="model.EO.FkMmpTrainingCheckInAssoc.TblCluster"
+    SourceUsage="model.LOV.Check_In_Cluster_Name_LOV.MmpTrainingCheckIn"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblCluster.ClusterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.MmpTrainingCheckIn.ClusterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="ClusterId"
+    PrecisionRule="true"
+    EntityAttrName="ClusterId"
+    EntityUsage="MmpTrainingCheckIn"
+    AliasName="CLUSTER_ID"/>
+  <ViewAttribute
+    Name="MmpTrainingCheckInId"
+    PrecisionRule="true"
+    EntityAttrName="MmpTrainingCheckInId"
+    EntityUsage="MmpTrainingCheckIn"
+    AliasName="MMP_TRAINING_CHECK_IN_ID"/>
+  <ViewAttribute
+    Name="ClusterNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClusterNo"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_NO"/>
+  <ViewAttribute
+    Name="ClusterId1"
+    PrecisionRule="true"
+    EntityAttrName="ClusterId"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="MmpTrainingCheckInId"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

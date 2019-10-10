@@ -8,6 +8,24 @@
               id="USERS_CRUD_OPERATIONS1Iterator"/>
     <iterator Binds="MmpTrainingMonInspView1" RangeSize="25" DataControl="AppModuleDataControl"
               id="MmpTrainingMonInspView1Iterator"/>
+    <iterator Binds="TblClusterView3" RangeSize="25" DataControl="AppModuleDataControl" id="TblClusterView3Iterator"/>
+    <searchRegion Binds="MmpTrainingMonInspView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpTrainingMonInspView1Query"/>
+    <iterator Binds="MmpTrainingMonInspView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MmpTrainingMonInspView2Iterator"/>
+    <iterator Binds="MmpTrainingMonFarmerView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MmpTrainingMonFarmerView2Iterator"/>
+    <searchRegion Binds="MmpTrainingMonFarmerView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpTrainingMonFarmerView2Query"/>
+    <iterator Binds="MmpTrainingMonUrfarmerView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MmpTrainingMonUrfarmerView2Iterator"/>
+    <searchRegion Binds="MmpTrainingMonUrfarmerView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="MmpTrainingMonUrfarmerView2Query"/>
+    <iterator Binds="MmpTrainingMonTopicsView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MmpTrainingMonTopicsView2Iterator"/>
+    <searchRegion Binds="MmpTrainingMonTopicsView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpTrainingMonTopicsView2Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -23,81 +41,203 @@
     </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" ListOperMode="navigation"
-          ListIter="MmpTrainingMonInspView1Iterator" id="MmpTrainingMonInspView1" DTSupportsMRU="true"
-          SelectItemValueMode="ListObject">
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ClusterId" id="ClusterId"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblClusterView3Iterator" id="ClusterId1">
       <AttrNames>
         <Item Value="ClusterId"/>
       </AttrNames>
-    </list>
-    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="MmpTrainingMonInspId">
+    </attributeValues>
+    <list IterBinding="TblClusterView3Iterator" StaticList="false" Uses="LOV_CropId" id="CropId" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblClusterView3Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblClusterView3Iterator" StaticList="false" Uses="LOV_CityLibrDetail" id="CityLibrDetail"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblClusterView3Iterator" StaticList="false" Uses="LOV_DistrictLibrDetail"
+          id="DistrictLibrDetail" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblClusterView3Iterator" StaticList="false" Uses="LOV_TehsilLibrDetail" id="TehsilLibrDetail"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblClusterView3Iterator" StaticList="false" Uses="LOV_MauzaLibrDetail" id="MauzaLibrDetail"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblClusterView3Iterator" StaticList="false" Uses="LOV_VillageLibrDetail" id="VillageLibrDetail"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblClusterView3Iterator" StaticList="false" Uses="LOV_PhaseId" id="PhaseId"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblClusterView3Iterator" id="ClusterNo">
+      <AttrNames>
+        <Item Value="ClusterNo"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblClusterView3Iterator" StaticList="false" Uses="LOV_UcLibrDetail" id="UcLibrDetail"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <action IterBinding="TblClusterView3Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblClusterView3Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblClusterView3Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblClusterView3Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="MmpTrainingMonInspView1Iterator" id="MmpTrainingMonInspView1">
+      <nodeDefinition DefName="model.VO.MmpTrainingMonInspView" Name="MmpTrainingMonInspView10">
+        <AttrNames>
+          <Item Value="MmpTrainingMonInspId"/>
+          <Item Value="ClusterId"/>
+          <Item Value="Dated"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="MmpTrainingMonInspView2Iterator" id="MmpTrainingMonInspId">
       <AttrNames>
         <Item Value="MmpTrainingMonInspId"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ClusterId" id="ClusterId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_CropId" id="CropId"
+    <list IterBinding="MmpTrainingMonInspView2Iterator" StaticList="false" Uses="LOV_ClusterId" id="ClusterId2"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_CityLibrDetail"
-          id="CityLibrDetail" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_DistrictLibrDetail"
-          id="DistrictLibrDetail" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_MauzaLibrDetail"
-          id="MauzaLibrDetail" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_TehsilLibrDetail"
-          id="TehsilLibrDetail" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_PhaseId" id="PhaseId"
+    <attributeValues IterBinding="MmpTrainingMonInspView2Iterator" id="StartTraining">
+      <AttrNames>
+        <Item Value="StartTraining"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView2Iterator" id="EndTraining">
+      <AttrNames>
+        <Item Value="EndTraining"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="MmpTrainingMonInspView2Iterator" StaticList="false" Uses="LOV_TotTrainer" id="TotTrainer"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView2Iterator" StaticList="false" Uses="LOV_AgendaDay" id="AgendaDay"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView2Iterator" StaticList="false" Uses="LOV_ReciteQuran" id="ReciteQuran"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView2Iterator" StaticList="false" Uses="LOV_PlanModule" id="PlanModule"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView2Iterator" StaticList="false" Uses="LOV_EcoSystem" id="EcoSystem"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView2Iterator" StaticList="false" Uses="LOV_RevLastTraining"
+          id="RevLastTraining" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView2Iterator" StaticList="false" Uses="LOV_QASess" id="QASess"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView2Iterator" StaticList="false" Uses="LOV_SummDay" id="SummDay"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView2Iterator" StaticList="false" Uses="LOV_AnyIec" id="AnyIec"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView2Iterator" StaticList="false" Uses="LOV_ToolsAdopt" id="ToolsAdopt"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="MmpTrainingMonInspView2Iterator" id="IssChlRec">
+      <AttrNames>
+        <Item Value="IssChlRec"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView2Iterator" id="DetailAboutOutcome">
+      <AttrNames>
+        <Item Value="DetailAboutOutcome"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="MmpTrainingMonInspView2Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="MmpTrainingMonInspView2Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="MmpTrainingMonInspView2Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="MmpTrainingMonInspView2Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="MmpTrainingMonFarmerView2Iterator" id="MmpTrainingMonFarmerView2">
+      <nodeDefinition DefName="model.VO.MmpTrainingMonFarmerView" Name="MmpTrainingMonFarmerView20">
+        <AttrNames>
+          <Item Value="MmpTrainingMonInspId"/>
+          <Item Value="FarmerRegId"/>
+          <Item Value="FarmerStatus"/>
+          <Item Value="Cnic"/>
+          <Item Value="Mobile"/>
+          <Item Value="Name"/>
+          <Item Value="FarmerNo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="StartTraining1">
+      <AttrNames>
+        <Item Value="StartTraining"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="EndTraining1">
+      <AttrNames>
+        <Item Value="EndTraining"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_TotTrainer" id="TotTrainer1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_AgendaDay" id="AgendaDay1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ReciteQuran" id="ReciteQuran1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_PlanModule" id="PlanModule1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_EcoSystem" id="EcoSystem1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_RevLastTraining"
+          id="RevLastTraining1" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_QASess" id="QASess1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_SummDay" id="SummDay1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_AnyIec" id="AnyIec1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ToolsAdopt" id="ToolsAdopt1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="IssChlRec1">
+      <AttrNames>
+        <Item Value="IssChlRec"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="DetailAboutOutcome1">
+      <AttrNames>
+        <Item Value="DetailAboutOutcome"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="MmpTrainingMonInspView1Iterator" id="First2" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="MmpTrainingMonInspView1Iterator" id="Previous2" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="MmpTrainingMonInspView1Iterator" id="Next2" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="MmpTrainingMonInspView1Iterator" id="Last2" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="MmpTrainingMonUrfarmerView2Iterator" id="MmpTrainingMonUrfarmerView2">
+      <nodeDefinition DefName="model.VO.MmpTrainingMonUrfarmerView" Name="MmpTrainingMonUrfarmerView20">
+        <AttrNames>
+          <Item Value="MmpTrainingMonUrfarmerId"/>
+          <Item Value="MmpTrainingMonInspId"/>
+          <Item Value="Name"/>
+          <Item Value="Cnic"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="MmpTrainingMonTopicsView2Iterator" id="MmpTrainingMonTopicsView2">
+      <nodeDefinition DefName="model.VO.MmpTrainingMonTopicsView" Name="MmpTrainingMonTopicsView20">
+        <AttrNames>
+          <Item Value="MmpTrainingMonTopicsId"/>
+          <Item Value="Name"/>
+          <Item Value="MmpTrainingMonInspId"/>
+          <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
     <action IterBinding="MmpTrainingMonInspView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
     <action IterBinding="MmpTrainingMonInspView1Iterator" id="Execute" RequiresUpdateModel="true"
             Action="iteratorExecute"/>
     <action IterBinding="MmpTrainingMonInspView1Iterator" id="Delete" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
-    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="StartTraining">
-      <AttrNames>
-        <Item Value="StartTraining"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="EndTraining">
-      <AttrNames>
-        <Item Value="EndTraining"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_TotTrainer" id="TotTrainer"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_AgendaDay" id="AgendaDay"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ReciteQuran" id="ReciteQuran"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_PlanModule" id="PlanModule"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_EcoSystem" id="EcoSystem"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_RevLastTraining"
-          id="RevLastTraining" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_QASess" id="QASess"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_SummDay" id="SummDay"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_AnyIec" id="AnyIec"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ToolsAdopt" id="ToolsAdopt"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="IssChlRec">
-      <AttrNames>
-        <Item Value="IssChlRec"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="DetailAboutOutcome">
-      <AttrNames>
-        <Item Value="DetailAboutOutcome"/>
-      </AttrNames>
-    </attributeValues>
-    <action IterBinding="MmpTrainingMonInspView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
-    <action IterBinding="MmpTrainingMonInspView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
-    <action IterBinding="MmpTrainingMonInspView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
-    <action IterBinding="MmpTrainingMonInspView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <action IterBinding="MmpTrainingMonFarmerView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="MmpTrainingMonFarmerView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="MmpTrainingMonFarmerView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="MmpTrainingMonUrfarmerView2Iterator" id="CreateInsert2" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="MmpTrainingMonUrfarmerView2Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="MmpTrainingMonUrfarmerView2Iterator" id="Delete2" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <action IterBinding="MmpTrainingMonTopicsView2Iterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="MmpTrainingMonTopicsView2Iterator" id="Execute3" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="MmpTrainingMonTopicsView2Iterator" id="Delete3" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

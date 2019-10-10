@@ -13,6 +13,182 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Crop_Name_LOV1"
+    ViewObjectName="model.LOV.Crop_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="City_Name_LOV1"
+    ViewObjectName="model.LOV.City_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="District_Name_LOV1"
+    ViewObjectName="model.LOV.District_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Tehsil_Name_LOV1"
+    ViewObjectName="model.LOV.Tehsil_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Mauza_Name_LOV1"
+    ViewObjectName="model.LOV.Mauza_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Village_Name_LOV1"
+    ViewObjectName="model.LOV.Village_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Phase_Name_LOV1"
+    ViewObjectName="model.LOV.Phase_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="UC_Name_LOV1"
+    ViewObjectName="model.LOV.UC_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CropId"
+    ListVOName="Crop_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CropId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CropId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_CityLibrDetail"
+    ListVOName="City_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CityLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_DistrictLibrDetail"
+    ListVOName="District_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DistrictLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TehsilLibrDetail"
+    ListVOName="Tehsil_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TehsilLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MauzaLibrDetail"
+    ListVOName="Mauza_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MauzaLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_VillageLibrDetail"
+    ListVOName="Village_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="VillageLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_PhaseId"
+    ListVOName="Phase_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PhaseId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="PhaseId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_UcLibrDetail"
+    ListVOName="UC_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="UcLibrDetail"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblCluster"
     Entity="model.EO.TblCluster"/>
@@ -29,7 +205,15 @@
     PrecisionRule="true"
     EntityAttrName="CropId"
     EntityUsage="TblCluster"
-    AliasName="CROP_ID"/>
+    AliasName="CROP_ID"
+    LOVName="LOV_CropId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Name"
     IsUnique="true"
@@ -43,31 +227,71 @@
     PrecisionRule="true"
     EntityAttrName="CityLibrDetail"
     EntityUsage="TblCluster"
-    AliasName="CITY_LIBR_DETAIL"/>
+    AliasName="CITY_LIBR_DETAIL"
+    LOVName="LOV_CityLibrDetail">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="DistrictLibrDetail"
     PrecisionRule="true"
     EntityAttrName="DistrictLibrDetail"
     EntityUsage="TblCluster"
-    AliasName="DISTRICT_LIBR_DETAIL"/>
+    AliasName="DISTRICT_LIBR_DETAIL"
+    LOVName="LOV_DistrictLibrDetail">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TehsilLibrDetail"
     PrecisionRule="true"
     EntityAttrName="TehsilLibrDetail"
     EntityUsage="TblCluster"
-    AliasName="TEHSIL_LIBR_DETAIL"/>
+    AliasName="TEHSIL_LIBR_DETAIL"
+    LOVName="LOV_TehsilLibrDetail">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MauzaLibrDetail"
     PrecisionRule="true"
     EntityAttrName="MauzaLibrDetail"
     EntityUsage="TblCluster"
-    AliasName="MAUZA_LIBR_DETAIL"/>
+    AliasName="MAUZA_LIBR_DETAIL"
+    LOVName="LOV_MauzaLibrDetail">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="VillageLibrDetail"
     PrecisionRule="true"
     EntityAttrName="VillageLibrDetail"
     EntityUsage="TblCluster"
-    AliasName="VILLAGE_LIBR_DETAIL"/>
+    AliasName="VILLAGE_LIBR_DETAIL"
+    LOVName="LOV_VillageLibrDetail">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Ast"
     IsNotNull="true"
@@ -81,7 +305,15 @@
     PrecisionRule="true"
     EntityAttrName="PhaseId"
     EntityUsage="TblCluster"
-    AliasName="PHASE_ID"/>
+    AliasName="PHASE_ID"
+    LOVName="LOV_PhaseId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ClusterNo"
     IsNotNull="true"
@@ -94,7 +326,15 @@
     PrecisionRule="true"
     EntityAttrName="UcLibrDetail"
     EntityUsage="TblCluster"
-    AliasName="UC_LIBR_DETAIL"/>
+    AliasName="UC_LIBR_DETAIL"
+    LOVName="LOV_UcLibrDetail">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

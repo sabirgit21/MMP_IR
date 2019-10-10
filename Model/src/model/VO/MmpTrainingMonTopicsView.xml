@@ -16,6 +16,25 @@
   <EntityUsage
     Name="MmpTrainingMonTopics"
     Entity="model.EO.MmpTrainingMonTopics"/>
+  <EntityUsage
+    Name="TblTopics"
+    Entity="model.EO.TblTopics"
+    Association="model.EO.FkMmpTrainingMonTopicsTopicsAssoc"
+    AssociationEnd="model.EO.FkMmpTrainingMonTopicsTopicsAssoc.TblTopics"
+    SourceUsage="model.VO.MmpTrainingMonTopicsView.MmpTrainingMonTopics"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblTopics.TopicsId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.MmpTrainingMonTopics.TopicsId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="MmpTrainingMonTopicsId"
     IsNotNull="true"
@@ -65,4 +84,21 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="MmpTrainingMonTopics"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="Name"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblTopics"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="TopicsId1"
+    PrecisionRule="true"
+    EntityAttrName="TopicsId"
+    EntityUsage="TblTopics"
+    AliasName="TOPICS_ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="MmpTrainingMonTopicsId"/>
+  </AttrArray>
 </ViewObject>

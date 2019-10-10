@@ -197,6 +197,13 @@
     AssociationOtherEnd="model.EO.Fk2TblClusterAttMasterFkAssoc.TblCluster"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="MmpTrainingMonInsp1"
+    Association="model.EO.FKMmpTrainingMonInspFKAssoc2"
+    AssociationEnd="model.EO.FKMmpTrainingMonInspFKAssoc2.MmpTrainingMonInsp1"
+    AssociationOtherEnd="model.EO.FKMmpTrainingMonInspFKAssoc2.TblCluster1"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkTblClusterPk"
     PrimaryKey="true">

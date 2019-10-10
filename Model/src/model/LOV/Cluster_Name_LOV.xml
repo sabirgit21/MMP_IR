@@ -8,7 +8,8 @@
   InheritPersonalization="merge"
   SelectList="TblCluster.CLUSTER_ID, 
        TblCluster.NAME, 
-       TblCluster.AST"
+       TblCluster.AST, 
+       TblCluster.CLUSTER_NO"
   FromList="TBL_CLUSTER TblCluster"
   Where="AST='Y'"
   BindingStyle="OracleName"
@@ -45,6 +46,13 @@
     EntityAttrName="Ast"
     EntityUsage="TblCluster"
     AliasName="AST"/>
+  <ViewAttribute
+    Name="ClusterNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClusterNo"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_NO"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

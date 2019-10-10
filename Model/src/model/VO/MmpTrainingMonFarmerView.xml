@@ -16,6 +16,25 @@
   <EntityUsage
     Name="MmpTrainingMonFarmer"
     Entity="model.EO.MmpTrainingMonFarmer"/>
+  <EntityUsage
+    Name="TblFarmerReg"
+    Entity="model.EO.TblFarmerReg"
+    Association="model.EO.FkMmpTrainingMonFarmerFarmerAssoc"
+    AssociationEnd="model.EO.FkMmpTrainingMonFarmerFarmerAssoc.TblFarmerReg"
+    SourceUsage="model.VO.MmpTrainingMonFarmerView.MmpTrainingMonFarmer"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblFarmerReg.FarmerRegId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.MmpTrainingMonFarmer.FarmerRegId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="MmpTrainingMonFarmerId"
     IsNotNull="true"
@@ -65,4 +84,40 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="MmpTrainingMonFarmer"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="Cnic"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Cnic"
+    EntityUsage="TblFarmerReg"
+    AliasName="CNIC"/>
+  <ViewAttribute
+    Name="Mobile"
+    PrecisionRule="true"
+    EntityAttrName="Mobile"
+    EntityUsage="TblFarmerReg"
+    AliasName="MOBILE"/>
+  <ViewAttribute
+    Name="Name"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblFarmerReg"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="FarmerNo"
+    PrecisionRule="true"
+    EntityAttrName="FarmerNo"
+    EntityUsage="TblFarmerReg"
+    AliasName="FARMER_NO"/>
+  <ViewAttribute
+    Name="FarmerRegId1"
+    PrecisionRule="true"
+    EntityAttrName="FarmerRegId"
+    EntityUsage="TblFarmerReg"
+    AliasName="FARMER_REG_ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="MmpTrainingMonFarmerId"/>
+  </AttrArray>
 </ViewObject>
