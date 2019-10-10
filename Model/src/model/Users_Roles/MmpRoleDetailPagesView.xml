@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MmpRoleDetailPagesView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Crud_Add_LOV1"
+    ViewObjectName="model.LOV.Crud_Add_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Crud_Edit_LOV1"
+    ViewObjectName="model.LOV.Crud_Edit_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Crud_Delete_LOV1"
+    ViewObjectName="model.LOV.Crud_Delete_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_MmpRView"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MmpRView"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MmpRAdd"
+    ListVOName="Crud_Add_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MmpRAdd"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbcrud"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="viewcrud"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MmpREdit"
+    ListVOName="Crud_Edit_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MmpREdit"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbcrud"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="viewcrud"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MmpRDelete"
+    ListVOName="Crud_Delete_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MmpRDelete"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbcrud"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="viewcrud"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="MmpRoleDetailPages"
+    Entity="model.EO.MmpRoleDetailPages"/>
+  <ViewAttribute
+    Name="MmpRoleDetailPagesId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="MmpRoleDetailPagesId"
+    EntityUsage="MmpRoleDetailPages"
+    AliasName="MMP_ROLE_DETAIL_PAGES_ID"/>
+  <ViewAttribute
+    Name="MmpRoleMasterId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="MmpRoleMasterId"
+    EntityUsage="MmpRoleDetailPages"
+    AliasName="MMP_ROLE_MASTER_ID"/>
+  <ViewAttribute
+    Name="MmpPagesId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="MmpPagesId"
+    EntityUsage="MmpRoleDetailPages"
+    AliasName="MMP_PAGES_ID"/>
+  <ViewAttribute
+    Name="MmpRView"
+    PrecisionRule="true"
+    EntityAttrName="MmpRView"
+    EntityUsage="MmpRoleDetailPages"
+    AliasName="MMP_R_VIEW"
+    LOVName="LOV_MmpRView">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpRAdd"
+    PrecisionRule="true"
+    EntityAttrName="MmpRAdd"
+    EntityUsage="MmpRoleDetailPages"
+    AliasName="MMP_R_ADD"
+    LOVName="LOV_MmpRAdd">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpREdit"
+    PrecisionRule="true"
+    EntityAttrName="MmpREdit"
+    EntityUsage="MmpRoleDetailPages"
+    AliasName="MMP_R_EDIT"
+    LOVName="LOV_MmpREdit">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpRDelete"
+    PrecisionRule="true"
+    EntityAttrName="MmpRDelete"
+    EntityUsage="MmpRoleDetailPages"
+    AliasName="MMP_R_DELETE"
+    LOVName="LOV_MmpRDelete">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpRPrint"
+    PrecisionRule="true"
+    EntityAttrName="MmpRPrint"
+    EntityUsage="MmpRoleDetailPages"
+    AliasName="MMP_R_PRINT"/>
+  <ViewAttribute
+    Name="MmpRPost"
+    PrecisionRule="true"
+    EntityAttrName="MmpRPost"
+    EntityUsage="MmpRoleDetailPages"
+    AliasName="MMP_R_POST"/>
+  <ViewAttribute
+    Name="MmpRoleDetailModulesId"
+    PrecisionRule="true"
+    EntityAttrName="MmpRoleDetailModulesId"
+    EntityUsage="MmpRoleDetailPages"
+    AliasName="MMP_ROLE_DETAIL_MODULES_ID"/>
+</ViewObject>

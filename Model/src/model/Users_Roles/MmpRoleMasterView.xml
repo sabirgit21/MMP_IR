@@ -40,17 +40,22 @@
     AliasName="AST"/>
   <ViewLinkAccessor
     Name="MmpRoleDetailPagesView"
-    ViewLink="model.VO.FkMmpRoleDetailPagesLink"
+    ViewLink="model.Users_Roles.FkMmpRoleDetailPagesLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ViewLinkAccessor
     Name="MmpRoleDetailModulesView"
-    ViewLink="model.VO.Fk2MmpRoleDetailModulesLink"
+    ViewLink="model.Users_Roles.Fk2MmpRoleDetailModulesLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <ViewLinkAccessor
     Name="MmpRoleDetailReportsView"
-    ViewLink="model.VO.FkMmpRoleDetailReportsLink"
+    ViewLink="model.Users_Roles.FkMmpRoleDetailReportsLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="MmpUserMasterView"
+    ViewLink="model.Users_Roles.FkMmpUserMasterFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

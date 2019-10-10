@@ -30,6 +30,7 @@
           usageId="view_Monitoring_Inspection_TaskFlow_Monitoring_Inspection_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Inspection.jsff"
           usageId="view_Monitoring_InspectionPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Management/User_Roles.jsff" usageId="view_User_RolesPageDef"/>
   </pageMap>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"
@@ -64,5 +65,6 @@
     <page id="view_Monitoring_Inspection_TaskFlow_Monitoring_Inspection_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Monitoring.Monitoring_Inspection_TaskFlow_Monitoring_Inspection_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Monitoring_InspectionPageDef" path="Fragments.Modules.Monitoring.Monitoring_InspectionPageDef"/>
+    <page id="view_User_RolesPageDef" path="Fragments.Modules.Management.User_RolesPageDef"/>
   </pageDefinitionUsages>
 </Application>

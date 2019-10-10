@@ -1,2 +1,664 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"></ui:composition>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+        <af:showDetailItem id="pane1" text="Manage User Roles">
+        <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
+                            <af:resetActionListener/>
+                        </af:button>
+                        <af:spacer width="10" height="10" id="s9"/>
+                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                                   iconPosition="top"/>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        </af:panelGroupLayout>
+            <af:panelGridLayout id="pgl8">
+                <af:gridRow marginTop="5px" height="auto" id="gr4">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="end"
+                                         valign="middle">
+                               
+                            </af:gridCell>
+                        </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr17">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc17">
+                         <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                <af:showDetailItem id="tab3" text="Users and User's Roles">
+                    <af:panelGridLayout id="pgl1">
+                        
+                        <af:gridRow marginTop="5px" height="auto" id="gr3">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"></af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr1">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                                <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+                                    <af:showDetailItem id="tab1" text="User's Roles">
+                                                    <af:table value="#{bindings.MmpRoleMasterView1.collectionModel}"
+                                                              var="row" rows="#{bindings.MmpRoleMasterView1.rangeSize}"
+                                                              emptyText="#{bindings.MmpRoleMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                              rowBandingInterval="0"
+                                                              selectedRowKeys="#{bindings.MmpRoleMasterView1.collectionModel.selectedRow}"
+                                                              selectionListener="#{bindings.MmpRoleMasterView1.collectionModel.makeCurrent}"
+                                                              rowSelection="single"
+                                                              fetchSize="#{bindings.MmpRoleMasterView1.rangeSize}"
+                                                              filterModel="#{bindings.MmpRoleMasterView1Query.queryDescriptor}"
+                                                              filterVisible="true"
+                                                              queryListener="#{bindings.MmpRoleMasterView1Query.processQuery}"
+                                                              varStatus="vs" id="t1" partialTriggers="::b2 ::b3 ::b4">
+                                                        <af:column sortProperty="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterId.label}"
+                                                                   id="c1">
+                                                            <af:inputText value="#{row.bindings.MmpRoleMasterId.inputValue}"
+                                                                          label="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterId.label}"
+                                                                          required="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterId.mandatory}"
+                                                                          columns="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterId.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterId.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterId.tooltip}"
+                                                                          id="it1">
+                                                                <f:validator binding="#{row.bindings.MmpRoleMasterId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterName.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterName.label}"
+                                                                   id="c2">
+                                                            <af:inputText value="#{row.bindings.MmpRoleMasterName.inputValue}"
+                                                                          label="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterName.label}"
+                                                                          required="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterName.mandatory}"
+                                                                          columns="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterName.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterName.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterName.tooltip}"
+                                                                          id="it2">
+                                                                <f:validator binding="#{row.bindings.MmpRoleMasterName.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleMasterView1.hints.Ast.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleMasterView1.hints.Ast.label}"
+                                                                   id="c3">
+                                                            <af:inputText value="#{row.bindings.Ast.inputValue}"
+                                                                          label="#{bindings.MmpRoleMasterView1.hints.Ast.label}"
+                                                                          required="#{bindings.MmpRoleMasterView1.hints.Ast.mandatory}"
+                                                                          columns="#{bindings.MmpRoleMasterView1.hints.Ast.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleMasterView1.hints.Ast.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleMasterView1.hints.Ast.tooltip}"
+                                                                          id="it3">
+                                                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                    </af:table>
+                                                </af:showDetailItem>
+                                </af:panelTabbed>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr2">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                                            <af:button actionListener="#{bindings.CreateInsert.execute}"
+                                                       text="CreateInsert" disabled="#{!bindings.CreateInsert.enabled}"
+                                                       id="b2"/>
+                                            <af:button actionListener="#{bindings.Execute.execute}" text="Execute"
+                                                       disabled="#{!bindings.Execute.enabled}" id="b3"/>
+                                            <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                                       disabled="#{!bindings.Delete.enabled}" id="b4"/>
+                                        </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr6">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc15"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr15">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                                <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                                    <af:showDetailItem id="tab2" text="Users">
+                                                    <af:table value="#{bindings.MmpUserMasterView2.collectionModel}"
+                                                              var="row" rows="#{bindings.MmpUserMasterView2.rangeSize}"
+                                                              emptyText="#{bindings.MmpUserMasterView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                              rowBandingInterval="0"
+                                                              selectedRowKeys="#{bindings.MmpUserMasterView2.collectionModel.selectedRow}"
+                                                              selectionListener="#{bindings.MmpUserMasterView2.collectionModel.makeCurrent}"
+                                                              rowSelection="single"
+                                                              fetchSize="#{bindings.MmpUserMasterView2.rangeSize}"
+                                                              filterModel="#{bindings.MmpUserMasterView2Query.queryDescriptor}"
+                                                              filterVisible="true"
+                                                              queryListener="#{bindings.MmpUserMasterView2Query.processQuery}"
+                                                              varStatus="vs" id="t2" partialTriggers="::b5 ::b6 ::b7">
+                                                        <af:column sortProperty="#{bindings.MmpUserMasterView2.hints.MmpUserMasterId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpUserMasterView2.hints.MmpUserMasterId.label}"
+                                                                   id="c4">
+                                                            <af:inputText value="#{row.bindings.MmpUserMasterId.inputValue}"
+                                                                          label="#{bindings.MmpUserMasterView2.hints.MmpUserMasterId.label}"
+                                                                          required="#{bindings.MmpUserMasterView2.hints.MmpUserMasterId.mandatory}"
+                                                                          columns="#{bindings.MmpUserMasterView2.hints.MmpUserMasterId.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpUserMasterView2.hints.MmpUserMasterId.precision}"
+                                                                          shortDesc="#{bindings.MmpUserMasterView2.hints.MmpUserMasterId.tooltip}"
+                                                                          id="it4">
+                                                                <f:validator binding="#{row.bindings.MmpUserMasterId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.MmpUserMasterView2.hints.MmpUserMasterId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpUserMasterView2.hints.MmpUserMasterName.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpUserMasterView2.hints.MmpUserMasterName.label}"
+                                                                   id="c5">
+                                                            <af:inputText value="#{row.bindings.MmpUserMasterName.inputValue}"
+                                                                          label="#{bindings.MmpUserMasterView2.hints.MmpUserMasterName.label}"
+                                                                          required="#{bindings.MmpUserMasterView2.hints.MmpUserMasterName.mandatory}"
+                                                                          columns="#{bindings.MmpUserMasterView2.hints.MmpUserMasterName.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpUserMasterView2.hints.MmpUserMasterName.precision}"
+                                                                          shortDesc="#{bindings.MmpUserMasterView2.hints.MmpUserMasterName.tooltip}"
+                                                                          id="it5">
+                                                                <f:validator binding="#{row.bindings.MmpUserMasterName.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpUserMasterView2.hints.MmpUserMasterPwd.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpUserMasterView2.hints.MmpUserMasterPwd.label}"
+                                                                   id="c6">
+                                                            <af:inputText value="#{row.bindings.MmpUserMasterPwd.inputValue}"
+                                                                          label="#{bindings.MmpUserMasterView2.hints.MmpUserMasterPwd.label}"
+                                                                          required="#{bindings.MmpUserMasterView2.hints.MmpUserMasterPwd.mandatory}"
+                                                                          columns="#{bindings.MmpUserMasterView2.hints.MmpUserMasterPwd.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpUserMasterView2.hints.MmpUserMasterPwd.precision}"
+                                                                          shortDesc="#{bindings.MmpUserMasterView2.hints.MmpUserMasterPwd.tooltip}"
+                                                                          id="it6">
+                                                                <f:validator binding="#{row.bindings.MmpUserMasterPwd.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpUserMasterView2.hints.Ast.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpUserMasterView2.hints.Ast.label}"
+                                                                   id="c7">
+                                                            <af:inputText value="#{row.bindings.Ast.inputValue}"
+                                                                          label="#{bindings.MmpUserMasterView2.hints.Ast.label}"
+                                                                          required="#{bindings.MmpUserMasterView2.hints.Ast.mandatory}"
+                                                                          columns="#{bindings.MmpUserMasterView2.hints.Ast.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpUserMasterView2.hints.Ast.precision}"
+                                                                          shortDesc="#{bindings.MmpUserMasterView2.hints.Ast.tooltip}"
+                                                                          id="it7">
+                                                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpUserMasterView2.hints.MmpRoleMasterId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpUserMasterView2.hints.MmpRoleMasterId.label}"
+                                                                   id="c8">
+                                                            <af:inputText value="#{row.bindings.MmpRoleMasterId.inputValue}"
+                                                                          label="#{bindings.MmpUserMasterView2.hints.MmpRoleMasterId.label}"
+                                                                          required="#{bindings.MmpUserMasterView2.hints.MmpRoleMasterId.mandatory}"
+                                                                          columns="#{bindings.MmpUserMasterView2.hints.MmpRoleMasterId.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpUserMasterView2.hints.MmpRoleMasterId.precision}"
+                                                                          shortDesc="#{bindings.MmpUserMasterView2.hints.MmpRoleMasterId.tooltip}"
+                                                                          id="it8">
+                                                                <f:validator binding="#{row.bindings.MmpRoleMasterId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.MmpUserMasterView2.hints.MmpRoleMasterId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpUserMasterView2.hints.MemberRegId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpUserMasterView2.hints.MemberRegId.label}"
+                                                                   id="c9">
+                                                            <af:selectOneChoice value="#{row.bindings.MemberRegId.inputValue}"
+                                                                                label="#{row.bindings.MemberRegId.label}"
+                                                                                required="#{bindings.MmpUserMasterView2.hints.MemberRegId.mandatory}"
+                                                                                shortDesc="#{bindings.MmpUserMasterView2.hints.MemberRegId.tooltip}"
+                                                                                id="soc1">
+                                                                <f:selectItems value="#{row.bindings.MemberRegId.items}"
+                                                                               id="si1"/>
+                                                                <f:validator binding="#{row.bindings.MemberRegId.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                    </af:table>
+                                                </af:showDetailItem>
+                                </af:panelTabbed>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                                            <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                                                       text="CreateInsert1"
+                                                       disabled="#{!bindings.CreateInsert1.enabled}" id="b5"/>
+                                            <af:button actionListener="#{bindings.Execute1.execute}" text="Execute1"
+                                                       disabled="#{!bindings.Execute1.enabled}" id="b6"/>
+                                            <af:button actionListener="#{bindings.Delete1.execute}" text="Delete1"
+                                                       disabled="#{!bindings.Delete1.enabled}" id="b7"/>
+                                        </af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </af:showDetailItem>
+                <af:showDetailItem text="Role's Privileges" id="sdi1">
+                    <af:panelGridLayout id="pgl9">
+                        <af:gridRow marginTop="5px" height="auto" id="gr7">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                                <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
+                                    <af:showDetailItem id="tab4" text="User's Roles">
+                                                    <af:table value="#{bindings.MmpRoleMasterView11.collectionModel}"
+                                                              var="row" rows="#{bindings.MmpRoleMasterView11.rangeSize}"
+                                                              emptyText="#{bindings.MmpRoleMasterView11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                              rowBandingInterval="0"
+                                                              selectedRowKeys="#{bindings.MmpRoleMasterView11.collectionModel.selectedRow}"
+                                                              selectionListener="#{bindings.MmpRoleMasterView11.collectionModel.makeCurrent}"
+                                                              rowSelection="single"
+                                                              fetchSize="#{bindings.MmpRoleMasterView11.rangeSize}"
+                                                              filterModel="#{bindings.MmpRoleMasterView1Query.queryDescriptor}"
+                                                              filterVisible="true"
+                                                              queryListener="#{bindings.MmpRoleMasterView1Query.processQuery}"
+                                                              varStatus="vs" id="t3" partialTriggers="::b2 ::b3 ::b4">
+                                                        <af:column sortProperty="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterId.label}"
+                                                                   id="c10">
+                                                            <af:inputText value="#{row.bindings.MmpRoleMasterId.inputValue}"
+                                                                          label="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterId.label}"
+                                                                          required="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterId.mandatory}"
+                                                                          columns="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterId.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterId.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterId.tooltip}"
+                                                                          id="it9">
+                                                                <f:validator binding="#{row.bindings.MmpRoleMasterId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterName.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterName.label}"
+                                                                   id="c11">
+                                                            <af:inputText value="#{row.bindings.MmpRoleMasterName.inputValue}"
+                                                                          label="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterName.label}"
+                                                                          required="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterName.mandatory}"
+                                                                          columns="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterName.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterName.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterName.tooltip}"
+                                                                          id="it10">
+                                                                <f:validator binding="#{row.bindings.MmpRoleMasterName.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleMasterView11.hints.Ast.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleMasterView11.hints.Ast.label}"
+                                                                   id="c12">
+                                                            <af:inputText value="#{row.bindings.Ast.inputValue}"
+                                                                          label="#{bindings.MmpRoleMasterView11.hints.Ast.label}"
+                                                                          required="#{bindings.MmpRoleMasterView11.hints.Ast.mandatory}"
+                                                                          columns="#{bindings.MmpRoleMasterView11.hints.Ast.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleMasterView11.hints.Ast.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleMasterView11.hints.Ast.tooltip}"
+                                                                          id="it11">
+                                                                <f:validator binding="#{row.bindings.Ast.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                    </af:table>
+                                                </af:showDetailItem>
+                                </af:panelTabbed>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr8">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr9">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr10">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
+                                <af:panelTabbed position="above" id="pt5" styleClass="tabel_pannel_tab">
+                                    <af:showDetailItem id="tab5" text="Modules">
+                                                    <af:table value="#{bindings.MmpRoleDetailModulesView2.collectionModel}"
+                                                              var="row"
+                                                              rows="#{bindings.MmpRoleDetailModulesView2.rangeSize}"
+                                                              emptyText="#{bindings.MmpRoleDetailModulesView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                              rowBandingInterval="0"
+                                                              selectedRowKeys="#{bindings.MmpRoleDetailModulesView2.collectionModel.selectedRow}"
+                                                              selectionListener="#{bindings.MmpRoleDetailModulesView2.collectionModel.makeCurrent}"
+                                                              rowSelection="single"
+                                                              fetchSize="#{bindings.MmpRoleDetailModulesView2.rangeSize}"
+                                                              filterModel="#{bindings.MmpRoleDetailModulesView2Query.queryDescriptor}"
+                                                              filterVisible="true"
+                                                              queryListener="#{bindings.MmpRoleDetailModulesView2Query.processQuery}"
+                                                              varStatus="vs" id="t4" partialTriggers="::b8">
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleDetailModulesId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleDetailModulesId.label}"
+                                                                   id="c13">
+                                                            <af:inputText value="#{row.bindings.MmpRoleDetailModulesId.inputValue}"
+                                                                          label="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleDetailModulesId.label}"
+                                                                          required="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleDetailModulesId.mandatory}"
+                                                                          columns="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleDetailModulesId.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleDetailModulesId.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleDetailModulesId.tooltip}"
+                                                                          id="it12">
+                                                                <f:validator binding="#{row.bindings.MmpRoleDetailModulesId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleDetailModulesId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.label}"
+                                                                   id="c14">
+                                                            <af:inputText value="#{row.bindings.MmpRoleMasterId.inputValue}"
+                                                                          label="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.label}"
+                                                                          required="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.mandatory}"
+                                                                          columns="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.tooltip}"
+                                                                          id="it13">
+                                                                <f:validator binding="#{row.bindings.MmpRoleMasterId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.label}"
+                                                                   id="c15">
+                                                            <af:inputText value="#{row.bindings.MmpModuleMenuId.inputValue}"
+                                                                          label="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.label}"
+                                                                          required="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.mandatory}"
+                                                                          columns="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.tooltip}"
+                                                                          id="it14">
+                                                                <f:validator binding="#{row.bindings.MmpModuleMenuId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailModulesView2.hints.MmpRView.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailModulesView2.hints.MmpRView.label}"
+                                                                   id="c16">
+                                                            <af:selectOneChoice value="#{row.bindings.MmpRView.inputValue}"
+                                                                                label="#{row.bindings.MmpRView.label}"
+                                                                                required="#{bindings.MmpRoleDetailModulesView2.hints.MmpRView.mandatory}"
+                                                                                shortDesc="#{bindings.MmpRoleDetailModulesView2.hints.MmpRView.tooltip}"
+                                                                                id="soc2">
+                                                                <f:selectItems value="#{row.bindings.MmpRView.items}"
+                                                                               id="si2"/>
+                                                                <f:validator binding="#{row.bindings.MmpRView.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                    </af:table>
+                                                    <af:button actionListener="#{bindings.Execute2.execute}"
+                                                               text="Execute2" disabled="#{!bindings.Execute2.enabled}"
+                                                               id="b8"/>
+                                                </af:showDetailItem>
+                                    <af:showDetailItem text="Pages" id="sdi2">
+                                                    <af:table value="#{bindings.MmpRoleDetailPagesView3.collectionModel}"
+                                                              var="row"
+                                                              rows="#{bindings.MmpRoleDetailPagesView3.rangeSize}"
+                                                              emptyText="#{bindings.MmpRoleDetailPagesView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                              rowBandingInterval="0"
+                                                              selectedRowKeys="#{bindings.MmpRoleDetailPagesView3.collectionModel.selectedRow}"
+                                                              selectionListener="#{bindings.MmpRoleDetailPagesView3.collectionModel.makeCurrent}"
+                                                              rowSelection="single"
+                                                              fetchSize="#{bindings.MmpRoleDetailPagesView3.rangeSize}"
+                                                              filterModel="#{bindings.MmpRoleDetailPagesView3Query.queryDescriptor}"
+                                                              filterVisible="true"
+                                                              queryListener="#{bindings.MmpRoleDetailPagesView3Query.processQuery}"
+                                                              varStatus="vs" id="t5" partialTriggers="::b9">
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailPagesId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailPagesId.label}"
+                                                                   id="c17">
+                                                            <af:inputText value="#{row.bindings.MmpRoleDetailPagesId.inputValue}"
+                                                                          label="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailPagesId.label}"
+                                                                          required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailPagesId.mandatory}"
+                                                                          columns="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailPagesId.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailPagesId.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailPagesId.tooltip}"
+                                                                          id="it15">
+                                                                <f:validator binding="#{row.bindings.MmpRoleDetailPagesId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailPagesId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.label}"
+                                                                   id="c18">
+                                                            <af:inputText value="#{row.bindings.MmpRoleMasterId.inputValue}"
+                                                                          label="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.label}"
+                                                                          required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.mandatory}"
+                                                                          columns="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.tooltip}"
+                                                                          id="it16">
+                                                                <f:validator binding="#{row.bindings.MmpRoleMasterId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.label}"
+                                                                   id="c19">
+                                                            <af:inputText value="#{row.bindings.MmpPagesId.inputValue}"
+                                                                          label="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.label}"
+                                                                          required="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.mandatory}"
+                                                                          columns="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.tooltip}"
+                                                                          id="it17">
+                                                                <f:validator binding="#{row.bindings.MmpPagesId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRView.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailPagesView3.hints.MmpRView.label}"
+                                                                   id="c20">
+                                                            <af:selectOneChoice value="#{row.bindings.MmpRView.inputValue}"
+                                                                                label="#{row.bindings.MmpRView.label}"
+                                                                                required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRView.mandatory}"
+                                                                                shortDesc="#{bindings.MmpRoleDetailPagesView3.hints.MmpRView.tooltip}"
+                                                                                id="soc3">
+                                                                <f:selectItems value="#{row.bindings.MmpRView.items}"
+                                                                               id="si3"/>
+                                                                <f:validator binding="#{row.bindings.MmpRView.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRAdd.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailPagesView3.hints.MmpRAdd.label}"
+                                                                   id="c21">
+                                                            <af:selectOneChoice value="#{row.bindings.MmpRAdd.inputValue}"
+                                                                                label="#{row.bindings.MmpRAdd.label}"
+                                                                                required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRAdd.mandatory}"
+                                                                                shortDesc="#{bindings.MmpRoleDetailPagesView3.hints.MmpRAdd.tooltip}"
+                                                                                id="soc4">
+                                                                <f:selectItems value="#{row.bindings.MmpRAdd.items}"
+                                                                               id="si4"/>
+                                                                <f:validator binding="#{row.bindings.MmpRAdd.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpREdit.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailPagesView3.hints.MmpREdit.label}"
+                                                                   id="c22">
+                                                            <af:selectOneChoice value="#{row.bindings.MmpREdit.inputValue}"
+                                                                                label="#{row.bindings.MmpREdit.label}"
+                                                                                required="#{bindings.MmpRoleDetailPagesView3.hints.MmpREdit.mandatory}"
+                                                                                shortDesc="#{bindings.MmpRoleDetailPagesView3.hints.MmpREdit.tooltip}"
+                                                                                id="soc5">
+                                                                <f:selectItems value="#{row.bindings.MmpREdit.items}"
+                                                                               id="si5"/>
+                                                                <f:validator binding="#{row.bindings.MmpREdit.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRDelete.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailPagesView3.hints.MmpRDelete.label}"
+                                                                   id="c23">
+                                                            <af:selectOneChoice value="#{row.bindings.MmpRDelete.inputValue}"
+                                                                                label="#{row.bindings.MmpRDelete.label}"
+                                                                                required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRDelete.mandatory}"
+                                                                                shortDesc="#{bindings.MmpRoleDetailPagesView3.hints.MmpRDelete.tooltip}"
+                                                                                id="soc6">
+                                                                <f:selectItems value="#{row.bindings.MmpRDelete.items}"
+                                                                               id="si6"/>
+                                                                <f:validator binding="#{row.bindings.MmpRDelete.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPrint.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPrint.label}"
+                                                                   id="c24">
+                                                            <af:inputText value="#{row.bindings.MmpRPrint.inputValue}"
+                                                                          label="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPrint.label}"
+                                                                          required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPrint.mandatory}"
+                                                                          columns="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPrint.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPrint.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPrint.tooltip}"
+                                                                          id="it18">
+                                                                <f:validator binding="#{row.bindings.MmpRPrint.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPost.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPost.label}"
+                                                                   id="c25">
+                                                            <af:inputText value="#{row.bindings.MmpRPost.inputValue}"
+                                                                          label="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPost.label}"
+                                                                          required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPost.mandatory}"
+                                                                          columns="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPost.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPost.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPost.tooltip}"
+                                                                          id="it19">
+                                                                <f:validator binding="#{row.bindings.MmpRPost.validator}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailModulesId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailModulesId.label}"
+                                                                   id="c26">
+                                                            <af:inputText value="#{row.bindings.MmpRoleDetailModulesId.inputValue}"
+                                                                          label="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailModulesId.label}"
+                                                                          required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailModulesId.mandatory}"
+                                                                          columns="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailModulesId.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailModulesId.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailModulesId.tooltip}"
+                                                                          id="it20">
+                                                                <f:validator binding="#{row.bindings.MmpRoleDetailModulesId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailModulesId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                    </af:table>
+                                                    <af:button actionListener="#{bindings.Execute3.execute}"
+                                                               text="Execute3" disabled="#{!bindings.Execute3.enabled}"
+                                                               id="b9"/>
+                                                </af:showDetailItem>
+                                    <af:showDetailItem text="Reports" id="sdi3">
+                                                    <af:table value="#{bindings.MmpRoleDetailReportsView2.collectionModel}"
+                                                              var="row"
+                                                              rows="#{bindings.MmpRoleDetailReportsView2.rangeSize}"
+                                                              emptyText="#{bindings.MmpRoleDetailReportsView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                              rowBandingInterval="0"
+                                                              selectedRowKeys="#{bindings.MmpRoleDetailReportsView2.collectionModel.selectedRow}"
+                                                              selectionListener="#{bindings.MmpRoleDetailReportsView2.collectionModel.makeCurrent}"
+                                                              rowSelection="single"
+                                                              fetchSize="#{bindings.MmpRoleDetailReportsView2.rangeSize}"
+                                                              filterModel="#{bindings.MmpRoleDetailReportsView2Query.queryDescriptor}"
+                                                              filterVisible="true"
+                                                              queryListener="#{bindings.MmpRoleDetailReportsView2Query.processQuery}"
+                                                              varStatus="vs" id="t6" partialTriggers="::b11">
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.label}"
+                                                                   id="c27">
+                                                            <af:inputText value="#{row.bindings.MmpRoleDetailReportsId.inputValue}"
+                                                                          label="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.label}"
+                                                                          required="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.mandatory}"
+                                                                          columns="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.tooltip}"
+                                                                          id="it21">
+                                                                <f:validator binding="#{row.bindings.MmpRoleDetailReportsId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.label}"
+                                                                   id="c28">
+                                                            <af:inputText value="#{row.bindings.MmpRoleMasterId.inputValue}"
+                                                                          label="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.label}"
+                                                                          required="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.mandatory}"
+                                                                          columns="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.tooltip}"
+                                                                          id="it22">
+                                                                <f:validator binding="#{row.bindings.MmpRoleMasterId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.label}"
+                                                                   id="c29">
+                                                            <af:inputText value="#{row.bindings.MmpReportsId.inputValue}"
+                                                                          label="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.label}"
+                                                                          required="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.mandatory}"
+                                                                          columns="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.displayWidth}"
+                                                                          maximumLength="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.precision}"
+                                                                          shortDesc="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.tooltip}"
+                                                                          id="it23">
+                                                                <f:validator binding="#{row.bindings.MmpReportsId.validator}"/>
+                                                                <af:convertNumber groupingUsed="false"
+                                                                                  pattern="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.format}"/>
+                                                            </af:inputText>
+                                                        </af:column>
+                                                        <af:column sortProperty="#{bindings.MmpRoleDetailReportsView2.hints.MmpRView.name}"
+                                                                   filterable="true" sortable="true"
+                                                                   headerText="#{bindings.MmpRoleDetailReportsView2.hints.MmpRView.label}"
+                                                                   id="c30">
+                                                            <af:selectOneChoice value="#{row.bindings.MmpRView.inputValue}"
+                                                                                label="#{row.bindings.MmpRView.label}"
+                                                                                required="#{bindings.MmpRoleDetailReportsView2.hints.MmpRView.mandatory}"
+                                                                                shortDesc="#{bindings.MmpRoleDetailReportsView2.hints.MmpRView.tooltip}"
+                                                                                id="soc7">
+                                                                <f:selectItems value="#{row.bindings.MmpRView.items}"
+                                                                               id="si7"/>
+                                                                <f:validator binding="#{row.bindings.MmpRView.validator}"/>
+                                                            </af:selectOneChoice>
+                                                        </af:column>
+                                                    </af:table>
+                                                    <af:button actionListener="#{bindings.Execute4.execute}"
+                                                               text="Execute4" disabled="#{!bindings.Execute4.enabled}"
+                                                               id="b11"/>
+                                                </af:showDetailItem>
+                                </af:panelTabbed>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr11">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr12">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc12"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr13">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc13"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr14">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc14"/>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </af:showDetailItem>
+            </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+           
+        </af:showDetailItem>
+    </af:panelAccordion>
+</ui:composition>

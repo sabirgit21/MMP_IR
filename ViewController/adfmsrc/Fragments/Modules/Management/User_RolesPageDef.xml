@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="User_RolesPageDef"
+                Package="Fragments.Modules.Management">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="MmpRoleMasterView1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="MmpRoleMasterView1Iterator"/>
+    <searchRegion Binds="MmpRoleMasterView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpRoleMasterView1Query"/>
+    <iterator Binds="MmpUserMasterView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="MmpUserMasterView2Iterator"/>
+    <searchRegion Binds="MmpUserMasterView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpUserMasterView2Query"/>
+    <iterator Binds="MmpRoleDetailModulesView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="MmpRoleDetailModulesView2Iterator"/>
+    <searchRegion Binds="MmpRoleDetailModulesView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpRoleDetailModulesView2Query"/>
+    <iterator Binds="MmpRoleDetailPagesView3" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="MmpRoleDetailPagesView3Iterator"/>
+    <searchRegion Binds="MmpRoleDetailPagesView3Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpRoleDetailPagesView3Query"/>
+    <iterator Binds="MmpRoleDetailReportsView2" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="MmpRoleDetailReportsView2Iterator"/>
+    <searchRegion Binds="MmpRoleDetailReportsView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpRoleDetailReportsView2Query"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.Users_Roles.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="MmpCrudid"/>
+          <Item Value="MmpOperation"/>
+          <Item Value="MmpIcon"/>
+          <Item Value="MmpBindingname"/>
+          <Item Value="MmpBtndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="MmpRoleMasterView1Iterator" id="MmpRoleMasterView1">
+      <nodeDefinition DefName="model.Users_Roles.MmpRoleMasterView" Name="MmpRoleMasterView10">
+        <AttrNames>
+          <Item Value="MmpRoleMasterId"/>
+          <Item Value="MmpRoleMasterName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="MmpRoleMasterView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="MmpRoleMasterView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="MmpRoleMasterView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="MmpUserMasterView2Iterator" id="MmpUserMasterView2">
+      <nodeDefinition DefName="model.Users_Roles.MmpUserMasterView" Name="MmpUserMasterView20">
+        <AttrNames>
+          <Item Value="MmpUserMasterId"/>
+          <Item Value="MmpUserMasterName"/>
+          <Item Value="MmpUserMasterPwd"/>
+          <Item Value="Ast"/>
+          <Item Value="MmpRoleMasterId"/>
+          <Item Value="MemberRegId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="MmpUserMasterView2Iterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="MmpUserMasterView2Iterator" id="Execute1" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="MmpUserMasterView2Iterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="MmpRoleMasterView1Iterator" id="MmpRoleMasterView11">
+      <nodeDefinition DefName="model.Users_Roles.MmpRoleMasterView" Name="MmpRoleMasterView110">
+        <AttrNames>
+          <Item Value="MmpRoleMasterId"/>
+          <Item Value="MmpRoleMasterName"/>
+          <Item Value="Ast"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="MmpRoleDetailModulesView2Iterator" id="MmpRoleDetailModulesView2">
+      <nodeDefinition DefName="model.Users_Roles.MmpRoleDetailModulesView" Name="MmpRoleDetailModulesView20">
+        <AttrNames>
+          <Item Value="MmpRoleDetailModulesId"/>
+          <Item Value="MmpRoleMasterId"/>
+          <Item Value="MmpModuleMenuId"/>
+          <Item Value="MmpRView"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="MmpRoleDetailPagesView3Iterator" id="MmpRoleDetailPagesView3">
+      <nodeDefinition DefName="model.Users_Roles.MmpRoleDetailPagesView" Name="MmpRoleDetailPagesView30">
+        <AttrNames>
+          <Item Value="MmpRoleDetailPagesId"/>
+          <Item Value="MmpRoleMasterId"/>
+          <Item Value="MmpPagesId"/>
+          <Item Value="MmpRView"/>
+          <Item Value="MmpRAdd"/>
+          <Item Value="MmpREdit"/>
+          <Item Value="MmpRDelete"/>
+          <Item Value="MmpRPrint"/>
+          <Item Value="MmpRPost"/>
+          <Item Value="MmpRoleDetailModulesId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="MmpRoleDetailReportsView2Iterator" id="MmpRoleDetailReportsView2">
+      <nodeDefinition DefName="model.Users_Roles.MmpRoleDetailReportsView" Name="MmpRoleDetailReportsView20">
+        <AttrNames>
+          <Item Value="MmpRoleDetailReportsId"/>
+          <Item Value="MmpRoleMasterId"/>
+          <Item Value="MmpReportsId"/>
+          <Item Value="MmpRView"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="MmpRoleDetailModulesView2Iterator" id="Execute2" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="MmpRoleDetailPagesView3Iterator" id="Execute3" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="MmpRoleDetailReportsView2Iterator" id="Execute4" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkMmpRoleDetailPagesLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  EntityAssociation="model.EO.FkMmpRoleDetailPagesAssoc">
+  <ViewLinkDefEnd
+    Name="MmpRoleMasterView"
+    Cardinality="1"
+    Source="true"
+    Owner="model.Users_Roles.MmpRoleMasterView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="MmpRoleMasterView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Users_Roles.MmpRoleMasterView.MmpRoleMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="MmpRoleDetailPagesView"
+    Cardinality="-1"
+    Owner="model.Users_Roles.MmpRoleDetailPagesView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="MmpRoleDetailPagesView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.Users_Roles.MmpRoleDetailPagesView.MmpRoleMasterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

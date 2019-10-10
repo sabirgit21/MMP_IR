@@ -11,26 +11,26 @@
     Name="MmpRoleMasterView"
     Cardinality="1"
     Source="true"
-    Owner="model.VO.MmpRoleMasterView">
+    Owner="model.Users_Roles.MmpRoleMasterView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_minCardinality" Value="1"/>
       <Attr Name="_finderName" Value="MmpRoleMasterView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.VO.MmpRoleMasterView.MmpRoleMasterId"/>
+      <Item Value="model.Users_Roles.MmpRoleMasterView.MmpRoleMasterId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
     Name="MmpRoleDetailModulesView"
     Cardinality="-1"
-    Owner="model.VO.MmpRoleDetailModulesView">
+    Owner="model.Users_Roles.MmpRoleDetailModulesView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_finderName" Value="MmpRoleDetailModulesView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.VO.MmpRoleDetailModulesView.MmpRoleMasterId"/>
+      <Item Value="model.Users_Roles.MmpRoleDetailModulesView.MmpRoleMasterId"/>
     </AttrArray>
   </ViewLinkDefEnd>
 </ViewLink>

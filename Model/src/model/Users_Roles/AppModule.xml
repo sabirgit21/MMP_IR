@@ -19,4 +19,55 @@
   <ViewUsage
     Name="Monitoring_Pages1"
     ViewObjectName="model.Users_Roles.Monitoring_Pages"/>
+  <ViewUsage
+    Name="MmpRoleDetailModulesView1"
+    ViewObjectName="model.Users_Roles.MmpRoleDetailModulesView"/>
+  <ViewUsage
+    Name="MmpRoleDetailPagesView1"
+    ViewObjectName="model.Users_Roles.MmpRoleDetailPagesView"/>
+  <ViewUsage
+    Name="MmpRoleDetailReportsView1"
+    ViewObjectName="model.Users_Roles.MmpRoleDetailReportsView"/>
+  <ViewUsage
+    Name="MmpRoleMasterView1"
+    ViewObjectName="model.Users_Roles.MmpRoleMasterView"/>
+  <ViewUsage
+    Name="MmpUserMasterView1"
+    ViewObjectName="model.Users_Roles.MmpUserMasterView"/>
+  <ViewUsage
+    Name="MmpRoleDetailModulesView2"
+    ViewObjectName="model.Users_Roles.MmpRoleDetailModulesView"/>
+  <ViewUsage
+    Name="MmpRoleDetailPagesView3"
+    ViewObjectName="model.Users_Roles.MmpRoleDetailPagesView"/>
+  <ViewUsage
+    Name="MmpRoleDetailReportsView2"
+    ViewObjectName="model.Users_Roles.MmpRoleDetailReportsView"/>
+  <ViewUsage
+    Name="MmpUserMasterView2"
+    ViewObjectName="model.Users_Roles.MmpUserMasterView"/>
+  <ViewLinkUsage
+    Name="Fk2MmpRoleDetailModulesLink1"
+    ViewLinkObjectName="model.Users_Roles.Fk2MmpRoleDetailModulesLink"
+    SrcViewUsageName="model.Users_Roles.AppModule.MmpRoleMasterView1"
+    DstViewUsageName="model.Users_Roles.AppModule.MmpRoleDetailModulesView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkMmpRoleDetailPagesLink2"
+    ViewLinkObjectName="model.Users_Roles.FkMmpRoleDetailPagesLink"
+    SrcViewUsageName="model.Users_Roles.AppModule.MmpRoleMasterView1"
+    DstViewUsageName="model.Users_Roles.AppModule.MmpRoleDetailPagesView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkMmpRoleDetailReportsLink1"
+    ViewLinkObjectName="model.Users_Roles.FkMmpRoleDetailReportsLink"
+    SrcViewUsageName="model.Users_Roles.AppModule.MmpRoleMasterView1"
+    DstViewUsageName="model.Users_Roles.AppModule.MmpRoleDetailReportsView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkMmpUserMasterFkLink1"
+    ViewLinkObjectName="model.Users_Roles.FkMmpUserMasterFkLink"
+    SrcViewUsageName="model.Users_Roles.AppModule.MmpRoleMasterView1"
+    DstViewUsageName="model.Users_Roles.AppModule.MmpUserMasterView2"
+    Reversed="false"/>
 </AppModule>

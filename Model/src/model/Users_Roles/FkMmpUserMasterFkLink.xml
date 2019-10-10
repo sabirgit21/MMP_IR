@@ -3,34 +3,42 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FkMmpRoleDetailReportsLink"
+  Name="FkMmpUserMasterFkLink"
   Version="12.2.1.11.57"
-  InheritPersonalization="merge"
-  EntityAssociation="model.EO.FkMmpRoleDetailReportsAssoc">
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.Users_Roles.FkMmpUserMasterFkLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
   <ViewLinkDefEnd
     Name="MmpRoleMasterView"
     Cardinality="1"
     Source="true"
-    Owner="model.VO.MmpRoleMasterView">
+    Owner="model.Users_Roles.MmpRoleMasterView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_minCardinality" Value="1"/>
       <Attr Name="_finderName" Value="MmpRoleMasterView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.VO.MmpRoleMasterView.MmpRoleMasterId"/>
+      <Item Value="model.Users_Roles.MmpRoleMasterView.MmpRoleMasterId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
-    Name="MmpRoleDetailReportsView"
+    Name="MmpUserMasterView"
     Cardinality="-1"
-    Owner="model.VO.MmpRoleDetailReportsView">
+    Owner="model.Users_Roles.MmpUserMasterView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="MmpRoleDetailReportsView"/>
+      <Attr Name="_finderName" Value="MmpUserMasterView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.VO.MmpRoleDetailReportsView.MmpRoleMasterId"/>
+      <Item Value="model.Users_Roles.MmpUserMasterView.MmpRoleMasterId"/>
     </AttrArray>
   </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewLink>

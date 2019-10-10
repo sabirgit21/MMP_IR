@@ -167,29 +167,8 @@
     Name="TblClusterView3"
     ViewObjectName="model.VO.TblClusterView"/>
   <ViewUsage
-    Name="MmpRoleDetailModulesView1"
-    ViewObjectName="model.VO.MmpRoleDetailModulesView"/>
-  <ViewUsage
-    Name="MmpRoleDetailPagesView1"
-    ViewObjectName="model.VO.MmpRoleDetailPagesView"/>
-  <ViewUsage
-    Name="MmpRoleDetailReportsView1"
-    ViewObjectName="model.VO.MmpRoleDetailReportsView"/>
-  <ViewUsage
-    Name="MmpRoleMasterView1"
-    ViewObjectName="model.VO.MmpRoleMasterView"/>
-  <ViewUsage
     Name="MmpUserMasterView1"
-    ViewObjectName="model.VO.MmpUserMasterView"/>
-  <ViewUsage
-    Name="MmpRoleDetailPagesView2"
-    ViewObjectName="model.VO.MmpRoleDetailPagesView"/>
-  <ViewUsage
-    Name="MmpRoleDetailModulesView2"
-    ViewObjectName="model.VO.MmpRoleDetailModulesView"/>
-  <ViewUsage
-    Name="MmpRoleDetailReportsView2"
-    ViewObjectName="model.VO.MmpRoleDetailReportsView"/>
+    ViewObjectName="model.Users_Roles.MmpUserMasterView"/>
   <ViewLinkUsage
     Name="FkMmpMemberRegDepLink1"
     ViewLinkObjectName="model.VO.FkMmpMemberRegDepLink"
@@ -369,23 +348,5 @@
     ViewLinkObjectName="model.VO.FKMmpTrainingMonInspFkLink2"
     SrcViewUsageName="model.AppModule.MmpTrainingMonInspView1"
     DstViewUsageName="model.AppModule.TblClusterView3"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="FkMmpRoleDetailPagesLink1"
-    ViewLinkObjectName="model.VO.FkMmpRoleDetailPagesLink"
-    SrcViewUsageName="model.AppModule.MmpRoleMasterView1"
-    DstViewUsageName="model.AppModule.MmpRoleDetailPagesView2"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="Fk2MmpRoleDetailModulesLink1"
-    ViewLinkObjectName="model.VO.Fk2MmpRoleDetailModulesLink"
-    SrcViewUsageName="model.AppModule.MmpRoleMasterView1"
-    DstViewUsageName="model.AppModule.MmpRoleDetailModulesView2"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="FkMmpRoleDetailReportsLink1"
-    ViewLinkObjectName="model.VO.FkMmpRoleDetailReportsLink"
-    SrcViewUsageName="model.AppModule.MmpRoleMasterView1"
-    DstViewUsageName="model.AppModule.MmpRoleDetailReportsView2"
     Reversed="false"/>
 </AppModule>
