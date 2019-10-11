@@ -254,7 +254,7 @@
                         <af:button actionListener="#{bindings.Last.execute}" text="Last"
                                    disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
                      <af:spacer width="100" height="10" id="s3"/>
-                      <af:panelGroupLayout id="pgl3" layout="horizontal">
+                      <af:panelGroupLayout id="pgl6" layout="horizontal">
                             <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -282,7 +282,7 @@
                           rowSelection="single" fetchSize="#{bindings.MmpMemberRegDepView2.rangeSize}"
                           filterModel="#{bindings.MmpMemberRegDepView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MmpMemberRegDepView2Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers=" ::b14"
+                          partialTriggers=""
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.MemberRegDepId.name}" filterable="true"
                              sortable="true" headerText="Member Dependend ID"

@@ -6,7 +6,7 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl1"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="MmpTrainingMonInspView1" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="MmpTrainingMonInspView1" RangeSize="8" DataControl="AppModuleDataControl"
               id="MmpTrainingMonInspView1Iterator"/>
     <iterator Binds="TblClusterView3" RangeSize="25" DataControl="AppModuleDataControl" id="TblClusterView3Iterator"/>
     <searchRegion Binds="MmpTrainingMonInspView1Iterator" Criteria=""

@@ -88,7 +88,14 @@
                       <af:convertDateTime pattern="#{bindings.MmpMonSchMasterView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpMonSchMasterView1.hints.MemberRegId.label}" id="c6">
+                  <af:column sortProperty="#{bindings.MmpMonSchMasterView1.hints.MemberRegId.name}"
+                             filterable="true" sortable="true"
+                             headerText="Member" id="c6" width="300">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MemberRegId}"
+                                          id="it6" placeholder="Search Member">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.MemberRegId.inputValue}"
                                         label="#{row.bindings.MemberRegId.label}"
                                         required="#{bindings.MmpMonSchMasterView1.hints.MemberRegId.mandatory}"
@@ -136,7 +143,7 @@
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.name}"
                              filterable="true" sortable="true"
-                             headerText="Monitoring Schedule Detai ID" id="c5" align="center" width="80">
+                             headerText="Monitoring Schedule Detail ID" id="c5" align="center" width="80">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.MmpMonSchDetailId}"
                                           id="it3" placeholder="Search ID">

@@ -56,7 +56,14 @@
                                         pattern="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpTrainingCheckInView1.hints.MemberRegId.label}" id="c8">
+                  <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.MemberRegId.name}"
+                             filterable="true" sortable="true"
+                             headerText="Member" id="c8" width="200">
+                              <f:facet name="filter">
+                                                                       <af:inputText value="#{vs.filterCriteria.MemberRegId}"
+                                                                                     placeholder="Search Member" id="it9" >
+                                                                       </af:inputText>
+                                                                   </f:facet>
                     <af:selectOneChoice value="#{row.bindings.MemberRegId.inputValue}"
                                         label="#{row.bindings.MemberRegId.label}"
                                         required="#{bindings.MmpTrainingCheckInView1.hints.MemberRegId.mandatory}"
