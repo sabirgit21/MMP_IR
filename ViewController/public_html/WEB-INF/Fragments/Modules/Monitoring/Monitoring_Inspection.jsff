@@ -124,7 +124,21 @@
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab2" text="Main">
                 <af:panelFormLayout id="pfl1" maxColumns="2" rows="5">
-                  <af:inputText value="#{bindings.ClusterId1.inputValue}" label="#{bindings.ClusterId1.hints.label}"
+                 <af:selectOneChoice value="#{bindings.PhaseId.inputValue}" label="Phase"
+                                      required="#{bindings.PhaseId.hints.mandatory}"
+                                      shortDesc="#{bindings.PhaseId.hints.tooltip}" readOnly="true" id="soc8">
+                    <f:selectItems value="#{bindings.PhaseId.items}" id="si8"/>
+                    <f:validator binding="#{bindings.PhaseId.validator}"/>
+                    <af:selectItem label="selectItem 1" id="si22"/>
+                  </af:selectOneChoice>
+                  <af:inputText value="#{bindings.ClusterNo.inputValue}" label="Cluster No."
+                                required="#{bindings.ClusterNo.hints.mandatory}" readOnly="true"
+                                columns="#{bindings.ClusterNo.hints.displayWidth}"
+                                maximumLength="#{bindings.ClusterNo.hints.precision}"
+                                shortDesc="#{bindings.ClusterNo.hints.tooltip}" id="it3">
+                    <f:validator binding="#{bindings.ClusterNo.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.ClusterId1.inputValue}" label="Cluster ID"
                                 required="#{bindings.ClusterId1.hints.mandatory}" readOnly="true"
                                 columns="#{bindings.ClusterId1.hints.displayWidth}"
                                 maximumLength="#{bindings.ClusterId1.hints.precision}"
@@ -132,69 +146,58 @@
                     <f:validator binding="#{bindings.ClusterId1.validator}"/>
                     <af:convertNumber groupingUsed="false" pattern="#{bindings.ClusterId1.format}"/>
                   </af:inputText>
-                  <af:selectOneChoice value="#{bindings.CropId.inputValue}" label="#{bindings.CropId.label}"
+                  <af:selectOneChoice value="#{bindings.CropId.inputValue}" label="Crop"
                                       required="#{bindings.CropId.hints.mandatory}"
                                       shortDesc="#{bindings.CropId.hints.tooltip}" readOnly="true" id="soc2">
                     <f:selectItems value="#{bindings.CropId.items}" id="si2"/>
                     <f:validator binding="#{bindings.CropId.validator}"/>
                   </af:selectOneChoice>
-                  <af:inputText value="#{bindings.Name.inputValue}" label="#{bindings.Name.hints.label}"
+                  <af:inputText value="#{bindings.Name.inputValue}" label="Cluster"
                                 required="#{bindings.Name.hints.mandatory}" readOnly="true"
                                 columns="#{bindings.Name.hints.displayWidth}"
                                 maximumLength="#{bindings.Name.hints.precision}"
                                 shortDesc="#{bindings.Name.hints.tooltip}" id="it2">
                     <f:validator binding="#{bindings.Name.validator}"/>
                   </af:inputText>
-                  <af:selectOneChoice value="#{bindings.CityLibrDetail.inputValue}"
-                                      label="#{bindings.CityLibrDetail.label}"
-                                      required="#{bindings.CityLibrDetail.hints.mandatory}"
-                                      shortDesc="#{bindings.CityLibrDetail.hints.tooltip}" readOnly="true" id="soc3">
-                    <f:selectItems value="#{bindings.CityLibrDetail.items}" id="si3"/>
-                    <f:validator binding="#{bindings.CityLibrDetail.validator}"/>
-                  </af:selectOneChoice>
+                  
                   <af:selectOneChoice value="#{bindings.DistrictLibrDetail.inputValue}"
-                                      label="#{bindings.DistrictLibrDetail.label}"
+                                      label="District"
                                       required="#{bindings.DistrictLibrDetail.hints.mandatory}"
                                       shortDesc="#{bindings.DistrictLibrDetail.hints.tooltip}" readOnly="true"
                                       id="soc4">
                     <f:selectItems value="#{bindings.DistrictLibrDetail.items}" id="si4"/>
                     <f:validator binding="#{bindings.DistrictLibrDetail.validator}"/>
                   </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.CityLibrDetail.inputValue}"
+                                      label="City"
+                                      required="#{bindings.CityLibrDetail.hints.mandatory}"
+                                      shortDesc="#{bindings.CityLibrDetail.hints.tooltip}" readOnly="true" id="soc3">
+                    <f:selectItems value="#{bindings.CityLibrDetail.items}" id="si3"/>
+                    <f:validator binding="#{bindings.CityLibrDetail.validator}"/>
+                  </af:selectOneChoice>
                   <af:selectOneChoice value="#{bindings.TehsilLibrDetail.inputValue}"
-                                      label="#{bindings.TehsilLibrDetail.label}"
+                                      label="Tehsil"
                                       required="#{bindings.TehsilLibrDetail.hints.mandatory}"
                                       shortDesc="#{bindings.TehsilLibrDetail.hints.tooltip}" readOnly="true" id="soc5">
                     <f:selectItems value="#{bindings.TehsilLibrDetail.items}" id="si5"/>
                     <f:validator binding="#{bindings.TehsilLibrDetail.validator}"/>
                   </af:selectOneChoice>
                   <af:selectOneChoice value="#{bindings.MauzaLibrDetail.inputValue}"
-                                      label="#{bindings.MauzaLibrDetail.label}"
+                                      label="Mauza"
                                       required="#{bindings.MauzaLibrDetail.hints.mandatory}"
                                       shortDesc="#{bindings.MauzaLibrDetail.hints.tooltip}" readOnly="true" id="soc6">
                     <f:selectItems value="#{bindings.MauzaLibrDetail.items}" id="si6"/>
                     <f:validator binding="#{bindings.MauzaLibrDetail.validator}"/>
                   </af:selectOneChoice>
                   <af:selectOneChoice value="#{bindings.VillageLibrDetail.inputValue}"
-                                      label="#{bindings.VillageLibrDetail.label}"
+                                      label="Village"
                                       required="#{bindings.VillageLibrDetail.hints.mandatory}"
                                       shortDesc="#{bindings.VillageLibrDetail.hints.tooltip}" readOnly="true" id="soc7">
                     <f:selectItems value="#{bindings.VillageLibrDetail.items}" id="si7"/>
                     <f:validator binding="#{bindings.VillageLibrDetail.validator}"/>
                   </af:selectOneChoice>
-                  <af:selectOneChoice value="#{bindings.PhaseId.inputValue}" label="#{bindings.PhaseId.label}"
-                                      required="#{bindings.PhaseId.hints.mandatory}"
-                                      shortDesc="#{bindings.PhaseId.hints.tooltip}" readOnly="true" id="soc8">
-                    <f:selectItems value="#{bindings.PhaseId.items}" id="si8"/>
-                    <f:validator binding="#{bindings.PhaseId.validator}"/>
-                  </af:selectOneChoice>
-                  <af:inputText value="#{bindings.ClusterNo.inputValue}" label="#{bindings.ClusterNo.hints.label}"
-                                required="#{bindings.ClusterNo.hints.mandatory}" readOnly="true"
-                                columns="#{bindings.ClusterNo.hints.displayWidth}"
-                                maximumLength="#{bindings.ClusterNo.hints.precision}"
-                                shortDesc="#{bindings.ClusterNo.hints.tooltip}" id="it3">
-                    <f:validator binding="#{bindings.ClusterNo.validator}"/>
-                  </af:inputText>
-                  <af:selectOneChoice value="#{bindings.UcLibrDetail.inputValue}" label="#{bindings.UcLibrDetail.label}"
+                 
+                  <af:selectOneChoice value="#{bindings.UcLibrDetail.inputValue}" label="UC"
                                       required="#{bindings.UcLibrDetail.hints.mandatory}"
                                       shortDesc="#{bindings.UcLibrDetail.hints.tooltip}" readOnly="true" id="soc9">
                     <f:selectItems value="#{bindings.UcLibrDetail.items}" id="si9"/>
@@ -214,86 +217,99 @@
                   </f:facet>
                 </af:panelFormLayout>
               </af:showDetailItem>
-              <af:showDetailItem text="Technical Detail" id="sdi1">
+              <af:showDetailItem text="Technical Detail" id="sdi1" inflexibleHeight="100">
                 <af:panelFormLayout id="pfl2" maxColumns="2" rows="10">
                   <af:inputDate value="#{bindings.StartTraining1.inputValue}"
-                                label="#{bindings.StartTraining1.hints.label}"
+                                label="Start Training"
                                 required="#{bindings.StartTraining1.hints.mandatory}"
                                 columns="#{bindings.StartTraining1.hints.displayWidth}"
-                                shortDesc="#{bindings.StartTraining1.hints.tooltip}" id="id3">
+                                shortDesc="#{bindings.StartTraining1.hints.tooltip}" id="id3"
+                                contentStyle="width:250px;">
                     <f:validator binding="#{bindings.StartTraining1.validator}"/>
                     <af:convertDateTime pattern="#{bindings.StartTraining1.format}"/>
                   </af:inputDate>
                   
-                  <af:inputDate value="#{bindings.EndTraining1.inputValue}" label="#{bindings.EndTraining1.hints.label}"
+                  <af:inputDate value="#{bindings.EndTraining1.inputValue}" label="End Training"
                                 required="#{bindings.EndTraining1.hints.mandatory}"
                                 columns="#{bindings.EndTraining1.hints.displayWidth}"
-                                shortDesc="#{bindings.EndTraining1.hints.tooltip}" id="id1">
+                                shortDesc="#{bindings.EndTraining1.hints.tooltip}" id="id1" contentStyle="width:250px;">
                     <f:validator binding="#{bindings.EndTraining1.validator}"/>
                     <af:convertDateTime pattern="#{bindings.EndTraining1.format}"/>
                   </af:inputDate>
-                  <af:selectOneChoice value="#{bindings.TotTrainer1.inputValue}" label="#{bindings.TotTrainer1.label}"
+                  <af:selectOneChoice value="#{bindings.TotTrainer1.inputValue}" label="TOT of Trainer Conducted"
                                       required="#{bindings.TotTrainer1.hints.mandatory}"
-                                      shortDesc="#{bindings.TotTrainer1.hints.tooltip}" id="soc10">
+                                      shortDesc="#{bindings.TotTrainer1.hints.tooltip}" id="soc10"
+                                      contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.TotTrainer1.items}" id="si10"/>
                     <f:validator binding="#{bindings.TotTrainer1.validator}"/>
                   </af:selectOneChoice>
-                  <af:selectOneChoice value="#{bindings.AgendaDay1.inputValue}" label="#{bindings.AgendaDay1.label}"
+                  <af:selectOneChoice value="#{bindings.AgendaDay1.inputValue}"
+                                      label="Aganda of the day"
                                       required="#{bindings.AgendaDay1.hints.mandatory}"
-                                      shortDesc="#{bindings.AgendaDay1.hints.tooltip}" id="soc11">
+                                      shortDesc="#{bindings.AgendaDay1.hints.tooltip}" id="soc11"
+                                      contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.AgendaDay1.items}" id="si11"/>
                     <f:validator binding="#{bindings.AgendaDay1.validator}"/>
                   </af:selectOneChoice>
-                  <af:selectOneChoice value="#{bindings.ReciteQuran1.inputValue}" label="#{bindings.ReciteQuran1.label}"
+                  <af:selectOneChoice value="#{bindings.ReciteQuran1.inputValue}" label="Recite Of Quran"
                                       required="#{bindings.ReciteQuran1.hints.mandatory}"
-                                      shortDesc="#{bindings.ReciteQuran1.hints.tooltip}" id="soc12">
+                                      shortDesc="#{bindings.ReciteQuran1.hints.tooltip}" id="soc12"
+                                      contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.ReciteQuran1.items}" id="si12"/>
                     <f:validator binding="#{bindings.ReciteQuran1.validator}"/>
                   </af:selectOneChoice>
-                  <af:selectOneChoice value="#{bindings.PlanModule1.inputValue}" label="#{bindings.PlanModule1.label}"
+                  <af:selectOneChoice value="#{bindings.PlanModule1.inputValue}" label="Planned Module"
                                       required="#{bindings.PlanModule1.hints.mandatory}"
-                                      shortDesc="#{bindings.PlanModule1.hints.tooltip}" id="soc13">
+                                      shortDesc="#{bindings.PlanModule1.hints.tooltip}" id="soc13"
+                                      contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.PlanModule1.items}" id="si13"/>
                     <f:validator binding="#{bindings.PlanModule1.validator}"/>
                   </af:selectOneChoice>
-                  <af:selectOneChoice value="#{bindings.EcoSystem1.inputValue}" label="#{bindings.EcoSystem1.label}"
+                  <af:selectOneChoice value="#{bindings.EcoSystem1.inputValue}" label="Eco System Analysis"
                                       required="#{bindings.EcoSystem1.hints.mandatory}"
-                                      shortDesc="#{bindings.EcoSystem1.hints.tooltip}" id="soc14">
+                                      shortDesc="#{bindings.EcoSystem1.hints.tooltip}" id="soc14"
+                                      contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.EcoSystem1.items}" id="si14"/>
                     <f:validator binding="#{bindings.EcoSystem1.validator}"/>
                   </af:selectOneChoice>
                   <af:selectOneChoice value="#{bindings.RevLastTraining1.inputValue}"
-                                      label="#{bindings.RevLastTraining1.label}"
+                                      label="Review Of Last Training"
                                       required="#{bindings.RevLastTraining1.hints.mandatory}"
-                                      shortDesc="#{bindings.RevLastTraining1.hints.tooltip}" id="soc15">
+                                      shortDesc="#{bindings.RevLastTraining1.hints.tooltip}" id="soc15"
+                                      contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.RevLastTraining1.items}" id="si15"/>
                     <f:validator binding="#{bindings.RevLastTraining1.validator}"/>
                   </af:selectOneChoice>
-                  <af:selectOneChoice value="#{bindings.QASess1.inputValue}" label="#{bindings.QASess1.label}"
+                  <af:selectOneChoice value="#{bindings.QASess1.inputValue}" label="Question Answere Session Held"
                                       required="#{bindings.QASess1.hints.mandatory}"
-                                      shortDesc="#{bindings.QASess1.hints.tooltip}" id="soc16">
+                                      shortDesc="#{bindings.QASess1.hints.tooltip}" id="soc16"
+                                      contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.QASess1.items}" id="si16"/>
                     <f:validator binding="#{bindings.QASess1.validator}"/>
                   </af:selectOneChoice>
-                  <af:selectOneChoice value="#{bindings.SummDay1.inputValue}" label="#{bindings.SummDay1.label}"
+                  <af:selectOneChoice value="#{bindings.SummDay1.inputValue}" label="Summary of the Day"
                                       required="#{bindings.SummDay1.hints.mandatory}"
-                                      shortDesc="#{bindings.SummDay1.hints.tooltip}" id="soc17">
+                                      shortDesc="#{bindings.SummDay1.hints.tooltip}" id="soc17"
+                                      contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.SummDay1.items}" id="si17"/>
                     <f:validator binding="#{bindings.SummDay1.validator}"/>
                   </af:selectOneChoice>
-                  <af:selectOneChoice value="#{bindings.AnyIec1.inputValue}" label="#{bindings.AnyIec1.label}"
+                  <af:selectOneChoice value="#{bindings.AnyIec1.inputValue}" label="Any IEC Material"
                                       required="#{bindings.AnyIec1.hints.mandatory}"
-                                      shortDesc="#{bindings.AnyIec1.hints.tooltip}" id="soc18">
+                                      shortDesc="#{bindings.AnyIec1.hints.tooltip}" id="soc18"
+                                      contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.AnyIec1.items}" id="si18"/>
                     <f:validator binding="#{bindings.AnyIec1.validator}"/>
                   </af:selectOneChoice>
-                  <af:selectOneChoice value="#{bindings.ToolsAdopt1.inputValue}" label="#{bindings.ToolsAdopt1.label}"
+                  <af:selectOneChoice value="#{bindings.ToolsAdopt1.inputValue}"
+                                      label="Tools Adopted For Effective Training"
                                       required="#{bindings.ToolsAdopt1.hints.mandatory}"
-                                      shortDesc="#{bindings.ToolsAdopt1.hints.tooltip}" id="soc19">
+                                      shortDesc="#{bindings.ToolsAdopt1.hints.tooltip}" id="soc19"
+                                      contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.ToolsAdopt1.items}" id="si19"/>
                     <f:validator binding="#{bindings.ToolsAdopt1.validator}"/>
                   </af:selectOneChoice>
-                  <af:inputText value="#{bindings.IssChlRec1.inputValue}" label="#{bindings.IssChlRec1.hints.label}"
+                  <af:inputText value="#{bindings.IssChlRec1.inputValue}" label="Issues Challenges Recommendation"
                                 required="#{bindings.IssChlRec1.hints.mandatory}"
                                 columns="40"
                                 maximumLength="#{bindings.IssChlRec1.hints.precision}"
@@ -301,7 +317,7 @@
                     <f:validator binding="#{bindings.IssChlRec1.validator}"/>
                   </af:inputText>
                   <af:inputText value="#{bindings.DetailAboutOutcome1.inputValue}"
-                                label="#{bindings.DetailAboutOutcome1.hints.label}"
+                                label="Detail About Some Positive Outcome Of Training in this Cluster"
                                 required="#{bindings.DetailAboutOutcome1.hints.mandatory}"
                                 columns="40"
                                 maximumLength="#{bindings.DetailAboutOutcome1.hints.precision}"
@@ -310,13 +326,13 @@
                   </af:inputText>
                   <f:facet name="footer">
                     <af:panelGroupLayout layout="horizontal" id="pgl7">
-                      <af:button actionListener="#{bindings.First2.execute}" text="First2"
+                      <af:button actionListener="#{bindings.First2.execute}" text="First"
                                  disabled="#{!bindings.First2.enabled}" partialSubmit="true" id="b6"/>
-                      <af:button actionListener="#{bindings.Previous2.execute}" text="Previous2"
+                      <af:button actionListener="#{bindings.Previous2.execute}" text="Previous"
                                  disabled="#{!bindings.Previous2.enabled}" partialSubmit="true" id="b7"/>
-                      <af:button actionListener="#{bindings.Next2.execute}" text="Next2"
+                      <af:button actionListener="#{bindings.Next2.execute}" text="Next"
                                  disabled="#{!bindings.Next2.enabled}" partialSubmit="true" id="b8"/>
-                      <af:button actionListener="#{bindings.Last2.execute}" text="Last2"
+                      <af:button actionListener="#{bindings.Last2.execute}" text="Last"
                                  disabled="#{!bindings.Last2.enabled}" partialSubmit="true" id="b9"/>
                                   <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
@@ -345,47 +361,53 @@
                           id="t2">
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.label}"
-                             id="c4">
+                             headerText="Inspection ID"
+                             id="c4" align="center" width="80">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MmpTrainingMonInspId}"
+                                          id="it23" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:inputText value="#{row.bindings.MmpTrainingMonInspId.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.mandatory}"
                                   columns="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.precision}"
                                   shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.tooltip}"
-                                  id="it8">
+                                  id="it8" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.MmpTrainingMonInspId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.label}"
-                             id="c7">
-                    <af:inputText value="#{row.bindings.Cnic.inputValue}"
-                                  label="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.label}"
-                                  required="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.mandatory}"
-                                  columns="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.displayWidth}"
-                                  maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.precision}"
-                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.tooltip}" id="it11">
-                      <f:validator binding="#{row.bindings.Cnic.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.label}"
-                             id="c8">
-                    <af:inputText value="#{row.bindings.Mobile.inputValue}"
-                                  label="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.label}"
-                                  required="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.mandatory}"
-                                  columns="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.displayWidth}"
-                                  maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.precision}"
-                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.tooltip}" id="it12">
-                      <f:validator binding="#{row.bindings.Mobile.validator}"/>
+                              <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.name}" filterable="true"
+                             sortable="true" headerText="Farmer No."
+                             id="c10" align="center">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FarmerNo}"
+                                          id="it24" placeholder="Search Farmer No.">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
+                                  label="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.label}"
+                                  required="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.mandatory}"
+                                  columns="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.displayWidth}"
+                                  maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.precision}"
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.tooltip}" 
+                                  id="it14" contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonFarmerView2.hints.Name.label}"
-                             id="c9">
+                             sortable="true" headerText="Farmer"
+                             id="c9" width="180">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it25" placeholder="Search Farmer">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.Name.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.Name.mandatory}"
@@ -395,44 +417,88 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.label}"
-                             id="c10">
-                    <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
-                                  label="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.label}"
-                                  required="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.mandatory}"
-                                  columns="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.displayWidth}"
-                                  maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.precision}"
-                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.tooltip}" id="it14">
-                      <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
+     
+                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.name}" filterable="true"
+                             sortable="true" headerText="CNIC"
+                             id="c7" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Cnic}"
+                                          id="it26" placeholder="Search CNIC">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.Cnic.inputValue}"
+                                  label="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.label}"
+                                  required="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.mandatory}"
+                                  columns="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.displayWidth}"
+                                  maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.precision}"
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.tooltip}" 
+                                  id="it11" contentStyle='text-align: center'>
+                      <f:validateRegex pattern="(^[0-9]{5}-[0-9]{7}-[0-9]$)"/>
+                      <f:validator binding="#{row.bindings.Cnic.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.label}" id="c19">
+                  <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.name}" filterable="true"
+                             sortable="true" headerText="Mobile"
+                             id="c8" align="center" width="80">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Mobile}"
+                                          id="it27" placeholder="Search Mobile">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.Mobile.inputValue}"
+                                  label="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.label}"
+                                  required="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.mandatory}"
+                                  columns="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.displayWidth}"
+                                  maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.precision}"
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.tooltip}" 
+                                  id="it12" contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.Mobile.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Land Acre" id="c19" align="center" width="80" sortable="true"
+                             filterable="true">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.LandAcre}"
+                                          id="it28" placeholder="Search Land Acre">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.LandAcre.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.mandatory}"
                                   columns="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.precision}"
-                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.tooltip}" id="it10">
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.tooltip}"
+                                  id="it10" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.LandAcre.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.label}" id="c20">
+                  <af:column headerText="Land Under Orchard" id="c20" align="center" width="80" sortable="true"
+                             filterable="true">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.LandUnderOrch}"
+                                          id="it29" placeholder="Search Land">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.LandUnderOrch.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.mandatory}"
                                   columns="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.precision}"
                                   shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.tooltip}"
-                                  id="it22">
+                                  id="it22" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.LandUnderOrch.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Present / Absent" id="c6">
+                  <af:column headerText="Present/Absent" id="c6" width="100" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FarmerStatus}"
+                                          id="it30" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.FarmerStatus.inputValue}"
                                         label="#{row.bindings.FarmerStatus.label}"
                                         required="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerStatus.mandatory}"
@@ -442,9 +508,14 @@
                       <f:validator binding="#{row.bindings.FarmerStatus.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpTrainingMonFarmerView2.hints.VerSource.label}" id="c21">
+                  <af:column headerText="Verified Source" id="c21" width="80" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.VerSource}"
+                                          id="it31" placeholder="Search Verified">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.VerSource.inputValue}"
-                                        label="#{row.bindings.VerSource.label}"
+                                        label="Verified Source"
                                         required="#{bindings.MmpTrainingMonFarmerView2.hints.VerSource.mandatory}"
                                         shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.VerSource.tooltip}"
                                         id="soc21">
@@ -479,39 +550,34 @@
                           varStatus="vs" id="t3">
                   <af:column sortProperty="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonUrfarmerId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonUrfarmerId.label}"
-                             id="c11">
-                    <af:inputText value="#{row.bindings.MmpTrainingMonUrfarmerId.inputValue}" readOnly="true"
+                             headerText="Un-Registered farmer ID"
+                             id="c11" align="center" width="90">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MmpTrainingMonUrfarmerId}"
+                                          id="it15" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.MmpTrainingMonUrfarmerId.inputValue}" 
                                   label="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonUrfarmerId.label}"
                                   required="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonUrfarmerId.mandatory}"
                                   columns="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonUrfarmerId.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonUrfarmerId.precision}"
                                   shortDesc="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonUrfarmerId.tooltip}"
-                                  id="it7">
+                                  id="it7" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.MmpTrainingMonUrfarmerId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonUrfarmerId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonInspId.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonInspId.label}"
-                             id="c12">
-                    <af:inputText value="#{row.bindings.MmpTrainingMonInspId.inputValue}"
-                                  label="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonInspId.label}"
-                                  required="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonInspId.mandatory}"
-                                  columns="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonInspId.displayWidth}"
-                                  maximumLength="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonInspId.precision}"
-                                  shortDesc="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonInspId.tooltip}"
-                                  id="it15">
-                      <f:validator binding="#{row.bindings.MmpTrainingMonInspId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonInspId.format}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonUrfarmerView2.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonUrfarmerView2.hints.Name.label}"
-                             id="c13">
+                             sortable="true" headerText="Un-Registered Farmer"
+                             id="c13" width="200">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it32" placeholder="Search Un-Registered Farmer">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.MmpTrainingMonUrfarmerView2.hints.Name.label}"
                                   required="#{bindings.MmpTrainingMonUrfarmerView2.hints.Name.mandatory}"
@@ -522,14 +588,21 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonUrfarmerView2.hints.Cnic.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonUrfarmerView2.hints.Cnic.label}"
-                             id="c14">
+                             sortable="true" headerText="CNIC"
+                             id="c14" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Cnic}"
+                                          id="it33" placeholder="Search CNIC">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Cnic.inputValue}"
                                   label="#{bindings.MmpTrainingMonUrfarmerView2.hints.Cnic.label}"
                                   required="#{bindings.MmpTrainingMonUrfarmerView2.hints.Cnic.mandatory}"
                                   columns="#{bindings.MmpTrainingMonUrfarmerView2.hints.Cnic.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonUrfarmerView2.hints.Cnic.precision}"
-                                  shortDesc="#{bindings.MmpTrainingMonUrfarmerView2.hints.Cnic.tooltip}" id="it17">
+                                  shortDesc="#{bindings.MmpTrainingMonUrfarmerView2.hints.Cnic.tooltip}" 
+                                  id="it17" contentStyle='text-align: center'>
+                                  <f:validateRegex pattern="(^[0-9]{5}-[0-9]{7}-[0-9]$)"/>
                       <f:validator binding="#{row.bindings.Cnic.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -560,23 +633,34 @@
                           id="t4">
                   <af:column sortProperty="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonTopicsId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonTopicsId.label}"
-                             id="c15">
+                             headerText="Topic ID"
+                             id="c15" align="center" width="60">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MmpTrainingMonTopicsId}"
+                                          id="it20" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.MmpTrainingMonTopicsId.inputValue}"
                                   label="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonTopicsId.label}"
                                   required="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonTopicsId.mandatory}"
                                   columns="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonTopicsId.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonTopicsId.precision}"
                                   shortDesc="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonTopicsId.tooltip}"
-                                  id="it18">
+                                  id="it18" readOnly="true"
+                                    contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.MmpTrainingMonTopicsId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonTopicsId.format}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonTopicsView2.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonTopicsView2.hints.Name.label}"
-                             id="c16">
+                             sortable="true" headerText="Topic"
+                             id="c16" width="200">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it34" placeholder="Search Topic">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.MmpTrainingMonTopicsView2.hints.Name.label}"
                                   required="#{bindings.MmpTrainingMonTopicsView2.hints.Name.mandatory}"
@@ -586,25 +670,14 @@
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.label}"
-                             id="c17">
-                    <af:inputText value="#{row.bindings.MmpTrainingMonInspId.inputValue}"
-                                  label="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.label}"
-                                  required="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.mandatory}"
-                                  columns="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.displayWidth}"
-                                  maximumLength="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.precision}"
-                                  shortDesc="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.tooltip}"
-                                  id="it20">
-                      <f:validator binding="#{row.bindings.MmpTrainingMonInspId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.format}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonTopicsView2.hints.Status.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonTopicsView2.hints.Status.label}"
-                             id="c18">
+                             sortable="true" headerText="Status"
+                             id="c18" width="100">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Status}"
+                                          id="it35" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Status.inputValue}"
                                   label="#{bindings.MmpTrainingMonTopicsView2.hints.Status.label}"
                                   required="#{bindings.MmpTrainingMonTopicsView2.hints.Status.mandatory}"
