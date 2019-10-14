@@ -107,6 +107,13 @@ public class Login {
         Map sessionState = ctx.getExternalContext().getSessionMap();
         sessionState.put(key, object);
     }
+    
+    // session value getting function
+    public static String getFromSession(String vari) {
+        FacesContext ctx = FacesContext.getCurrentInstance();
+        Map sessionState = ctx.getExternalContext().getSessionMap();
+        return (String) sessionState.get(vari);
+    }
 
     //user logging in
     public String login_action() {
@@ -145,7 +152,7 @@ public class Login {
                 //Storing value in session username from input text field and role_master_id from DB
 
                 System.out.println(".........MMP_User Name stored in session is :..." + username + "...");
-                System.out.println(".........MMP_User Password stored in session is :..." + password + "...");
+                //System.out.println(".........MMP_User Password stored in session is :..." + password + "...");
                 System.out.println(".........MMP_User Role stored in session is :..." + role_master_id + "...");
                 System.out.println(".........MMP_User Master ID stored in session is :..." + user_master_id + "...");
                 System.out.println(".........Member Registration ID stored in session is :..." + member_reg_id + "...");

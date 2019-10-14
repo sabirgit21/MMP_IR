@@ -6,8 +6,8 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl1"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="MmpTrainingCheckInView1" RangeSize="8" DataControl="AppModuleDataControl"
-              id="MmpTrainingCheckInView1Iterator" Refresh="always" CacheResults="false"/>
+    <iterator Binds="MmpTrainingCheckInView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MmpTrainingCheckInView1Iterator"/>
     <searchRegion Binds="MmpTrainingCheckInView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpTrainingCheckInView1Query"/>
   </executables>
@@ -23,6 +23,8 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
     <tree IterBinding="MmpTrainingCheckInView1Iterator" id="MmpTrainingCheckInView1">
       <nodeDefinition DefName="model.VO.MmpTrainingCheckInView" Name="MmpTrainingCheckInView10">
         <AttrNames>
@@ -33,6 +35,10 @@
           <Item Value="Remarks"/>
           <Item Value="Latitude"/>
           <Item Value="Longitude"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
           <Item Value="MemberRegId"/>
         </AttrNames>
       </nodeDefinition>
@@ -43,7 +49,5 @@
             Action="iteratorExecute"/>
     <action IterBinding="MmpTrainingCheckInView1Iterator" id="Delete" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
   </bindings>
 </pageDefinition>

@@ -33,7 +33,7 @@
                           filterModel="#{bindings.MmpTrainingCheckInView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MmpTrainingCheckInView1Query.processQuery}" varStatus="vs" id="t1"
                           
-                          scrollPolicy="page" autoHeightRows="0" partialTriggers="::b2 ::b3 ::b4">
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.name}"
                              filterable="true" sortable="true"
                              headerText="Training CheckIn ID" id="c1" align="center" width="60">
@@ -177,14 +177,8 @@
                     </af:inputText>
                   </af:column>
                 </af:table>
-              </af:showDetailItem>
+               </af:showDetailItem>
             </af:panelTabbed>
-            <af:button actionListener="#{bindings.Commit.execute}" text="Commit" disabled="#{!bindings.Commit.enabled}"
-                       id="b5"/>
-            <af:button actionListener="#{bindings.Rollback.execute}" text="Rollback"
-                       disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b6">
-              <af:resetActionListener/>
-            </af:button>
           </af:gridCell>
         </af:gridRow>
         
@@ -196,12 +190,7 @@
                                 <af:clientListener type="action" method="getLocation"/>
                                 <af:serverListener type="servListener" method="#{getLocationBean.getLocation}"/>
                             </af:button>
-            <af:button actionListener="#{bindings.CreateInsert.execute}" text="CreateInsert"
-                       disabled="#{!bindings.CreateInsert.enabled}" id="b2"/>
-            <af:button actionListener="#{bindings.Execute.execute}" text="Execute"
-                       disabled="#{!bindings.Execute.enabled}" id="b3"/>
-            <af:button actionListener="#{bindings.Delete.execute}" text="Delete" disabled="#{!bindings.Delete.enabled}"
-                       id="b4"/>
+        
             <af:panelGroupLayout id="pgl3" layout="horizontal">
                             <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
