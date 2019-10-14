@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57"
+                id="Monitoring_Check_In_TaskFlow_Monitoring_Check_In_TaskFlow_ExecutePageDef"
+                Package="Task_Flows.Modules.Monitoring" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="MmpTrainingCheckInView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MmpTrainingCheckInView1Iterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="MmpTrainingCheckInView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

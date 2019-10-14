@@ -22,11 +22,13 @@
        MmpTrainingCheckIn.UPDATED_BY, 
        MmpTrainingCheckIn.MEMBER_REG_ID"
   FromList="MMP_TRAINING_CHECK_IN MmpTrainingCheckIn"
-  Where="MmpTrainingCheckIn.MEMBER_REG_ID = :sessMemID">
+  Where="MmpTrainingCheckIn.MEMBER_REG_ID = :sessMemID"
+  AutoRefresh="true">
   <Variable
     Name="sessMemID"
     Kind="where"
-    Type="java.math.BigDecimal">
+    Type="java.math.BigDecimal"
+    IsUpdateable="true">
     <TransientExpression
       Name="VariableScript"
       CodeSourceName="MmpTrainingCheckInView"/>

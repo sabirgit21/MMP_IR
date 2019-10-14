@@ -34,6 +34,8 @@
           usageId="view_Monitoring_InspectionPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Management/User_Roles.jsff" usageId="view_User_RolesPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Management/Map.jsff" usageId="view_MapPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Monitoring/Monitoring_Check_In_TaskFlow.xml#Monitoring_Check_In_TaskFlow@Execute"
+          usageId="view_Monitoring_Check_In_TaskFlow_Monitoring_Check_In_TaskFlow_ExecutePageDef"/>
   </pageMap>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"
@@ -70,5 +72,7 @@
     <page id="view_Monitoring_InspectionPageDef" path="Fragments.Modules.Monitoring.Monitoring_InspectionPageDef"/>
     <page id="view_User_RolesPageDef" path="Fragments.Modules.Management.User_RolesPageDef"/>
     <page id="view_MapPageDef" path="Fragments.Modules.Management.MapPageDef"/>
+    <page id="view_Monitoring_Check_In_TaskFlow_Monitoring_Check_In_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Monitoring.Monitoring_Check_In_TaskFlow_Monitoring_Check_In_TaskFlow_ExecutePageDef"/>
   </pageDefinitionUsages>
 </Application>
