@@ -172,6 +172,15 @@
   <ViewUsage
     Name="Mmp_Map_Sch_Detail_Att1"
     ViewObjectName="model.VO.Mmp_Map_Sch_Detail_Att"/>
+  <ViewUsage
+    Name="MmpTrainingPhyProgDetailView1"
+    ViewObjectName="model.VO.MmpTrainingPhyProgDetailView"/>
+  <ViewUsage
+    Name="MmpTrainingPhyProgMasterView1"
+    ViewObjectName="model.VO.MmpTrainingPhyProgMasterView"/>
+  <ViewUsage
+    Name="MmpTrainingPhyProgDetailView2"
+    ViewObjectName="model.VO.MmpTrainingPhyProgDetailView"/>
   <ViewLinkUsage
     Name="FkMmpMemberRegDepLink1"
     ViewLinkObjectName="model.VO.FkMmpMemberRegDepLink"
@@ -351,5 +360,11 @@
     ViewLinkObjectName="model.VO.FKMmpTrainingMonInspFkLink2"
     SrcViewUsageName="model.AppModule.MmpTrainingMonInspView1"
     DstViewUsageName="model.AppModule.TblClusterView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkMmpTrainingPhyProgDetailMasterLink1"
+    ViewLinkObjectName="model.VO.FkMmpTrainingPhyProgDetailMasterLink"
+    SrcViewUsageName="model.AppModule.MmpTrainingPhyProgMasterView1"
+    DstViewUsageName="model.AppModule.MmpTrainingPhyProgDetailView2"
     Reversed="false"/>
 </AppModule>
