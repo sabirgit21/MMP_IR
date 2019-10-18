@@ -55,7 +55,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.MemberNo.name}" 
                              filterable="true" sortable="true" 
-                             headerText="Member No." id="c15" align="center" width="100">
+                             headerText="Member No." id="c15" align="center" width="91">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.MemberNo}"
                                           id="it27" placeholder="Search Member No.">
@@ -72,7 +72,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.Name.name}" 
-                             filterable="true" sortable="true" headerText="Member" id="c2" width="300">
+                             filterable="true" sortable="true" headerText="Member" id="c2" width="293">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Name}"
                                           id="it28" placeholder="Search Member">
@@ -88,7 +88,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.FatherName.name}" 
-                             filterable="true" sortable="true" headerText="Father" id="c3" width="300">
+                             filterable="true" sortable="true" headerText="Father" id="c3" width="226">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FatherName}"
                                           id="it30" placeholder="Search Father">
@@ -105,7 +105,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.Cnic.name}" 
                              filterable="true" sortable="true"
-                             headerText="CNIC" id="c16" align="center" width="100">
+                             headerText="CNIC" id="c16" align="center" width="171">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Cnic}"
                                           id="it29" placeholder="Search CNIC">
@@ -122,7 +122,15 @@
                                   <f:validator binding="#{row.bindings.Cnic.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.Ast.name}" 
+                  <af:column headerText="Active" id="c4" width="75">
+                    <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
+                                        required="#{bindings.MmpMemberRegView1.hints.Ast.mandatory}"
+                                        shortDesc="#{bindings.MmpMemberRegView1.hints.Ast.tooltip}" id="soc1">
+                      <f:selectItems value="#{row.bindings.Ast.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.Ast.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <!--<af:column sortProperty="#{bindings.MmpMemberRegView1.hints.Ast.name}" 
                              filterable="true" sortable="true" headerText="Active" id="c4" width="60">
                     <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Ast}"
@@ -137,7 +145,7 @@
                                   shortDesc="#{bindings.MmpMemberRegView1.hints.Ast.tooltip}" id="it4">
                       <f:validator binding="#{row.bindings.Ast.validator}"/>
                     </af:inputText>
-                  </af:column>
+                  </af:column>-->
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>
@@ -151,26 +159,32 @@
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab2" text="Monitoring Member">
                 <af:panelFormLayout id="pfl1" maxColumns="3" rows="3">
-                  <af:inputText value="#{bindings.MarStatus.inputValue}" label="Marital Status"
+                  <af:selectOneChoice value="#{bindings.MarStatus1.inputValue}" label="Marital Status"
+                                      required="#{bindings.MarStatus1.hints.mandatory}"
+                                      shortDesc="#{bindings.MarStatus1.hints.tooltip}" id="soc2">
+                    <f:selectItems value="#{bindings.MarStatus1.items}" id="si2"/>
+                    <f:validator binding="#{bindings.MarStatus1.validator}"/>
+                  </af:selectOneChoice>
+                  <!--<af:inputText value="#{bindings.MarStatus.inputValue}" label="Marital Status"
                                 required="#{bindings.MarStatus.hints.mandatory}"
                                 columns="#{bindings.MarStatus.hints.displayWidth}"
                                 maximumLength="#{bindings.MarStatus.hints.precision}"
                                 shortDesc="#{bindings.MarStatus.hints.tooltip}" id="it8">
                     <f:validator binding="#{bindings.MarStatus.validator}"/>
-                  </af:inputText>
-                  <af:inputDate value="#{bindings.Dob.inputValue}" label="DOB"
+                  </af:inputText>-->
+                  <af:inputDate value="#{bindings.Dob.inputValue}" label="D.O.B"
                                 required="#{bindings.Dob.hints.mandatory}" columns="#{bindings.Dob.hints.displayWidth}"
                                 shortDesc="#{bindings.Dob.hints.tooltip}" id="id3">
                     <f:validator binding="#{bindings.Dob.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Dob.format}"/>
                   </af:inputDate>
-                  <af:inputDate value="#{bindings.Doj.inputValue}" label="DOJ"
+                  <af:inputDate value="#{bindings.Doj.inputValue}" label="D.O.J"
                                 required="#{bindings.Doj.hints.mandatory}" columns="#{bindings.Doj.hints.displayWidth}"
                                 shortDesc="#{bindings.Doj.hints.tooltip}" id="id5">
                     <f:validator binding="#{bindings.Doj.validator}"/>
                     <af:convertDateTime pattern="#{bindings.Doj.format}"/>
                   </af:inputDate>
-                  <af:inputText value="#{bindings.Ntn.inputValue}" label="NTN"
+                  <af:inputText value="#{bindings.Ntn.inputValue}" label="N.T.N"
                                 required="#{bindings.Ntn.hints.mandatory}" columns="#{bindings.Ntn.hints.displayWidth}"
                                 maximumLength="#{bindings.Ntn.hints.precision}"
                                 shortDesc="#{bindings.Ntn.hints.tooltip}" id="it9">
@@ -242,19 +256,7 @@
                     <af:panelGroupLayout layout="vertical" id="pgl2">
                       <af:panelGroupLayout layout="horizontal" id="pgl3">
                         <af:spacer width="100" height="10" id="s2"/>
-                        <af:button actionListener="#{bindings.First.execute}" text="First"
-                                   disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b2"/>
-                        <af:spacer width="5" height="10" id="s6"/>
-                        <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
-                                   disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b3"/>
-                        <af:spacer width="5" height="10" id="s7"/>
-                        <af:button actionListener="#{bindings.Next.execute}" text="Next"
-                                   disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b4"/>
-                        <af:spacer width="5" height="10" id="s8"/>
-                        <af:button actionListener="#{bindings.Last.execute}" text="Last"
-                                   disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b5"/>
-                     <af:spacer width="100" height="10" id="s3"/>
-                      <af:panelGroupLayout id="pgl6" layout="horizontal">
+                         <af:panelGroupLayout id="pgl6" layout="horizontal">
                             <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -285,7 +287,7 @@
                           partialTriggers=""
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.MemberRegDepId.name}" filterable="true"
-                             sortable="true" headerText="Member Dependend ID"
+                             sortable="true" headerText="Dependent ID"
                              id="c5" align="center" width="68">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.MemberRegDepId}"
@@ -307,7 +309,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="Member Dependend " id="c7" width="160">
+                             sortable="true" headerText="Member Dependent" id="c7" width="160">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Name}"
                                           id="it6" placeholder="Search Member Dependend">
@@ -358,7 +360,7 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.Dob.name}" filterable="true"
-                             sortable="true" headerText="DOB" id="c9" align="center" width="80">
+                             sortable="true" headerText="D.O.B" id="c9" align="center" width="80">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.MmpMemberRegDepView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dob.value}"
                                     id="id1">

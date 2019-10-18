@@ -43,11 +43,6 @@
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
     <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ClusterId" id="ClusterId"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="TblClusterView3Iterator" id="ClusterId1">
-      <AttrNames>
-        <Item Value="ClusterId"/>
-      </AttrNames>
-    </attributeValues>
     <list IterBinding="TblClusterView3Iterator" StaticList="false" Uses="LOV_CropId" id="CropId" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblClusterView3Iterator" id="Name">

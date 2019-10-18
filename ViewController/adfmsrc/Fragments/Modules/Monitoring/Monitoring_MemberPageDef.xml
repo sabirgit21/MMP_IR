@@ -158,5 +158,7 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <list IterBinding="MmpMemberRegView1Iterator" StaticList="false" Uses="LOV_MarStatus" id="MarStatus1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>
