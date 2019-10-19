@@ -79,6 +79,18 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_MON_URFARMER"/>
+  <Attribute
+    Name="Mobile"
+    Precision="25"
+    ColumnName="MOBILE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_TRAINING_MON_URFARMER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="MmpTrainingMonInsp"
     Association="model.EO.FkMmpTrainingMonUrfarmerInspAssoc"

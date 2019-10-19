@@ -17,9 +17,10 @@
        MmpMonSchMaster.MEMBER_REG_ID, 
        MmpMonSchMaster.MMP_MON_SCH_MASTER_ID"
   FromList="MMP_MON_SCH_DETAIL MmpMonSchDetail, TBL_CLUSTER TblCluster, MMP_MON_SCH_MASTER MmpMonSchMaster"
-  Where="(MmpMonSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID)   
-AND (MmpMonSchDetail.MMP_MON_SCH_MASTER_ID = MmpMonSchMaster.MMP_MON_SCH_MASTER_ID(+))  
-AND MmpMonSchMaster.MEMBER_REG_ID = :mmRegID">
+  Where="(MmpMonSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID)     
+AND (MmpMonSchDetail.MMP_MON_SCH_MASTER_ID = MmpMonSchMaster.MMP_MON_SCH_MASTER_ID(+))    
+AND MmpMonSchMaster.MEMBER_REG_ID = :mmRegID  
+AND MmpMonSchDetail.DATED = :schDate">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -32,9 +33,12 @@ AND MmpMonSchMaster.MEMBER_REG_ID = :mmRegID">
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="Member_Depn_Cluster_LOV"/>
   </Variable>
+  <Variable
+    Name="schDate"
+    Kind="where"
+    Type="java.sql.Timestamp"/>
   <EntityUsage
     Name="MmpMonSchDetail"
     Entity="model.EO.MmpMonSchDetail"/>

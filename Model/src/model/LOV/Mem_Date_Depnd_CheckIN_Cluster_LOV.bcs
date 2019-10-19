@@ -1,0 +1,12 @@
+//Groovy Scripts for model.LOV.Mem_Date_Depnd_CheckIN_Cluster_LOV
+
+package model.LOV
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="getmemRegID")
+def getmemRegID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessMemID')
+}
+

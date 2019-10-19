@@ -90,6 +90,32 @@
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="PerChange"
+    Precision="1"
+    ColumnName="PER_CHANGE"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="MMP_TRAINING_MON_FARMER"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Remarks"
+    Precision="250"
+    ColumnName="REMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_TRAINING_MON_FARMER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="MmpTrainingMonInsp"
     Association="model.EO.FkMmpTrainingMonFarmerInspAssoc"

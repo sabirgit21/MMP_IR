@@ -79,6 +79,7 @@
           <Item Value="MmpTrainingMonInspId"/>
           <Item Value="ClusterId"/>
           <Item Value="Dated"/>
+          <Item Value="MemberRegId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -146,6 +147,8 @@
           <Item Value="LandAcre"/>
           <Item Value="LandUnderOrch"/>
           <Item Value="VerSource"/>
+          <Item Value="PerChange" Binds="PerChange"/>
+          <Item Value="Remarks"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -200,6 +203,7 @@
           <Item Value="MmpTrainingMonInspId"/>
           <Item Value="Name"/>
           <Item Value="Cnic"/>
+          <Item Value="Mobile"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -237,5 +241,14 @@
             Action="iteratorExecute"/>
     <action IterBinding="MmpTrainingMonTopicsView2Iterator" id="Delete3" RequiresUpdateModel="false"
             Action="removeCurrentRow"/>
+    <button IterBinding="MmpTrainingMonFarmerView2Iterator" id="PerChange" DTSupportsMRU="false" StaticList="true">
+      <AttrNames>
+        <Item Value="PerChange"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="Y"/>
+        <Item Value="N"/>
+      </ValueList>
+    </button>
   </bindings>
 </pageDefinition>

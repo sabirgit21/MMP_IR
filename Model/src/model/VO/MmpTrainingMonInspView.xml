@@ -81,6 +81,22 @@
     Name="Check_In_Cluster_Name_LOV1"
     ViewObjectName="model.LOV.Check_In_Cluster_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Member_Name_LOV1"
+    ViewObjectName="model.LOV.Member_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Mem_Date_Depnd_CheckIN_Cluster_LOV1"
+    ViewObjectName="model.LOV.Mem_Date_Depnd_CheckIN_Cluster_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="getDate">
+        <TransientExpression
+          trustMode="trusted"
+          Name="ExpressionScript"><![CDATA[Dated]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_TotTrainer"
     ListVOName="Active_LOV1"
@@ -261,8 +277,26 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
+    Name="LOV_MemberRegId"
+    ListVOName="Member_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MemberRegId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MemberRegId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
     Name="LOV_ClusterId"
-    ListVOName="Check_In_Cluster_Name_LOV1"
+    ListVOName="Mem_Date_Depnd_CheckIN_Cluster_LOV1"
     ListRangeSize="-1"
     NullValueFlag="none"
     MRUCount="0">
@@ -270,16 +304,11 @@
       <Item Value="ClusterId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="DerivedAttrNames">
-      <Item Value="Dated"/>
-    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ClusterId"/>
-      <Item Value="Dated"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
-      <Item Value="Dated"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -500,7 +529,22 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
     EntityUsage="MmpTrainingMonInsp"
-    AliasName="UPDATED_BY"/><AttrArray Name="KeyAttributes">
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="MemberRegId"
+    PrecisionRule="true"
+    EntityAttrName="MemberRegId"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="MEMBER_REG_ID"
+    LOVName="LOV_MemberRegId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingMonInspId"/>
   </AttrArray>
   <ViewLinkAccessor

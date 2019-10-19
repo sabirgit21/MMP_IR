@@ -227,6 +227,18 @@
     EntityAttrName="FarmerRegLandId"
     EntityUsage="TblFarmerRegLand"
     AliasName="FARMER_REG_LAND_ID"/>
+  <ViewAttribute
+    Name="PerChange"
+    PrecisionRule="true"
+    EntityAttrName="PerChange"
+    EntityUsage="MmpTrainingMonFarmer"
+    AliasName="PER_CHANGE"/>
+  <ViewAttribute
+    Name="Remarks"
+    PrecisionRule="true"
+    EntityAttrName="Remarks"
+    EntityUsage="MmpTrainingMonFarmer"
+    AliasName="REMARKS"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingMonFarmerId"/>
   </AttrArray>

@@ -65,4 +65,10 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="MmpTrainingMonUrfarmer"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="Mobile"
+    PrecisionRule="true"
+    EntityAttrName="Mobile"
+    EntityUsage="MmpTrainingMonUrfarmer"
+    AliasName="MOBILE"/>
 </ViewObject>

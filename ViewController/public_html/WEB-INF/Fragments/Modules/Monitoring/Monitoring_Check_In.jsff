@@ -64,7 +64,7 @@
                                                                                      placeholder="Search Member" id="it9" >
                                                                        </af:inputText>
                                                                    </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.MemberRegId.inputValue}"
+                    <af:selectOneChoice value="#{row.bindings.MemberRegId.inputValue}" readOnly="true"
                                         label="#{row.bindings.MemberRegId.label}"
                                         required="#{bindings.MmpTrainingCheckInView1.hints.MemberRegId.mandatory}"
                                         shortDesc="#{bindings.MmpTrainingCheckInView1.hints.MemberRegId.tooltip}"
@@ -81,7 +81,7 @@
                         <af:convertDateTime pattern="#{bindings.MmpTrainingCheckInView1.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
-                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}" autoSubmit="true"
                                   label="#{bindings.MmpTrainingCheckInView1.hints.Dated.label}"
                                   required="#{bindings.MmpTrainingCheckInView1.hints.Dated.mandatory}"
                                   columns="#{bindings.MmpTrainingCheckInView1.hints.Dated.displayWidth}"

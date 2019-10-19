@@ -47,7 +47,7 @@
             Action="createInsertRow"/>
     <action IterBinding="MmpTrainingCheckInView1Iterator" id="Execute" RequiresUpdateModel="true"
             Action="iteratorExecute"/>
-    <action IterBinding="MmpTrainingCheckInView1Iterator" id="Delete" RequiresUpdateModel="false"
+    <action IterBinding="MmpTrainingCheckInView1Iterator" id="Delete" RequiresUpdateModel="true"
             Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>
