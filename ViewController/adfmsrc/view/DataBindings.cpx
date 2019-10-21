@@ -38,6 +38,8 @@
           usageId="view_Monitoring_Check_In_TaskFlow_Monitoring_Check_In_TaskFlow_ExecutePageDef"/>
     <page path="/WEB-INF/Task_Flows/Modules/Monitoring/Report_Physical_Progress_TaskFlow.xml#Report_Physical_Progress_TaskFlow@ExecuteWithParams"
           usageId="view_Report_Physical_Progress_TaskFlow_Report_Physical_Progress_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Monitoring/Report_Physical_Progress.jsff"
+          usageId="view_Report_Physical_ProgressPageDef"/>
   </pageMap>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"
@@ -78,5 +80,7 @@
           path="Task_Flows.Modules.Monitoring.Monitoring_Check_In_TaskFlow_Monitoring_Check_In_TaskFlow_ExecutePageDef"/>
     <page id="view_Report_Physical_Progress_TaskFlow_Report_Physical_Progress_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Monitoring.Report_Physical_Progress_TaskFlow_Report_Physical_Progress_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Report_Physical_ProgressPageDef"
+          path="Fragments.Modules.Monitoring.Report_Physical_ProgressPageDef"/>
   </pageDefinitionUsages>
 </Application>
