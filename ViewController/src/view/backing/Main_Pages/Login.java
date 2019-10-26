@@ -30,6 +30,8 @@ import oracle.adf.view.rich.component.rich.output.RichSpacer;
 import oracle.adf.view.rich.context.AdfFacesContext;
 import oracle.jdbc.driver.OracleDriver;
 
+import view.DatabaseConnection.DatabaseConnection;
+
 public class Login {
 
     // generating static variables to use in different scopes
@@ -91,15 +93,15 @@ public class Login {
     }
 
     // creating generic database connection
-    public static Connection getConnection() throws SQLException {
-        String username = "emfp";
-        String password = "emfp";
-        String thinConn = "jdbc:oracle:thin:@192.168.1.3:1521:orcl";
-        DriverManager.registerDriver(new OracleDriver());
-        Connection conn = DriverManager.getConnection(thinConn, username, password);
-        conn.setAutoCommit(false);
-        return conn;
-    }
+//    public static Connection getConnection() throws SQLException {
+//        String username = "emfp";
+//        String password = "emfp";
+//        String thinConn = "jdbc:oracle:thin:@192.168.1.3:1521:orcl";
+//        DriverManager.registerDriver(new OracleDriver());
+//        Connection conn = DriverManager.getConnection(thinConn, username, password);
+//        conn.setAutoCommit(false);
+//        return conn;
+//    }
 
     // session value storing function
     public static void storeOnSession(String key, Object object) {
@@ -137,7 +139,7 @@ public class Login {
         Connection conn;
 
         try {
-            conn = getConnection();
+            conn = DatabaseConnection.getConnection();
             Statement stmt = conn.createStatement();
             ResultSet rset =
                 stmt.executeQuery("SELECT * FROM mmp_user_master where mmp_user_master_name = '" + username +
