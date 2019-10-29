@@ -4,7 +4,8 @@
 @namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
 
 .login_background {
-    background-color: #a5e6ec;
+    /*background-color: #a5e6ec;*/
+    background-color: White;
 }
 
 .content_pannel_acc {
