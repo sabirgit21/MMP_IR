@@ -37,7 +37,7 @@ public class Login {
     // generating static variables to use in different scopes
     private static String role_master_id;
     private static String user_master_id;
-    private static String member_reg_id;
+//    private static String member_reg_id;
     private static String sessUName;
 
 
@@ -157,7 +157,7 @@ public class Login {
                 //System.out.println(".........MMP_User Password stored in session is :..." + password + "...");
                 System.out.println(".........MMP_User Role stored in session is :..." + role_master_id + "...");
                 System.out.println(".........MMP_User Master ID stored in session is :..." + user_master_id + "...");
-                System.out.println(".........Member Registration ID stored in session is :..." + member_reg_id + "...");
+//                System.out.println(".........Member Registration ID stored in session is :..." + member_reg_id + "...");
 
                 //Redirecting to home page after successfull authentication
                 //System.out.println("....... here we go /// you are redirecting now to DASHBOARD ......");
