@@ -102,9 +102,9 @@
                         <af:gridRow marginTop="5px" height="auto" id="gr2">
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
                                             <af:button actionListener="#{bindings.CreateInsert.execute}"
-                                                       text="CreateInsert" disabled="#{!bindings.CreateInsert.enabled}"
+                                                       text="Add" disabled="#{!bindings.CreateInsert.enabled}"
                                                        id="b2"/>
-                                            <af:button actionListener="#{bindings.Execute.execute}" text="Execute"
+                                            <af:button actionListener="#{bindings.Execute.execute}" text="Verify Editing"
                                                        disabled="#{!bindings.Execute.enabled}" id="b3"/>
                                             <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
                                                        disabled="#{!bindings.Delete.enabled}" id="b4"/>
@@ -229,11 +229,11 @@
                         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
                                             <af:button actionListener="#{bindings.CreateInsert1.execute}"
-                                                       text="CreateInsert1"
+                                                       text="Add"
                                                        disabled="#{!bindings.CreateInsert1.enabled}" id="b5"/>
-                                            <af:button actionListener="#{bindings.Execute1.execute}" text="Execute1"
+                                            <af:button actionListener="#{bindings.Execute1.execute}" text="Verify Editing"
                                                        disabled="#{!bindings.Execute1.enabled}" id="b6"/>
-                                            <af:button actionListener="#{bindings.Delete1.execute}" text="Delete1"
+                                            <af:button actionListener="#{bindings.Delete1.execute}" text="Delete"
                                                        disabled="#{!bindings.Delete1.enabled}" id="b7"/>
                                         </af:gridCell>
                         </af:gridRow>
@@ -397,7 +397,7 @@
                                                         </af:column>
                                                     </af:table>
                                                     <af:button actionListener="#{bindings.Execute2.execute}"
-                                                               text="Execute2" disabled="#{!bindings.Execute2.enabled}"
+                                                               text="Verify Editing" disabled="#{!bindings.Execute2.enabled}"
                                                                id="b8"/>
                                                 </af:showDetailItem>
                                     <af:showDetailItem text="Pages" id="sdi2">
@@ -495,7 +495,7 @@
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpREdit.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="Edit"
+                                                                   headertext="Verify Editing"
                                                                    id="c22" width="60">
                                                             <af:selectOneChoice value="#{row.bindings.MmpREdit.inputValue}"
                                                                                 label="#{row.bindings.MmpREdit.label}"
@@ -568,7 +568,7 @@
                                                         </af:column>
                                                     </af:table>
                                                     <af:button actionListener="#{bindings.Execute3.execute}"
-                                                               text="Execute3" disabled="#{!bindings.Execute3.enabled}"
+                                                               text="Verify Editing" disabled="#{!bindings.Execute3.enabled}"
                                                                id="b9"/>
                                                 </af:showDetailItem>
                                     <af:showDetailItem text="Reports" id="sdi3">
@@ -653,7 +653,7 @@
                                                         </af:column>
                                                     </af:table>
                                                     <af:button actionListener="#{bindings.Execute4.execute}"
-                                                               text="Execute4" disabled="#{!bindings.Execute4.enabled}"
+                                                               text="Verify Editing" disabled="#{!bindings.Execute4.enabled}"
                                                                id="b11"/>
                                                 </af:showDetailItem>
                                 </af:panelTabbed>

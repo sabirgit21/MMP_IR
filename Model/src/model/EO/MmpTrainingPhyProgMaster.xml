@@ -12,13 +12,14 @@
   BindingStyle="OracleName">
   <Attribute
     Name="MmpTrngPhyProgMstId"
-    IsNotNull="true"
     ColumnName="MMP_TRNG_PHY_PROG_MST_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_PHY_PROG_MASTER"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="PhaseId"
     ColumnName="PHASE_ID"
