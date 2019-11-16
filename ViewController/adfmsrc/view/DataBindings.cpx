@@ -40,6 +40,10 @@
           usageId="view_Report_Physical_Progress_TaskFlow_Report_Physical_Progress_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Monitoring/Report_Physical_Progress.jsff"
           usageId="view_Report_Physical_ProgressPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Monitoring/Farmer_Verification_TaskFlow.xml#Farmer_Verification_TaskFlow@ExecuteWithParams"
+          usageId="view_Farmer_Verification_TaskFlow_Farmer_Verification_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Monitoring/Farmer_Verification.jsff"
+          usageId="view_Farmer_VerificationPageDef"/>
   </pageMap>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"
@@ -82,5 +86,8 @@
           path="Task_Flows.Modules.Monitoring.Report_Physical_Progress_TaskFlow_Report_Physical_Progress_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Report_Physical_ProgressPageDef"
           path="Fragments.Modules.Monitoring.Report_Physical_ProgressPageDef"/>
+    <page id="view_Farmer_Verification_TaskFlow_Farmer_Verification_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Monitoring.Farmer_Verification_TaskFlow_Farmer_Verification_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Farmer_VerificationPageDef" path="Fragments.Modules.Monitoring.Farmer_VerificationPageDef"/>
   </pageDefinitionUsages>
 </Application>

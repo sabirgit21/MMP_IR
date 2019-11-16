@@ -1,0 +1,1429 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+    <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+        <af:showDetailItem id="pane1" text="Farmer Verification &amp; Correction">
+            <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                           icon="#{resource['images:cancel.png']}" iconPosition="top">
+                    <af:resetActionListener/>
+                </af:button>
+                <af:spacer width="10" height="10" id="s9"/>
+                <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                           disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                           iconPosition="top"/>
+                <af:spacer width="10" height="10" id="s1"/>
+            </af:panelGroupLayout>
+            <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                <af:showDetailItem id="tab3" text="Farmer Verification">
+                    <af:panelGridLayout id="pgl1">
+                        <af:gridRow marginTop="5px" height="auto" id="gr1">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr2">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                                <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+                                    <af:showDetailItem id="tab1" text="Farmer Registration">
+                                        <af:panelGridLayout id="pgl6">
+                                            <af:gridRow marginTop="5px" height="auto" id="gr11">
+                                                <af:gridCell marginStart="5px" width="auto" id="gc11">
+                                                     <af:panelFormLayout id="pfl1" maxColumns="2" rows="4">
+                                            <af:inputText value="#{bindings.FarmerRegId.inputValue}"
+                                                          label="#{bindings.FarmerRegId.hints.label}"
+                                                          required="#{bindings.FarmerRegId.hints.mandatory}"
+                                                          columns="#{bindings.FarmerRegId.hints.displayWidth}"
+                                                          maximumLength="#{bindings.FarmerRegId.hints.precision}"
+                                                          shortDesc="#{bindings.FarmerRegId.hints.tooltip}" id="it1">
+                                                <f:validator binding="#{bindings.FarmerRegId.validator}"/>
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.FarmerRegId.format}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.FarmerNo.inputValue}"
+                                                          label="#{bindings.FarmerNo.hints.label}"
+                                                          required="#{bindings.FarmerNo.hints.mandatory}"
+                                                          columns="#{bindings.FarmerNo.hints.displayWidth}"
+                                                          maximumLength="#{bindings.FarmerNo.hints.precision}"
+                                                          shortDesc="#{bindings.FarmerNo.hints.tooltip}" id="it2">
+                                                <f:validator binding="#{bindings.FarmerNo.validator}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.Name.inputValue}"
+                                                          label="#{bindings.Name.hints.label}"
+                                                          required="#{bindings.Name.hints.mandatory}"
+                                                          columns="20"
+                                                          maximumLength="#{bindings.Name.hints.precision}"
+                                                          shortDesc="#{bindings.Name.hints.tooltip}" id="it3">
+                                                <f:validator binding="#{bindings.Name.validator}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.FatherName.inputValue}"
+                                                          label="#{bindings.FatherName.hints.label}"
+                                                          required="#{bindings.FatherName.hints.mandatory}"
+                                                          columns="20"
+                                                          maximumLength="#{bindings.FatherName.hints.precision}"
+                                                          shortDesc="#{bindings.FatherName.hints.tooltip}" id="it4">
+                                                <f:validator binding="#{bindings.FatherName.validator}"/>
+                                            </af:inputText>
+                                            <af:selectOneChoice value="#{bindings.Ast.inputValue}"
+                                                                label="#{bindings.Ast.label}"
+                                                                required="#{bindings.Ast.hints.mandatory}"
+                                                                shortDesc="#{bindings.Ast.hints.tooltip}" id="soc1">
+                                                <f:selectItems value="#{bindings.Ast.items}" id="si1"/>
+                                                <f:validator binding="#{bindings.Ast.validator}"/>
+                                            </af:selectOneChoice>
+                                            <af:selectOneChoice value="#{bindings.Gender.inputValue}"
+                                                                label="#{bindings.Gender.label}"
+                                                                required="#{bindings.Gender.hints.mandatory}"
+                                                                shortDesc="#{bindings.Gender.hints.tooltip}" id="soc2">
+                                                <f:selectItems value="#{bindings.Gender.items}" id="si2"/>
+                                                <f:validator binding="#{bindings.Gender.validator}"/>
+                                            </af:selectOneChoice>
+                                            <af:inputText value="#{bindings.Image.inputValue}"
+                                                         partialTriggers="b11"
+                                                         readOnly="true"
+                                                          label="#{bindings.Image.hints.label}"
+                                                          required="#{bindings.Image.hints.mandatory}"
+                                                          columns="20"
+                                                          maximumLength="#{bindings.Image.hints.precision}"
+                                                          binding="#{pageFlowScope.FileManagingBean.db_Image_Value}"
+                                                          shortDesc="#{bindings.Image.hints.tooltip}" id="it5">
+                                                <f:validator binding="#{bindings.Image.validator}"/>
+                                            </af:inputText>
+                                            <f:facet name="footer">
+                                                <af:panelGroupLayout layout="horizontal" id="pgl3">
+                                                    <af:button actionListener="#{bindings.First.execute}" text="First"
+                                                               disabled="#{!bindings.First.enabled}"
+                                                               partialSubmit="true" id="b2"/>
+                                                    <af:button actionListener="#{bindings.Previous.execute}"
+                                                               text="Previous" disabled="#{!bindings.Previous.enabled}"
+                                                               partialSubmit="true" id="b3"/>
+                                                    <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                               id="b4"/>
+                                                    <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                               id="b5"/>
+                                                </af:panelGroupLayout>
+                                            </f:facet>
+                                        </af:panelFormLayout>
+                                                </af:gridCell>
+                                                <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc12">
+                                                    <af:panelGroupLayout id="pgl5" layout="vertical" inlineStyle="margin-top: 20%; margin-left: 5%;">
+                                        <af:image id="i1"
+                                                  shortDesc="Upload image or refresh page to render properly"
+                                                  inlineStyle="height:100px;"               
+                                                  source="/imageservlet?imageNameParam=#{bindings.Image.inputValue}"
+                                                  partialTriggers="it5"/>
+                                        <af:inputFile id="if1" value="#{pageFlowScope.FileManagingBean.file}"/>
+                                        <af:button text="Save Image" id="b11" partialSubmit="true" 
+                                                   actionListener="#{pageFlowScope.FileManagingBean.UploadFarmerImage}"/>
+                                    </af:panelGroupLayout>
+                                                </af:gridCell>
+                                            </af:gridRow>
+                                            <!--<af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr12">
+                                                <af:gridCell marginStart="5px" width="auto" id="gc13"/>
+                                                <af:gridCell marginStart="5px" width="auto" marginEnd="5px" id="gc14"/>
+                                            </af:gridRow>-->
+                                        </af:panelGridLayout>
+                                       
+                                    </af:showDetailItem>
+                                </af:panelTabbed>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr3">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"></af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr4">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                                <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                                    <af:showDetailItem id="tab2" text="Farmer Detail">
+                                        <af:table value="#{bindings.TblFarmerRegView1.collectionModel}" var="row"
+                                                  rows="#{bindings.TblFarmerRegView1.rangeSize}"
+                                                  emptyText="#{bindings.TblFarmerRegView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.TblFarmerRegView1.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.TblFarmerRegView1.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.TblFarmerRegView1.rangeSize}"
+                                                  filterModel="#{bindings.TblFarmerRegView1Query.queryDescriptor}"
+                                                  filterVisible="true"
+                                                  queryListener="#{bindings.TblFarmerRegView1Query.processQuery}"
+                                                  varStatus="vs" id="t1" partialTriggers="::b2 ::b3 ::b4 ::b5">
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.Gender.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.Gender.label}"
+                                                       id="c1">
+                                                <af:selectOneChoice value="#{row.bindings.Gender.inputValue}"
+                                                                    label="#{row.bindings.Gender.label}"
+                                                                    required="#{bindings.TblFarmerRegView1.hints.Gender.mandatory}"
+                                                                    shortDesc="#{bindings.TblFarmerRegView1.hints.Gender.tooltip}"
+                                                                    id="soc3">
+                                                    <f:selectItems value="#{row.bindings.Gender.items}" id="si3"/>
+                                                    <f:validator binding="#{row.bindings.Gender.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.ClusterId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.ClusterId.label}"
+                                                       id="c2">
+                                                <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
+                                                                    label="#{row.bindings.ClusterId.label}"
+                                                                    required="#{bindings.TblFarmerRegView1.hints.ClusterId.mandatory}"
+                                                                    shortDesc="#{bindings.TblFarmerRegView1.hints.ClusterId.tooltip}"
+                                                                    id="soc4">
+                                                    <f:selectItems value="#{row.bindings.ClusterId.items}" id="si4"/>
+                                                    <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.BeneficiaryId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.BeneficiaryId.label}"
+                                                       id="c3">
+                                                <af:inputText value="#{row.bindings.BeneficiaryId.inputValue}"
+                                                              label="#{bindings.TblFarmerRegView1.hints.BeneficiaryId.label}"
+                                                              required="#{bindings.TblFarmerRegView1.hints.BeneficiaryId.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegView1.hints.BeneficiaryId.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegView1.hints.BeneficiaryId.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegView1.hints.BeneficiaryId.tooltip}"
+                                                              id="it6">
+                                                    <f:validator binding="#{row.bindings.BeneficiaryId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblFarmerRegView1.hints.BeneficiaryId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.MarStatus.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.MarStatus.label}"
+                                                       id="c4">
+                                                <af:selectOneChoice value="#{row.bindings.MarStatus.inputValue}"
+                                                                    label="#{row.bindings.MarStatus.label}"
+                                                                    required="#{bindings.TblFarmerRegView1.hints.MarStatus.mandatory}"
+                                                                    shortDesc="#{bindings.TblFarmerRegView1.hints.MarStatus.tooltip}"
+                                                                    id="soc5">
+                                                    <f:selectItems value="#{row.bindings.MarStatus.items}" id="si5"/>
+                                                    <f:validator binding="#{row.bindings.MarStatus.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.Dob.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.Dob.label}"
+                                                       id="c5">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.TblFarmerRegView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dob.value}"
+                                                                  id="id1">
+                                                        <af:convertDateTime pattern="#{bindings.TblFarmerRegView1.hints.Dob.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.Dob.inputValue}"
+                                                              label="#{bindings.TblFarmerRegView1.hints.Dob.label}"
+                                                              required="#{bindings.TblFarmerRegView1.hints.Dob.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegView1.hints.Dob.displayWidth}"
+                                                              shortDesc="#{bindings.TblFarmerRegView1.hints.Dob.tooltip}"
+                                                              id="id2">
+                                                    <f:validator binding="#{row.bindings.Dob.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.TblFarmerRegView1.hints.Dob.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.Doj.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.Doj.label}"
+                                                       id="c6">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.TblFarmerRegView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Doj.value}"
+                                                                  id="id3">
+                                                        <af:convertDateTime pattern="#{bindings.TblFarmerRegView1.hints.Doj.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.Doj.inputValue}"
+                                                              label="#{bindings.TblFarmerRegView1.hints.Doj.label}"
+                                                              required="#{bindings.TblFarmerRegView1.hints.Doj.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegView1.hints.Doj.displayWidth}"
+                                                              shortDesc="#{bindings.TblFarmerRegView1.hints.Doj.tooltip}"
+                                                              id="id4">
+                                                    <f:validator binding="#{row.bindings.Doj.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.TblFarmerRegView1.hints.Doj.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.Ntn.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.Ntn.label}"
+                                                       id="c7">
+                                                <af:inputText value="#{row.bindings.Ntn.inputValue}"
+                                                              label="#{bindings.TblFarmerRegView1.hints.Ntn.label}"
+                                                              required="#{bindings.TblFarmerRegView1.hints.Ntn.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegView1.hints.Ntn.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegView1.hints.Ntn.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegView1.hints.Ntn.tooltip}"
+                                                              id="it7">
+                                                    <f:validator binding="#{row.bindings.Ntn.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.PassNo.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.PassNo.label}"
+                                                       id="c8">
+                                                <af:inputText value="#{row.bindings.PassNo.inputValue}"
+                                                              label="#{bindings.TblFarmerRegView1.hints.PassNo.label}"
+                                                              required="#{bindings.TblFarmerRegView1.hints.PassNo.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegView1.hints.PassNo.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegView1.hints.PassNo.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegView1.hints.PassNo.tooltip}"
+                                                              id="it8">
+                                                    <f:validator binding="#{row.bindings.PassNo.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.Cnic.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.Cnic.label}"
+                                                       id="c9">
+                                                <af:inputText value="#{row.bindings.Cnic.inputValue}"
+                                                              label="#{bindings.TblFarmerRegView1.hints.Cnic.label}"
+                                                              required="#{bindings.TblFarmerRegView1.hints.Cnic.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegView1.hints.Cnic.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegView1.hints.Cnic.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegView1.hints.Cnic.tooltip}"
+                                                              id="it9">
+                                                    <f:validator binding="#{row.bindings.Cnic.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.DrLicNo.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.DrLicNo.label}"
+                                                       id="c10">
+                                                <af:inputText value="#{row.bindings.DrLicNo.inputValue}"
+                                                              label="#{bindings.TblFarmerRegView1.hints.DrLicNo.label}"
+                                                              required="#{bindings.TblFarmerRegView1.hints.DrLicNo.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegView1.hints.DrLicNo.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegView1.hints.DrLicNo.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegView1.hints.DrLicNo.tooltip}"
+                                                              id="it10">
+                                                    <f:validator binding="#{row.bindings.DrLicNo.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.Telephone.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.Telephone.label}"
+                                                       id="c11">
+                                                <af:inputText value="#{row.bindings.Telephone.inputValue}"
+                                                              label="#{bindings.TblFarmerRegView1.hints.Telephone.label}"
+                                                              required="#{bindings.TblFarmerRegView1.hints.Telephone.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegView1.hints.Telephone.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegView1.hints.Telephone.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegView1.hints.Telephone.tooltip}"
+                                                              id="it11">
+                                                    <f:validator binding="#{row.bindings.Telephone.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.Mobile.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.Mobile.label}"
+                                                       id="c12">
+                                                <af:inputText value="#{row.bindings.Mobile.inputValue}"
+                                                              label="#{bindings.TblFarmerRegView1.hints.Mobile.label}"
+                                                              required="#{bindings.TblFarmerRegView1.hints.Mobile.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegView1.hints.Mobile.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegView1.hints.Mobile.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegView1.hints.Mobile.tooltip}"
+                                                              id="it12">
+                                                    <f:validator binding="#{row.bindings.Mobile.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.Email.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.Email.label}"
+                                                       id="c13">
+                                                <af:inputText value="#{row.bindings.Email.inputValue}"
+                                                              label="#{bindings.TblFarmerRegView1.hints.Email.label}"
+                                                              required="#{bindings.TblFarmerRegView1.hints.Email.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegView1.hints.Email.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegView1.hints.Email.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegView1.hints.Email.tooltip}"
+                                                              id="it13">
+                                                    <f:validator binding="#{row.bindings.Email.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.Url.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.Url.label}"
+                                                       id="c14">
+                                                <af:inputText value="#{row.bindings.Url.inputValue}"
+                                                              label="#{bindings.TblFarmerRegView1.hints.Url.label}"
+                                                              required="#{bindings.TblFarmerRegView1.hints.Url.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegView1.hints.Url.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegView1.hints.Url.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegView1.hints.Url.tooltip}"
+                                                              id="it14">
+                                                    <f:validator binding="#{row.bindings.Url.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.PreAddress.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.PreAddress.label}"
+                                                       id="c15">
+                                                <af:inputText value="#{row.bindings.PreAddress.inputValue}"
+                                                              label="#{bindings.TblFarmerRegView1.hints.PreAddress.label}"
+                                                              required="#{bindings.TblFarmerRegView1.hints.PreAddress.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegView1.hints.PreAddress.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegView1.hints.PreAddress.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegView1.hints.PreAddress.tooltip}"
+                                                              id="it15">
+                                                    <f:validator binding="#{row.bindings.PreAddress.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.PerAddress.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.PerAddress.label}"
+                                                       id="c16">
+                                                <af:inputText value="#{row.bindings.PerAddress.inputValue}"
+                                                              label="#{bindings.TblFarmerRegView1.hints.PerAddress.label}"
+                                                              required="#{bindings.TblFarmerRegView1.hints.PerAddress.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegView1.hints.PerAddress.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegView1.hints.PerAddress.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegView1.hints.PerAddress.tooltip}"
+                                                              id="it16">
+                                                    <f:validator binding="#{row.bindings.PerAddress.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.FarmerRegTehsil.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.FarmerRegTehsil.label}"
+                                                       id="c17">
+                                                <af:selectOneChoice value="#{row.bindings.FarmerRegTehsil.inputValue}"
+                                                                    label="#{row.bindings.FarmerRegTehsil.label}"
+                                                                    required="#{bindings.TblFarmerRegView1.hints.FarmerRegTehsil.mandatory}"
+                                                                    shortDesc="#{bindings.TblFarmerRegView1.hints.FarmerRegTehsil.tooltip}"
+                                                                    id="soc6">
+                                                    <f:selectItems value="#{row.bindings.FarmerRegTehsil.items}"
+                                                                   id="si6"/>
+                                                    <f:validator binding="#{row.bindings.FarmerRegTehsil.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.FarmerRegDistrict.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.FarmerRegDistrict.label}"
+                                                       id="c18">
+                                                <af:selectOneChoice value="#{row.bindings.FarmerRegDistrict.inputValue}"
+                                                                    label="#{row.bindings.FarmerRegDistrict.label}"
+                                                                    required="#{bindings.TblFarmerRegView1.hints.FarmerRegDistrict.mandatory}"
+                                                                    shortDesc="#{bindings.TblFarmerRegView1.hints.FarmerRegDistrict.tooltip}"
+                                                                    id="soc7">
+                                                    <f:selectItems value="#{row.bindings.FarmerRegDistrict.items}"
+                                                                   id="si7"/>
+                                                    <f:validator binding="#{row.bindings.FarmerRegDistrict.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegView1.hints.GrantStatus.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegView1.hints.GrantStatus.label}"
+                                                       id="c19">
+                                                <af:inputText value="#{row.bindings.GrantStatus.inputValue}"
+                                                              label="#{bindings.TblFarmerRegView1.hints.GrantStatus.label}"
+                                                              required="#{bindings.TblFarmerRegView1.hints.GrantStatus.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegView1.hints.GrantStatus.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegView1.hints.GrantStatus.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegView1.hints.GrantStatus.tooltip}"
+                                                              id="it17">
+                                                    <f:validator binding="#{row.bindings.GrantStatus.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                        </af:table>
+                                    </af:showDetailItem>
+                                    <af:showDetailItem id="sdi4" text="Farmer Land">
+                                        <af:table value="#{bindings.TblFarmerRegLandView2.collectionModel}" var="row"
+                                                  rows="#{bindings.TblFarmerRegLandView2.rangeSize}"
+                                                  emptyText="#{bindings.TblFarmerRegLandView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.TblFarmerRegLandView2.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.TblFarmerRegLandView2.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.TblFarmerRegLandView2.rangeSize}"
+                                                  filterModel="#{bindings.TblFarmerRegLandView2Query.queryDescriptor}"
+                                                  filterVisible="true"
+                                                  queryListener="#{bindings.TblFarmerRegLandView2Query.processQuery}"
+                                                  varStatus="vs" id="t2">
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.FarmerRegLandId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.FarmerRegLandId.label}"
+                                                       id="c20">
+                                                <af:inputText value="#{row.bindings.FarmerRegLandId.inputValue}"
+                                                              label="#{bindings.TblFarmerRegLandView2.hints.FarmerRegLandId.label}"
+                                                              required="#{bindings.TblFarmerRegLandView2.hints.FarmerRegLandId.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegLandView2.hints.FarmerRegLandId.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegLandView2.hints.FarmerRegLandId.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegLandView2.hints.FarmerRegLandId.tooltip}"
+                                                              id="it18">
+                                                    <f:validator binding="#{row.bindings.FarmerRegLandId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblFarmerRegLandView2.hints.FarmerRegLandId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.FarmerRegId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.FarmerRegId.label}"
+                                                       id="c21">
+                                                <af:inputText value="#{row.bindings.FarmerRegId.inputValue}"
+                                                              label="#{bindings.TblFarmerRegLandView2.hints.FarmerRegId.label}"
+                                                              required="#{bindings.TblFarmerRegLandView2.hints.FarmerRegId.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegLandView2.hints.FarmerRegId.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegLandView2.hints.FarmerRegId.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegLandView2.hints.FarmerRegId.tooltip}"
+                                                              id="it19">
+                                                    <f:validator binding="#{row.bindings.FarmerRegId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblFarmerRegLandView2.hints.FarmerRegId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.LandAcre.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.LandAcre.label}"
+                                                       id="c22">
+                                                <af:inputText value="#{row.bindings.LandAcre.inputValue}"
+                                                              label="#{bindings.TblFarmerRegLandView2.hints.LandAcre.label}"
+                                                              required="#{bindings.TblFarmerRegLandView2.hints.LandAcre.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegLandView2.hints.LandAcre.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegLandView2.hints.LandAcre.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegLandView2.hints.LandAcre.tooltip}"
+                                                              id="it20">
+                                                    <f:validator binding="#{row.bindings.LandAcre.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblFarmerRegLandView2.hints.LandAcre.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.LandKanal.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.LandKanal.label}"
+                                                       id="c23">
+                                                <af:inputText value="#{row.bindings.LandKanal.inputValue}"
+                                                              label="#{bindings.TblFarmerRegLandView2.hints.LandKanal.label}"
+                                                              required="#{bindings.TblFarmerRegLandView2.hints.LandKanal.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegLandView2.hints.LandKanal.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegLandView2.hints.LandKanal.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegLandView2.hints.LandKanal.tooltip}"
+                                                              id="it21">
+                                                    <f:validator binding="#{row.bindings.LandKanal.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblFarmerRegLandView2.hints.LandKanal.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.PresentProd.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.PresentProd.label}"
+                                                       id="c24">
+                                                <af:inputText value="#{row.bindings.PresentProd.inputValue}"
+                                                              label="#{bindings.TblFarmerRegLandView2.hints.PresentProd.label}"
+                                                              required="#{bindings.TblFarmerRegLandView2.hints.PresentProd.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegLandView2.hints.PresentProd.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegLandView2.hints.PresentProd.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegLandView2.hints.PresentProd.tooltip}"
+                                                              id="it22">
+                                                    <f:validator binding="#{row.bindings.PresentProd.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblFarmerRegLandView2.hints.PresentProd.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.LandUnderOrch.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.LandUnderOrch.label}"
+                                                       id="c25">
+                                                <af:inputText value="#{row.bindings.LandUnderOrch.inputValue}"
+                                                              label="#{bindings.TblFarmerRegLandView2.hints.LandUnderOrch.label}"
+                                                              required="#{bindings.TblFarmerRegLandView2.hints.LandUnderOrch.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegLandView2.hints.LandUnderOrch.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegLandView2.hints.LandUnderOrch.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegLandView2.hints.LandUnderOrch.tooltip}"
+                                                              id="it23">
+                                                    <f:validator binding="#{row.bindings.LandUnderOrch.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblFarmerRegLandView2.hints.LandUnderOrch.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.SelfshipType.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.SelfshipType.label}"
+                                                       id="c26">
+                                                <af:selectOneChoice value="#{row.bindings.SelfshipType.inputValue}"
+                                                                    label="#{row.bindings.SelfshipType.label}"
+                                                                    required="#{bindings.TblFarmerRegLandView2.hints.SelfshipType.mandatory}"
+                                                                    shortDesc="#{bindings.TblFarmerRegLandView2.hints.SelfshipType.tooltip}"
+                                                                    id="soc8">
+                                                    <f:selectItems value="#{row.bindings.SelfshipType.items}" id="si8"/>
+                                                    <f:validator binding="#{row.bindings.SelfshipType.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.SelfLocalMark.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.SelfLocalMark.label}"
+                                                       id="c27">
+                                                <af:selectOneChoice value="#{row.bindings.SelfLocalMark.inputValue}"
+                                                                    label="#{row.bindings.SelfLocalMark.label}"
+                                                                    required="#{bindings.TblFarmerRegLandView2.hints.SelfLocalMark.mandatory}"
+                                                                    shortDesc="#{bindings.TblFarmerRegLandView2.hints.SelfLocalMark.tooltip}"
+                                                                    id="soc9">
+                                                    <f:selectItems value="#{row.bindings.SelfLocalMark.items}"
+                                                                   id="si9"/>
+                                                    <f:validator binding="#{row.bindings.SelfLocalMark.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.SelfExportMark.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.SelfExportMark.label}"
+                                                       id="c28">
+                                                <af:selectOneChoice value="#{row.bindings.SelfExportMark.inputValue}"
+                                                                    label="#{row.bindings.SelfExportMark.label}"
+                                                                    required="#{bindings.TblFarmerRegLandView2.hints.SelfExportMark.mandatory}"
+                                                                    shortDesc="#{bindings.TblFarmerRegLandView2.hints.SelfExportMark.tooltip}"
+                                                                    id="soc10">
+                                                    <f:selectItems value="#{row.bindings.SelfExportMark.items}"
+                                                                   id="si10"/>
+                                                    <f:validator binding="#{row.bindings.SelfExportMark.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.ContractMark.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.ContractMark.label}"
+                                                       id="c29">
+                                                <af:selectOneChoice value="#{row.bindings.ContractMark.inputValue}"
+                                                                    label="#{row.bindings.ContractMark.label}"
+                                                                    required="#{bindings.TblFarmerRegLandView2.hints.ContractMark.mandatory}"
+                                                                    shortDesc="#{bindings.TblFarmerRegLandView2.hints.ContractMark.tooltip}"
+                                                                    id="soc11">
+                                                    <f:selectItems value="#{row.bindings.ContractMark.items}"
+                                                                   id="si11"/>
+                                                    <f:validator binding="#{row.bindings.ContractMark.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.KhatooniNo.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.KhatooniNo.label}"
+                                                       id="c30">
+                                                <af:inputText value="#{row.bindings.KhatooniNo.inputValue}"
+                                                              label="#{bindings.TblFarmerRegLandView2.hints.KhatooniNo.label}"
+                                                              required="#{bindings.TblFarmerRegLandView2.hints.KhatooniNo.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegLandView2.hints.KhatooniNo.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegLandView2.hints.KhatooniNo.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegLandView2.hints.KhatooniNo.tooltip}"
+                                                              id="it24">
+                                                    <f:validator binding="#{row.bindings.KhatooniNo.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblFarmerRegLandView2.hints.KhatooniNo.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.KhauuetNo.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.KhauuetNo.label}"
+                                                       id="c31">
+                                                <af:inputText value="#{row.bindings.KhauuetNo.inputValue}"
+                                                              label="#{bindings.TblFarmerRegLandView2.hints.KhauuetNo.label}"
+                                                              required="#{bindings.TblFarmerRegLandView2.hints.KhauuetNo.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegLandView2.hints.KhauuetNo.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegLandView2.hints.KhauuetNo.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegLandView2.hints.KhauuetNo.tooltip}"
+                                                              id="it25">
+                                                    <f:validator binding="#{row.bindings.KhauuetNo.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblFarmerRegLandView2.hints.KhauuetNo.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.QittaNo.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.QittaNo.label}"
+                                                       id="c32">
+                                                <af:inputText value="#{row.bindings.QittaNo.inputValue}"
+                                                              label="#{bindings.TblFarmerRegLandView2.hints.QittaNo.label}"
+                                                              required="#{bindings.TblFarmerRegLandView2.hints.QittaNo.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegLandView2.hints.QittaNo.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegLandView2.hints.QittaNo.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegLandView2.hints.QittaNo.tooltip}"
+                                                              id="it26">
+                                                    <f:validator binding="#{row.bindings.QittaNo.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblFarmerRegLandView2.hints.QittaNo.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.KhasraNo.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.KhasraNo.label}"
+                                                       id="c33">
+                                                <af:inputText value="#{row.bindings.KhasraNo.inputValue}"
+                                                              label="#{bindings.TblFarmerRegLandView2.hints.KhasraNo.label}"
+                                                              required="#{bindings.TblFarmerRegLandView2.hints.KhasraNo.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegLandView2.hints.KhasraNo.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegLandView2.hints.KhasraNo.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegLandView2.hints.KhasraNo.tooltip}"
+                                                              id="it27">
+                                                    <f:validator binding="#{row.bindings.KhasraNo.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblFarmerRegLandView2.hints.KhasraNo.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.CreatedDate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.CreatedDate.label}"
+                                                       id="c34">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.TblFarmerRegLandView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CreatedDate.value}"
+                                                                  id="id5">
+                                                        <af:convertDateTime pattern="#{bindings.TblFarmerRegLandView2.hints.CreatedDate.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.CreatedDate.inputValue}"
+                                                              label="#{bindings.TblFarmerRegLandView2.hints.CreatedDate.label}"
+                                                              required="#{bindings.TblFarmerRegLandView2.hints.CreatedDate.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegLandView2.hints.CreatedDate.displayWidth}"
+                                                              shortDesc="#{bindings.TblFarmerRegLandView2.hints.CreatedDate.tooltip}"
+                                                              id="id6">
+                                                    <f:validator binding="#{row.bindings.CreatedDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.TblFarmerRegLandView2.hints.CreatedDate.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.CreatedBy.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.CreatedBy.label}"
+                                                       id="c35">
+                                                <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
+                                                              label="#{bindings.TblFarmerRegLandView2.hints.CreatedBy.label}"
+                                                              required="#{bindings.TblFarmerRegLandView2.hints.CreatedBy.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegLandView2.hints.CreatedBy.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegLandView2.hints.CreatedBy.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegLandView2.hints.CreatedBy.tooltip}"
+                                                              id="it28">
+                                                    <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblFarmerRegLandView2.hints.CreatedBy.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.UpdatedDate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.UpdatedDate.label}"
+                                                       id="c36">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.TblFarmerRegLandView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.UpdatedDate.value}"
+                                                                  id="id7">
+                                                        <af:convertDateTime pattern="#{bindings.TblFarmerRegLandView2.hints.UpdatedDate.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.UpdatedDate.inputValue}"
+                                                              label="#{bindings.TblFarmerRegLandView2.hints.UpdatedDate.label}"
+                                                              required="#{bindings.TblFarmerRegLandView2.hints.UpdatedDate.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegLandView2.hints.UpdatedDate.displayWidth}"
+                                                              shortDesc="#{bindings.TblFarmerRegLandView2.hints.UpdatedDate.tooltip}"
+                                                              id="id8">
+                                                    <f:validator binding="#{row.bindings.UpdatedDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.TblFarmerRegLandView2.hints.UpdatedDate.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TblFarmerRegLandView2.hints.UpdatedBy.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TblFarmerRegLandView2.hints.UpdatedBy.label}"
+                                                       id="c37">
+                                                <af:inputText value="#{row.bindings.UpdatedBy.inputValue}"
+                                                              label="#{bindings.TblFarmerRegLandView2.hints.UpdatedBy.label}"
+                                                              required="#{bindings.TblFarmerRegLandView2.hints.UpdatedBy.mandatory}"
+                                                              columns="#{bindings.TblFarmerRegLandView2.hints.UpdatedBy.displayWidth}"
+                                                              maximumLength="#{bindings.TblFarmerRegLandView2.hints.UpdatedBy.precision}"
+                                                              shortDesc="#{bindings.TblFarmerRegLandView2.hints.UpdatedBy.tooltip}"
+                                                              id="it29">
+                                                    <f:validator binding="#{row.bindings.UpdatedBy.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TblFarmerRegLandView2.hints.UpdatedBy.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                        </af:table>
+                                    </af:showDetailItem>
+                                </af:panelTabbed>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5"></af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </af:showDetailItem>
+                <af:showDetailItem text="Issues Pinged" id="sdi1">
+                    <af:panelGridLayout id="pgl2">
+                        <af:gridRow marginTop="5px" height="auto" id="gr6">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6"/>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr7">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                                <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
+                                    <af:showDetailItem id="sdi2" text="Farmer Registration">
+                                        <af:panelFormLayout id="pfl2">
+                                            <af:inputText value="#{bindings.FarmerRegVerifId.inputValue}"
+                                                          label="#{bindings.FarmerRegVerifId.hints.label}"
+                                                          required="#{bindings.FarmerRegVerifId.hints.mandatory}"
+                                                          columns="#{bindings.FarmerRegVerifId.hints.displayWidth}"
+                                                          maximumLength="#{bindings.FarmerRegVerifId.hints.precision}"
+                                                          shortDesc="#{bindings.FarmerRegVerifId.hints.tooltip}"
+                                                          id="it30">
+                                                <f:validator binding="#{bindings.FarmerRegVerifId.validator}"/>
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.FarmerRegVerifId.format}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.FarmerNo1.inputValue}"
+                                                          label="#{bindings.FarmerNo1.hints.label}"
+                                                          required="#{bindings.FarmerNo1.hints.mandatory}"
+                                                          columns="#{bindings.FarmerNo1.hints.displayWidth}"
+                                                          maximumLength="#{bindings.FarmerNo1.hints.precision}"
+                                                          shortDesc="#{bindings.FarmerNo1.hints.tooltip}" id="it31">
+                                                <f:validator binding="#{bindings.FarmerNo1.validator}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.NameVerif.inputValue}"
+                                                          label="#{bindings.NameVerif.hints.label}"
+                                                          required="#{bindings.NameVerif.hints.mandatory}"
+                                                          columns="#{bindings.NameVerif.hints.displayWidth}"
+                                                          maximumLength="#{bindings.NameVerif.hints.precision}"
+                                                          shortDesc="#{bindings.NameVerif.hints.tooltip}" id="it32">
+                                                <f:validator binding="#{bindings.NameVerif.validator}"/>
+                                            </af:inputText>
+                                            <af:inputText value="#{bindings.FatherName1.inputValue}"
+                                                          label="#{bindings.FatherName1.hints.label}"
+                                                          required="#{bindings.FatherName1.hints.mandatory}"
+                                                          columns="#{bindings.FatherName1.hints.displayWidth}"
+                                                          maximumLength="#{bindings.FatherName1.hints.precision}"
+                                                          shortDesc="#{bindings.FatherName1.hints.tooltip}" id="it33">
+                                                <f:validator binding="#{bindings.FatherName1.validator}"/>
+                                            </af:inputText>
+                                            <af:selectOneChoice value="#{bindings.Ast1.inputValue}"
+                                                                label="#{bindings.Ast1.label}"
+                                                                required="#{bindings.Ast1.hints.mandatory}"
+                                                                shortDesc="#{bindings.Ast1.hints.tooltip}" id="soc12">
+                                                <f:selectItems value="#{bindings.Ast1.items}" id="si12"/>
+                                                <f:validator binding="#{bindings.Ast1.validator}"/>
+                                            </af:selectOneChoice>
+                                            <af:selectOneChoice value="#{bindings.Gender1.inputValue}"
+                                                                label="#{bindings.Gender1.label}"
+                                                                required="#{bindings.Gender1.hints.mandatory}"
+                                                                shortDesc="#{bindings.Gender1.hints.tooltip}"
+                                                                id="soc13">
+                                                <f:selectItems value="#{bindings.Gender1.items}" id="si13"/>
+                                                <f:validator binding="#{bindings.Gender1.validator}"/>
+                                            </af:selectOneChoice>
+                                            <af:inputText value="#{bindings.Image1.inputValue}"
+                                                          label="#{bindings.Image1.hints.label}"
+                                                          required="#{bindings.Image1.hints.mandatory}"
+                                                          columns="#{bindings.Image1.hints.displayWidth}"
+                                                          maximumLength="#{bindings.Image1.hints.precision}"
+                                                          shortDesc="#{bindings.Image1.hints.tooltip}" id="it34">
+                                                <f:validator binding="#{bindings.Image1.validator}"/>
+                                            </af:inputText>
+                                            <f:facet name="footer">
+                                                <af:panelGroupLayout layout="horizontal" id="pgl7">
+                                                    <af:button actionListener="#{bindings.First1.execute}" text="First1"
+                                                               disabled="#{!bindings.First1.enabled}"
+                                                               partialSubmit="true" id="b6"/>
+                                                    <af:button actionListener="#{bindings.Previous1.execute}"
+                                                               text="Previous1"
+                                                               disabled="#{!bindings.Previous1.enabled}"
+                                                               partialSubmit="true" id="b7"/>
+                                                    <af:button actionListener="#{bindings.Next1.execute}" text="Next1"
+                                                               disabled="#{!bindings.Next1.enabled}"
+                                                               partialSubmit="true" id="b8"/>
+                                                    <af:button actionListener="#{bindings.Last1.execute}" text="Last1"
+                                                               disabled="#{!bindings.Last1.enabled}"
+                                                               partialSubmit="true" id="b9"/>
+                                                </af:panelGroupLayout>
+                                            </f:facet>
+                                        </af:panelFormLayout>
+                                    </af:showDetailItem>
+                                </af:panelTabbed>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr8">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8"></af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" id="gr9">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9">
+                                <af:panelTabbed position="above" id="pt5" styleClass="tabel_pannel_tab">
+                                    <af:showDetailItem id="sdi3" text="Farmer Detail">
+                                        <af:table value="#{bindings.MmpFarmerRegVerifView1.collectionModel}" var="row"
+                                                  rows="#{bindings.MmpFarmerRegVerifView1.rangeSize}"
+                                                  emptyText="#{bindings.MmpFarmerRegVerifView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.MmpFarmerRegVerifView1.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.MmpFarmerRegVerifView1.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.MmpFarmerRegVerifView1.rangeSize}"
+                                                  filterModel="#{bindings.MmpFarmerRegVerifView1Query.queryDescriptor}"
+                                                  filterVisible="true"
+                                                  queryListener="#{bindings.MmpFarmerRegVerifView1Query.processQuery}"
+                                                  varStatus="vs" id="t3" partialTriggers="::b6 ::b7 ::b8 ::b9">
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.ClusterId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.ClusterId.label}"
+                                                       id="c38">
+                                                <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
+                                                                    label="#{row.bindings.ClusterId.label}"
+                                                                    required="#{bindings.MmpFarmerRegVerifView1.hints.ClusterId.mandatory}"
+                                                                    shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.ClusterId.tooltip}"
+                                                                    id="soc14">
+                                                    <f:selectItems value="#{row.bindings.ClusterId.items}" id="si14"/>
+                                                    <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.BeneficiaryId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.BeneficiaryId.label}"
+                                                       id="c39">
+                                                <af:inputText value="#{row.bindings.BeneficiaryId.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifView1.hints.BeneficiaryId.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifView1.hints.BeneficiaryId.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifView1.hints.BeneficiaryId.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifView1.hints.BeneficiaryId.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.BeneficiaryId.tooltip}"
+                                                              id="it35">
+                                                    <f:validator binding="#{row.bindings.BeneficiaryId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MmpFarmerRegVerifView1.hints.BeneficiaryId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.MarStatus.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.MarStatus.label}"
+                                                       id="c40">
+                                                <af:selectOneChoice value="#{row.bindings.MarStatus.inputValue}"
+                                                                    label="#{row.bindings.MarStatus.label}"
+                                                                    required="#{bindings.MmpFarmerRegVerifView1.hints.MarStatus.mandatory}"
+                                                                    shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.MarStatus.tooltip}"
+                                                                    id="soc15">
+                                                    <f:selectItems value="#{row.bindings.MarStatus.items}" id="si15"/>
+                                                    <f:validator binding="#{row.bindings.MarStatus.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.Dob.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.Dob.label}"
+                                                       id="c41">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.MmpFarmerRegVerifView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dob.value}"
+                                                                  id="id9">
+                                                        <af:convertDateTime pattern="#{bindings.MmpFarmerRegVerifView1.hints.Dob.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.Dob.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifView1.hints.Dob.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifView1.hints.Dob.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifView1.hints.Dob.displayWidth}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.Dob.tooltip}"
+                                                              id="id10">
+                                                    <f:validator binding="#{row.bindings.Dob.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.MmpFarmerRegVerifView1.hints.Dob.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.Doj.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.Doj.label}"
+                                                       id="c42">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.MmpFarmerRegVerifView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Doj.value}"
+                                                                  id="id11">
+                                                        <af:convertDateTime pattern="#{bindings.MmpFarmerRegVerifView1.hints.Doj.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.Doj.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifView1.hints.Doj.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifView1.hints.Doj.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifView1.hints.Doj.displayWidth}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.Doj.tooltip}"
+                                                              id="id12">
+                                                    <f:validator binding="#{row.bindings.Doj.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.MmpFarmerRegVerifView1.hints.Doj.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.Ntn.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.Ntn.label}"
+                                                       id="c43">
+                                                <af:inputText value="#{row.bindings.Ntn.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifView1.hints.Ntn.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifView1.hints.Ntn.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifView1.hints.Ntn.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifView1.hints.Ntn.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.Ntn.tooltip}"
+                                                              id="it36">
+                                                    <f:validator binding="#{row.bindings.Ntn.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.PassNo.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.PassNo.label}"
+                                                       id="c44">
+                                                <af:inputText value="#{row.bindings.PassNo.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifView1.hints.PassNo.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifView1.hints.PassNo.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifView1.hints.PassNo.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifView1.hints.PassNo.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.PassNo.tooltip}"
+                                                              id="it37">
+                                                    <f:validator binding="#{row.bindings.PassNo.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.Cnic.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.Cnic.label}"
+                                                       id="c45">
+                                                <af:inputText value="#{row.bindings.Cnic.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifView1.hints.Cnic.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifView1.hints.Cnic.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifView1.hints.Cnic.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifView1.hints.Cnic.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.Cnic.tooltip}"
+                                                              id="it38">
+                                                    <f:validator binding="#{row.bindings.Cnic.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.DrLicNo.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.DrLicNo.label}"
+                                                       id="c46">
+                                                <af:inputText value="#{row.bindings.DrLicNo.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifView1.hints.DrLicNo.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifView1.hints.DrLicNo.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifView1.hints.DrLicNo.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifView1.hints.DrLicNo.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.DrLicNo.tooltip}"
+                                                              id="it39">
+                                                    <f:validator binding="#{row.bindings.DrLicNo.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.Telephone.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.Telephone.label}"
+                                                       id="c47">
+                                                <af:inputText value="#{row.bindings.Telephone.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifView1.hints.Telephone.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifView1.hints.Telephone.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifView1.hints.Telephone.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifView1.hints.Telephone.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.Telephone.tooltip}"
+                                                              id="it40">
+                                                    <f:validator binding="#{row.bindings.Telephone.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.Mobile.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.Mobile.label}"
+                                                       id="c48">
+                                                <af:inputText value="#{row.bindings.Mobile.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifView1.hints.Mobile.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifView1.hints.Mobile.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifView1.hints.Mobile.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifView1.hints.Mobile.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.Mobile.tooltip}"
+                                                              id="it41">
+                                                    <f:validator binding="#{row.bindings.Mobile.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.Email.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.Email.label}"
+                                                       id="c49">
+                                                <af:inputText value="#{row.bindings.Email.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifView1.hints.Email.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifView1.hints.Email.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifView1.hints.Email.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifView1.hints.Email.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.Email.tooltip}"
+                                                              id="it42">
+                                                    <f:validator binding="#{row.bindings.Email.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.Url.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.Url.label}"
+                                                       id="c50">
+                                                <af:inputText value="#{row.bindings.Url.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifView1.hints.Url.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifView1.hints.Url.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifView1.hints.Url.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifView1.hints.Url.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.Url.tooltip}"
+                                                              id="it43">
+                                                    <f:validator binding="#{row.bindings.Url.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.PreAddress.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.PreAddress.label}"
+                                                       id="c51">
+                                                <af:inputText value="#{row.bindings.PreAddress.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifView1.hints.PreAddress.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifView1.hints.PreAddress.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifView1.hints.PreAddress.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifView1.hints.PreAddress.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.PreAddress.tooltip}"
+                                                              id="it44">
+                                                    <f:validator binding="#{row.bindings.PreAddress.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.PerAddress.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.PerAddress.label}"
+                                                       id="c52">
+                                                <af:inputText value="#{row.bindings.PerAddress.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifView1.hints.PerAddress.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifView1.hints.PerAddress.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifView1.hints.PerAddress.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifView1.hints.PerAddress.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.PerAddress.tooltip}"
+                                                              id="it45">
+                                                    <f:validator binding="#{row.bindings.PerAddress.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.FarmerRegTehsil.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.FarmerRegTehsil.label}"
+                                                       id="c53">
+                                                <af:selectOneChoice value="#{row.bindings.FarmerRegTehsil.inputValue}"
+                                                                    label="#{row.bindings.FarmerRegTehsil.label}"
+                                                                    required="#{bindings.MmpFarmerRegVerifView1.hints.FarmerRegTehsil.mandatory}"
+                                                                    shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.FarmerRegTehsil.tooltip}"
+                                                                    id="soc16">
+                                                    <f:selectItems value="#{row.bindings.FarmerRegTehsil.items}"
+                                                                   id="si16"/>
+                                                    <f:validator binding="#{row.bindings.FarmerRegTehsil.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.FarmerRegDistrict.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.FarmerRegDistrict.label}"
+                                                       id="c54">
+                                                <af:selectOneChoice value="#{row.bindings.FarmerRegDistrict.inputValue}"
+                                                                    label="#{row.bindings.FarmerRegDistrict.label}"
+                                                                    required="#{bindings.MmpFarmerRegVerifView1.hints.FarmerRegDistrict.mandatory}"
+                                                                    shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.FarmerRegDistrict.tooltip}"
+                                                                    id="soc17">
+                                                    <f:selectItems value="#{row.bindings.FarmerRegDistrict.items}"
+                                                                   id="si17"/>
+                                                    <f:validator binding="#{row.bindings.FarmerRegDistrict.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifView1.hints.GrantStatus.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifView1.hints.GrantStatus.label}"
+                                                       id="c55">
+                                                <af:inputText value="#{row.bindings.GrantStatus.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifView1.hints.GrantStatus.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifView1.hints.GrantStatus.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifView1.hints.GrantStatus.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifView1.hints.GrantStatus.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifView1.hints.GrantStatus.tooltip}"
+                                                              id="it46">
+                                                    <f:validator binding="#{row.bindings.GrantStatus.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                        </af:table>
+                                    </af:showDetailItem>
+                                    <af:showDetailItem id="sdi5" text="Farmer Land">
+                                        <af:table value="#{bindings.MmpFarmerRegVerifLandView2.collectionModel}"
+                                                  var="row" rows="#{bindings.MmpFarmerRegVerifLandView2.rangeSize}"
+                                                  emptyText="#{bindings.MmpFarmerRegVerifLandView2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.MmpFarmerRegVerifLandView2.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.MmpFarmerRegVerifLandView2.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.MmpFarmerRegVerifLandView2.rangeSize}"
+                                                  filterModel="#{bindings.MmpFarmerRegVerifLandView2Query.queryDescriptor}"
+                                                  filterVisible="true"
+                                                  queryListener="#{bindings.MmpFarmerRegVerifLandView2Query.processQuery}"
+                                                  varStatus="vs" id="t4">
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifLandId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifLandId.label}"
+                                                       id="c56">
+                                                <af:inputText value="#{row.bindings.FarmerRegVerifLandId.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifLandId.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifLandId.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifLandId.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifLandId.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifLandId.tooltip}"
+                                                              id="it47">
+                                                    <f:validator binding="#{row.bindings.FarmerRegVerifLandId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifLandId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifId.label}"
+                                                       id="c57">
+                                                <af:inputText value="#{row.bindings.FarmerRegVerifId.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifId.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifId.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifId.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifId.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifId.tooltip}"
+                                                              id="it48">
+                                                    <f:validator binding="#{row.bindings.FarmerRegVerifId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.FarmerRegVerifId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.LandAcre.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.LandAcre.label}"
+                                                       id="c58">
+                                                <af:inputText value="#{row.bindings.LandAcre.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifLandView2.hints.LandAcre.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifLandView2.hints.LandAcre.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifLandView2.hints.LandAcre.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifLandView2.hints.LandAcre.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.LandAcre.tooltip}"
+                                                              id="it49">
+                                                    <f:validator binding="#{row.bindings.LandAcre.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.LandAcre.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.LandKanal.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.LandKanal.label}"
+                                                       id="c59">
+                                                <af:inputText value="#{row.bindings.LandKanal.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifLandView2.hints.LandKanal.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifLandView2.hints.LandKanal.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifLandView2.hints.LandKanal.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifLandView2.hints.LandKanal.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.LandKanal.tooltip}"
+                                                              id="it50">
+                                                    <f:validator binding="#{row.bindings.LandKanal.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.LandKanal.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.PresentProd.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.PresentProd.label}"
+                                                       id="c60">
+                                                <af:inputText value="#{row.bindings.PresentProd.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifLandView2.hints.PresentProd.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifLandView2.hints.PresentProd.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifLandView2.hints.PresentProd.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifLandView2.hints.PresentProd.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.PresentProd.tooltip}"
+                                                              id="it51">
+                                                    <f:validator binding="#{row.bindings.PresentProd.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.PresentProd.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.LandUnderOrch.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.LandUnderOrch.label}"
+                                                       id="c61">
+                                                <af:inputText value="#{row.bindings.LandUnderOrch.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifLandView2.hints.LandUnderOrch.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifLandView2.hints.LandUnderOrch.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifLandView2.hints.LandUnderOrch.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifLandView2.hints.LandUnderOrch.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.LandUnderOrch.tooltip}"
+                                                              id="it52">
+                                                    <f:validator binding="#{row.bindings.LandUnderOrch.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.LandUnderOrch.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.SelfshipType.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.SelfshipType.label}"
+                                                       id="c62">
+                                                <af:selectOneChoice value="#{row.bindings.SelfshipType.inputValue}"
+                                                                    label="#{row.bindings.SelfshipType.label}"
+                                                                    required="#{bindings.MmpFarmerRegVerifLandView2.hints.SelfshipType.mandatory}"
+                                                                    shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.SelfshipType.tooltip}"
+                                                                    id="soc18">
+                                                    <f:selectItems value="#{row.bindings.SelfshipType.items}"
+                                                                   id="si18"/>
+                                                    <f:validator binding="#{row.bindings.SelfshipType.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.SelfLocalMark.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.SelfLocalMark.label}"
+                                                       id="c63">
+                                                <af:selectOneChoice value="#{row.bindings.SelfLocalMark.inputValue}"
+                                                                    label="#{row.bindings.SelfLocalMark.label}"
+                                                                    required="#{bindings.MmpFarmerRegVerifLandView2.hints.SelfLocalMark.mandatory}"
+                                                                    shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.SelfLocalMark.tooltip}"
+                                                                    id="soc19">
+                                                    <f:selectItems value="#{row.bindings.SelfLocalMark.items}"
+                                                                   id="si19"/>
+                                                    <f:validator binding="#{row.bindings.SelfLocalMark.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.SelfExportMark.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.SelfExportMark.label}"
+                                                       id="c64">
+                                                <af:selectOneChoice value="#{row.bindings.SelfExportMark.inputValue}"
+                                                                    label="#{row.bindings.SelfExportMark.label}"
+                                                                    required="#{bindings.MmpFarmerRegVerifLandView2.hints.SelfExportMark.mandatory}"
+                                                                    shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.SelfExportMark.tooltip}"
+                                                                    id="soc20">
+                                                    <f:selectItems value="#{row.bindings.SelfExportMark.items}"
+                                                                   id="si20"/>
+                                                    <f:validator binding="#{row.bindings.SelfExportMark.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.ContractMark.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.ContractMark.label}"
+                                                       id="c65">
+                                                <af:selectOneChoice value="#{row.bindings.ContractMark.inputValue}"
+                                                                    label="#{row.bindings.ContractMark.label}"
+                                                                    required="#{bindings.MmpFarmerRegVerifLandView2.hints.ContractMark.mandatory}"
+                                                                    shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.ContractMark.tooltip}"
+                                                                    id="soc21">
+                                                    <f:selectItems value="#{row.bindings.ContractMark.items}"
+                                                                   id="si21"/>
+                                                    <f:validator binding="#{row.bindings.ContractMark.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.KhatooniNo.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.KhatooniNo.label}"
+                                                       id="c66">
+                                                <af:inputText value="#{row.bindings.KhatooniNo.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifLandView2.hints.KhatooniNo.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifLandView2.hints.KhatooniNo.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifLandView2.hints.KhatooniNo.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifLandView2.hints.KhatooniNo.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.KhatooniNo.tooltip}"
+                                                              id="it53">
+                                                    <f:validator binding="#{row.bindings.KhatooniNo.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.KhatooniNo.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.KhauuetNo.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.KhauuetNo.label}"
+                                                       id="c67">
+                                                <af:inputText value="#{row.bindings.KhauuetNo.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifLandView2.hints.KhauuetNo.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifLandView2.hints.KhauuetNo.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifLandView2.hints.KhauuetNo.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifLandView2.hints.KhauuetNo.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.KhauuetNo.tooltip}"
+                                                              id="it54">
+                                                    <f:validator binding="#{row.bindings.KhauuetNo.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.KhauuetNo.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.QittaNo.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.QittaNo.label}"
+                                                       id="c68">
+                                                <af:inputText value="#{row.bindings.QittaNo.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifLandView2.hints.QittaNo.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifLandView2.hints.QittaNo.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifLandView2.hints.QittaNo.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifLandView2.hints.QittaNo.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.QittaNo.tooltip}"
+                                                              id="it55">
+                                                    <f:validator binding="#{row.bindings.QittaNo.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.QittaNo.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.KhasraNo.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.KhasraNo.label}"
+                                                       id="c69">
+                                                <af:inputText value="#{row.bindings.KhasraNo.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifLandView2.hints.KhasraNo.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifLandView2.hints.KhasraNo.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifLandView2.hints.KhasraNo.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifLandView2.hints.KhasraNo.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.KhasraNo.tooltip}"
+                                                              id="it56">
+                                                    <f:validator binding="#{row.bindings.KhasraNo.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.KhasraNo.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedDate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedDate.label}"
+                                                       id="c70">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.MmpFarmerRegVerifLandView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CreatedDate.value}"
+                                                                  id="id13">
+                                                        <af:convertDateTime pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedDate.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.CreatedDate.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedDate.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedDate.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedDate.displayWidth}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedDate.tooltip}"
+                                                              id="id14">
+                                                    <f:validator binding="#{row.bindings.CreatedDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedDate.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedBy.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedBy.label}"
+                                                       id="c71">
+                                                <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedBy.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedBy.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedBy.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedBy.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedBy.tooltip}"
+                                                              id="it57">
+                                                    <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.CreatedBy.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedDate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedDate.label}"
+                                                       id="c72">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.MmpFarmerRegVerifLandView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.UpdatedDate.value}"
+                                                                  id="id15">
+                                                        <af:convertDateTime pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedDate.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.UpdatedDate.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedDate.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedDate.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedDate.displayWidth}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedDate.tooltip}"
+                                                              id="id16">
+                                                    <f:validator binding="#{row.bindings.UpdatedDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedDate.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedBy.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedBy.label}"
+                                                       id="c73">
+                                                <af:inputText value="#{row.bindings.UpdatedBy.inputValue}"
+                                                              label="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedBy.label}"
+                                                              required="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedBy.mandatory}"
+                                                              columns="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedBy.displayWidth}"
+                                                              maximumLength="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedBy.precision}"
+                                                              shortDesc="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedBy.tooltip}"
+                                                              id="it58">
+                                                    <f:validator binding="#{row.bindings.UpdatedBy.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.MmpFarmerRegVerifLandView2.hints.UpdatedBy.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                        </af:table>
+                                    </af:showDetailItem>
+                                </af:panelTabbed>
+                            </af:gridCell>
+                        </af:gridRow>
+                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr10">
+                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10"></af:gridCell>
+                        </af:gridRow>
+                    </af:panelGridLayout>
+                </af:showDetailItem>
+            </af:panelTabbed>
+        </af:showDetailItem>
+    </af:panelAccordion>
+</ui:composition>

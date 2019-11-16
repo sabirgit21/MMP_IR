@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="Marital_Status"
+  Name="Selfish_Type_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   BindingStyle="OracleName"
@@ -15,32 +15,29 @@
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.LOV.Marital_Status_LABEL"/>
+        ResId="model.LOV.Selfish_Type_LOV_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <ViewAttribute
-    Name="ViewDB"
-    IsUpdateable="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="java.lang.String"
-    ColumnType="$none$"
-    SQLType="VARCHAR"/>
-  <ViewAttribute
-    Name="ViewMarital"
+    Name="selfishView"
     IsUpdateable="false"
     IsSelected="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Precision="255"
     Type="java.lang.String"
-    ColumnType="VARCHAR2"
-    SQLType="VARCHAR"/>
+    ColumnType="$none$"/>
+  <ViewAttribute
+    Name="SelfishDB"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.String"
+    ColumnType="$none$"/>
   <AttrArray Name="KeyAttributes">
-    <Item Value="ViewDB"/>
+    <Item Value="SelfishDB"/>
   </AttrArray>
   <StaticList
-    Rows="4"
+    Rows="3"
     Columns="2"/>
   <ResourceBundle>
     <PropertiesBundle

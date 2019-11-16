@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblFarmerRegLandView"
+  Name="MmpFarmerRegVerifLandView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -98,55 +98,55 @@
     <DisplayCriteria/>
   </ListBinding>
   <EntityUsage
-    Name="TblFarmerRegLand"
-    Entity="model.EO.TblFarmerRegLand"/>
+    Name="MmpFarmerRegVerifLand"
+    Entity="model.EO.MmpFarmerRegVerifLand"/>
   <ViewAttribute
-    Name="FarmerRegLandId"
+    Name="FarmerRegVerifLandId"
     IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="FarmerRegLandId"
-    EntityUsage="TblFarmerRegLand"
-    AliasName="FARMER_REG_LAND_ID"/>
+    EntityAttrName="FarmerRegVerifLandId"
+    EntityUsage="MmpFarmerRegVerifLand"
+    AliasName="FARMER_REG_VERIF_LAND_ID"/>
   <ViewAttribute
-    Name="FarmerRegId"
+    Name="FarmerRegVerifId"
     IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="FarmerRegId"
-    EntityUsage="TblFarmerRegLand"
-    AliasName="FARMER_REG_ID"/>
+    EntityAttrName="FarmerRegVerifId"
+    EntityUsage="MmpFarmerRegVerifLand"
+    AliasName="FARMER_REG_VERIF_ID"/>
   <ViewAttribute
     Name="LandAcre"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="LandAcre"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="LAND_ACRE"/>
   <ViewAttribute
     Name="LandKanal"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="LandKanal"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="LAND_KANAL"/>
   <ViewAttribute
     Name="PresentProd"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="PresentProd"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="PRESENT_PROD"/>
   <ViewAttribute
     Name="LandUnderOrch"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="LandUnderOrch"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="LAND_UNDER_ORCH"/>
   <ViewAttribute
     Name="SelfshipType"
     PrecisionRule="true"
     EntityAttrName="SelfshipType"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="SELFSHIP_TYPE"
     LOVName="LOV_SelfshipType">
     <Properties>
@@ -160,7 +160,7 @@
     Name="SelfLocalMark"
     PrecisionRule="true"
     EntityAttrName="SelfLocalMark"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="SELF_LOCAL_MARK"
     LOVName="LOV_SelfLocalMark">
     <Properties>
@@ -174,7 +174,7 @@
     Name="SelfExportMark"
     PrecisionRule="true"
     EntityAttrName="SelfExportMark"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="SELF_EXPORT_MARK"
     LOVName="LOV_SelfExportMark">
     <Properties>
@@ -188,7 +188,7 @@
     Name="ContractMark"
     PrecisionRule="true"
     EntityAttrName="ContractMark"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="CONTRACT_MARK"
     LOVName="LOV_ContractMark">
     <Properties>
@@ -202,49 +202,49 @@
     Name="KhatooniNo"
     PrecisionRule="true"
     EntityAttrName="KhatooniNo"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="KHATOONI_NO"/>
   <ViewAttribute
     Name="KhauuetNo"
     PrecisionRule="true"
     EntityAttrName="KhauuetNo"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="KHAUUET_NO"/>
   <ViewAttribute
     Name="QittaNo"
     PrecisionRule="true"
     EntityAttrName="QittaNo"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="QITTA_NO"/>
   <ViewAttribute
     Name="KhasraNo"
     IsUnique="true"
     PrecisionRule="true"
     EntityAttrName="KhasraNo"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="KHASRA_NO"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblFarmerRegLand"
+    EntityUsage="MmpFarmerRegVerifLand"
     AliasName="UPDATED_BY"/>
 </ViewObject>

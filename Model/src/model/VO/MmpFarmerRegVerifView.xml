@@ -3,7 +3,7 @@
 <!---->
 <ViewObject
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TblFarmerRegView"
+  Name="MmpFarmerRegVerifView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   SelectListFlags="1"
@@ -30,12 +30,12 @@
     ViewObjectName="model.LOV.Marital_Status"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="District_Name_LOV1"
-    ViewObjectName="model.LOV.District_Name_LOV"
-    RowLevelBinds="true"/>
-  <ViewAccessor
     Name="Tehsil_Name_LOV1"
     ViewObjectName="model.LOV.Tehsil_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="District_Name_LOV1"
+    ViewObjectName="model.LOV.District_Name_LOV"
     RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Ast"
@@ -114,25 +114,6 @@
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_FarmerRegDistrict"
-    ListVOName="District_Name_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="start"
-    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="FarmerRegDistrict"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="LibrDetailId"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_FarmerRegTehsil"
     ListVOName="Tehsil_Name_LOV1"
     ListRangeSize="-1"
@@ -151,36 +132,55 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_FarmerRegDistrict"
+    ListVOName="District_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FarmerRegDistrict"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="LibrDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
-    Name="TblFarmerReg"
-    Entity="model.EO.TblFarmerReg"/>
+    Name="MmpFarmerRegVerif"
+    Entity="model.EO.MmpFarmerRegVerif"/>
   <ViewAttribute
-    Name="FarmerRegId"
+    Name="FarmerRegVerifId"
     IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="FarmerRegId"
-    EntityUsage="TblFarmerReg"
-    AliasName="FARMER_REG_ID"/>
+    EntityAttrName="FarmerRegVerifId"
+    EntityUsage="MmpFarmerRegVerif"
+    AliasName="FARMER_REG_VERIF_ID"/>
   <ViewAttribute
-    Name="Name"
+    Name="NameVerif"
     IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="Name"
-    EntityUsage="TblFarmerReg"
-    AliasName="NAME"/>
+    EntityAttrName="NameVerif"
+    EntityUsage="MmpFarmerRegVerif"
+    AliasName="NAME_VERIF"/>
   <ViewAttribute
     Name="FatherName"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="FatherName"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="FATHER_NAME"/>
   <ViewAttribute
     Name="Ast"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Ast"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="AST"
     LOVName="LOV_Ast">
     <Properties>
@@ -194,7 +194,7 @@
     Name="Gender"
     PrecisionRule="true"
     EntityAttrName="Gender"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="GENDER"
     LOVName="LOV_Gender">
     <Properties>
@@ -209,7 +209,7 @@
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="ClusterId"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="CLUSTER_ID"
     LOVName="LOV_ClusterId">
     <Properties>
@@ -223,13 +223,13 @@
     Name="BeneficiaryId"
     PrecisionRule="true"
     EntityAttrName="BeneficiaryId"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="BENEFICIARY_ID"/>
   <ViewAttribute
     Name="MarStatus"
     PrecisionRule="true"
     EntityAttrName="MarStatus"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="MAR_STATUS"
     LOVName="LOV_MarStatus">
     <Properties>
@@ -243,27 +243,27 @@
     Name="Dob"
     PrecisionRule="true"
     EntityAttrName="Dob"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="DOB"/>
   <ViewAttribute
     Name="Doj"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Doj"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="DOJ"/>
   <ViewAttribute
     Name="Ntn"
     PrecisionRule="true"
     EntityAttrName="Ntn"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="NTN"/>
   <ViewAttribute
     Name="PassNo"
     IsUnique="true"
     PrecisionRule="true"
     EntityAttrName="PassNo"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="PASS_NO"/>
   <ViewAttribute
     Name="Cnic"
@@ -271,93 +271,93 @@
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Cnic"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="CNIC"/>
   <ViewAttribute
     Name="DrLicNo"
     PrecisionRule="true"
     EntityAttrName="DrLicNo"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="DR_LIC_NO"/>
   <ViewAttribute
     Name="Telephone"
     PrecisionRule="true"
     EntityAttrName="Telephone"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="TELEPHONE"/>
   <ViewAttribute
     Name="Mobile"
     PrecisionRule="true"
     EntityAttrName="Mobile"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="MOBILE"/>
   <ViewAttribute
     Name="Email"
     IsUnique="true"
     PrecisionRule="true"
     EntityAttrName="Email"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="EMAIL"/>
   <ViewAttribute
     Name="Url"
     PrecisionRule="true"
     EntityAttrName="Url"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="URL"/>
   <ViewAttribute
     Name="PreAddress"
     PrecisionRule="true"
     EntityAttrName="PreAddress"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="PRE_ADDRESS"/>
   <ViewAttribute
     Name="PerAddress"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="PerAddress"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="PER_ADDRESS"/>
   <ViewAttribute
     Name="Image"
     PrecisionRule="true"
     EntityAttrName="Image"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="IMAGE"/>
   <ViewAttribute
     Name="FarmerNo"
     PrecisionRule="true"
     EntityAttrName="FarmerNo"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="FARMER_NO"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="CREATED_DATE"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
     EntityAttrName="CreatedBy"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="CREATED_BY"/>
   <ViewAttribute
     Name="UpdatedDate"
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="UPDATED_DATE"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
     EntityAttrName="UpdatedBy"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="UPDATED_BY"/>
   <ViewAttribute
     Name="FarmerRegTehsil"
     PrecisionRule="true"
     EntityAttrName="FarmerRegTehsil"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="FARMER_REG_TEHSIL"
     LOVName="LOV_FarmerRegTehsil">
     <Properties>
@@ -371,7 +371,7 @@
     Name="FarmerRegDistrict"
     PrecisionRule="true"
     EntityAttrName="FarmerRegDistrict"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="FARMER_REG_DISTRICT"
     LOVName="LOV_FarmerRegDistrict">
     <Properties>
@@ -385,16 +385,11 @@
     Name="GrantStatus"
     PrecisionRule="true"
     EntityAttrName="GrantStatus"
-    EntityUsage="TblFarmerReg"
+    EntityUsage="MmpFarmerRegVerif"
     AliasName="GRANT_STATUS"/>
   <ViewLinkAccessor
-    Name="MmpTrainingMonFarmerView"
-    ViewLink="model.VO.FkMmpTrainingMonFarmerFarmerLink"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
-  <ViewLinkAccessor
-    Name="TblFarmerRegLandView"
-    ViewLink="model.VO.FkTblFarmerRegLandFkLink"
+    Name="MmpFarmerRegVerifLandView"
+    ViewLink="model.VO.FkMmpFarmerRegVerifLandLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

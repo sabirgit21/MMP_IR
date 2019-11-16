@@ -181,6 +181,15 @@
   <ViewUsage
     Name="MmpTrainingPhyProgDetailView2"
     ViewObjectName="model.VO.MmpTrainingPhyProgDetailView"/>
+  <ViewUsage
+    Name="MmpFarmerRegVerifLandView1"
+    ViewObjectName="model.VO.MmpFarmerRegVerifLandView"/>
+  <ViewUsage
+    Name="MmpFarmerRegVerifView1"
+    ViewObjectName="model.VO.MmpFarmerRegVerifView"/>
+  <ViewUsage
+    Name="MmpFarmerRegVerifLandView2"
+    ViewObjectName="model.VO.MmpFarmerRegVerifLandView"/>
   <ViewLinkUsage
     Name="FkMmpMemberRegDepLink1"
     ViewLinkObjectName="model.VO.FkMmpMemberRegDepLink"
@@ -366,5 +375,11 @@
     ViewLinkObjectName="model.VO.FkMmpTrainingPhyProgDetailMasterLink"
     SrcViewUsageName="model.AppModule.MmpTrainingPhyProgMasterView1"
     DstViewUsageName="model.AppModule.MmpTrainingPhyProgDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkMmpFarmerRegVerifLandLink1"
+    ViewLinkObjectName="model.VO.FkMmpFarmerRegVerifLandLink"
+    SrcViewUsageName="model.AppModule.MmpFarmerRegVerifView1"
+    DstViewUsageName="model.AppModule.MmpFarmerRegVerifLandView2"
     Reversed="false"/>
 </AppModule>

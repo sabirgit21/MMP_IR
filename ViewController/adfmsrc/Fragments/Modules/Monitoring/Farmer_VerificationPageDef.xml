@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="Farmer_VerificationPageDef"
+                Package="Fragments.Modules.Monitoring">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl1"
+              id="USERS_CRUD_OPERATIONS1Iterator"/>
+    <iterator Binds="TblFarmerRegView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblFarmerRegView1Iterator"/>
+    <searchRegion Binds="TblFarmerRegView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFarmerRegView1Query"/>
+    <iterator Binds="TblFarmerRegLandView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblFarmerRegLandView2Iterator"/>
+    <searchRegion Binds="TblFarmerRegLandView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TblFarmerRegLandView2Query"/>
+    <iterator Binds="MmpFarmerRegVerifView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MmpFarmerRegVerifView1Iterator"/>
+    <searchRegion Binds="MmpFarmerRegVerifView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpFarmerRegVerifView1Query"/>
+    <iterator Binds="MmpFarmerRegVerifLandView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MmpFarmerRegVerifLandView2Iterator"/>
+    <searchRegion Binds="MmpFarmerRegVerifLandView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpFarmerRegVerifLandView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
+      <nodeDefinition DefName="model.Users_Roles.USERS_CRUD_OPERATIONS" Name="USERS_CRUD_OPERATIONS10">
+        <AttrNames>
+          <Item Value="MmpCrudid"/>
+          <Item Value="MmpOperation"/>
+          <Item Value="MmpIcon"/>
+          <Item Value="MmpBindingname"/>
+          <Item Value="MmpBtndisabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <attributeValues IterBinding="TblFarmerRegView1Iterator" id="FarmerRegId">
+      <AttrNames>
+        <Item Value="FarmerRegId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFarmerRegView1Iterator" id="FarmerNo">
+      <AttrNames>
+        <Item Value="FarmerNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFarmerRegView1Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="TblFarmerRegView1Iterator" id="FatherName">
+      <AttrNames>
+        <Item Value="FatherName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="TblFarmerRegView1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="TblFarmerRegView1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="TblFarmerRegView1Iterator" id="Image">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="TblFarmerRegView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="TblFarmerRegView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="TblFarmerRegView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="TblFarmerRegView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TblFarmerRegView1Iterator" id="TblFarmerRegView1">
+      <nodeDefinition DefName="model.VO.TblFarmerRegView" Name="TblFarmerRegView10">
+        <AttrNames>
+          <Item Value="Gender"/>
+          <Item Value="ClusterId"/>
+          <Item Value="BeneficiaryId"/>
+          <Item Value="MarStatus"/>
+          <Item Value="Dob"/>
+          <Item Value="Doj"/>
+          <Item Value="Ntn"/>
+          <Item Value="PassNo"/>
+          <Item Value="Cnic"/>
+          <Item Value="DrLicNo"/>
+          <Item Value="Telephone"/>
+          <Item Value="Mobile"/>
+          <Item Value="Email"/>
+          <Item Value="Url"/>
+          <Item Value="PreAddress"/>
+          <Item Value="PerAddress"/>
+          <Item Value="FarmerRegTehsil"/>
+          <Item Value="FarmerRegDistrict"/>
+          <Item Value="GrantStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TblFarmerRegLandView2Iterator" id="TblFarmerRegLandView2">
+      <nodeDefinition DefName="model.VO.TblFarmerRegLandView" Name="TblFarmerRegLandView20">
+        <AttrNames>
+          <Item Value="FarmerRegLandId"/>
+          <Item Value="FarmerRegId"/>
+          <Item Value="LandAcre"/>
+          <Item Value="LandKanal"/>
+          <Item Value="PresentProd"/>
+          <Item Value="LandUnderOrch"/>
+          <Item Value="SelfshipType"/>
+          <Item Value="SelfLocalMark"/>
+          <Item Value="SelfExportMark"/>
+          <Item Value="ContractMark"/>
+          <Item Value="KhatooniNo"/>
+          <Item Value="KhauuetNo"/>
+          <Item Value="QittaNo"/>
+          <Item Value="KhasraNo"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="MmpFarmerRegVerifView1Iterator" id="FarmerRegVerifId">
+      <AttrNames>
+        <Item Value="FarmerRegVerifId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpFarmerRegVerifView1Iterator" id="FarmerNo1">
+      <AttrNames>
+        <Item Value="FarmerNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpFarmerRegVerifView1Iterator" id="NameVerif">
+      <AttrNames>
+        <Item Value="NameVerif"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpFarmerRegVerifView1Iterator" id="FatherName1">
+      <AttrNames>
+        <Item Value="FatherName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="MmpFarmerRegVerifView1Iterator" StaticList="false" Uses="LOV_Ast" id="Ast1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpFarmerRegVerifView1Iterator" StaticList="false" Uses="LOV_Gender" id="Gender1"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="MmpFarmerRegVerifView1Iterator" id="Image1">
+      <AttrNames>
+        <Item Value="Image"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="MmpFarmerRegVerifView1Iterator" id="First1" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="MmpFarmerRegVerifView1Iterator" id="Previous1" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="MmpFarmerRegVerifView1Iterator" id="Next1" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="MmpFarmerRegVerifView1Iterator" id="Last1" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="MmpFarmerRegVerifView1Iterator" id="MmpFarmerRegVerifView1">
+      <nodeDefinition DefName="model.VO.MmpFarmerRegVerifView" Name="MmpFarmerRegVerifView10">
+        <AttrNames>
+          <Item Value="ClusterId"/>
+          <Item Value="BeneficiaryId"/>
+          <Item Value="MarStatus"/>
+          <Item Value="Dob"/>
+          <Item Value="Doj"/>
+          <Item Value="Ntn"/>
+          <Item Value="PassNo"/>
+          <Item Value="Cnic"/>
+          <Item Value="DrLicNo"/>
+          <Item Value="Telephone"/>
+          <Item Value="Mobile"/>
+          <Item Value="Email"/>
+          <Item Value="Url"/>
+          <Item Value="PreAddress"/>
+          <Item Value="PerAddress"/>
+          <Item Value="FarmerRegTehsil"/>
+          <Item Value="FarmerRegDistrict"/>
+          <Item Value="GrantStatus"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="MmpFarmerRegVerifLandView2Iterator" id="MmpFarmerRegVerifLandView2">
+      <nodeDefinition DefName="model.VO.MmpFarmerRegVerifLandView" Name="MmpFarmerRegVerifLandView20">
+        <AttrNames>
+          <Item Value="FarmerRegVerifLandId"/>
+          <Item Value="FarmerRegVerifId"/>
+          <Item Value="LandAcre"/>
+          <Item Value="LandKanal"/>
+          <Item Value="PresentProd"/>
+          <Item Value="LandUnderOrch"/>
+          <Item Value="SelfshipType"/>
+          <Item Value="SelfLocalMark"/>
+          <Item Value="SelfExportMark"/>
+          <Item Value="ContractMark"/>
+          <Item Value="KhatooniNo"/>
+          <Item Value="KhauuetNo"/>
+          <Item Value="QittaNo"/>
+          <Item Value="KhasraNo"/>
+          <Item Value="CreatedDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="UpdatedDate"/>
+          <Item Value="UpdatedBy"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
