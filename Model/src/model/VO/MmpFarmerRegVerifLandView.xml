@@ -247,4 +247,9 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="MmpFarmerRegVerifLand"
     AliasName="UPDATED_BY"/>
+  <ViewLinkAccessor
+    Name="MmpFarmerRegDVerifLandView"
+    ViewLink="model.VO.FKMmpFarmerRegDVerifLandFKLinkA"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

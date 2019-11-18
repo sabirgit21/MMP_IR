@@ -3,58 +3,70 @@
 <!---->
 <Entity
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="MmpFarmerRegVerifLand"
+  Name="MmpFarmerRegDVerifLand"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
   DBObjectType="table"
-  DBObjectName="MMP_FARMER_REG_VERIF_LAND"
-  AliasName="MmpFarmerRegVerifLand"
+  DBObjectName='"MMP_FARMER_REG_D_Verif_LAND"'
+  AliasName="MmpFarmerRegDVerifLand"
   BindingStyle="OracleName">
   <Attribute
+    Name="FarmerRegDVerifLandId"
+    IsNotNull="true"
+    ColumnName="FARMER_REG_D_VERIF_LAND_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'
+    PrimaryKey="true"/>
+  <Attribute
+    Name="FarmerRegDVerifId"
+    IsNotNull="true"
+    ColumnName="FARMER_REG_D_VERIF_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
+  <Attribute
     Name="FarmerRegVerifLandId"
+    IsNotNull="true"
     ColumnName="FARMER_REG_VERIF_LAND_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="MMP_FARMER_REG_VERIF_LAND"
-    PrimaryKey="true"
-    RetrievedOnInsert="true"
-    RetrievedOnUpdate="true"/>
-  <Attribute
-    Name="FarmerRegVerifId"
-    ColumnName="FARMER_REG_VERIF_ID"
-    SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
-    ColumnType="NUMBER"
-    TableName="MMP_FARMER_REG_VERIF_LAND"/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <Attribute
     Name="LandAcre"
+    IsNotNull="true"
     ColumnName="LAND_ACRE"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="MMP_FARMER_REG_VERIF_LAND"/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <Attribute
     Name="LandKanal"
+    IsNotNull="true"
     ColumnName="LAND_KANAL"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="MMP_FARMER_REG_VERIF_LAND"/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <Attribute
     Name="PresentProd"
+    IsNotNull="true"
     ColumnName="PRESENT_PROD"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="MMP_FARMER_REG_VERIF_LAND"/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <Attribute
     Name="LandUnderOrch"
+    IsNotNull="true"
     ColumnName="LAND_UNDER_ORCH"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="MMP_FARMER_REG_VERIF_LAND"/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <Attribute
     Name="SelfshipType"
     Precision="1"
@@ -62,7 +74,7 @@
     SQLType="CHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="MMP_FARMER_REG_VERIF_LAND"
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'
     RetrievedOnUpdate="true"
     RetrievedOnInsert="true">
     <DesignTime>
@@ -76,7 +88,7 @@
     SQLType="CHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="MMP_FARMER_REG_VERIF_LAND"
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'
     RetrievedOnUpdate="true"
     RetrievedOnInsert="true">
     <DesignTime>
@@ -90,7 +102,7 @@
     SQLType="CHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="MMP_FARMER_REG_VERIF_LAND"
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'
     RetrievedOnUpdate="true"
     RetrievedOnInsert="true">
     <DesignTime>
@@ -104,7 +116,7 @@
     SQLType="CHAR"
     Type="java.lang.String"
     ColumnType="CHAR"
-    TableName="MMP_FARMER_REG_VERIF_LAND"
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'
     RetrievedOnUpdate="true"
     RetrievedOnInsert="true">
     <DesignTime>
@@ -117,21 +129,21 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="MMP_FARMER_REG_VERIF_LAND"/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <Attribute
     Name="KhauuetNo"
     ColumnName="KHAUUET_NO"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="MMP_FARMER_REG_VERIF_LAND"/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <Attribute
     Name="QittaNo"
     ColumnName="QITTA_NO"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="MMP_FARMER_REG_VERIF_LAND"/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <Attribute
     Name="KhasraNo"
     IsUnique="true"
@@ -139,78 +151,100 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="MMP_FARMER_REG_VERIF_LAND"/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <Attribute
     Name="CreatedDate"
     ColumnName="CREATED_DATE"
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_FARMER_REG_VERIF_LAND"/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="MMP_FARMER_REG_VERIF_LAND"/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <Attribute
     Name="UpdatedDate"
     ColumnName="UPDATED_DATE"
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_FARMER_REG_VERIF_LAND"/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="MMP_FARMER_REG_VERIF_LAND"/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <AccessorAttribute
-    Name="MmpFarmerRegVerif"
-    Association="model.EO.FkMmpFarmerRegVerifLandAssoc"
-    AssociationEnd="model.EO.FkMmpFarmerRegVerifLandAssoc.MmpFarmerRegVerif"
-    AssociationOtherEnd="model.EO.FkMmpFarmerRegVerifLandAssoc.MmpFarmerRegVerifLand"
+    Name="MmpFarmerRegDVerif"
+    Association="model.EO.FkMmpFarmerRegDVerifLandAssoc"
+    AssociationEnd="model.EO.FkMmpFarmerRegDVerifLandAssoc.MmpFarmerRegDVerif"
+    AssociationOtherEnd="model.EO.FkMmpFarmerRegDVerifLandAssoc.MmpFarmerRegDVerifLand"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <AccessorAttribute
-    Name="MmpFarmerRegDVerifLand"
+    Name="MmpFarmerRegVerifLand"
     Association="model.EO.FKMmpFarmerRegDVerifLandFKAssocA"
-    AssociationEnd="model.EO.FKMmpFarmerRegDVerifLandFKAssocA.MmpFarmerRegDVerifLand"
-    AssociationOtherEnd="model.EO.FKMmpFarmerRegDVerifLandFKAssocA.MmpFarmerRegVerifLand"
-    Type="oracle.jbo.RowIterator"
-    IsUpdateable="false"/>
+    AssociationEnd="model.EO.FKMmpFarmerRegDVerifLandFKAssocA.MmpFarmerRegVerifLand"
+    AssociationOtherEnd="model.EO.FKMmpFarmerRegDVerifLandFKAssocA.MmpFarmerRegDVerifLand"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
-    Name="PkMmpFarmerRegVerifLand"
+    Name="PkMmpFarmerRegDVerifLand"
     PrimaryKey="true">
     <DesignTime>
-      <Attr Name="_DBObjectName" Value="PK_MMP_FARMER_REG_VERIF_LAND"/>
+      <Attr Name="_DBObjectName" Value="PK_MMP_FARMER_REG_D_VERIF_LAND"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.EO.MmpFarmerRegVerifLand.FarmerRegVerifLandId"/>
+      <Item Value="model.EO.MmpFarmerRegDVerifLand.FarmerRegDVerifLandId"/>
     </AttrArray>
   </Key>
   <Key
-    Name="UkMmpFarmerRegVerifLand">
+    Name="UkMmpFarmerRegDVerifLand">
     <DesignTime>
       <Attr Name="_isUnique" Value="true"/>
-      <Attr Name="_DBObjectName" Value="UK_MMP_FARMER_REG_VERIF_LAND"/>
+      <Attr Name="_DBObjectName" Value="UK_MMP_FARMER_REG_D_VERIF_LAND"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.EO.MmpFarmerRegVerifLand.KhasraNo"/>
+      <Item Value="model.EO.MmpFarmerRegDVerifLand.KhasraNo"/>
     </AttrArray>
   </Key>
   <Key
-    Name="FkMmpFarmerRegVerifLand">
+    Name="FkMmpFarmerRegDVerifLand">
     <DesignTime>
-      <Attr Name="_referencedKey" Value="PK_MMP_FARMER_REG_PK"/>
+      <Attr Name="_referencedKey" Value="PK_MMP_FARMER_REG_D_VERIF"/>
       <Attr Name="_isForeign" Value="true"/>
-      <Attr Name="_DBObjectName" Value="FK_MMP_FARMER_REG_VERIF_LAND"/>
+      <Attr Name="_DBObjectName" Value="FK_MMP_FARMER_REG_D_VERIF_LAND"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.EO.MmpFarmerRegVerifLand.FarmerRegVerifId"/>
+      <Item Value="model.EO.MmpFarmerRegDVerifLand.FarmerRegDVerifId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkMmpFarmerRegVerifLandId">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_MMP_FARMER_REG_VERIF_LAND"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_MMP_FARMER_REG_VERIF_LAND_ID"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.MmpFarmerRegDVerifLand.FarmerRegVerifLandId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_MmpFarmerRegDVerifLand">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_MMP_FARMER_REG_VERIF_LAND"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_MMP_FARMER_REG_DVERIF_LAND"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.MmpFarmerRegDVerifLand.FarmerRegVerifLandId"/>
     </AttrArray>
   </Key>
 </Entity>

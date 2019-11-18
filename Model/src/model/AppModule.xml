@@ -190,6 +190,21 @@
   <ViewUsage
     Name="MmpFarmerRegVerifLandView2"
     ViewObjectName="model.VO.MmpFarmerRegVerifLandView"/>
+  <ViewUsage
+    Name="MmpFarmerRegDVerifLandView1"
+    ViewObjectName="model.VO.MmpFarmerRegDVerifLandView"/>
+  <ViewUsage
+    Name="MmpFarmerRegDVerifView1"
+    ViewObjectName="model.VO.MmpFarmerRegDVerifView"/>
+  <ViewUsage
+    Name="MmpFarmerRegDVerifLandView2"
+    ViewObjectName="model.VO.MmpFarmerRegDVerifLandView"/>
+  <ViewUsage
+    Name="MmpFarmerRegDVerifView2"
+    ViewObjectName="model.VO.MmpFarmerRegDVerifView"/>
+  <ViewUsage
+    Name="MmpFarmerRegDVerifLandView3"
+    ViewObjectName="model.VO.MmpFarmerRegDVerifLandView"/>
   <ViewLinkUsage
     Name="FkMmpMemberRegDepLink1"
     ViewLinkObjectName="model.VO.FkMmpMemberRegDepLink"
@@ -381,5 +396,23 @@
     ViewLinkObjectName="model.VO.FkMmpFarmerRegVerifLandLink"
     SrcViewUsageName="model.AppModule.MmpFarmerRegVerifView1"
     DstViewUsageName="model.AppModule.MmpFarmerRegVerifLandView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkMmpFarmerRegDVerifLandLink1"
+    ViewLinkObjectName="model.VO.FkMmpFarmerRegDVerifLandLink"
+    SrcViewUsageName="model.AppModule.MmpFarmerRegDVerifView1"
+    DstViewUsageName="model.AppModule.MmpFarmerRegDVerifLandView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKMmpFarmerRegDVerifFKLinkA1"
+    ViewLinkObjectName="model.VO.FKMmpFarmerRegDVerifFKLinkA"
+    SrcViewUsageName="model.AppModule.MmpFarmerRegVerifView1"
+    DstViewUsageName="model.AppModule.MmpFarmerRegDVerifView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKMmpFarmerRegDVerifLandFKLinkA1"
+    ViewLinkObjectName="model.VO.FKMmpFarmerRegDVerifLandFKLinkA"
+    SrcViewUsageName="model.AppModule.MmpFarmerRegVerifLandView2"
+    DstViewUsageName="model.AppModule.MmpFarmerRegDVerifLandView3"
     Reversed="false"/>
 </AppModule>
