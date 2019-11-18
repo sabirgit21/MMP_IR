@@ -13,6 +13,90 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Selfish_Type_LOV1"
+    ViewObjectName="model.LOV.Selfish_Type_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_SelfshipType"
+    ListVOName="Selfish_Type_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SelfshipType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SelfishDB"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="selfishView"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SelfLocalMark"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SelfLocalMark"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_SelfExportMark"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SelfExportMark"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ContractMark"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ContractMark"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="MmpFarmerRegDVerifLand"
     Entity="model.EO.MmpFarmerRegDVerifLand"/>
@@ -70,25 +154,57 @@
     PrecisionRule="true"
     EntityAttrName="SelfshipType"
     EntityUsage="MmpFarmerRegDVerifLand"
-    AliasName="SELFSHIP_TYPE"/>
+    AliasName="SELFSHIP_TYPE"
+    LOVName="LOV_SelfshipType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SelfLocalMark"
     PrecisionRule="true"
     EntityAttrName="SelfLocalMark"
     EntityUsage="MmpFarmerRegDVerifLand"
-    AliasName="SELF_LOCAL_MARK"/>
+    AliasName="SELF_LOCAL_MARK"
+    LOVName="LOV_SelfLocalMark">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="SelfExportMark"
     PrecisionRule="true"
     EntityAttrName="SelfExportMark"
     EntityUsage="MmpFarmerRegDVerifLand"
-    AliasName="SELF_EXPORT_MARK"/>
+    AliasName="SELF_EXPORT_MARK"
+    LOVName="LOV_SelfExportMark">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ContractMark"
     PrecisionRule="true"
     EntityAttrName="ContractMark"
     EntityUsage="MmpFarmerRegDVerifLand"
-    AliasName="CONTRACT_MARK"/>
+    AliasName="CONTRACT_MARK"
+    LOVName="LOV_ContractMark">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="KhatooniNo"
     PrecisionRule="true"
