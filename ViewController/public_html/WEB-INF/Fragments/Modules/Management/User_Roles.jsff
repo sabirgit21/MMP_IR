@@ -349,37 +349,17 @@
                                                                                   pattern="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleDetailModulesId.format}"/>
                                                             </af:inputText>
                                                         </af:column>
-                                                        <af:column sortProperty="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Role Master ID" width="60"
-                                                                   id="c14" align="center">
-                                                            <af:inputText value="#{row.bindings.MmpRoleMasterId.inputValue}"
-                                                                          label="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.label}"
-                                                                          required="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.mandatory}"
-                                                                          columns="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.displayWidth}"
-                                                                          maximumLength="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.precision}"
-                                                                          shortDesc="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.tooltip}"
-                                                                          id="it13" readOnly="true" contentStyle='text-align: center'>
-                                                                <f:validator binding="#{row.bindings.MmpRoleMasterId.validator}"/>
-                                                                <af:convertNumber groupingUsed="false"
-                                                                                  pattern="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleMasterId.format}"/>
-                                                            </af:inputText>
-                                                        </af:column>
-                                                        <af:column sortProperty="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Module ID" width="60"
-                                                                   id="c15" align="center">
-                                                            <af:inputText value="#{row.bindings.MmpModuleMenuId.inputValue}"
-                                                                          label="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.label}"
-                                                                          required="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.mandatory}"
-                                                                          columns="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.displayWidth}"
-                                                                          maximumLength="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.precision}"
-                                                                          shortDesc="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.tooltip}"
-                                                                          id="it14" readOnly="true" contentStyle='text-align: center'>
+                                                        <af:column headerText="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.label}"
+                                                                   id="c31">
+                                                            <af:selectOneChoice value="#{row.bindings.MmpModuleMenuId.inputValue}"
+                                                                                label="#{row.bindings.MmpModuleMenuId.label}" readOnly="true"
+                                                                                required="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.mandatory}"
+                                                                                shortDesc="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.tooltip}"
+                                                                                id="soc8">
+                                                                <f:selectItems value="#{row.bindings.MmpModuleMenuId.items}"
+                                                                               id="si8"/>
                                                                 <f:validator binding="#{row.bindings.MmpModuleMenuId.validator}"/>
-                                                                <af:convertNumber groupingUsed="false"
-                                                                                  pattern="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.format}"/>
-                                                            </af:inputText>
+                                                            </af:selectOneChoice>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailModulesView2.hints.MmpRView.name}"
                                                                    filterable="true" sortable="true"
@@ -432,38 +412,17 @@
                                                                                   pattern="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailPagesId.format}"/>
                                                             </af:inputText>
                                                         </af:column>
-                                                        <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Role Master ID" width="60"
-                                                                   id="c18" align="center">
-                                                            <af:inputText value="#{row.bindings.MmpRoleMasterId.inputValue}"
-                                                                          label="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.label}"
-                                                                          required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.mandatory}"
-                                                                          columns="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.displayWidth}"
-                                                                          maximumLength="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.precision}"
-                                                                          shortDesc="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.tooltip}"
-                                                                          id="it16" readOnly="true"
-                                                                          contentStyle='text-align: center'>
-                                                                <f:validator binding="#{row.bindings.MmpRoleMasterId.validator}"/>
-                                                                <af:convertNumber groupingUsed="false"
-                                                                                  pattern="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleMasterId.format}"/>
-                                                            </af:inputText>
-                                                        </af:column>
-                                                        <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Page ID" width="60"
-                                                                   id="c19" align="center">
-                                                            <af:inputText value="#{row.bindings.MmpPagesId.inputValue}"
-                                                                          label="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.label}"
-                                                                          required="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.mandatory}"
-                                                                          columns="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.displayWidth}"
-                                                                          maximumLength="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.precision}"
-                                                                          shortDesc="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.tooltip}"
-                                                                          id="it17">
+                                                        <af:column headerText="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.label}"
+                                                                   id="c15">
+                                                            <af:selectOneChoice value="#{row.bindings.MmpPagesId.inputValue}"
+                                                                                label="#{row.bindings.MmpPagesId.label}" readOnly="true"
+                                                                                required="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.mandatory}"
+                                                                                shortDesc="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.tooltip}"
+                                                                                id="soc9">
+                                                                <f:selectItems value="#{row.bindings.MmpPagesId.items}"
+                                                                               id="si9"/>
                                                                 <f:validator binding="#{row.bindings.MmpPagesId.validator}"/>
-                                                                <af:convertNumber groupingUsed="false"
-                                                                                  pattern="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.format}"/>
-                                                            </af:inputText>
+                                                            </af:selectOneChoice>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRView.name}"
                                                                    filterable="true" sortable="true"
@@ -584,76 +543,54 @@
                                                               filterModel="#{bindings.MmpRoleDetailReportsView2Query.queryDescriptor}"
                                                               filterVisible="true"
                                                               queryListener="#{bindings.MmpRoleDetailReportsView2Query.processQuery}"
-                                                              varStatus="vs" id="t6" partialTriggers="::b11"
-                                                              scrollPolicy="page" autoHeightRows="0">
+                                                              varStatus="vs" id="t6" partialTriggers="::b11">
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="Role Detail Report ID" width="60"
-                                                                   id="c27" align="center">
+                                                                   headerText="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.label}"
+                                                                   id="c14">
                                                             <af:inputText value="#{row.bindings.MmpRoleDetailReportsId.inputValue}"
                                                                           label="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.label}"
                                                                           required="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.mandatory}"
                                                                           columns="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.displayWidth}"
                                                                           maximumLength="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.precision}"
                                                                           shortDesc="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.tooltip}"
-                                                                          id="it21" readOnly="true"
-                                                                          contentStyle='text-align: center'>
+                                                                          id="it13">
                                                                 <f:validator binding="#{row.bindings.MmpRoleDetailReportsId.validator}"/>
                                                                 <af:convertNumber groupingUsed="false"
                                                                                   pattern="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleDetailReportsId.format}"/>
                                                             </af:inputText>
                                                         </af:column>
-                                                        <af:column sortProperty="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Role Master ID" width="60"
-                                                                   id="c28" align="center">
-                                                            <af:inputText value="#{row.bindings.MmpRoleMasterId.inputValue}"
-                                                                          label="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.label}"
-                                                                          required="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.mandatory}"
-                                                                          columns="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.displayWidth}"
-                                                                          maximumLength="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.precision}"
-                                                                          shortDesc="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.tooltip}"
-                                                                          id="it22" readOnly="true"
-                                                                          contentStyle='text-align: center'>
-                                                                <f:validator binding="#{row.bindings.MmpRoleMasterId.validator}"/>
-                                                                <af:convertNumber groupingUsed="false"
-                                                                                  pattern="#{bindings.MmpRoleDetailReportsView2.hints.MmpRoleMasterId.format}"/>
-                                                            </af:inputText>
-                                                        </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="Report ID" width="60"
-                                                                   id="c29" align="center">
-                                                            <af:inputText value="#{row.bindings.MmpReportsId.inputValue}"
-                                                                          label="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.label}"
-                                                                          required="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.mandatory}"
-                                                                          columns="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.displayWidth}"
-                                                                          maximumLength="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.precision}"
-                                                                          shortDesc="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.tooltip}"
-                                                                          id="it23" readOnly="true"
-                                                                          contentStyle='text-align: center'>
+                                                                   headerText="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.label}"
+                                                                   id="c19">
+                                                            <af:selectOneChoice value="#{row.bindings.MmpReportsId.inputValue}"
+                                                                                label="#{row.bindings.MmpReportsId.label}" readOnly="true"
+                                                                                required="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.mandatory}"
+                                                                                shortDesc="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.tooltip}"
+                                                                                id="soc7">
+                                                                <f:selectItems value="#{row.bindings.MmpReportsId.items}"
+                                                                               id="si7"/>
                                                                 <f:validator binding="#{row.bindings.MmpReportsId.validator}"/>
-                                                                <af:convertNumber groupingUsed="false"
-                                                                                  pattern="#{bindings.MmpRoleDetailReportsView2.hints.MmpReportsId.format}"/>
-                                                            </af:inputText>
+                                                            </af:selectOneChoice>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailReportsView2.hints.MmpRView.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="View"
-                                                                   id="c30" width="60">
+                                                                   headerText="#{bindings.MmpRoleDetailReportsView2.hints.MmpRView.label}"
+                                                                   id="c27">
                                                             <af:selectOneChoice value="#{row.bindings.MmpRView.inputValue}"
                                                                                 label="#{row.bindings.MmpRView.label}"
                                                                                 required="#{bindings.MmpRoleDetailReportsView2.hints.MmpRView.mandatory}"
                                                                                 shortDesc="#{bindings.MmpRoleDetailReportsView2.hints.MmpRView.tooltip}"
-                                                                                id="soc7">
+                                                                                id="soc10">
                                                                 <f:selectItems value="#{row.bindings.MmpRView.items}"
-                                                                               id="si7"/>
+                                                                               id="si10"/>
                                                                 <f:validator binding="#{row.bindings.MmpRView.validator}"/>
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                     </af:table>
                                                     <af:button actionListener="#{bindings.Execute4.execute}"
-                                                               text="Verify Editing" disabled="#{!bindings.Execute4.enabled}"
+                                                               text="Execute4" disabled="#{!bindings.Execute4.enabled}"
                                                                id="b11"/>
                                                 </af:showDetailItem>
                                 </af:panelTabbed>

@@ -17,6 +17,10 @@
     Name="Active_LOV1"
     ViewObjectName="model.LOV.Active_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Reports_Name_LOV1"
+    ViewObjectName="model.LOV.Reports_Name_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_MmpRView"
     ListVOName="Active_LOV1"
@@ -32,6 +36,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MmpReportsId"
+    ListVOName="Reports_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MmpReportsId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MmpReportsId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="MmpReportsName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -58,7 +80,15 @@
     PrecisionRule="true"
     EntityAttrName="MmpReportsId"
     EntityUsage="MmpRoleDetailReports"
-    AliasName="MMP_REPORTS_ID"/>
+    AliasName="MMP_REPORTS_ID"
+    LOVName="LOV_MmpReportsId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MmpRView"
     PrecisionRule="true"

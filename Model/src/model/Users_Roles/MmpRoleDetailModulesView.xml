@@ -17,6 +17,10 @@
     Name="Active_LOV1"
     ViewObjectName="model.LOV.Active_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Module_Menu_Name_LOV1"
+    ViewObjectName="model.LOV.Module_Menu_Name_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_MmpRView"
     ListVOName="Active_LOV1"
@@ -32,6 +36,24 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MmpModuleMenuId"
+    ListVOName="Module_Menu_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MmpModuleMenuId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MmpModuleMenuId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="MmpModuleMenuName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -58,7 +80,15 @@
     PrecisionRule="true"
     EntityAttrName="MmpModuleMenuId"
     EntityUsage="MmpRoleDetailModules"
-    AliasName="MMP_MODULE_MENU_ID"/>
+    AliasName="MMP_MODULE_MENU_ID"
+    LOVName="LOV_MmpModuleMenuId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MmpRView"
     PrecisionRule="true"

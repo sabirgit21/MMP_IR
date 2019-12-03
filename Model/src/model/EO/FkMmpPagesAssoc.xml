@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkMmpPagesAssoc"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="MmpModuleMenu"
+    Cardinality="1"
+    Source="true"
+    Owner="model.EO.MmpModuleMenu">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="MmpModuleMenu"/>
+      <Attr Name="_foreignKey" Value="model.EO.MmpModuleMenu.PkMmpModuleMenu"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.MmpModuleMenu.MmpModuleMenuId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="MmpPages"
+    Cardinality="-1"
+    Owner="model.EO.MmpPages">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="MmpPages"/>
+      <Attr Name="_foreignKey" Value="model.EO.MmpPages.FkMmpPages"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.MmpPages.MmpModuleMenuId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

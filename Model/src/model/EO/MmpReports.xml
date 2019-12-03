@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MmpReports"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="MMP_REPORTS"
+  AliasName="MmpReports"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="MmpReportsId"
+    IsNotNull="true"
+    ColumnName="MMP_REPORTS_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_REPORTS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="MmpReportsName"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="150"
+    ColumnName="MMP_REPORTS_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_REPORTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MmpModuleMenuId"
+    IsNotNull="true"
+    ColumnName="MMP_MODULE_MENU_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_REPORTS"/>
+  <Attribute
+    Name="Ast"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="AST"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="MMP_REPORTS"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MmpReportIcon"
+    Precision="200"
+    ColumnName="MMP_REPORT_ICON"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_REPORTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MmpReportLink"
+    Precision="200"
+    ColumnName="MMP_REPORT_LINK"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MMP_REPORTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MmpSrNo"
+    ColumnName="MMP_SR_NO"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_REPORTS"/>
+  <AccessorAttribute
+    Name="MmpModuleMenu"
+    Association="model.EO.FkMmpReportsAssoc"
+    AssociationEnd="model.EO.FkMmpReportsAssoc.MmpModuleMenu"
+    AssociationOtherEnd="model.EO.FkMmpReportsAssoc.MmpReports"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="PkMmpReports"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_MMP_REPORTS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.MmpReports.MmpReportsId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="UkMmpReports">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="UK_MMP_REPORTS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.MmpReports.MmpReportsName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkMmpReports">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_MMP_MODULE_MENU"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_MMP_REPORTS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.MmpReports.MmpModuleMenuId"/>
+    </AttrArray>
+  </Key>
+</Entity>

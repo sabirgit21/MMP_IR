@@ -29,6 +29,10 @@
     Name="Crud_Delete_LOV1"
     ViewObjectName="model.LOV.Crud_Delete_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Pages_Name_LOV1"
+    ViewObjectName="model.LOV.Pages_Name_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_MmpRView"
     ListVOName="Active_LOV1"
@@ -101,6 +105,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_MmpPagesId"
+    ListVOName="Pages_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MmpPagesId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MmpPagesId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="MmpPagesName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="MmpRoleDetailPages"
     Entity="model.EO.MmpRoleDetailPages"/>
@@ -124,7 +146,15 @@
     PrecisionRule="true"
     EntityAttrName="MmpPagesId"
     EntityUsage="MmpRoleDetailPages"
-    AliasName="MMP_PAGES_ID"/>
+    AliasName="MMP_PAGES_ID"
+    LOVName="LOV_MmpPagesId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MmpRView"
     PrecisionRule="true"

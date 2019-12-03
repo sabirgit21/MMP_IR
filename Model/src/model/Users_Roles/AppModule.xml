@@ -46,6 +46,21 @@
   <ViewUsage
     Name="MmpUserMasterView2"
     ViewObjectName="model.Users_Roles.MmpUserMasterView"/>
+  <ViewUsage
+    Name="MmpModuleMenuView1"
+    ViewObjectName="model.Users_Roles.MmpModuleMenuView"/>
+  <ViewUsage
+    Name="MmpPagesView1"
+    ViewObjectName="model.Users_Roles.MmpPagesView"/>
+  <ViewUsage
+    Name="MmpReportsView1"
+    ViewObjectName="model.Users_Roles.MmpReportsView"/>
+  <ViewUsage
+    Name="MmpReportsView2"
+    ViewObjectName="model.Users_Roles.MmpReportsView"/>
+  <ViewUsage
+    Name="MmpPagesView2"
+    ViewObjectName="model.Users_Roles.MmpPagesView"/>
   <ViewLinkUsage
     Name="Fk2MmpRoleDetailModulesLink1"
     ViewLinkObjectName="model.Users_Roles.Fk2MmpRoleDetailModulesLink"
@@ -69,5 +84,17 @@
     ViewLinkObjectName="model.Users_Roles.FkMmpUserMasterFkLink"
     SrcViewUsageName="model.Users_Roles.AppModule.MmpRoleMasterView1"
     DstViewUsageName="model.Users_Roles.AppModule.MmpUserMasterView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkMmpReportsLink1"
+    ViewLinkObjectName="model.Users_Roles.FkMmpReportsLink"
+    SrcViewUsageName="model.Users_Roles.AppModule.MmpModuleMenuView1"
+    DstViewUsageName="model.Users_Roles.AppModule.MmpReportsView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkMmpPagesLink1"
+    ViewLinkObjectName="model.Users_Roles.FkMmpPagesLink"
+    SrcViewUsageName="model.Users_Roles.AppModule.MmpModuleMenuView1"
+    DstViewUsageName="model.Users_Roles.AppModule.MmpPagesView2"
     Reversed="false"/>
 </AppModule>
