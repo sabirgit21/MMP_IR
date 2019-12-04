@@ -32,7 +32,6 @@
                           rowSelection="single" fetchSize="#{bindings.MmpMemberRegView1.rangeSize}"
                           filterModel="#{bindings.MmpMemberRegView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MmpMemberRegView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers="::b2 ::b3 ::b4 ::b5"
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpMemberRegView1.hints.MemberRegId.name}" 
                              filterable="true" sortable="true" 
@@ -41,7 +40,7 @@
                                           <af:inputText value="#{vs.filterCriteria.MemberRegId}"
                                           id="id4" placeholder="Search ID">
                            </af:inputText>
-                             </f:facet>
+                    </f:facet>
                     <af:inputText value="#{row.bindings.MemberRegId.inputValue}"
                                   label="#{bindings.MmpMemberRegView1.hints.MemberRegId.label}"
                                   required="#{bindings.MmpMemberRegView1.hints.MemberRegId.mandatory}"
@@ -286,7 +285,6 @@
                           rowSelection="single" fetchSize="#{bindings.MmpMemberRegDepView2.rangeSize}"
                           filterModel="#{bindings.MmpMemberRegDepView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MmpMemberRegDepView2Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers=""
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpMemberRegDepView2.hints.MemberRegDepId.name}" filterable="true"
                              sortable="true" headerText="Dependent ID"

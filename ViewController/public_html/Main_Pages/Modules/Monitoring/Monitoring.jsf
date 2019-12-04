@@ -5,6 +5,7 @@
     <af:messages id="m1"/>
     <af:resource type="javascript" source="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js" />
         <af:form id="f1">
+        <af:panelGroupLayout layout="scroll" id="pgl1">
             <af:panelGridLayout id="pgl2">
                 <af:gridRow height="160px" id="gr2">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
@@ -19,6 +20,7 @@
                         <af:panelSplitter orientation="horizontal" splitterPosition="220" id="ps1">
                             <f:facet name="first">
                                 <!-- Left -->
+                                <af:panelGroupLayout id="pgl5">
                                 <af:panelAccordion discloseMany="false" id="pa4" inlineStyle="width:210px; ">
                                     <af:showDetailItem id="sdi1" text="Monitoring">
                                         <af:spacer width="190" height="10" id="s1"/>
@@ -35,9 +37,10 @@
                                         </af:iterator>
                                     </af:showDetailItem>
                                 </af:panelAccordion>
+                                </af:panelGroupLayout>
                             </f:facet>
                             <f:facet name="second">
-                                <af:panelGroupLayout layout="scroll" id="pgl1">
+                                <af:panelGroupLayout id="pgl4">
                                     <!-- Content -->
                                     <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"/>
                                 </af:panelGroupLayout>
@@ -46,6 +49,7 @@
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
+            </af:panelGroupLayout>
         </af:form>
     </af:document>
 </f:view>

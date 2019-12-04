@@ -4,6 +4,7 @@
     <af:document title="Management.jsf" id="d1">
         <af:messages id="m1"/>
         <af:form id="f1">
+        <af:panelGroupLayout layout="scroll" id="pgl1">
             <af:panelGridLayout id="pgl2">
                 <af:gridRow height="160px" id="gr2">
                     <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
@@ -36,7 +37,7 @@
                                 </af:panelAccordion>
                             </f:facet>
                             <f:facet name="second">
-                                <af:panelGroupLayout layout="scroll" id="pgl1">
+                                <af:panelGroupLayout layout="scroll" id="pgl4">
                                     <!-- Content -->
                                     <af:region value="#{bindings.dynamicRegion1.regionModel}" id="r1"/>
                                 </af:panelGroupLayout>
@@ -45,6 +46,7 @@
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
+             </af:panelGroupLayout>
         </af:form>
     </af:document>
 </f:view>

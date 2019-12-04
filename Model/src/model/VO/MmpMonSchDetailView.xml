@@ -23,23 +23,12 @@
     <ParameterMap>
       <PIMap Variable="getphaseID">
         <TransientExpression
-          trustMode="trusted"
           Name="ExpressionScript"><![CDATA[MmpPhaseId]]></TransientExpression>
       </PIMap>
-    </ParameterMap>
-  </ViewAccessor>
-  <ViewAccessor
-    Name="Cluster_Depn_Sch_Date_LOV1"
-    ViewObjectName="model.LOV.Cluster_Depn_Sch_Date_LOV"
-    RowLevelBinds="true">
-    <ViewCriteriaUsage
-      Name="Cluster_Depn_Sch_Date_LOVCriteria"
-      FullName="model.LOV.Cluster_Depn_Sch_Date_LOV.Cluster_Depn_Sch_Date_LOVCriteria"/>
-    <ParameterMap>
-      <PIMap Variable="getClstr">
+      <PIMap Variable="getDate">
         <TransientExpression
-          trustMode="trusted"
-          Name="ExpressionScript"><![CDATA[ClusterId]]></TransientExpression>
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[Dated]]></TransientExpression>
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
@@ -58,24 +47,7 @@
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_Dated"
-    ListVOName="Cluster_Depn_Sch_Date_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="Dated"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="DatedD"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="DatedD"/>
+      <Item Value="ModuleName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -133,15 +105,7 @@
     PrecisionRule="true"
     EntityAttrName="Dated"
     EntityUsage="MmpMonSchDetail"
-    AliasName="DATED"
-    LOVName="LOV_Dated">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="DATED"/>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"

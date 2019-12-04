@@ -32,7 +32,6 @@
                           rowSelection="single" fetchSize="#{bindings.MmpMonSchMasterView1.rangeSize}"
                           filterModel="#{bindings.MmpMonSchMasterView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MmpMonSchMasterView1Query.processQuery}" varStatus="vs" id="t1"
-                          partialTriggers=""
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpMonSchMasterView1.hints.MmpMonSchMasterId.name}"
                              filterable="true" sortable="true"
@@ -73,14 +72,14 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMonSchMasterView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c3" align="center" width="100">
+                             sortable="true" headerText="Voucher Date" id="c3" align="center" width="100">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.MmpMonSchMasterView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
                                     id="id1">
                         <af:convertDateTime pattern="#{bindings.MmpMonSchMasterView1.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
-                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}" 
                                   label="#{bindings.MmpMonSchMasterView1.hints.Dated.label}"
                                   required="#{bindings.MmpMonSchMasterView1.hints.Dated.mandatory}"
                                   columns="#{bindings.MmpMonSchMasterView1.hints.Dated.displayWidth}"
@@ -140,8 +139,7 @@
                           selectionListener="#{bindings.MmpMonSchDetailView2.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.MmpMonSchDetailView2.rangeSize}"
                           filterModel="#{bindings.MmpMonSchDetailView2Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.MmpMonSchDetailView2Query.processQuery}" varStatus="vs" id="t2"
-                          partialTriggers="" 
+                          queryListener="#{bindings.MmpMonSchDetailView2Query.processQuery}" varStatus="vs" id="t2" 
                           scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.name}"
                              filterable="true" sortable="true"
@@ -164,6 +162,24 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpMonSchDetailView2.hints.MmpMonSchDetailId.format}"/>
                     </af:inputText>
+                  </af:column>
+                  <!--<af:column headerText="Date" id="c7">
+                    <af:selectOneChoice value="#{row.bindings.Dated.inputValue}" label="#{row.bindings.Dated.label}"
+                                        required="#{bindings.MmpMonSchDetailView2.hints.Dated.mandatory}"
+                                        shortDesc="#{bindings.MmpMonSchDetailView2.hints.Dated.tooltip}" id="soc4">
+                      <f:selectItems value="#{row.bindings.Dated.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>-->
+                  <af:column headerText="#{bindings.MmpMonSchDetailView2.hints.Dated.label}" id="c7">
+                    <af:inputDate value="#{row.bindings.Dated.inputValue}" autoSubmit="true"
+                                  label="#{bindings.MmpMonSchDetailView2.hints.Dated.label}"
+                                  required="#{bindings.MmpMonSchDetailView2.hints.Dated.mandatory}"
+                                  columns="#{bindings.MmpMonSchDetailView2.hints.Dated.displayWidth}"
+                                  shortDesc="#{bindings.MmpMonSchDetailView2.hints.Dated.tooltip}" id="id3">
+                      <f:validator binding="#{row.bindings.Dated.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.MmpMonSchDetailView2.hints.Dated.format}"/>
+                    </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.ClusterId.name}"
                              filterable="true" sortable="true"
@@ -200,14 +216,6 @@
                       <af:convertDateTime pattern="#{bindings.MmpMonSchDetailView2.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>-->
-                  <af:column headerText="Date" id="c7">
-                    <af:selectOneChoice value="#{row.bindings.Dated.inputValue}" label="#{row.bindings.Dated.label}"
-                                        required="#{bindings.MmpMonSchDetailView2.hints.Dated.mandatory}"
-                                        shortDesc="#{bindings.MmpMonSchDetailView2.hints.Dated.tooltip}" id="soc4">
-                      <f:selectItems value="#{row.bindings.Dated.items}" id="si4"/>
-                      <f:validator binding="#{row.bindings.Dated.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>

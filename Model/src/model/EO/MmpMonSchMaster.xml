@@ -33,7 +33,8 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="MMP_MON_SCH_MASTER"/>
+    TableName="MMP_MON_SCH_MASTER"
+    IsNotNull="true"/>
   <Attribute
     Name="MemberRegId"
     ColumnName="MEMBER_REG_ID"
@@ -90,6 +91,18 @@
     AssociationOtherEnd="model.EO.FkMmpMonSchMasterPhaseAssoc.MmpMonSchMaster"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <Key
+    Name="MmpMonSchMasterDatedCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_checkCondition" Value='"DATED" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="MMP_MON_SCH_MASTER_DATED_CHECK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.MmpMonSchMaster.Dated"/>
+    </AttrArray>
+  </Key>
   <Key
     Name="PkMmpMonSchMaster"
     PrimaryKey="true">

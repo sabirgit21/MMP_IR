@@ -23,6 +23,10 @@
     Name="getphaseID"
     Kind="viewcriteria"
     Type="java.math.BigDecimal"/>
+  <Variable
+    Name="getDate"
+    Kind="viewcriteria"
+    Type="java.sql.Timestamp"/>
   <EntityUsage
     Name="TblCluster"
     Entity="model.EO.TblCluster"/>
@@ -45,6 +49,63 @@
       </AttrArray>
     </DesignTime>
   </EntityUsage>
+  <EntityUsage
+    Name="TblTrainingSchDetail"
+    Entity="model.EO.TblTrainingSchDetail"
+    Association="model.EO.Fk2TblTrainingSchDetailFkAssoc"
+    AssociationEnd="model.EO.Fk2TblTrainingSchDetailFkAssoc.TblTrainingSchDetail"
+    SourceUsage="model.LOV.Cluster_ID_Depen_Phase_ID_LOV.TblCluster"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblTrainingSchDetail.ClusterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblCluster.ClusterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblTrainingSchMaster"
+    Entity="model.EO.TblTrainingSchMaster"
+    Association="model.EO.FkTblTrainingSchDetailFkAssoc"
+    AssociationEnd="model.EO.FkTblTrainingSchDetailFkAssoc.TblTrainingSchMaster"
+    SourceUsage="model.LOV.Cluster_ID_Depen_Phase_ID_LOV.TblTrainingSchDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblTrainingSchMaster.TrainingSchMasterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblTrainingSchDetail.TrainingSchMasterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblModule"
+    Entity="model.EO.TblModule"
+    Association="model.EO.Fk3TblTrainingSchMasterFkAssoc"
+    AssociationEnd="model.EO.Fk3TblTrainingSchMasterFkAssoc.TblModule"
+    SourceUsage="model.LOV.Cluster_ID_Depen_Phase_ID_LOV.TblTrainingSchMaster"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblModule.ModuleId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblTrainingSchMaster.ModuleId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="ClusterNo"
     IsNotNull="true"
@@ -64,6 +125,46 @@
     EntityAttrName="PhaseId"
     EntityUsage="TblPhase"
     AliasName="PHASE_ID"/>
+  <ViewAttribute
+    Name="DatedD"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DatedD"
+    EntityUsage="TblTrainingSchDetail"
+    AliasName="DATED_D"/>
+  <ViewAttribute
+    Name="TrainingSchDetailId"
+    PrecisionRule="true"
+    EntityAttrName="TrainingSchDetailId"
+    EntityUsage="TblTrainingSchDetail"
+    AliasName="TRAINING_SCH_DETAIL_ID"/>
+  <ViewAttribute
+    Name="ModuleId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ModuleId"
+    EntityUsage="TblTrainingSchMaster"
+    AliasName="MODULE_ID"/>
+  <ViewAttribute
+    Name="TrainingSchMasterId"
+    PrecisionRule="true"
+    EntityAttrName="TrainingSchMasterId"
+    EntityUsage="TblTrainingSchMaster"
+    AliasName="TRAINING_SCH_MASTER_ID"/>
+  <ViewAttribute
+    Name="ModuleName"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblModule"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="ModuleId1"
+    PrecisionRule="true"
+    EntityAttrName="ModuleId"
+    EntityUsage="TblModule"
+    AliasName="MODULE_ID1"/>
   <ViewCriteria
     Name="Cluster_ID_Depen_Phase_ID_LOVCriteria"
     ViewObjectName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV"
@@ -96,6 +197,14 @@
         Operator="="
         Conjunction="AND"
         Value=":getphaseID"
+        IsBindVarValue="true"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="DatedD"
+        ViewAttribute="DatedD"
+        Operator="="
+        Conjunction="AND"
+        Value=":getDate"
         IsBindVarValue="true"
         Required="Optional"/>
     </ViewCriteriaRow>

@@ -120,10 +120,13 @@
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
                                             <af:button actionListener="#{bindings.CreateInsert.execute}"
                                                        text="Add" disabled="#{!bindings.CreateInsert.enabled}"
+                                                       icon="#{resource['images:add.png']}"
                                                        id="b2"/>
                                             <af:button actionListener="#{bindings.Execute.execute}" text="Verify Editing"
+                                            icon="#{resource['images:edit.png']}"
                                                        disabled="#{!bindings.Execute.enabled}" id="b3"/>
                                             <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                            icon="#{resource['images:delete.png']}"
                                                        disabled="#{!bindings.Delete.enabled}" id="b4"/>
                                         </af:gridCell>
                         </af:gridRow>
@@ -255,11 +258,13 @@
                         <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
                             <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
                                             <af:button actionListener="#{bindings.CreateInsert1.execute}"
-                                                       text="Add"
+                                                       text="Add" icon="#{resource['images:add.png']}"
                                                        disabled="#{!bindings.CreateInsert1.enabled}" id="b5"/>
                                             <af:button actionListener="#{bindings.Execute1.execute}" text="Verify Editing"
+                                             icon="#{resource['images:edit.png']}"
                                                        disabled="#{!bindings.Execute1.enabled}" id="b6"/>
                                             <af:button actionListener="#{bindings.Delete1.execute}" text="Delete"
+                                             icon="#{resource['images:delete.png']}"
                                                        disabled="#{!bindings.Delete1.enabled}" id="b7"/>
                                         </af:gridCell>
                         </af:gridRow>
@@ -433,7 +438,7 @@
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                     </af:table>
-                                                    <af:button actionListener="#{bindings.Execute2.execute}"
+                                                    <af:button actionListener="#{bindings.Execute2.execute}" icon="#{resource['images:edit.png']}"
                                                                text="Verify Editing" disabled="#{!bindings.Execute2.enabled}"
                                                                id="b8"/>
                                                 </af:showDetailItem>
@@ -532,7 +537,7 @@
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpREdit.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headertext="Verify Editing"
+                                                                   headertext="Edit"
                                                                    id="c22" width="60">
                                                                    <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.MmpREdit}"
@@ -608,7 +613,7 @@
                                                         </af:column>
                                                         
                                                     </af:table>
-                                                    <af:button actionListener="#{bindings.Execute3.execute}"
+                                                    <af:button actionListener="#{bindings.Execute3.execute}" icon="#{resource['images:edit.png']}"
                                                                text="Verify Editing" disabled="#{!bindings.Execute3.enabled}"
                                                                id="b9"/>
                                                 </af:showDetailItem>
@@ -687,7 +692,7 @@
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                     </af:table>
-                                                    <af:button actionListener="#{bindings.Execute4.execute}"
+                                                    <af:button actionListener="#{bindings.Execute4.execute}" icon="#{resource['images:edit.png']}"
                                                                text="Execute4" disabled="#{!bindings.Execute4.enabled}"
                                                                id="b11"/>
                                                 </af:showDetailItem>-->

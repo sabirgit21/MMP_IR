@@ -57,5 +57,9 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <action IterBinding="MmpMonSchMasterView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+    <action IterBinding="MmpMonSchDetailView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>

@@ -160,5 +160,8 @@
     </tree>
     <list IterBinding="MmpMemberRegView1Iterator" StaticList="false" Uses="LOV_MarStatus" id="MarStatus1"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <action IterBinding="MmpMemberRegView1Iterator" id="Execute" RequiresUpdateModel="true" Action="iteratorExecute"/>
+    <action IterBinding="MmpMemberRegDepView2Iterator" id="Execute1" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
   </bindings>
 </pageDefinition>
