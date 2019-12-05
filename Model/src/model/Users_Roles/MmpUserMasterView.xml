@@ -21,8 +21,9 @@
     Name="LOV_MemberRegId"
     ListVOName="Member_Name_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="LOV_MemberRegId_LOVUIHints_NullValueId">
     <AttrArray Name="AttrNames">
       <Item Value="MemberRegId"/>
     </AttrArray>
@@ -89,4 +90,8 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>

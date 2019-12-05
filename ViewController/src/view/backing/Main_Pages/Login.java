@@ -150,7 +150,11 @@ public class Login {
                 //getting data against column from table
                 role_master_id = (rset.getString("mmp_role_master_id")).toString();
                 user_master_id = (rset.getString("mmp_user_master_id")).toString();
-                member_reg_id = (rset.getString("member_reg_id")).toString();
+                
+                if((rset.getString("member_reg_id")) != null){
+                    member_reg_id = (rset.getString("member_reg_id")).toString();
+                }
+                
                 //Storing value in session username from input text field and role_master_id from DB
 
                 System.out.println(".........MMP_User Name stored in session is :..." + username + "...");
