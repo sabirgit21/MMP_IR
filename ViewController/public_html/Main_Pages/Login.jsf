@@ -102,7 +102,7 @@
 
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
         xmlns:h="http://java.sun.com/jsf/html">
-    <af:document title="Login.jsf" id="d1">
+    <af:document title="M.M Pakistan" id="d1">
         <af:form id="f1">
             <af:panelGridLayout id="pgl1"
                                 inlineStyle="background-image: url(../Resources/agri_slider.jpg); background-size:cover ;max-height: none !important; max-width: none;">

@@ -34,7 +34,7 @@
                           filterVisible="true"
                           queryListener="#{bindings.MmpTrainingPhyProgMasterView1Query.processQuery}" varStatus="vs"
                           id="t1">
-                  <af:column sortProperty="#{bindings.MmpTrainingPhyProgMasterView1.hints.MmpTrngPhyProgMstId.name}"
+                  <!--<af:column sortProperty="#{bindings.MmpTrainingPhyProgMasterView1.hints.MmpTrngPhyProgMstId.name}"
                              filterable="true" sortable="true"
                              headerText="Physical Progress Master ID"
                              id="c1" align="center" width="100">
@@ -55,7 +55,8 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpTrainingPhyProgMasterView1.hints.MmpTrngPhyProgMstId.format}"/>
                     </af:inputText>
-                  </af:column>
+                  </af:column>-->
+                  
                   <af:column sortProperty="#{bindings.MmpTrainingPhyProgMasterView1.hints.PhaseId.name}"
                              filterable="true" sortable="true"
                              headerText="Phase" id="c2" width="200">

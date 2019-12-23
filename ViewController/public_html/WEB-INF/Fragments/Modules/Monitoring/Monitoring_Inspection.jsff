@@ -263,72 +263,79 @@
                 <af:panelFormLayout id="pfl1" maxColumns="2" rows="5">
                  <af:selectOneChoice value="#{bindings.PhaseId.inputValue}" label="Phase"
                                       required="#{bindings.PhaseId.hints.mandatory}"
-                                      shortDesc="#{bindings.PhaseId.hints.tooltip}" readOnly="true" id="soc8">
+                                      shortDesc="#{bindings.PhaseId.hints.tooltip}" disabled="true" id="soc8">
                     <f:selectItems value="#{bindings.PhaseId.items}" id="si8"/>
                     <f:validator binding="#{bindings.PhaseId.validator}"/>
                     <af:selectItem label="selectItem 1" id="si22"/>
                   </af:selectOneChoice>
+                  <af:spacer width="10" height="0" id="s4"/>
                   <af:inputText value="#{bindings.ClusterNo.inputValue}" label="Cluster No."
-                                required="#{bindings.ClusterNo.hints.mandatory}" readOnly="true"
+                                required="#{bindings.ClusterNo.hints.mandatory}" disabled="true"
                                 columns="#{bindings.ClusterNo.hints.displayWidth}"
                                 maximumLength="#{bindings.ClusterNo.hints.precision}"
                                 shortDesc="#{bindings.ClusterNo.hints.tooltip}" id="it3">
                     <f:validator binding="#{bindings.ClusterNo.validator}"/>
                   </af:inputText>
+                  <af:spacer width="10" height="2" id="s11"/>
                   <af:selectOneChoice value="#{bindings.CropId.inputValue}" label="Crop"
                                       required="#{bindings.CropId.hints.mandatory}"
-                                      shortDesc="#{bindings.CropId.hints.tooltip}" readOnly="true" id="soc2">
+                                      shortDesc="#{bindings.CropId.hints.tooltip}" disabled="true" id="soc2">
                     <f:selectItems value="#{bindings.CropId.items}" id="si2"/>
                     <f:validator binding="#{bindings.CropId.validator}"/>
                   </af:selectOneChoice>
-                  <af:inputText value="#{bindings.Name.inputValue}" label="Cluster"
-                                required="#{bindings.Name.hints.mandatory}" readOnly="true"
-                                columns="#{bindings.Name.hints.displayWidth}"
+                  <af:spacer width="10" height="2" id="s16"/>
+                  <af:inputText value="#{bindings.Name.inputValue}" label="Cluster" 
+                                required="#{bindings.Name.hints.mandatory}" disabled="true"
+                                columns="20"
                                 maximumLength="#{bindings.Name.hints.precision}"
                                 shortDesc="#{bindings.Name.hints.tooltip}" id="it2">
                     <f:validator binding="#{bindings.Name.validator}"/>
                   </af:inputText>
-                  
+                  <af:spacer width="10" height="2" id="s12"/>
                   <af:selectOneChoice value="#{bindings.DistrictLibrDetail.inputValue}"
                                       label="District"
                                       required="#{bindings.DistrictLibrDetail.hints.mandatory}"
-                                      shortDesc="#{bindings.DistrictLibrDetail.hints.tooltip}" readOnly="true"
+                                      shortDesc="#{bindings.DistrictLibrDetail.hints.tooltip}" disabled="true"
                                       id="soc4">
                     <f:selectItems value="#{bindings.DistrictLibrDetail.items}" id="si4"/>
                     <f:validator binding="#{bindings.DistrictLibrDetail.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer width="10" height="2" id="s13"/>
                   <af:selectOneChoice value="#{bindings.CityLibrDetail.inputValue}"
                                       label="City"
                                       required="#{bindings.CityLibrDetail.hints.mandatory}"
-                                      shortDesc="#{bindings.CityLibrDetail.hints.tooltip}" readOnly="true" id="soc3">
+                                      shortDesc="#{bindings.CityLibrDetail.hints.tooltip}" disabled="true" id="soc3">
                     <f:selectItems value="#{bindings.CityLibrDetail.items}" id="si3"/>
                     <f:validator binding="#{bindings.CityLibrDetail.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer width="10" height="2" id="s14"/>
                   <af:selectOneChoice value="#{bindings.TehsilLibrDetail.inputValue}"
                                       label="Tehsil"
                                       required="#{bindings.TehsilLibrDetail.hints.mandatory}"
-                                      shortDesc="#{bindings.TehsilLibrDetail.hints.tooltip}" readOnly="true" id="soc5">
+                                      shortDesc="#{bindings.TehsilLibrDetail.hints.tooltip}" disabled="true" id="soc5">
                     <f:selectItems value="#{bindings.TehsilLibrDetail.items}" id="si5"/>
                     <f:validator binding="#{bindings.TehsilLibrDetail.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer width="10" height="2" id="s15"/>
                   <af:selectOneChoice value="#{bindings.MauzaLibrDetail.inputValue}"
                                       label="Mauza"
                                       required="#{bindings.MauzaLibrDetail.hints.mandatory}"
-                                      shortDesc="#{bindings.MauzaLibrDetail.hints.tooltip}" readOnly="true" id="soc6">
+                                      shortDesc="#{bindings.MauzaLibrDetail.hints.tooltip}" disabled="true" id="soc6">
                     <f:selectItems value="#{bindings.MauzaLibrDetail.items}" id="si6"/>
                     <f:validator binding="#{bindings.MauzaLibrDetail.validator}"/>
                   </af:selectOneChoice>
+                  <af:spacer width="10" height="2" id="s17"/>
                   <af:selectOneChoice value="#{bindings.VillageLibrDetail.inputValue}"
                                       label="Village"
                                       required="#{bindings.VillageLibrDetail.hints.mandatory}"
-                                      shortDesc="#{bindings.VillageLibrDetail.hints.tooltip}" readOnly="true" id="soc7">
+                                      shortDesc="#{bindings.VillageLibrDetail.hints.tooltip}" disabled="true" id="soc7">
                     <f:selectItems value="#{bindings.VillageLibrDetail.items}" id="si7"/>
                     <f:validator binding="#{bindings.VillageLibrDetail.validator}"/>
                   </af:selectOneChoice>
-                 
+                  <af:spacer width="10" height="2" id="s18"/>
                   <af:selectOneChoice value="#{bindings.UcLibrDetail.inputValue}" label="UC"
                                       required="#{bindings.UcLibrDetail.hints.mandatory}"
-                                      shortDesc="#{bindings.UcLibrDetail.hints.tooltip}" readOnly="true" id="soc9">
+                                      shortDesc="#{bindings.UcLibrDetail.hints.tooltip}" disabled="true" id="soc9">
                     <f:selectItems value="#{bindings.UcLibrDetail.items}" id="si9"/>
                     <f:validator binding="#{bindings.UcLibrDetail.validator}"/>
                   </af:selectOneChoice>
