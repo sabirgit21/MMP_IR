@@ -5,7 +5,7 @@
   <executables>
     <variableIterator id="variables"/>
     <iterator Binds="Management_Pages1" RangeSize="25" DataControl="AppModuleDataControl1"
-              id="Management_Pages1Iterator"/>
+              id="Management_Pages1Iterator" CacheResults="false" Refresh="always"/>
     <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.ManagementSidebarBean.dynamicTaskFlowId}"
               activation="deferred" xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
