@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
-    <af:document title="Dashboard.jsf" id="d1">
+    <af:document title="M.M Pakistan" id="d1">
         <af:form id="f1">
             <af:panelGridLayout id="pgl1">
                 <af:gridRow height="160px" id="gr1">

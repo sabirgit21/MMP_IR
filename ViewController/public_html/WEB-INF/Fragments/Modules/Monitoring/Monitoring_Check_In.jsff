@@ -21,7 +21,7 @@
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr2">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-            <af:panelTabbed position="above" id="pt1" >
+            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Monitoring Check In">
                 <af:table value="#{bindings.MmpTrainingCheckInView1.collectionModel}" var="row"
                           rows="#{bindings.MmpTrainingCheckInView1.rangeSize}"
@@ -58,7 +58,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.MemberRegId.name}"
                              filterable="true" sortable="true"
-                             headerText="Member" id="c8" width="200">
+                             headerText="Member" id="c8" width="150">
                               <f:facet name="filter">
                                                                        <af:inputText value="#{vs.filterCriteria.MemberRegId}"
                                                                                      placeholder="Search Member" id="it9" >
