@@ -61,6 +61,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_PerChange"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="PerChange"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="MmpTrainingMonFarmer"
     Entity="model.EO.MmpTrainingMonFarmer"/>
@@ -232,7 +250,15 @@
     PrecisionRule="true"
     EntityAttrName="PerChange"
     EntityUsage="MmpTrainingMonFarmer"
-    AliasName="PER_CHANGE"/>
+    AliasName="PER_CHANGE"
+    LOVName="LOV_PerChange">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Remarks"
     PrecisionRule="true"

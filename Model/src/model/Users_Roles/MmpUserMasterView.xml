@@ -17,6 +17,10 @@
     Name="Member_Name_LOV1"
     ViewObjectName="model.LOV.Member_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_MemberRegId"
     ListVOName="Member_Name_LOV1"
@@ -34,6 +38,24 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="MemberNo"/>
       <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -68,7 +90,15 @@
     PrecisionRule="true"
     EntityAttrName="Ast"
     EntityUsage="MmpUserMaster"
-    AliasName="AST"/>
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="MmpRoleMasterId"
     IsNotNull="true"

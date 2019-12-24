@@ -13,6 +13,51 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Trainer_Name_LOV1"
+    ViewObjectName="model.LOV.Trainer_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Status"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Status"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TrainerId"
+    ListVOName="Trainer_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TrainerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TrainerId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+      <Item Value="Mobile"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="MmpTrainingMonTopics"
     Entity="model.EO.MmpTrainingMonTopics"/>
@@ -59,7 +104,15 @@
     PrecisionRule="true"
     EntityAttrName="Status"
     EntityUsage="MmpTrainingMonTopics"
-    AliasName="STATUS"/>
+    AliasName="STATUS"
+    LOVName="LOV_Status">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="CreatedDate"
     PrecisionRule="true"
@@ -98,6 +151,20 @@
     EntityAttrName="TopicsId"
     EntityUsage="TblTopics"
     AliasName="TOPICS_ID1"/>
+  <ViewAttribute
+    Name="TrainerId"
+    PrecisionRule="true"
+    EntityAttrName="TrainerId"
+    EntityUsage="MmpTrainingMonTopics"
+    AliasName="TRAINER_ID"
+    LOVName="LOV_TrainerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingMonTopicsId"/>
   </AttrArray>

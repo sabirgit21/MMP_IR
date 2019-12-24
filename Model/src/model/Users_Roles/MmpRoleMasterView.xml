@@ -13,6 +13,28 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Active_LOV1"
+    ViewObjectName="model.LOV.Active_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="MmpRoleMaster"
     Entity="model.EO.MmpRoleMaster"/>
@@ -37,7 +59,15 @@
     PrecisionRule="true"
     EntityAttrName="Ast"
     EntityUsage="MmpRoleMaster"
-    AliasName="AST"/>
+    AliasName="AST"
+    LOVName="LOV_Ast">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="MmpRoleDetailPagesView"
     ViewLink="model.Users_Roles.FkMmpRoleDetailPagesLink"
