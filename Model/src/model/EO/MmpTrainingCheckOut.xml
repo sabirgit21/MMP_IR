@@ -83,6 +83,27 @@
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
     TableName="MMP_TRAINING_CHECK_OUT"/>
+  <Attribute
+    Name="ClusterId"
+    ColumnName="CLUSTER_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_TRAINING_CHECK_OUT"/>
+  <Attribute
+    Name="Dated"
+    ColumnName="DATED"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="MMP_TRAINING_CHECK_OUT"/>
+  <Attribute
+    Name="MemberRegId"
+    ColumnName="MEMBER_REG_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_TRAINING_CHECK_OUT"/>
   <AccessorAttribute
     Name="MmpTrainingCheckIn"
     Association="model.EO.FKTblTrainingCheckOutFKAssoc"

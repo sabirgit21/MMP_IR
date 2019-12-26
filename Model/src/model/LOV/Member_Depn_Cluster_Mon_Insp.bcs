@@ -1,0 +1,12 @@
+//Groovy Scripts for model.LOV.Member_Depn_Cluster_Mon_Insp
+
+package model.LOV
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="mmRegID")
+def mmRegID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessMemID')
+}
+
