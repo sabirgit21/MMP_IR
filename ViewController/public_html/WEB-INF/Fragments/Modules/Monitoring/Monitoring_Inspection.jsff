@@ -145,9 +145,8 @@
                     <f:validator binding="#{bindings.StartTraining1.validator}"/>
                     <af:convertDateTime pattern="MM/dd/yyyy hh:mm:ss a"/>
                   </af:inputDate>
-                  
                   <af:inputDate value="#{bindings.EndTraining1.inputValue}" label="End Training"
-                                required="#{bindings.EndTraining1.hints.mandatory}"
+                                required="#{bindings.EndTraining1.hints.mandatory}" disabled="true"
                                 columns="#{bindings.EndTraining1.hints.displayWidth}"
                                 shortDesc="#{bindings.EndTraining1.hints.tooltip}" id="id5" contentStyle="width:250px;">
                     <f:validator binding="#{bindings.EndTraining1.validator}"/>

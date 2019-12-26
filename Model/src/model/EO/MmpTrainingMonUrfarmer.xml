@@ -46,7 +46,8 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="MMP_TRAINING_MON_URFARMER">
+    TableName="MMP_TRAINING_MON_URFARMER"
+    DefaultValue="00000-0000000-0">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="15"/>
     </DesignTime>

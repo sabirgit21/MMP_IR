@@ -205,6 +205,9 @@
   <ViewUsage
     Name="MmpFarmerRegDVerifLandView3"
     ViewObjectName="model.VO.MmpFarmerRegDVerifLandView"/>
+  <ViewUsage
+    Name="MmpTrainingCheckOutView1"
+    ViewObjectName="model.VO.MmpTrainingCheckOutView"/>
   <ViewLinkUsage
     Name="FkMmpMemberRegDepLink1"
     ViewLinkObjectName="model.VO.FkMmpMemberRegDepLink"

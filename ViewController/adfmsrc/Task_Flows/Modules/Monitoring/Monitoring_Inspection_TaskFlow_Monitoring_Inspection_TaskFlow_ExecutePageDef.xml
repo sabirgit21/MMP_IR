@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57"
+                id="Monitoring_Inspection_TaskFlow_Monitoring_Inspection_TaskFlow_ExecutePageDef"
+                Package="Task_Flows.Modules.Monitoring" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="MmpTrainingMonInspView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MmpTrainingMonInspView1Iterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="MmpTrainingMonInspView1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

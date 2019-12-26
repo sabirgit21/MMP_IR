@@ -5,19 +5,19 @@
    <View
       id="View2">
       <property
-         name="activityId">Monitoring_Inspection</property>
+         name="activityId">Monitoring_Check_Out</property>
       <property
          name="pageFragment">true</property>
       <property
-         name="x">335.0</property>
+         name="x">430.0</property>
       <property
          name="start">false</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>Monitoring_Inspection&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>Monitoring_Check_Out&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">228.5459</property>
+         name="y">203.5459</property>
       <property
-         name="page">/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Inspection.jsff</property>
+         name="page">/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Check_Out.jsff</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -26,13 +26,13 @@
       <property
          name="activityId">ExecuteWithParams</property>
       <property
-         name="x">186.35156</property>
+         name="x">176.35156</property>
       <property
          name="start">false</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>ExecuteWithParams&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">337.1494</property>
+         name="y">255.14941</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
@@ -44,20 +44,20 @@
       <property
          name="fromOutcome">ExecuteWithParams</property>
       <property
-         name="sdm:polyPoints">T50,186.35156,282.79883,294.0,228.19531,L50</property>
+         name="sdm:polyPoints">R50,217.35156,254.79883,389.0,203.19531,L50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall5">
       <property
          name="activityId">Execute</property>
       <property
-         name="x">376.5</property>
+         name="x">282.5</property>
       <property
          name="start">true</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>Execute&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">519.1494</property>
+         name="y">471.1494</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
@@ -69,6 +69,6 @@
       <property
          name="fromOutcome">Execute</property>
       <property
-         name="sdm:polyPoints">T0,R45</property>
+         name="sdm:polyPoints">T33,B99</property>
    </ControlFlowCase>
 </SDM>

@@ -1,0 +1,12 @@
+//Groovy Scripts for model.VO.MmpTrainingMonInspView
+
+package model.VO
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="sessMemID")
+def sessMemID_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessMemID')
+}
+

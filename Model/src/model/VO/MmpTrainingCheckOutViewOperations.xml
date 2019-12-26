@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding='windows-1252'?>
+<!DOCTYPE OperationDefinitions SYSTEM "jbo_03_01.dtd">
+<OperationDefinitions xmlns="http://xmlns.oracle.com/bc4j" Name="MmpTrainingCheckOutViewOperations">
+  <ExpressionCodeSource
+    Name="MmpTrainingCheckOutView"
+    Type="Static"
+    URI="model/VO/MmpTrainingCheckOutView.bcs"/>
+</OperationDefinitions>

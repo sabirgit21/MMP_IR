@@ -44,6 +44,14 @@
           usageId="view_Farmer_Verification_TaskFlow_Farmer_Verification_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Monitoring/Farmer_Verification.jsff"
           usageId="view_Farmer_VerificationPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Monitoring/Monitoring_Check_Out_TaskFlow.xml#Monitoring_Check_Out_TaskFlow@ExecuteWithParams"
+          usageId="view_Monitoring_Check_Out_TaskFlow_Monitoring_Check_Out_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Check_Out.jsff"
+          usageId="view_Monitoring_Check_OutPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Monitoring/Monitoring_Check_Out_TaskFlow.xml#Monitoring_Check_Out_TaskFlow@Execute"
+          usageId="view_Monitoring_Check_Out_TaskFlow_Monitoring_Check_Out_TaskFlow_ExecutePageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Monitoring/Monitoring_Inspection_TaskFlow.xml#Monitoring_Inspection_TaskFlow@Execute"
+          usageId="view_Monitoring_Inspection_TaskFlow_Monitoring_Inspection_TaskFlow_ExecutePageDef"/>
   </pageMap>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"
@@ -89,5 +97,12 @@
     <page id="view_Farmer_Verification_TaskFlow_Farmer_Verification_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Monitoring.Farmer_Verification_TaskFlow_Farmer_Verification_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_Farmer_VerificationPageDef" path="Fragments.Modules.Monitoring.Farmer_VerificationPageDef"/>
+    <page id="view_Monitoring_Check_Out_TaskFlow_Monitoring_Check_Out_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Monitoring.Monitoring_Check_Out_TaskFlow_Monitoring_Check_Out_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Monitoring_Check_OutPageDef" path="Fragments.Modules.Monitoring.Monitoring_Check_OutPageDef"/>
+    <page id="view_Monitoring_Check_Out_TaskFlow_Monitoring_Check_Out_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Monitoring.Monitoring_Check_Out_TaskFlow_Monitoring_Check_Out_TaskFlow_ExecutePageDef"/>
+    <page id="view_Monitoring_Inspection_TaskFlow_Monitoring_Inspection_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Monitoring.Monitoring_Inspection_TaskFlow_Monitoring_Inspection_TaskFlow_ExecutePageDef"/>
   </pageDefinitionUsages>
 </Application>

@@ -6,14 +6,42 @@
   Name="MmpTrainingMonInspView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
-
+  PageIterMode="Full"
+  SelectList="MmpTrainingMonInsp.MMP_TRAINING_MON_INSP_ID, 
+       MmpTrainingMonInsp.CLUSTER_ID, 
+       MmpTrainingMonInsp.DATED, 
+       MmpTrainingMonInsp.START_TRAINING, 
+       MmpTrainingMonInsp.END_TRAINING, 
+       MmpTrainingMonInsp.TOT_TRAINER, 
+       MmpTrainingMonInsp.AGENDA_DAY, 
+       MmpTrainingMonInsp.RECITE_QURAN, 
+       MmpTrainingMonInsp.PLAN_MODULE, 
+       MmpTrainingMonInsp.ECO_SYSTEM, 
+       MmpTrainingMonInsp.REV_LAST_TRAINING, 
+       MmpTrainingMonInsp.Q_A_SESS, 
+       MmpTrainingMonInsp.SUMM_DAY, 
+       MmpTrainingMonInsp.ANY_IEC, 
+       MmpTrainingMonInsp.TOOLS_ADOPT, 
+       MmpTrainingMonInsp.ISS_CHL_REC, 
+       MmpTrainingMonInsp.DETAIL_ABOUT_OUTCOME, 
+       MmpTrainingMonInsp.CREATED_DATE, 
+       MmpTrainingMonInsp.CREATED_BY, 
+       MmpTrainingMonInsp.UPDATED_DATE, 
+       MmpTrainingMonInsp.UPDATED_BY, 
+       MmpTrainingMonInsp.MEMBER_REG_ID"
+  FromList="MMP_TRAINING_MON_INSP MmpTrainingMonInsp"
+  Where="MmpTrainingMonInsp.MEMBER_REG_ID = :sessMemID">
+  <Variable
+    Name="sessMemID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="MmpTrainingMonInspView"/>
+  </Variable>
   <ViewAccessor
     Name="Crop_Name_LOV1"
     ViewObjectName="model.LOV.Crop_Name_LOV"
@@ -92,7 +120,6 @@
     <ParameterMap>
       <PIMap Variable="getDate">
         <TransientExpression
-          trustMode="trusted"
           Name="ExpressionScript"><![CDATA[Dated]]></TransientExpression>
       </PIMap>
     </ParameterMap>

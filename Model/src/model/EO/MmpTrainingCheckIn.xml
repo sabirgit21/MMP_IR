@@ -116,6 +116,13 @@
     AssociationOtherEnd="model.EO.FkMmpTrainingCheckInAssoc.MmpTrainingCheckIn"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="MmpTrainingCheckOut"
+    Association="model.EO.FKTblTrainingCheckOutFKAssoc"
+    AssociationEnd="model.EO.FKTblTrainingCheckOutFKAssoc.MmpTrainingCheckOut"
+    AssociationOtherEnd="model.EO.FKTblTrainingCheckOutFKAssoc.MmpTrainingCheckIn"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkMmpTrainingCheckIn"
     PrimaryKey="true">

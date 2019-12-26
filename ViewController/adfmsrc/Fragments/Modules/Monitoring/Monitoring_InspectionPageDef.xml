@@ -7,12 +7,13 @@
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl1"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
     <iterator Binds="MmpTrainingMonInspView1" RangeSize="8" DataControl="AppModuleDataControl"
-              id="MmpTrainingMonInspView1Iterator"/>
+              id="MmpTrainingMonInspView1Iterator" Refresh="always" CacheResults="false"/>
     <iterator Binds="TblClusterView3" RangeSize="25" DataControl="AppModuleDataControl" id="TblClusterView3Iterator"/>
     <searchRegion Binds="MmpTrainingMonInspView1Iterator" Criteria=""
-                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpTrainingMonInspView1Query"/>
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpTrainingMonInspView1Query"
+                  Refresh="always"/>
     <iterator Binds="MmpTrainingMonInspView2" RangeSize="25" DataControl="AppModuleDataControl"
-              id="MmpTrainingMonInspView2Iterator"/><iterator Binds="MmpTrainingMonUrfarmerView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MmpTrainingMonInspView2Iterator" Refresh="always" CacheResults="false"/><iterator Binds="MmpTrainingMonUrfarmerView2" RangeSize="25" DataControl="AppModuleDataControl"
               id="MmpTrainingMonUrfarmerView2Iterator"/>
     <searchRegion Binds="MmpTrainingMonUrfarmerView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"

@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MmpTrainingCheckOutView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="MmpTrainingCheckOut.MMP_TRAINING_CHECK_OUT_ID, 
+       MmpTrainingCheckOut.MMP_TRAINING_CHECK_IN_ID, 
+       MmpTrainingCheckOut.REMARKS, 
+       MmpTrainingCheckOut.TRAINING_END, 
+       MmpTrainingCheckOut.TRAINING_START, 
+       MmpTrainingCheckOut.CREATED_DATE, 
+       MmpTrainingCheckOut.CREATED_BY, 
+       MmpTrainingCheckOut.UPDATED_DATE, 
+       MmpTrainingCheckOut.UPDATED_BY, 
+       MmpTrainingCheckIn.CLUSTER_ID, 
+       MmpTrainingCheckIn.MMP_TRAINING_CHECK_IN_ID AS MMP_TRAINING_CHECK_IN_ID1, 
+       MmpTrainingCheckIn.DATED, 
+       MmpTrainingCheckIn.MEMBER_REG_ID"
+  FromList="MMP_TRAINING_CHECK_OUT MmpTrainingCheckOut, MMP_TRAINING_CHECK_IN MmpTrainingCheckIn"
+  Where="MmpTrainingCheckOut.MMP_TRAINING_CHECK_IN_ID = MmpTrainingCheckIn.MMP_TRAINING_CHECK_IN_ID(+)   
+And MmpTrainingCheckIn.MEMBER_REG_ID = :sessMemID">
+  <Variable
+    Name="sessMemID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="MmpTrainingCheckOutView"/>
+  </Variable>
+  <ViewAccessor
+    Name="Cluster_Name_LOV1"
+    ViewObjectName="model.LOV.Cluster_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Session_Member_ID_LOV1"
+    ViewObjectName="model.LOV.Session_Member_ID_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ClusterId"
+    ListVOName="Cluster_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClusterId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ClusterId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ClusterNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MemberRegId"
+    ListVOName="Session_Member_ID_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MemberRegId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MemberRegId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="MmpTrainingCheckOut"
+    Entity="model.EO.MmpTrainingCheckOut"/>
+  <EntityUsage
+    Name="MmpTrainingCheckIn"
+    Entity="model.EO.MmpTrainingCheckIn"
+    Association="model.EO.FKTblTrainingCheckOutFKAssoc"
+    AssociationEnd="model.EO.FKTblTrainingCheckOutFKAssoc.MmpTrainingCheckIn"
+    SourceUsage="model.VO.MmpTrainingCheckOutView.MmpTrainingCheckOut"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.MmpTrainingCheckIn.MmpTrainingCheckInId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.MmpTrainingCheckOut.MmpTrainingCheckInId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="MmpTrainingCheckOutId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="MmpTrainingCheckOutId"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="MMP_TRAINING_CHECK_OUT_ID"/>
+  <ViewAttribute
+    Name="MmpTrainingCheckInId"
+    PrecisionRule="true"
+    EntityAttrName="MmpTrainingCheckInId"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="MMP_TRAINING_CHECK_IN_ID"/>
+  <ViewAttribute
+    Name="Remarks"
+    PrecisionRule="true"
+    EntityAttrName="Remarks"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="REMARKS"/>
+  <ViewAttribute
+    Name="TrainingEnd"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TrainingEnd"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="TRAINING_END"/>
+  <ViewAttribute
+    Name="TrainingStart"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TrainingStart"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="TRAINING_START"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="ClusterId"
+    PrecisionRule="true"
+    EntityAttrName="ClusterId"
+    EntityUsage="MmpTrainingCheckIn"
+    AliasName="CLUSTER_ID"
+    LOVName="LOV_ClusterId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpTrainingCheckInId1"
+    PrecisionRule="true"
+    EntityAttrName="MmpTrainingCheckInId"
+    EntityUsage="MmpTrainingCheckIn"
+    AliasName="MMP_TRAINING_CHECK_IN_ID1"/>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="MmpTrainingCheckIn"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="MemberRegId"
+    PrecisionRule="true"
+    EntityAttrName="MemberRegId"
+    EntityUsage="MmpTrainingCheckIn"
+    AliasName="MEMBER_REG_ID"
+    LOVName="LOV_MemberRegId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="MmpTrainingCheckOutId"/>
+  </AttrArray>
+</ViewObject>
