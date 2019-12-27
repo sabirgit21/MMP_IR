@@ -1,180 +1,170 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
-  <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
-    <af:showDetailItem id="pane1" text="Monitoring Check In">
-         <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
-                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
-                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
-                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
-                            <af:resetActionListener/>
-                        </af:button>
-                        <af:spacer width="10" height="10" id="s9"/>
-                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
-                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
-                                   iconPosition="top"/>
-                        <af:spacer width="10" height="10" id="s1"/>
-                        </af:panelGroupLayout>
-      <af:panelGridLayout id="pgl1">
-        <af:gridRow marginTop="5px" height="auto" id="gr1">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
-        </af:gridRow>
-        <af:gridRow marginTop="5px" height="auto" id="gr2">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-              <af:showDetailItem id="tab1" text="Monitoring Check In">
-                <af:table value="#{bindings.MmpTrainingCheckInView1.collectionModel}" var="row"
-                          rows="#{bindings.MmpTrainingCheckInView1.rangeSize}"
-                          emptyText="#{bindings.MmpTrainingCheckInView1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                          rowBandingInterval="0"
-                          selectedRowKeys="#{bindings.MmpTrainingCheckInView1.collectionModel.selectedRow}"
-                          selectionListener="#{bindings.MmpTrainingCheckInView1.collectionModel.makeCurrent}"
-                          rowSelection="single" fetchSize="#{bindings.MmpTrainingCheckInView1.rangeSize}"
-                          filterModel="#{bindings.MmpTrainingCheckInView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.MmpTrainingCheckInView1Query.processQuery}" varStatus="vs" id="t1"
-                          
-                          scrollPolicy="page" autoHeightRows="0">
-                  <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.name}"
-                             filterable="true" sortable="true"
-                             headerText="Training CheckIn ID" id="c1" align="center" width="60">
-                             <f:facet name="filter">
-                                                                       <af:inputText value="#{vs.filterCriteria.MmpTrainingCheckInId}"
-                                                                                     placeholder="Search ID" id="id4" >
-                                                                       </af:inputText>
-                                                                   </f:facet>
-                    <af:inputText value="#{row.bindings.MmpTrainingCheckInId.inputValue}"
-                                  label="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.label}"
-                                  required="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.mandatory}"
-                                  columns="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.displayWidth}"
-                                  maximumLength="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.precision}"
-                                  shortDesc="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.tooltip}"
-                                  id="it1" readOnly="true" 
-                                  contentStyle='text-align: center'>
-                                  
-                      <f:validator binding="#{row.bindings.MmpTrainingCheckInId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.MemberRegId.name}"
-                             filterable="true" sortable="true"
-                             headerText="Member" id="c8" width="150">
-                              <f:facet name="filter">
-                                                                       <af:inputText value="#{vs.filterCriteria.MemberRegId}"
-                                                                                     placeholder="Search Member" id="it9" >
-                                                                       </af:inputText>
-                                                                   </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.MemberRegId.inputValue}" readOnly="true"
-                                        label="#{row.bindings.MemberRegId.label}"
-                                        required="#{bindings.MmpTrainingCheckInView1.hints.MemberRegId.mandatory}"
-                                        shortDesc="#{bindings.MmpTrainingCheckInView1.hints.MemberRegId.tooltip}"
-                                        id="soc2">
-                      <f:selectItems value="#{row.bindings.MemberRegId.items}" id="si2"/>
-                      <f:validator binding="#{row.bindings.MemberRegId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c3" width="100">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.MmpTrainingCheckInView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id1">
-                        <af:convertDateTime pattern="#{bindings.MmpTrainingCheckInView1.hints.Dated.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.Dated.inputValue}" autoSubmit="true"
-                                  label="#{bindings.MmpTrainingCheckInView1.hints.Dated.label}"
-                                  required="#{bindings.MmpTrainingCheckInView1.hints.Dated.mandatory}"
-                                  columns="#{bindings.MmpTrainingCheckInView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.MmpTrainingCheckInView1.hints.Dated.tooltip}" id="id2">
-                      <f:validator binding="#{row.bindings.Dated.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.MmpTrainingCheckInView1.hints.Dated.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.ClusterId.name}"
-                             filterable="true" sortable="true"
-                            headerText="Cluster" id="c2" width="200">
-                            <f:facet name="filter">
-                                                                       <af:inputText value="#{vs.filterCriteria.ClusterId}"
-                                                                                     placeholder="Search Cluster" id="it2" >
-                                                                       </af:inputText>
-                                                                   </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
-                                        label="#{row.bindings.ClusterId.label}"
-                                        required="#{bindings.MmpTrainingCheckInView1.hints.ClusterId.mandatory}"
-                                        shortDesc="#{bindings.MmpTrainingCheckInView1.hints.ClusterId.tooltip}"
-                                        id="soc1">
-                      <f:selectItems value="#{row.bindings.ClusterId.items}" id="si1"/>
-                      <f:validator binding="#{row.bindings.ClusterId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.Remarks.name}" filterable="true"
-                             sortable="true" headerText="Remarks"
-                             id="c5" width="200">
-                             <f:facet name="filter">
-                                                                       <af:inputText value="#{vs.filterCriteria.Remarks}"
-                                                                                     placeholder="Search Remarks"
-                                                                                     id="it8" >
-                                                                       </af:inputText>
-                                                                   </f:facet>
-                    <af:inputText value="#{row.bindings.Remarks.inputValue}"
-                                  label="#{bindings.MmpTrainingCheckInView1.hints.Remarks.label}"
-                                  required="#{bindings.MmpTrainingCheckInView1.hints.Remarks.mandatory}"
-                                  columns="#{bindings.MmpTrainingCheckInView1.hints.Remarks.displayWidth}"
-                                  maximumLength="#{bindings.MmpTrainingCheckInView1.hints.Remarks.precision}"
-                                  shortDesc="#{bindings.MmpTrainingCheckInView1.hints.Remarks.tooltip}" id="it4">
-                      <f:validator binding="#{row.bindings.Remarks.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.Latitude.name}" filterable="true"
-                             sortable="true" headerText="Latitude"
-                             id="c6" width="100">
-                    <af:inputText value="#{row.bindings.Latitude.inputValue}"
-                                  label="#{bindings.MmpTrainingCheckInView1.hints.Latitude.label}"
-                                  required="#{bindings.MmpTrainingCheckInView1.hints.Latitude.mandatory}"
-                                  columns="#{bindings.MmpTrainingCheckInView1.hints.Latitude.displayWidth}"
-                                  maximumLength="#{bindings.MmpTrainingCheckInView1.hints.Latitude.precision}"
-                                  shortDesc="#{bindings.MmpTrainingCheckInView1.hints.Latitude.tooltip}" 
-                                  id="it5" readOnly="true">
-                      <f:validator binding="#{row.bindings.Latitude.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.MmpTrainingCheckInView1.hints.Latitude.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.Longitude.name}" filterable="true"
-                             sortable="true" headerText="Longitude"
-                             id="c7" width="100">
-                    <af:inputText value="#{row.bindings.Longitude.inputValue}"
-                                  label="#{bindings.MmpTrainingCheckInView1.hints.Longitude.label}"
-                                  required="#{bindings.MmpTrainingCheckInView1.hints.Longitude.mandatory}"
-                                  columns="#{bindings.MmpTrainingCheckInView1.hints.Longitude.displayWidth}"
-                                  maximumLength="#{bindings.MmpTrainingCheckInView1.hints.Longitude.precision}"
-                                  shortDesc="#{bindings.MmpTrainingCheckInView1.hints.Longitude.tooltip}" 
-                                  id="it6" readOnly="true">
-                      <f:validator binding="#{row.bindings.Longitude.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.MmpTrainingCheckInView1.hints.Longitude.format}"/>
-                    </af:inputText>
-                  </af:column>
-                </af:table>
-               </af:showDetailItem>
-            </af:panelTabbed>
-          </af:gridCell>
-        </af:gridRow>
-        
-        <af:gridRow marginTop="5px" height="auto" id="gr3">
-          <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-                      
-        <!--<af:button id="cb1" clientComponent="true" text="Add Auto"
+    <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
+        <af:showDetailItem id="pane1" text="Monitoring Check In">
+            <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                           icon="#{resource['images:cancel.png']}" iconPosition="top">
+                    <af:resetActionListener/>
+                </af:button>
+                <af:spacer width="10" height="10" id="s9"/>
+                <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                           disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                           iconPosition="top"/>
+                <af:spacer width="10" height="10" id="s1"/>
+            </af:panelGroupLayout>
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow marginTop="5px" height="auto" id="gr1">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1"/>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr2">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                        <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+                            <af:showDetailItem id="tab1" text="Monitoring Check In">
+                                <af:table value="#{bindings.MmpTrainingCheckInView1.collectionModel}" var="row"
+                                          rows="#{bindings.MmpTrainingCheckInView1.rangeSize}"
+                                          emptyText="#{bindings.MmpTrainingCheckInView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.MmpTrainingCheckInView1.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.MmpTrainingCheckInView1.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.MmpTrainingCheckInView1.rangeSize}"
+                                          filterModel="#{bindings.MmpTrainingCheckInView1Query.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.MmpTrainingCheckInView1Query.processQuery}"
+                                          varStatus="vs" id="t1" scrollPolicy="page" autoHeightRows="0">
+                                    <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.name}"
+                                               filterable="true" sortable="true" headerText="Training CheckIn ID"
+                                               id="c1" align="center" width="60">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.MmpTrainingCheckInId}"
+                                                          placeholder="Search ID" id="id4"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.MmpTrainingCheckInId.inputValue}"
+                                                      label="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.label}"
+                                                      required="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.mandatory}"
+                                                      columns="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.displayWidth}"
+                                                      maximumLength="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.precision}"
+                                                      shortDesc="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.tooltip}"
+                                                      id="it1" readOnly="true" contentStyle='text-align: center'>
+                                            <f:validator binding="#{row.bindings.MmpTrainingCheckInId.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.MmpTrainingCheckInView1.hints.MmpTrainingCheckInId.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.MemberRegId.name}"
+                                               filterable="true" sortable="true" headerText="Member" id="c8"
+                                               width="150">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.MemberRegId}"
+                                                          placeholder="Search Member" id="it9"></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.MemberRegId.inputValue}"
+                                                            readOnly="true" label="#{row.bindings.MemberRegId.label}"
+                                                            required="#{bindings.MmpTrainingCheckInView1.hints.MemberRegId.mandatory}"
+                                                            shortDesc="#{bindings.MmpTrainingCheckInView1.hints.MemberRegId.tooltip}"
+                                                            id="soc2">
+                                            <f:selectItems value="#{row.bindings.MemberRegId.items}" id="si2"/>
+                                            <f:validator binding="#{row.bindings.MemberRegId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.Dated.name}"
+                                               filterable="true" sortable="true" headerText="Date" id="c3" width="100">
+                                        <f:facet name="filter">
+                                            <af:inputDate value="#{bindings.MmpTrainingCheckInView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
+                                                          id="id1">
+                                                <af:convertDateTime pattern="#{bindings.MmpTrainingCheckInView1.hints.Dated.format}"/>
+                                            </af:inputDate>
+                                        </f:facet>
+                                        <af:inputDate value="#{row.bindings.Dated.inputValue}" autoSubmit="true"
+                                                      label="#{bindings.MmpTrainingCheckInView1.hints.Dated.label}"
+                                                      required="#{bindings.MmpTrainingCheckInView1.hints.Dated.mandatory}"
+                                                      columns="#{bindings.MmpTrainingCheckInView1.hints.Dated.displayWidth}"
+                                                      shortDesc="#{bindings.MmpTrainingCheckInView1.hints.Dated.tooltip}"
+                                                      id="id2">
+                                            <f:validator binding="#{row.bindings.Dated.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.MmpTrainingCheckInView1.hints.Dated.format}"/>
+                                        </af:inputDate>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.ClusterId.name}"
+                                               filterable="true" sortable="true" headerText="Cluster" id="c2"
+                                               width="200">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.ClusterId}"
+                                                          placeholder="Search Cluster" id="it2"></af:inputText>
+                                        </f:facet>
+                                        <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
+                                                            label="#{row.bindings.ClusterId.label}"
+                                                            required="#{bindings.MmpTrainingCheckInView1.hints.ClusterId.mandatory}"
+                                                            shortDesc="#{bindings.MmpTrainingCheckInView1.hints.ClusterId.tooltip}"
+                                                            id="soc1">
+                                            <f:selectItems value="#{row.bindings.ClusterId.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.Remarks.name}"
+                                               filterable="true" sortable="true" headerText="Remarks" id="c5"
+                                               width="200">
+                                        <f:facet name="filter">
+                                            <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                                          placeholder="Search Remarks" id="it8"></af:inputText>
+                                        </f:facet>
+                                        <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                                      label="#{bindings.MmpTrainingCheckInView1.hints.Remarks.label}"
+                                                      required="#{bindings.MmpTrainingCheckInView1.hints.Remarks.mandatory}"
+                                                      columns="#{bindings.MmpTrainingCheckInView1.hints.Remarks.displayWidth}"
+                                                      maximumLength="#{bindings.MmpTrainingCheckInView1.hints.Remarks.precision}"
+                                                      shortDesc="#{bindings.MmpTrainingCheckInView1.hints.Remarks.tooltip}"
+                                                      id="it4">
+                                            <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.Latitude.name}"
+                                               filterable="true" sortable="true" headerText="Latitude" id="c6"
+                                               width="100">
+                                        <af:inputText value="#{row.bindings.Latitude.inputValue}"
+                                                      label="#{bindings.MmpTrainingCheckInView1.hints.Latitude.label}"
+                                                      required="#{bindings.MmpTrainingCheckInView1.hints.Latitude.mandatory}"
+                                                      columns="#{bindings.MmpTrainingCheckInView1.hints.Latitude.displayWidth}"
+                                                      maximumLength="#{bindings.MmpTrainingCheckInView1.hints.Latitude.precision}"
+                                                      shortDesc="#{bindings.MmpTrainingCheckInView1.hints.Latitude.tooltip}"
+                                                      id="it5" readOnly="true">
+                                            <f:validator binding="#{row.bindings.Latitude.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.MmpTrainingCheckInView1.hints.Latitude.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.Longitude.name}"
+                                               filterable="true" sortable="true" headerText="Longitude" id="c7"
+                                               width="100">
+                                        <af:inputText value="#{row.bindings.Longitude.inputValue}"
+                                                      label="#{bindings.MmpTrainingCheckInView1.hints.Longitude.label}"
+                                                      required="#{bindings.MmpTrainingCheckInView1.hints.Longitude.mandatory}"
+                                                      columns="#{bindings.MmpTrainingCheckInView1.hints.Longitude.displayWidth}"
+                                                      maximumLength="#{bindings.MmpTrainingCheckInView1.hints.Longitude.precision}"
+                                                      shortDesc="#{bindings.MmpTrainingCheckInView1.hints.Longitude.tooltip}"
+                                                      id="it6" readOnly="true">
+                                            <f:validator binding="#{row.bindings.Longitude.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.MmpTrainingCheckInView1.hints.Longitude.format}"/>
+                                        </af:inputText>
+                                    </af:column>
+                                </af:table>
+                            </af:showDetailItem>
+                        </af:panelTabbed>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow marginTop="5px" height="auto" id="gr3">
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
+                        <!--<af:button id="cb1" clientComponent="true" text="Add Auto"
                                        icon="#{resource['images:add.png']}"
                                        disabled="#{!bindings.CreateInsert.enabled}">
                                 <af:clientListener type="action" method="getLocation"/>
                                 <af:serverListener type="servListener" method="#{getLocationBean.getLocation}"/>
                             </af:button>-->
-                            
-                            
-                            
-                            
-            <!--<af:panelGroupLayout id="pgl3" layout="horizontal">
+                        <!--<af:panelGroupLayout id="pgl3" layout="horizontal">
                             <af:spacer width="190" height="10" id="s4"/>
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -187,15 +177,10 @@
                                 <af:spacer width="5" height="10" id="s5"/>
                             </af:iterator>
                         </af:panelGroupLayout>-->
-                        
-                        
-                        
-                        
                         <af:panelGroupLayout id="pgl2" layout="horizontal">
                             <af:spacer width="190" height="10" id="s2"/>
                             <af:iterator id="i3" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
-                                
                                 <!--<af:button id="btn#{status.index+1}" text="#{index.MmpOperation}" clientComponent="true"
                         rendered="#{index.bindings.Crudid.inputValue =='1'}"
                                        icon="/ViewController/faces/javax.faces.resource/#{index.bindings.MmpIcon.inputValue}?ln=images">
@@ -203,19 +188,19 @@
                                 <af:serverListener type="servListener" method="#{getLocationBean.getLocation}"/>
                                 <f:attribute name="link" value="#{index.Operation}"/>
                             </af:button>-->
-                            <af:button id="b2" clientComponent="true" text="Add Auto"
-                            rendered="#{index.bindings.MmpCrudid.inputValue =='1'}"
-                                       icon="#{resource['images:add.png']}"
-                                       disabled="#{!bindings.CreateInsert.enabled}">
-                                <af:clientListener type="action" method="getLocation"/>
-                                <af:serverListener type="servListener" method="#{getLocationBean.getLocation}"/>
-                            </af:button>
+                                <af:button id="b2" clientComponent="true" text="Add Auto"
+                                           rendered="#{index.bindings.MmpCrudid.inputValue =='1'}"
+                                           icon="#{resource['images:add.png']}"
+                                           disabled="#{!bindings.CreateInsert.enabled}">
+                                    <af:clientListener type="action" method="getLocation"/>
+                                    <af:serverListener type="servListener" method="#{getLocationBean.getLocation}"/>
+                                </af:button>
                                 <af:spacer width="5" height="10" id="s6"/>
                             </af:iterator>
                             <af:iterator id="i1" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.MmpOperation}"
-                                rendered="#{index.bindings.MmpCrudid.inputValue !='1'}"
+                                           rendered="#{index.bindings.MmpCrudid.inputValue !='1'}"
                                            icon="/ViewController/faces/javax.faces.resource/#{index.bindings.MmpIcon.inputValue}?ln=images"
                                            actionListener="#{USERS_CRUD_BEAN.get_users_crud_bind}">
                                     <f:attribute name="AcLslink" value="#{index.bindings.MmpBindingname.inputValue}"/>
@@ -223,13 +208,12 @@
                                 <af:spacer width="5" height="10" id="s3"/>
                             </af:iterator>
                         </af:panelGroupLayout>
-              </af:gridCell>
-        </af:gridRow>
-        
-      </af:panelGridLayout>
-    </af:showDetailItem>
-  </af:panelAccordion>
-   <af:resource type="javascript">
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:showDetailItem>
+    </af:panelAccordion>
+    <af:resource type="javascript">
       var value;
 
       function getLocation(actionEvent) {

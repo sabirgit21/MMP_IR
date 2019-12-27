@@ -23,13 +23,92 @@
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
             <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
               <af:showDetailItem id="tab1" text="Monitoring Check Out">
-                </af:showDetailItem>
+                <af:table value="#{bindings.MmpTrainingCheckOutView1.collectionModel}" var="row"
+                          rows="#{bindings.MmpTrainingCheckOutView1.rangeSize}"
+                          emptyText="#{bindings.MmpTrainingCheckOutView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                          rowBandingInterval="0" fetchSize="#{bindings.MmpTrainingCheckOutView1.rangeSize}" id="t1">
+                  <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.label}"
+                             id="c1">
+                    <af:inputText value="#{row.bindings.MmpTrainingCheckOutId.inputValue}" readOnly="true"
+                                  label="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.label}"
+                                  required="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.mandatory}"
+                                  columns="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.displayWidth}"
+                                  maximumLength="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.precision}"
+                                  shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.tooltip}"
+                                  id="it1">
+                      <f:validator binding="#{row.bindings.MmpTrainingCheckOutId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.MemberRegId1.label}" id="c6">
+                    <af:selectOneChoice value="#{row.bindings.MemberRegId1.inputValue}"
+                                        label="#{row.bindings.MemberRegId1.label}" readOnly="true"
+                                        required="#{bindings.MmpTrainingCheckOutView1.hints.MemberRegId1.mandatory}"
+                                        shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.MemberRegId1.tooltip}"
+                                        id="soc1">
+                      <f:selectItems value="#{row.bindings.MemberRegId1.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.MemberRegId1.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.Dated1.label}" id="c7">
+                    <af:inputDate value="#{row.bindings.Dated1.inputValue}" autoSubmit="true"
+                                  label="#{bindings.MmpTrainingCheckOutView1.hints.Dated1.label}"
+                                  required="#{bindings.MmpTrainingCheckOutView1.hints.Dated1.mandatory}"
+                                  columns="#{bindings.MmpTrainingCheckOutView1.hints.Dated1.displayWidth}"
+                                  shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.Dated1.tooltip}" id="id3">
+                      <f:validator binding="#{row.bindings.Dated1.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.Dated1.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.ClusterId1.label}" id="c8">
+                    <af:selectOneChoice value="#{row.bindings.ClusterId1.inputValue}"
+                                        label="#{row.bindings.ClusterId1.label}"
+                                        required="#{bindings.MmpTrainingCheckOutView1.hints.ClusterId1.mandatory}"
+                                        shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.ClusterId1.tooltip}"
+                                        id="soc2">
+                      <f:selectItems value="#{row.bindings.ClusterId1.items}" id="si2"/>
+                      <f:validator binding="#{row.bindings.ClusterId1.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.label}" id="c5">
+                    <af:inputDate value="#{row.bindings.TrainingStart.inputValue}"
+                                  label="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.label}"
+                                  required="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.mandatory}"
+                                  columns="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.displayWidth}"
+                                  shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.tooltip}" id="id2">
+                      <f:validator binding="#{row.bindings.TrainingStart.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.label}" id="c4">
+                    <af:inputDate value="#{row.bindings.TrainingEnd.inputValue}"
+                                  label="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.label}"
+                                  required="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.mandatory}"
+                                  columns="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.displayWidth}"
+                                  shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.tooltip}" id="id1">
+                      <f:validator binding="#{row.bindings.TrainingEnd.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.label}" id="c3">
+                    <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                  label="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.label}"
+                                  required="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.mandatory}"
+                                  columns="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.displayWidth}"
+                                  maximumLength="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.precision}"
+                                  shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                </af:table>
+              </af:showDetailItem>
             </af:panelTabbed>
           </af:gridCell>
         </af:gridRow>
         <af:gridRow marginTop="5px" height="auto" id="gr3">
           <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3">
-                        <!--<af:panelGroupLayout layout="horizontal" id="pgl7">
+            <af:panelGroupLayout layout="horizontal" id="pgl7">
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.MmpOperation}"
@@ -39,7 +118,7 @@
                                 </af:button>
                                 <af:spacer width="5" height="10" id="s5"/>
                             </af:iterator>
-                    </af:panelGroupLayout>-->
+                    </af:panelGroupLayout>
           </af:gridCell>
         </af:gridRow>
         

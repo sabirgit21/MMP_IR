@@ -10,7 +10,6 @@
   CustomQuery="false"
   PageIterMode="Full"
   SelectList="MmpTrainingCheckOut.MMP_TRAINING_CHECK_OUT_ID, 
-       MmpTrainingCheckOut.MMP_TRAINING_CHECK_IN_ID, 
        MmpTrainingCheckOut.REMARKS, 
        MmpTrainingCheckOut.TRAINING_END, 
        MmpTrainingCheckOut.TRAINING_START, 
@@ -22,7 +21,7 @@
        MmpTrainingCheckOut.DATED AS DATED1, 
        MmpTrainingCheckOut.CLUSTER_ID AS CLUSTER_ID1"
   FromList="MMP_TRAINING_CHECK_OUT MmpTrainingCheckOut"
-  Where="MmpTrainingCheckIn.MEMBER_REG_ID = :sessMemID">
+  Where="MmpTrainingCheckOut.MEMBER_REG_ID = :sessMemID">
   <Variable
     Name="sessMemID"
     Kind="where"
@@ -36,9 +35,57 @@
     ViewObjectName="model.LOV.Cluster_Name_LOV"
     RowLevelBinds="true"/>
   <ViewAccessor
-    Name="Session_Member_ID_LOV1"
-    ViewObjectName="model.LOV.Session_Member_ID_LOV"
+    Name="Member_Depn_Cluster_Mon_Ins_LOV1"
+    ViewObjectName="model.LOV.Member_Depn_Cluster_Mon_Ins_LOV"
+    RowLevelBinds="true">
+    <ParameterMap>
+      <PIMap Variable="schDate">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[Dated1]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
+  <ViewAccessor
+    Name="Member_Name_LOV1"
+    ViewObjectName="model.LOV.Member_Name_LOV"
     RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ClusterId1"
+    ListVOName="Member_Depn_Cluster_Mon_Ins_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClusterId1"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ClusterId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ClusterNo"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_MemberRegId1"
+    ListVOName="Member_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MemberRegId1"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MemberRegId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="MmpTrainingCheckOut"
     Entity="model.EO.MmpTrainingCheckOut"/>
@@ -49,12 +96,6 @@
     EntityAttrName="MmpTrainingCheckOutId"
     EntityUsage="MmpTrainingCheckOut"
     AliasName="MMP_TRAINING_CHECK_OUT_ID"/>
-  <ViewAttribute
-    Name="MmpTrainingCheckInId"
-    PrecisionRule="true"
-    EntityAttrName="MmpTrainingCheckInId"
-    EntityUsage="MmpTrainingCheckOut"
-    AliasName="MMP_TRAINING_CHECK_IN_ID"/>
   <ViewAttribute
     Name="Remarks"
     PrecisionRule="true"
@@ -104,7 +145,15 @@
     PrecisionRule="true"
     EntityAttrName="MemberRegId"
     EntityUsage="MmpTrainingCheckOut"
-    AliasName="MEMBER_REG_ID1"/>
+    AliasName="MEMBER_REG_ID1"
+    LOVName="LOV_MemberRegId1">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Dated1"
     PrecisionRule="true"
@@ -116,7 +165,15 @@
     PrecisionRule="true"
     EntityAttrName="ClusterId"
     EntityUsage="MmpTrainingCheckOut"
-    AliasName="CLUSTER_ID1"/>
+    AliasName="CLUSTER_ID1"
+    LOVName="LOV_ClusterId1">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingCheckOutId"/>
   </AttrArray>

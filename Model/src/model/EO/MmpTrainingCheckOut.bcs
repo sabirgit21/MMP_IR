@@ -1,0 +1,12 @@
+//Groovy Scripts for model.EO.MmpTrainingCheckOut
+
+package model.EO
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="MemberRegId")
+def MemberRegId_ExpressionScript_Expression()
+{
+adf.context.current.sessionScope.get('sessMemID')
+}
+

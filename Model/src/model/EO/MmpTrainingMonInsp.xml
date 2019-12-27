@@ -49,7 +49,9 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_MON_INSP"/>
+    TableName="MMP_TRAINING_MON_INSP"
+    IsEffectiveEndDate="true"
+    IsEffectiveDateSequenceFlag="true"/>
   <Attribute
     Name="TotTrainer"
     Precision="1"

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Member_Depn_Cluster_Mon_Ins_LOV"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  SelectList="MmpTrainingMonInsp.CLUSTER_ID, 
+       MmpTrainingMonInsp.MMP_TRAINING_MON_INSP_ID, 
+       TblCluster.CLUSTER_NO, 
+       TblCluster.CLUSTER_ID AS CLUSTER_ID1, 
+       MmpTrainingMonInsp.DATED, 
+       MmpTrainingMonInsp.MEMBER_REG_ID"
+  FromList="MMP_TRAINING_MON_INSP MmpTrainingMonInsp, TBL_CLUSTER TblCluster"
+  Where="MmpTrainingMonInsp.CLUSTER_ID = TblCluster.CLUSTER_ID(+)  
+AND MmpTrainingMonInsp.MEMBER_REG_ID = :mmRegID    
+AND MmpTrainingMonInsp.DATED = :schDate">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.LOV.Member_Depn_Cluster_Mon_Ins_LOV_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="mmRegID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Member_Depn_Cluster_Mon_Ins_LOV"/>
+  </Variable>
+  <Variable
+    Name="schDate"
+    Kind="where"
+    Type="java.sql.Timestamp"/>
+  <EntityUsage
+    Name="MmpTrainingMonInsp"
+    Entity="model.EO.MmpTrainingMonInsp"/>
+  <EntityUsage
+    Name="TblCluster"
+    Entity="model.EO.TblCluster"
+    Association="model.EO.FkMmpTrainingMonInspClusterAssoc"
+    AssociationEnd="model.EO.FkMmpTrainingMonInspClusterAssoc.TblCluster"
+    SourceUsage="model.LOV.Member_Depn_Cluster_Mon_Ins_LOV.MmpTrainingMonInsp"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblCluster.ClusterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.MmpTrainingMonInsp.ClusterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="ClusterId"
+    PrecisionRule="true"
+    EntityAttrName="ClusterId"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="CLUSTER_ID"/>
+  <ViewAttribute
+    Name="MmpTrainingMonInspId"
+    PrecisionRule="true"
+    EntityAttrName="MmpTrainingMonInspId"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="MMP_TRAINING_MON_INSP_ID"/>
+  <ViewAttribute
+    Name="ClusterNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClusterNo"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_NO"/>
+  <ViewAttribute
+    Name="ClusterId1"
+    PrecisionRule="true"
+    EntityAttrName="ClusterId"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_ID1"/>
+  <ViewAttribute
+    Name="Dated"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="DATED"/>
+  <ViewAttribute
+    Name="MemberRegId"
+    PrecisionRule="true"
+    EntityAttrName="MemberRegId"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="MEMBER_REG_ID"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="MmpTrainingMonInspId"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
