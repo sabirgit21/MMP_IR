@@ -10,6 +10,7 @@
   CustomQuery="false"
   PageIterMode="Full"
   SelectList="MmpTrainingCheckOut.MMP_TRAINING_CHECK_OUT_ID, 
+       MmpTrainingCheckOut.MMP_TRAINING_MON_INSP_ID, 
        MmpTrainingCheckOut.REMARKS, 
        MmpTrainingCheckOut.TRAINING_END, 
        MmpTrainingCheckOut.TRAINING_START, 
@@ -19,8 +20,10 @@
        MmpTrainingCheckOut.UPDATED_BY, 
        MmpTrainingCheckOut.MEMBER_REG_ID AS MEMBER_REG_ID1, 
        MmpTrainingCheckOut.DATED AS DATED1, 
-       MmpTrainingCheckOut.CLUSTER_ID AS CLUSTER_ID1"
-  FromList="MMP_TRAINING_CHECK_OUT MmpTrainingCheckOut"
+       MmpTrainingCheckOut.CLUSTER_ID AS CLUSTER_ID1, 
+       MmpTrainingMonInsp.END_TRAINING, 
+       MmpTrainingMonInsp.MMP_TRAINING_MON_INSP_ID AS MMP_TRAINING_MON_INSP_ID1"
+  FromList="MMP_TRAINING_CHECK_OUT MmpTrainingCheckOut, MMP_TRAINING_MON_INSP MmpTrainingMonInsp"
   Where="MmpTrainingCheckOut.MEMBER_REG_ID = :sessMemID">
   <Variable
     Name="sessMemID"
@@ -60,8 +63,12 @@
       <Item Value="ClusterId1"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="TrainingStart"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ClusterId"/>
+      <Item Value="StartTraining"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
@@ -89,6 +96,25 @@
   <EntityUsage
     Name="MmpTrainingCheckOut"
     Entity="model.EO.MmpTrainingCheckOut"/>
+  <EntityUsage
+    Name="MmpTrainingMonInsp"
+    Entity="model.EO.MmpTrainingMonInsp"
+    Association="model.EO.FKMmpTrainingCheckOutFkAssoc"
+    AssociationEnd="model.EO.FKMmpTrainingCheckOutFkAssoc.MmpTrainingMonInsp"
+    SourceUsage="model.VO.MmpTrainingCheckOutView.MmpTrainingCheckOut"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.MmpTrainingMonInsp.MmpTrainingMonInspId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.MmpTrainingCheckOut.MmpTrainingMonInspId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="MmpTrainingCheckOutId"
     IsNotNull="true"
@@ -96,6 +122,12 @@
     EntityAttrName="MmpTrainingCheckOutId"
     EntityUsage="MmpTrainingCheckOut"
     AliasName="MMP_TRAINING_CHECK_OUT_ID"/>
+  <ViewAttribute
+    Name="MmpTrainingMonInspId"
+    PrecisionRule="true"
+    EntityAttrName="MmpTrainingMonInspId"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="MMP_TRAINING_MON_INSP_ID"/>
   <ViewAttribute
     Name="Remarks"
     PrecisionRule="true"
@@ -174,6 +206,19 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="EndTraining"
+    PrecisionRule="true"
+    IsEffectiveEndDate="true"
+    EntityAttrName="EndTraining"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="END_TRAINING"/>
+  <ViewAttribute
+    Name="MmpTrainingMonInspId1"
+    PrecisionRule="true"
+    EntityAttrName="MmpTrainingMonInspId"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="MMP_TRAINING_MON_INSP_ID1"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingCheckOutId"/>
   </AttrArray>

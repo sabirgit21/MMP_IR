@@ -253,7 +253,6 @@
     TableName="MMP_TRAINING_MON_INSP">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="MmpTrainingMonInspRow"/>
   </Attribute>
   <AccessorAttribute
@@ -289,6 +288,13 @@
     Association="model.EO.FKMmpTrainingMonInspFKAssoc2"
     AssociationEnd="model.EO.FKMmpTrainingMonInspFKAssoc2.TblCluster1"
     AssociationOtherEnd="model.EO.FKMmpTrainingMonInspFKAssoc2.MmpTrainingMonInsp1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="MmpTrainingCheckOut"
+    Association="model.EO.FKMmpTrainingCheckOutFkAssoc"
+    AssociationEnd="model.EO.FKMmpTrainingCheckOutFkAssoc.MmpTrainingCheckOut"
+    AssociationOtherEnd="model.EO.FKMmpTrainingCheckOutFkAssoc.MmpTrainingMonInsp"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

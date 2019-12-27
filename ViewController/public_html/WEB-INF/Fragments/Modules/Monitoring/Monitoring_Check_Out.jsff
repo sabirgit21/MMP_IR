@@ -63,7 +63,7 @@
                   </af:column>
                   <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.ClusterId1.label}" id="c8">
                     <af:selectOneChoice value="#{row.bindings.ClusterId1.inputValue}"
-                                        label="#{row.bindings.ClusterId1.label}"
+                                        label="#{row.bindings.ClusterId1.label}" autoSubmit="true"
                                         required="#{bindings.MmpTrainingCheckOutView1.hints.ClusterId1.mandatory}"
                                         shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.ClusterId1.tooltip}"
                                         id="soc2">
@@ -72,7 +72,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.label}" id="c5">
-                    <af:inputDate value="#{row.bindings.TrainingStart.inputValue}"
+                    <af:inputDate value="#{row.bindings.TrainingStart.inputValue}" readOnly="true"
                                   label="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.label}"
                                   required="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.mandatory}"
                                   columns="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.displayWidth}"

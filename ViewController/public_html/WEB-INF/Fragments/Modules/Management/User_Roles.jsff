@@ -3,38 +3,34 @@
                 xmlns:f="http://java.sun.com/jsf/core">
     <af:panelAccordion discloseMany="false" id="pa1" styleClass="content_pannel_acc">
         <af:showDetailItem id="pane1" text="Manage User Roles">
-        <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
-                            <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
-                                   disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
-                                   icon="#{resource['images:cancel.png']}" iconPosition="top">
-                            <af:resetActionListener/>
-                        </af:button>
-                        <af:spacer width="10" height="10" id="s9"/>
-                        <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
-                                   disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
-                                   iconPosition="top"/>
-                        <af:spacer width="10" height="10" id="s1"/>
-                        </af:panelGroupLayout>
+            <af:panelGroupLayout id="pgl4" styleClass="position_fixed_button">
+                <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel"
+                           disabled="#{!bindings.Rollback.enabled}" immediate="true" id="b1"
+                           icon="#{resource['images:cancel.png']}" iconPosition="top">
+                    <af:resetActionListener/>
+                </af:button>
+                <af:spacer width="10" height="10" id="s9"/>
+                <af:button actionListener="#{bindings.Commit.execute}" text="Save All"
+                           disabled="#{!bindings.Commit.enabled}" id="b10" icon="#{resource['images:save.png']}"
+                           iconPosition="top"/>
+                <af:spacer width="10" height="10" id="s1"/>
+            </af:panelGroupLayout>
             <af:panelGridLayout id="pgl8">
                 <af:gridRow marginTop="5px" height="auto" id="gr4">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="end"
-                                         valign="middle">
-                               
-                            </af:gridCell>
-                        </af:gridRow>
+                    <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc6" halign="end" valign="middle"></af:gridCell>
+                </af:gridRow>
                 <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr17">
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc17">
-                         <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
-                <af:showDetailItem id="tab3" text="Users and User's Roles">
-                    <af:panelGridLayout id="pgl1">
-                        
-                        <af:gridRow marginTop="5px" height="auto" id="gr3">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"></af:gridCell>
-                        </af:gridRow>
-                        <af:gridRow marginTop="5px" height="auto" id="gr1">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
-                                <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
-                                    <af:showDetailItem id="tab1" text="User's Roles">
+                        <af:panelTabbed position="above" id="pt3" styleClass="tabel_pannel_tab">
+                            <af:showDetailItem id="tab3" text="Users and User's Roles">
+                                <af:panelGridLayout id="pgl1">
+                                    <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc3"></af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr1">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc1">
+                                            <af:panelTabbed position="above" id="pt1" styleClass="tabel_pannel_tab">
+                                                <af:showDetailItem id="tab1" text="User's Roles">
                                                     <af:table value="#{bindings.MmpRoleMasterView1.collectionModel}"
                                                               var="row" rows="#{bindings.MmpRoleMasterView1.rangeSize}"
                                                               emptyText="#{bindings.MmpRoleMasterView1.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -50,14 +46,12 @@
                                                               scrollPolicy="page" autoHeightRows="0">
                                                         <af:column sortProperty="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterId.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="Role ID" width="60"
-                                                                   id="c1" align="center">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpRoleMasterId}"
-                                          id="id4" placeholder="Search ID">
-                           </af:inputText>
-                             </f:facet>
-
+                                                                   headerText="Role ID" width="60" id="c1"
+                                                                   align="center">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpRoleMasterId}"
+                                                                              id="id4" placeholder="Search ID"></af:inputText>
+                                                            </f:facet>
                                                             <af:inputText value="#{row.bindings.MmpRoleMasterId.inputValue}"
                                                                           label="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterId.label}"
                                                                           required="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterId.mandatory}"
@@ -66,22 +60,18 @@
                                                                           shortDesc="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterId.tooltip}"
                                                                           id="it1" readOnly="true"
                                                                           contentStyle='text-align: center'>
-                                                                          
                                                                 <f:validator binding="#{row.bindings.MmpRoleMasterId.validator}"/>
                                                                 <af:convertNumber groupingUsed="false"
                                                                                   pattern="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterId.format}"/>
                                                             </af:inputText>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterName.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Role"
+                                                                   filterable="true" sortable="true" headerText="Role"
                                                                    id="c2" width="300">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpRoleMasterName}"
-                                          id="it14" placeholder="Search Role">
-                           </af:inputText>
-                             </f:facet>
-
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpRoleMasterName}"
+                                                                              id="it14" placeholder="Search Role"></af:inputText>
+                                                            </f:facet>
                                                             <af:inputText value="#{row.bindings.MmpRoleMasterName.inputValue}"
                                                                           label="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterName.label}"
                                                                           required="#{bindings.MmpRoleMasterView1.hints.MmpRoleMasterName.mandatory}"
@@ -112,14 +102,12 @@
                                                             </af:inputText>
                                                         </af:column>-->
                                                         <af:column filterable="true" sortable="true"
-                                                        sortProperty="#{bindings.MmpRoleMasterView1.hints.Ast.name}"
-                                                                   headerText="Active"
-                                                                   id="c3" width="60">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.Ast}"
-                                          id="it16" placeholder="Search Status">
-                           </af:inputText>
-                             </f:facet>
+                                                                   sortProperty="#{bindings.MmpRoleMasterView1.hints.Ast.name}"
+                                                                   headerText="Active" id="c3" width="60">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.Ast}" id="it16"
+                                                                              placeholder="Search Status"></af:inputText>
+                                                            </f:facet>
                                                             <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
                                                                                 label="#{row.bindings.Ast.label}"
                                                                                 required="#{bindings.MmpRoleMasterView1.hints.Ast.mandatory}"
@@ -132,30 +120,29 @@
                                                         </af:column>
                                                     </af:table>
                                                 </af:showDetailItem>
-                                </af:panelTabbed>
-                            </af:gridCell>
-                        </af:gridRow>
-                        <af:gridRow marginTop="5px" height="auto" id="gr2">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
-                                            <af:button actionListener="#{bindings.CreateInsert.execute}"
-                                                       text="Add" disabled="#{!bindings.CreateInsert.enabled}"
-                                                       icon="#{resource['images:add.png']}"
-                                                       id="b2"/>
-                                            <af:button actionListener="#{bindings.Execute.execute}" text="Verify Editing"
-                                            icon="#{resource['images:edit.png']}"
+                                            </af:panelTabbed>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr2">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
+                                            <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                                                       disabled="#{!bindings.CreateInsert.enabled}"
+                                                       icon="#{resource['images:add.png']}" id="b2"/>
+                                            <af:button actionListener="#{bindings.Execute.execute}"
+                                                       text="Verify Editing" icon="#{resource['images:edit.png']}"
                                                        disabled="#{!bindings.Execute.enabled}" id="b3"/>
                                             <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
-                                            icon="#{resource['images:delete.png']}"
+                                                       icon="#{resource['images:delete.png']}"
                                                        disabled="#{!bindings.Delete.enabled}" id="b4"/>
                                         </af:gridCell>
-                        </af:gridRow>
-                        <af:gridRow marginTop="5px" height="auto" id="gr6">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc15"/>
-                        </af:gridRow>
-                        <af:gridRow marginTop="5px" height="auto" id="gr15">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
-                                <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
-                                    <af:showDetailItem id="tab2" text="Users">
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr6">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc15"/>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr15">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc4">
+                                            <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
+                                                <af:showDetailItem id="tab2" text="Users">
                                                     <af:table value="#{bindings.MmpUserMasterView2.collectionModel}"
                                                               var="row" rows="#{bindings.MmpUserMasterView2.rangeSize}"
                                                               emptyText="#{bindings.MmpUserMasterView2.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -169,16 +156,14 @@
                                                               queryListener="#{bindings.MmpUserMasterView2Query.processQuery}"
                                                               varStatus="vs" id="t2" partialTriggers="::b5 ::b6 ::b7"
                                                               scrollPolicy="page" autoHeightRows="0">
-                                                            
                                                         <af:column sortProperty="#{bindings.MmpUserMasterView2.hints.MmpUserMasterId.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="User ID" width="60"
-                                                                   id="c4" align="center">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpUserMasterId}"
-                                          id="it17" placeholder="Search ID">
-                           </af:inputText>
-                             </f:facet>
+                                                                   headerText="User ID" width="60" id="c4"
+                                                                   align="center">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpUserMasterId}"
+                                                                              id="it17" placeholder="Search ID"></af:inputText>
+                                                            </f:facet>
                                                             <af:inputText value="#{row.bindings.MmpUserMasterId.inputValue}"
                                                                           label="#{bindings.MmpUserMasterView2.hints.MmpUserMasterId.label}"
                                                                           required="#{bindings.MmpUserMasterView2.hints.MmpUserMasterId.mandatory}"
@@ -193,14 +178,12 @@
                                                             </af:inputText>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpUserMasterView2.hints.MmpUserMasterName.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="User"
+                                                                   filterable="true" sortable="true" headerText="User"
                                                                    id="c5" width="300">
-                                                                    <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpUserMasterName}"
-                                          id="it21" placeholder="Search User">
-                           </af:inputText>
-                             </f:facet>
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpUserMasterName}"
+                                                                              id="it21" placeholder="Search User"></af:inputText>
+                                                            </f:facet>
                                                             <af:inputText value="#{row.bindings.MmpUserMasterName.inputValue}"
                                                                           label="#{bindings.MmpUserMasterView2.hints.MmpUserMasterName.label}"
                                                                           required="#{bindings.MmpUserMasterView2.hints.MmpUserMasterName.mandatory}"
@@ -213,13 +196,11 @@
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpUserMasterView2.hints.MmpUserMasterPwd.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="Password"
-                                                                   id="c6" width="200">
-                                                                    <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpUserMasterPwd}"
-                                          id="it22" placeholder="Search Password">
-                           </af:inputText>
-                             </f:facet>
+                                                                   headerText="Password" id="c6" width="200">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpUserMasterPwd}"
+                                                                              id="it22" placeholder="Search Password"></af:inputText>
+                                                            </f:facet>
                                                             <af:inputText value="#{row.bindings.MmpUserMasterPwd.inputValue}"
                                                                           label="#{bindings.MmpUserMasterView2.hints.MmpUserMasterPwd.label}"
                                                                           required="#{bindings.MmpUserMasterView2.hints.MmpUserMasterPwd.mandatory}"
@@ -249,15 +230,13 @@
                                                                 <f:validator binding="#{row.bindings.Ast.validator}"/>
                                                             </af:inputText>
                                                         </af:column>-->
-                                                        <af:column  sortProperty="#{bindings.MmpUserMasterView2.hints.Ast.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Active"
+                                                        <af:column sortProperty="#{bindings.MmpUserMasterView2.hints.Ast.name}"
+                                                                   filterable="true" sortable="true" headerText="Active"
                                                                    id="c7" width="60">
-                                                                    <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.Ast}"
-                                          id="it23" placeholder="Search Status">
-                           </af:inputText>
-                             </f:facet>
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.Ast}" id="it23"
+                                                                              placeholder="Search Status"></af:inputText>
+                                                            </f:facet>
                                                             <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
                                                                                 label="#{row.bindings.Ast.label}"
                                                                                 required="#{bindings.MmpUserMasterView2.hints.Ast.mandatory}"
@@ -269,14 +248,12 @@
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpUserMasterView2.hints.MemberRegId.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Member" width="300"
-                                                                   id="c9">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MemberRegId}"
-                                          id="it24" placeholder="Search Member">
-                           </af:inputText>
-                             </f:facet>
+                                                                   filterable="true" sortable="true" headerText="Member"
+                                                                   width="300" id="c9">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MemberRegId}"
+                                                                              id="it24" placeholder="Search Member"></af:inputText>
+                                                            </f:facet>
                                                             <af:selectOneChoice value="#{row.bindings.MemberRegId.inputValue}"
                                                                                 label="#{row.bindings.MemberRegId.label}"
                                                                                 required="#{bindings.MmpUserMasterView2.hints.MemberRegId.mandatory}"
@@ -289,30 +266,30 @@
                                                         </af:column>
                                                     </af:table>
                                                 </af:showDetailItem>
-                                </af:panelTabbed>
-                            </af:gridCell>
-                        </af:gridRow>
-                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
-                                            <af:button actionListener="#{bindings.CreateInsert1.execute}"
-                                                       text="Add" icon="#{resource['images:add.png']}"
+                                            </af:panelTabbed>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc5">
+                                            <af:button actionListener="#{bindings.CreateInsert1.execute}" text="Add"
+                                                       icon="#{resource['images:add.png']}"
                                                        disabled="#{!bindings.CreateInsert1.enabled}" id="b5"/>
-                                            <af:button actionListener="#{bindings.Execute1.execute}" text="Verify Editing"
-                                             icon="#{resource['images:edit.png']}"
+                                            <af:button actionListener="#{bindings.Execute1.execute}"
+                                                       text="Verify Editing" icon="#{resource['images:edit.png']}"
                                                        disabled="#{!bindings.Execute1.enabled}" id="b6"/>
                                             <af:button actionListener="#{bindings.Delete1.execute}" text="Delete"
-                                             icon="#{resource['images:delete.png']}"
+                                                       icon="#{resource['images:delete.png']}"
                                                        disabled="#{!bindings.Delete1.enabled}" id="b7"/>
                                         </af:gridCell>
-                        </af:gridRow>
-                    </af:panelGridLayout>
-                </af:showDetailItem>
-                <af:showDetailItem text="Role's Privileges" id="sdi1">
-                    <af:panelGridLayout id="pgl9">
-                        <af:gridRow marginTop="5px" height="auto" id="gr7">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
-                                <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
-                                    <af:showDetailItem id="tab4" text="User's Roles">
+                                    </af:gridRow>
+                                </af:panelGridLayout>
+                            </af:showDetailItem>
+                            <af:showDetailItem text="Role's Privileges" id="sdi1">
+                                <af:panelGridLayout id="pgl9">
+                                    <af:gridRow marginTop="5px" height="auto" id="gr7">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc7">
+                                            <af:panelTabbed position="above" id="pt4" styleClass="tabel_pannel_tab">
+                                                <af:showDetailItem id="tab4" text="User's Roles">
                                                     <af:table value="#{bindings.MmpRoleMasterView11.collectionModel}"
                                                               var="row" rows="#{bindings.MmpRoleMasterView11.rangeSize}"
                                                               emptyText="#{bindings.MmpRoleMasterView11.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -328,13 +305,12 @@
                                                               scrollPolicy="page" autoHeightRows="0">
                                                         <af:column sortProperty="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterId.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="Role Master ID" width="60"
-                                                                   id="c10" align="center">
-                                                                    <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpRoleMasterId}"
-                                          id="it8" placeholder="Search ID">
-                           </af:inputText>
-                             </f:facet>
+                                                                   headerText="Role Master ID" width="60" id="c10"
+                                                                   align="center">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpRoleMasterId}"
+                                                                              id="it8" placeholder="Search ID"></af:inputText>
+                                                            </f:facet>
                                                             <af:inputText value="#{row.bindings.MmpRoleMasterId.inputValue}"
                                                                           label="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterId.label}"
                                                                           required="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterId.mandatory}"
@@ -349,14 +325,12 @@
                                                             </af:inputText>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterName.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Role" width="300"
-                                                                   id="c11">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpRoleMasterName}"
-                                          id="it25" placeholder="Search Role">
-                           </af:inputText>
-                             </f:facet>
+                                                                   filterable="true" sortable="true" headerText="Role"
+                                                                   width="300" id="c11">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpRoleMasterName}"
+                                                                              id="it25" placeholder="Search Role"></af:inputText>
+                                                            </f:facet>
                                                             <af:inputText value="#{row.bindings.MmpRoleMasterName.inputValue}"
                                                                           label="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterName.label}"
                                                                           required="#{bindings.MmpRoleMasterView11.hints.MmpRoleMasterName.mandatory}"
@@ -386,17 +360,16 @@
                                                                 <f:validator binding="#{row.bindings.Ast.validator}"/>
                                                             </af:inputText>
                                                         </af:column>-->
-                                                        <af:column  sortProperty="#{bindings.MmpRoleMasterView11.hints.Ast.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Active"
+                                                        <af:column sortProperty="#{bindings.MmpRoleMasterView11.hints.Ast.name}"
+                                                                   filterable="true" sortable="true" headerText="Active"
                                                                    id="c8" width="60">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.Ast}"
-                                          id="it26" placeholder="Search Status">
-                           </af:inputText>
-                             </f:facet>
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.Ast}" id="it26"
+                                                                              placeholder="Search Status"></af:inputText>
+                                                            </f:facet>
                                                             <af:selectOneChoice value="#{row.bindings.Ast.inputValue}"
-                                                                                label="#{row.bindings.Ast.label}" readOnly="true"
+                                                                                label="#{row.bindings.Ast.label}"
+                                                                                readOnly="true"
                                                                                 required="#{bindings.MmpRoleMasterView11.hints.Ast.mandatory}"
                                                                                 shortDesc="#{bindings.MmpRoleMasterView11.hints.Ast.tooltip}"
                                                                                 id="soc11">
@@ -407,19 +380,19 @@
                                                         </af:column>
                                                     </af:table>
                                                 </af:showDetailItem>
-                                </af:panelTabbed>
-                            </af:gridCell>
-                        </af:gridRow>
-                        <af:gridRow marginTop="5px" height="auto" id="gr8">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8"/>
-                        </af:gridRow>
-                        <af:gridRow marginTop="5px" height="auto" id="gr9">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9"/>
-                        </af:gridRow>
-                        <af:gridRow marginTop="5px" height="auto" id="gr10">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
-                                <af:panelTabbed position="above" id="pt5" styleClass="tabel_pannel_tab">
-                                    <af:showDetailItem id="tab5" text="Modules">
+                                            </af:panelTabbed>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr8">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc8"/>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr9">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc9"/>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr10">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc10">
+                                            <af:panelTabbed position="above" id="pt5" styleClass="tabel_pannel_tab">
+                                                <af:showDetailItem id="tab5" text="Modules">
                                                     <af:table value="#{bindings.MmpRoleDetailModulesView2.collectionModel}"
                                                               var="row"
                                                               rows="#{bindings.MmpRoleDetailModulesView2.rangeSize}"
@@ -438,11 +411,10 @@
                                                                    filterable="true" sortable="true"
                                                                    headerText="Role Module Deatil ID" width="60"
                                                                    id="c13" align="center">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpRoleDetailModulesId}"
-                                          id="it27" placeholder="Search ID">
-                           </af:inputText>
-                             </f:facet>
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpRoleDetailModulesId}"
+                                                                              id="it27" placeholder="Search ID"></af:inputText>
+                                                            </f:facet>
                                                             <af:inputText value="#{row.bindings.MmpRoleDetailModulesId.inputValue}"
                                                                           label="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleDetailModulesId.label}"
                                                                           required="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleDetailModulesId.mandatory}"
@@ -456,16 +428,16 @@
                                                                                   pattern="#{bindings.MmpRoleDetailModulesView2.hints.MmpRoleDetailModulesId.format}"/>
                                                             </af:inputText>
                                                         </af:column>
-                                                        <af:column headerText="Module Menu"
-                                                                   id="c31" sortable="true" filterable="true"
-                                                                   width="200">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpModuleMenuId}"
-                                          id="it28" placeholder="Search Module Menu">
-                           </af:inputText>
-                             </f:facet>
+                                                        <af:column headerText="Module Menu" id="c31" sortable="true"
+                                                                   filterable="true" width="200">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpModuleMenuId}"
+                                                                              id="it28"
+                                                                              placeholder="Search Module Menu"></af:inputText>
+                                                            </f:facet>
                                                             <af:selectOneChoice value="#{row.bindings.MmpModuleMenuId.inputValue}"
-                                                                                label="#{row.bindings.MmpModuleMenuId.label}" readOnly="true"
+                                                                                label="#{row.bindings.MmpModuleMenuId.label}"
+                                                                                readOnly="true"
                                                                                 required="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.mandatory}"
                                                                                 shortDesc="#{bindings.MmpRoleDetailModulesView2.hints.MmpModuleMenuId.tooltip}"
                                                                                 id="soc8">
@@ -476,13 +448,11 @@
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailModulesView2.hints.MmpRView.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="Show Module" width="200"
-                                                                   id="c16">
-                                                                    <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpRView}"
-                                          id="it29" placeholder="Search Status">
-                           </af:inputText>
-                             </f:facet>
+                                                                   headerText="Show Module" width="200" id="c16">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpRView}"
+                                                                              id="it29" placeholder="Search Status"></af:inputText>
+                                                            </f:facet>
                                                             <af:selectOneChoice value="#{row.bindings.MmpRView.inputValue}"
                                                                                 label="#{row.bindings.MmpRView.label}"
                                                                                 required="#{bindings.MmpRoleDetailModulesView2.hints.MmpRView.mandatory}"
@@ -494,11 +464,12 @@
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                     </af:table>
-                                                    <af:button actionListener="#{bindings.Execute2.execute}" icon="#{resource['images:edit.png']}"
-                                                               text="Verify Editing" disabled="#{!bindings.Execute2.enabled}"
-                                                               id="b8"/>
+                                                    <af:button actionListener="#{bindings.Execute2.execute}"
+                                                               icon="#{resource['images:edit.png']}"
+                                                               text="Verify Editing"
+                                                               disabled="#{!bindings.Execute2.enabled}" id="b8"/>
                                                 </af:showDetailItem>
-                                    <af:showDetailItem text="Pages" id="sdi2">
+                                                <af:showDetailItem text="Pages" id="sdi2">
                                                     <af:table value="#{bindings.MmpRoleDetailPagesView3.collectionModel}"
                                                               var="row"
                                                               rows="#{bindings.MmpRoleDetailPagesView3.rangeSize}"
@@ -515,13 +486,12 @@
                                                               scrollPolicy="page" autoHeightRows="0">
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailPagesId.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="Role page Detail ID" width="60"
-                                                                   id="c17" align="center">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpRoleDetailPagesId}"
-                                          id="it30" placeholder="Search ID">
-                           </af:inputText>
-                             </f:facet>
+                                                                   headerText="Role page Detail ID" width="60" id="c17"
+                                                                   align="center">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpRoleDetailPagesId}"
+                                                                              id="it30" placeholder="Search ID"></af:inputText>
+                                                            </f:facet>
                                                             <af:inputText value="#{row.bindings.MmpRoleDetailPagesId.inputValue}"
                                                                           label="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailPagesId.label}"
                                                                           required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailPagesId.mandatory}"
@@ -535,16 +505,15 @@
                                                                                   pattern="#{bindings.MmpRoleDetailPagesView3.hints.MmpRoleDetailPagesId.format}"/>
                                                             </af:inputText>
                                                         </af:column>
-                                                        <af:column headerText="Page"
-                                                                   id="c15" sortable="true" filterable="true"
-                                                                   width="200">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpPagesId}"
-                                          id="it31" placeholder="Search Page">
-                           </af:inputText>
-                             </f:facet>
+                                                        <af:column headerText="Page" id="c15" sortable="true"
+                                                                   filterable="true" width="200">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpPagesId}"
+                                                                              id="it31" placeholder="Search Page"></af:inputText>
+                                                            </f:facet>
                                                             <af:selectOneChoice value="#{row.bindings.MmpPagesId.inputValue}"
-                                                                                label="#{row.bindings.MmpPagesId.label}" readOnly="true"
+                                                                                label="#{row.bindings.MmpPagesId.label}"
+                                                                                readOnly="true"
                                                                                 required="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.mandatory}"
                                                                                 shortDesc="#{bindings.MmpRoleDetailPagesView3.hints.MmpPagesId.tooltip}"
                                                                                 id="soc9">
@@ -555,13 +524,11 @@
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRView.name}"
                                                                    filterable="true" sortable="true"
-                                                                   headerText="Show Page"
-                                                                   id="c20" width="80">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpRView}"
-                                          id="it32" placeholder="Search Status">
-                           </af:inputText>
-                             </f:facet>
+                                                                   headerText="Show Page" id="c20" width="80">
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpRView}"
+                                                                              id="it32" placeholder="Search Status"></af:inputText>
+                                                            </f:facet>
                                                             <af:selectOneChoice value="#{row.bindings.MmpRView.inputValue}"
                                                                                 label="#{row.bindings.MmpRView.label}"
                                                                                 required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRView.mandatory}"
@@ -573,14 +540,12 @@
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRAdd.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Add"
+                                                                   filterable="true" sortable="true" headerText="Add"
                                                                    id="c21" width="60">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpRAdd}"
-                                          id="it33" placeholder="Search Add">
-                           </af:inputText>
-                             </f:facet>
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpRAdd}"
+                                                                              id="it33" placeholder="Search Add"></af:inputText>
+                                                            </f:facet>
                                                             <af:selectOneChoice value="#{row.bindings.MmpRAdd.inputValue}"
                                                                                 label="#{row.bindings.MmpRAdd.label}"
                                                                                 required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRAdd.mandatory}"
@@ -592,14 +557,12 @@
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpREdit.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headertext="Edit"
+                                                                   filterable="true" sortable="true" headertext="Edit"
                                                                    id="c22" width="60">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpREdit}"
-                                          id="it34" placeholder="Search Editing">
-                           </af:inputText>
-                             </f:facet>
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpREdit}"
+                                                                              id="it34" placeholder="Search Editing"></af:inputText>
+                                                            </f:facet>
                                                             <af:selectOneChoice value="#{row.bindings.MmpREdit.inputValue}"
                                                                                 label="#{row.bindings.MmpREdit.label}"
                                                                                 required="#{bindings.MmpRoleDetailPagesView3.hints.MmpREdit.mandatory}"
@@ -611,14 +574,12 @@
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRDelete.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Delete"
+                                                                   filterable="true" sortable="true" headerText="Delete"
                                                                    id="c23" width="60">
-                                                                    <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpRDelete}"
-                                          id="it35" placeholder="Search Delete">
-                           </af:inputText>
-                             </f:facet>
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpRDelete}"
+                                                                              id="it35" placeholder="Search Delete"></af:inputText>
+                                                            </f:facet>
                                                             <af:selectOneChoice value="#{row.bindings.MmpRDelete.inputValue}"
                                                                                 label="#{row.bindings.MmpRDelete.label}"
                                                                                 required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRDelete.mandatory}"
@@ -630,14 +591,12 @@
                                                             </af:selectOneChoice>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPrint.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Print"
+                                                                   filterable="true" sortable="true" headerText="Print"
                                                                    id="c24" width="60">
-                                                                    <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpRPrint}"
-                                          id="it36" placeholder="Search Print">
-                           </af:inputText>
-                             </f:facet>
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpRPrint}"
+                                                                              id="it36" placeholder="Search Print"></af:inputText>
+                                                            </f:facet>
                                                             <af:inputText value="#{row.bindings.MmpRPrint.inputValue}"
                                                                           label="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPrint.label}"
                                                                           required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPrint.mandatory}"
@@ -649,14 +608,12 @@
                                                             </af:inputText>
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPost.name}"
-                                                                   filterable="true" sortable="true"
-                                                                   headerText="Post"
+                                                                   filterable="true" sortable="true" headerText="Post"
                                                                    id="c25" width="60">
-                                                                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.MmpRPost}"
-                                          id="it37" placeholder="Search Post">
-                           </af:inputText>
-                             </f:facet>
+                                                            <f:facet name="filter">
+                                                                <af:inputText value="#{vs.filterCriteria.MmpRPost}"
+                                                                              id="it37" placeholder="Search Post"></af:inputText>
+                                                            </f:facet>
                                                             <af:inputText value="#{row.bindings.MmpRPost.inputValue}"
                                                                           label="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPost.label}"
                                                                           required="#{bindings.MmpRoleDetailPagesView3.hints.MmpRPost.mandatory}"
@@ -667,13 +624,13 @@
                                                                 <f:validator binding="#{row.bindings.MmpRPost.validator}"/>
                                                             </af:inputText>
                                                         </af:column>
-                                                        
                                                     </af:table>
-                                                    <af:button actionListener="#{bindings.Execute3.execute}" icon="#{resource['images:edit.png']}"
-                                                               text="Verify Editing" disabled="#{!bindings.Execute3.enabled}"
-                                                               id="b9"/>
+                                                    <af:button actionListener="#{bindings.Execute3.execute}"
+                                                               icon="#{resource['images:edit.png']}"
+                                                               text="Verify Editing"
+                                                               disabled="#{!bindings.Execute3.enabled}" id="b9"/>
                                                 </af:showDetailItem>
-                                    <!--<af:showDetailItem text="Reports" id="sdi3">
+                                                <!--<af:showDetailItem text="Reports" id="sdi3">
                                                     <af:table value="#{bindings.MmpRoleDetailReportsView2.collectionModel}"
                                                               var="row"
                                                               rows="#{bindings.MmpRoleDetailReportsView2.rangeSize}"
@@ -752,28 +709,27 @@
                                                                text="Execute4" disabled="#{!bindings.Execute4.enabled}"
                                                                id="b11"/>
                                                 </af:showDetailItem>-->
-                                </af:panelTabbed>
-                            </af:gridCell>
-                        </af:gridRow>
-                        <af:gridRow marginTop="5px" height="auto" id="gr11">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11"/>
-                        </af:gridRow>
-                        <af:gridRow marginTop="5px" height="auto" id="gr12">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc12"/>
-                        </af:gridRow>
-                        <af:gridRow marginTop="5px" height="auto" id="gr13">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc13"/>
-                        </af:gridRow>
-                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr14">
-                            <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc14"/>
-                        </af:gridRow>
-                    </af:panelGridLayout>
+                                            </af:panelTabbed>
+                                        </af:gridCell>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr11">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc11"/>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr12">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc12"/>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" id="gr13">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc13"/>
+                                    </af:gridRow>
+                                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr14">
+                                        <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc14"/>
+                                    </af:gridRow>
+                                </af:panelGridLayout>
                             </af:showDetailItem>
-            </af:panelTabbed>
+                        </af:panelTabbed>
                     </af:gridCell>
                 </af:gridRow>
             </af:panelGridLayout>
-           
         </af:showDetailItem>
     </af:panelAccordion>
 </ui:composition>

@@ -14,11 +14,14 @@
        TblCluster.CLUSTER_NO, 
        TblCluster.CLUSTER_ID AS CLUSTER_ID1, 
        MmpTrainingMonInsp.DATED, 
-       MmpTrainingMonInsp.MEMBER_REG_ID"
+       MmpTrainingMonInsp.MEMBER_REG_ID, 
+       MmpTrainingMonInsp.START_TRAINING, 
+       MmpTrainingMonInsp.END_TRAINING"
   FromList="MMP_TRAINING_MON_INSP MmpTrainingMonInsp, TBL_CLUSTER TblCluster"
-  Where="MmpTrainingMonInsp.CLUSTER_ID = TblCluster.CLUSTER_ID(+)  
-AND MmpTrainingMonInsp.MEMBER_REG_ID = :mmRegID    
-AND MmpTrainingMonInsp.DATED = :schDate">
+  Where="MmpTrainingMonInsp.CLUSTER_ID = TblCluster.CLUSTER_ID(+)   
+AND MmpTrainingMonInsp.MEMBER_REG_ID = :mmRegID     
+AND MmpTrainingMonInsp.DATED = :schDate 
+And MmpTrainingMonInsp.END_TRAINING is Null">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -31,7 +34,6 @@ AND MmpTrainingMonInsp.DATED = :schDate">
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="Member_Depn_Cluster_Mon_Ins_LOV"/>
   </Variable>
   <Variable
@@ -97,6 +99,20 @@ AND MmpTrainingMonInsp.DATED = :schDate">
     EntityAttrName="MemberRegId"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="MEMBER_REG_ID"/>
+  <ViewAttribute
+    Name="StartTraining"
+    PrecisionRule="true"
+    IsEffectiveStartDate="true"
+    EntityAttrName="StartTraining"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="START_TRAINING"/>
+  <ViewAttribute
+    Name="EndTraining"
+    PrecisionRule="true"
+    IsEffectiveEndDate="true"
+    EntityAttrName="EndTraining"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="END_TRAINING"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingMonInspId"/>
   </AttrArray>

@@ -39,7 +39,6 @@
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="MmpTrainingMonInspView"/>
   </Variable>
   <ViewAccessor
@@ -592,6 +591,11 @@
   <ViewLinkAccessor
     Name="TblClusterView"
     ViewLink="model.VO.FKMmpTrainingMonInspFkLink2"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="MmpTrainingCheckOutView"
+    ViewLink="model.VO.FKMmpTrainingCheckOutFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>
