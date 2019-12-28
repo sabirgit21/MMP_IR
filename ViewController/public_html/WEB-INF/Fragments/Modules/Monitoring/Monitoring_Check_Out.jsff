@@ -27,21 +27,31 @@
                           rows="#{bindings.MmpTrainingCheckOutView1.rangeSize}"
                           emptyText="#{bindings.MmpTrainingCheckOutView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0" fetchSize="#{bindings.MmpTrainingCheckOutView1.rangeSize}" id="t1">
-                  <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.label}"
-                             id="c1">
+                  <af:column headerText="MMP Traininig Check Out"
+                             id="c1" align="center" sortable="true" filterable="true" width="90">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MmpTrainingCheckOutId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.MmpTrainingCheckOutId.inputValue}" readOnly="true"
                                   label="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.label}"
                                   required="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.mandatory}"
                                   columns="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.precision}"
                                   shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.tooltip}"
-                                  id="it1">
+                                  id="it1" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.MmpTrainingCheckOutId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.MemberRegId1.label}" id="c6">
+                  <af:column headerText="Member" id="c6" sortable="true" filterable="true" width="200">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MemberRegId1}"
+                                          id="it2" placeholder="Search Member">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.MemberRegId1.inputValue}"
                                         label="#{row.bindings.MemberRegId1.label}" readOnly="true"
                                         required="#{bindings.MmpTrainingCheckOutView1.hints.MemberRegId1.mandatory}"
@@ -51,7 +61,12 @@
                       <f:validator binding="#{row.bindings.MemberRegId1.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.Dated1.label}" id="c7">
+                  <af:column headerText="Dated" id="c7" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Dated1}"
+                                          id="it4" placeholder="Search Dated">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputDate value="#{row.bindings.Dated1.inputValue}" autoSubmit="true"
                                   label="#{bindings.MmpTrainingCheckOutView1.hints.Dated1.label}"
                                   required="#{bindings.MmpTrainingCheckOutView1.hints.Dated1.mandatory}"
@@ -61,7 +76,12 @@
                       <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.Dated1.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.ClusterId1.label}" id="c8">
+                  <af:column headerText="Cluster" id="c8" width="110" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ClusterId1}"
+                                          id="it5" placeholder="Search Cluster">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.ClusterId1.inputValue}"
                                         label="#{row.bindings.ClusterId1.label}" autoSubmit="true"
                                         required="#{bindings.MmpTrainingCheckOutView1.hints.ClusterId1.mandatory}"
@@ -71,7 +91,12 @@
                       <f:validator binding="#{row.bindings.ClusterId1.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.label}" id="c5">
+                  <af:column headerText="Training Start" id="c5" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.TrainingStart}"
+                                          id="it6" placeholder="Search Training Start">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputDate value="#{row.bindings.TrainingStart.inputValue}" readOnly="true"
                                   label="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.label}"
                                   required="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.mandatory}"
@@ -81,7 +106,12 @@
                       <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.label}" id="c4">
+                  <af:column headerText="Training End" id="c4" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.TrainingEnd}"
+                                          id="it7" placeholder="Search Training End">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputDate value="#{row.bindings.TrainingEnd.inputValue}"
                                   label="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.label}"
                                   required="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.mandatory}"
@@ -91,7 +121,12 @@
                       <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.label}" id="c3">
+                  <af:column headerText="Remarks" id="c3" width="200" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                          id="it8" placeholder="Search Remarks">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Remarks.inputValue}"
                                   label="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.label}"
                                   required="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.mandatory}"
