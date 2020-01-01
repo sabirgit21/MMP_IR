@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FKMapFarmerDetailAttFKLink"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.VO.FKMapFarmerDetailAttFKLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="Map_Cluster_Detail"
+    Cardinality="1"
+    Source="true"
+    Owner="model.VO.Map_Cluster_Detail">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Map_Cluster_Detail"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.Map_Cluster_Detail.ClusterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Map_Farmer_Detail_Att"
+    Cardinality="-1"
+    Owner="model.VO.Map_Farmer_Detail_Att">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Map_Farmer_Detail_Att"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.VO.Map_Farmer_Detail_Att.ClusterId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

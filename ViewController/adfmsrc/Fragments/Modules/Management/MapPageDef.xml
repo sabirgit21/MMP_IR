@@ -6,6 +6,12 @@
     <variableIterator id="variables"/>
     <iterator Binds="Mmp_Map_Sch_Detail_Att1" RangeSize="-1" DataControl="AppModuleDataControl"
               id="Mmp_Map_Sch_Detail_Att1Iterator"/>
+    <iterator Binds="Map_Cluster_Detail1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Map_Cluster_Detail1Iterator"/>
+    <iterator Binds="Map_Farmer_Detail_Att1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Map_Farmer_Detail_Att1Iterator"/>
+    <searchRegion Binds="Map_Farmer_Detail_Att1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="Map_Farmer_Detail_Att1Query"/>
   </executables>
   <bindings>
     <mapTheme IterBinding="Mmp_Map_Sch_Detail_Att1Iterator" id="Mmp_Map_Sch_Detail_Att1"
@@ -18,5 +24,27 @@
         <item type="category" value="ColFlag"/>
       </mapThemeDataMap>
     </mapTheme>
+    <list IterBinding="Map_Cluster_Detail1Iterator" ListOperMode="navigation" ListIter="Map_Cluster_Detail1Iterator"
+          id="Map_Cluster_Detail1" DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="ClusterNo"/>
+      </AttrNames>
+    </list>
+    <tree IterBinding="Map_Farmer_Detail_Att1Iterator" id="Map_Farmer_Detail_Att1">
+      <nodeDefinition DefName="model.VO.Map_Farmer_Detail_Att" Name="Map_Farmer_Detail_Att10">
+        <AttrNames>
+          <Item Value="Name"/>
+          <Item Value="Ast"/>
+          <Item Value="FarmerStatus"/>
+          <Item Value="VerLandUnderOrch"/>
+          <Item Value="FatherName"/>
+          <Item Value="Cnic"/>
+          <Item Value="Mobile"/>
+          <Item Value="FarmerNo"/>
+          <Item Value="LandAcre"/>
+          <Item Value="LandUnderOrch"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

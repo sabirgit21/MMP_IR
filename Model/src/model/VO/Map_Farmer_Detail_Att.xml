@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Map_Farmer_Detail_Att"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.VO.Map_Farmer_Detail_Att_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewAccessor
+    Name="Map_Attendance_LOV1"
+    ViewObjectName="model.LOV.Map_Attendance_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_Ast"
+    ListVOName="Map_Attendance_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Ast"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbvalue"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="viewattr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FarmerStatus"
+    ListVOName="Map_Attendance_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FarmerStatus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbvalue"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="viewattr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery><![CDATA[SELECT Map_Farmer_Detail.FARMER_REG_ID,        
+       Map_Farmer_Detail.NAME,        
+       CATT.AST,       
+       MINSPFAR.FARMER_STATUS,  
+       MINSPFAR.VER_LAND_UNDER_ORCH,  
+       Map_Farmer_Detail.FATHER_NAME,        
+       Map_Farmer_Detail.CLUSTER_ID,        
+       Map_Farmer_Detail.BENEFICIARY_ID,        
+       Map_Farmer_Detail.CNIC,        
+       Map_Farmer_Detail.MOBILE,        
+       Map_Farmer_Detail.FARMER_NO,        
+       TblFarmerRegLand.LAND_ACRE,        
+       TblFarmerRegLand.LAND_UNDER_ORCH,        
+       TblFarmerRegLand.FARMER_REG_LAND_ID       
+FROM  TBL_FARMER_REG Map_Farmer_Detail, TBL_FARMER_REG_LAND TblFarmerRegLand,       
+       
+(Select Distinct CAD.farmer_reg_id,CAD.AST,CAM.Cluster_ID from tbl_cluster_att_detail CAD,tbl_cluster_att_Master CAM       
+Where cad.cluster_att_master_id= cam.cluster_att_master_id       
+And TRUNC(cam.dated)=  TRUNC(SYSDATE)) CATT , 
+ 
+(Select Distinct MFAR.farmer_reg_id, MFAR.FARMER_STATUS, MINSP.Cluster_ID,MFAR.VER_LAND_UNDER_ORCH from MMP_TRAINING_MON_INSP MINSP,MMP_TRAINING_MON_FARMER MFAR      
+Where MINSP.MMP_TRAINING_MON_INSP_ID= MFAR.MMP_TRAINING_MON_INSP_ID      
+And TRUNC(MINSP.dated)=  TRUNC(SYSDATE)) MINSPFAR       
+       
+where Map_Farmer_Detail.FARMER_REG_ID = TblFarmerRegLand.FARMER_REG_ID       
+And Catt.Farmer_Reg_Id=Map_Farmer_Detail.FARMER_REG_ID       
+And Catt.Cluster_ID=Map_Farmer_Detail.Cluster_ID 
+And MINSPFAR.Farmer_Reg_Id(+)=Map_Farmer_Detail.FARMER_REG_ID      
+And MINSPFAR.Cluster_ID(+)=Map_Farmer_Detail.Cluster_ID]]></SQLQuery>
+  <ViewAttribute
+    Name="FarmerRegId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FARMER_REG_ID"
+    Expression="FARMER_REG_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Name"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NAME"
+    Expression="NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Ast"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="AST"
+    Expression="AST"
+    SQLType="CHAR"
+    LOVName="LOV_Ast">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FarmerStatus"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="FARMER_STATUS"
+    Expression="FARMER_STATUS"
+    SQLType="CHAR"
+    LOVName="LOV_FarmerStatus">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VerLandUnderOrch"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="VER_LAND_UNDER_ORCH"
+    Expression="VER_LAND_UNDER_ORCH"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="FatherName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="150"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FATHER_NAME"
+    Expression="FATHER_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ClusterId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CLUSTER_ID"
+    Expression="CLUSTER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="BeneficiaryId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="BENEFICIARY_ID"
+    Expression="BENEFICIARY_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Cnic"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="25"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="CNIC"
+    Expression="CNIC"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="25"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Mobile"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="20"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MOBILE"
+    Expression="MOBILE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="FarmerNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="20"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FARMER_NO"
+    Expression="FARMER_NO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="LandAcre"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LAND_ACRE"
+    Expression="LAND_ACRE"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="LandUnderOrch"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="LAND_UNDER_ORCH"
+    Expression="LAND_UNDER_ORCH"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="FarmerRegLandId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="FARMER_REG_LAND_ID"
+    Expression="FARMER_REG_LAND_ID"
+    SQLType="NUMERIC"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

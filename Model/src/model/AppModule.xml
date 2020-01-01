@@ -241,6 +241,12 @@
   <ViewUsage
     Name="MmpMonSchDetailView4"
     ViewObjectName="model.VO.MmpMonSchDetailView"/>
+  <ViewUsage
+    Name="Map_Cluster_Detail1"
+    ViewObjectName="model.VO.Map_Cluster_Detail"/>
+  <ViewUsage
+    Name="Map_Farmer_Detail_Att1"
+    ViewObjectName="model.VO.Map_Farmer_Detail_Att"/>
   <ViewLinkUsage
     Name="FkMmpMemberRegDepLink1"
     ViewLinkObjectName="model.VO.FkMmpMemberRegDepLink"
@@ -486,5 +492,11 @@
     ViewLinkObjectName="model.VO.FkMmpMonSchDetailTrngSchFkLink"
     SrcViewUsageName="model.AppModule.TblTrainingSchDetailView1"
     DstViewUsageName="model.AppModule.MmpMonSchDetailView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKMapFarmerDetailAttFKLink1"
+    ViewLinkObjectName="model.VO.FKMapFarmerDetailAttFKLink"
+    SrcViewUsageName="model.AppModule.Map_Cluster_Detail1"
+    DstViewUsageName="model.AppModule.Map_Farmer_Detail_Att1"
     Reversed="false"/>
 </AppModule>
