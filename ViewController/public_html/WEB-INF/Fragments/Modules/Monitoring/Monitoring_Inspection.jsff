@@ -355,18 +355,24 @@
                           rowSelection="single" fetchSize="#{bindings.MmpTrainingMonFarmerView2.rangeSize}"
                           filterModel="#{bindings.MmpTrainingMonFarmerView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MmpTrainingMonFarmerView2Query.processQuery}" varStatus="vs"
-                          id="t2">
+                          id="t2" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonFarmerId.name}"
                              filterable="true" sortable="true" visible="false"
-                             headerText="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonFarmerId.label}"
-                             id="c4">
+                             headerText="Training Monitoring Inspection Farmer ID"
+                             id="c4" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MmpTrainingMonFarmerId}"
+                                          id="it28" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.MmpTrainingMonFarmerId.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonFarmerId.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonFarmerId.mandatory}"
                                   columns="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonFarmerId.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonFarmerId.precision}"
                                   shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonFarmerId.tooltip}"
-                                  id="it1">
+                                  id="it1" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.MmpTrainingMonFarmerId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonFarmerId.format}"/>
@@ -374,15 +380,21 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.label}"
-                             id="c5">
-                    <af:inputText value="#{row.bindings.MmpTrainingMonInspId.inputValue}" readOnly="true"
+                             headerText="Training Monitoring Inspection ID"
+                             id="c5" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MmpTrainingMonInspId}"
+                                          id="it29" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.MmpTrainingMonInspId.inputValue}" 
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.mandatory}"
                                   columns="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.precision}"
                                   shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.tooltip}"
-                                  id="it8">
+                                  id="it8" readOnly="true"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.MmpTrainingMonInspId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpTrainingMonFarmerView2.hints.MmpTrainingMonInspId.format}"/>
@@ -390,7 +402,8 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerRegId.name}"
                              filterable="true" sortable="true" visible="false"
-                             headerText="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerRegId.label}" id="c6">
+                             headerText="Farmer Reg ID" id="c6" align="center">
+                            
                     <af:inputText value="#{row.bindings.FarmerRegId.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerRegId.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerRegId.mandatory}"
@@ -418,20 +431,31 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.label}"
-                             id="c8">
+                             sortable="true" headerText="Farmer No."
+                             id="c8" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FarmerNo}"
+                                          id="it30" placeholder="Search Farmer No.">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.FarmerNo.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.mandatory}"
                                   columns="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.precision}"
-                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.tooltip}" id="it12">
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerNo.tooltip}" 
+                                  id="it12" readOnly="true" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.FarmerNo.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonFarmerView2.hints.Name.label}"
-                             id="c9">
+                             sortable="true" headerText="Farmer"
+                             id="c9" width="200">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it34" placeholder="Search Farmer">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.Name.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.Name.mandatory}"
@@ -442,38 +466,56 @@
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.label}"
-                             id="c10">
+                             sortable="true" headerText="CNIC"
+                             id="c10" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Cnic}"
+                                          id="it35" placeholder="Search CNIC">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Cnic.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.mandatory}"
                                   columns="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.precision}"
-                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.tooltip}" id="it14">
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.Cnic.tooltip}" 
+                                  id="it14" readOnly="true" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Cnic.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.label}"
-                             id="c12">
+                             sortable="true" headerText="Mobile"
+                             id="c12" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Mobile}"
+                                          id="it38" placeholder="Search Mobile">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Mobile.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.mandatory}"
                                   columns="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.precision}"
-                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.tooltip}" id="it21">
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.Mobile.tooltip}" 
+                                  id="it21" readOnly="true" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Mobile.validator}"/>
                     </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.label}"
-                             id="c19">
+                             sortable="true" headerText="Land Acre"
+                             id="c19" align="center">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.LandAcre}"
+                                          id="it41" placeholder="Search Acre">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.LandAcre.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.mandatory}"
                                   columns="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.precision}"
-                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.tooltip}" id="it22">
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.tooltip}" 
+                                  id="it22" readOnly="true" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.LandAcre.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpTrainingMonFarmerView2.hints.LandAcre.format}"/>
@@ -481,14 +523,19 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.label}" id="c20">
+                             headerText="Land Under Orchard" id="c20" align="center">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.LandUnderOrch}"
+                                          id="it39" placeholder="Search Land">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.LandUnderOrch.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.mandatory}"
                                   columns="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.precision}"
                                   shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.tooltip}"
-                                  id="it23">
+                                  id="it23" readOnly="true" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.LandUnderOrch.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.format}"/>
@@ -496,7 +543,12 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerStatus.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerStatus.label}" id="c22">
+                             headerText="Farmer Status" id="c22">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FarmerStatus}"
+                                          id="it39" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.FarmerStatus.inputValue}"
                                         label="#{row.bindings.FarmerStatus.label}"
                                         required="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerStatus.mandatory}"
@@ -507,8 +559,13 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.VerSource.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonFarmerView2.hints.VerSource.label}"
+                             sortable="true" headerText="Verified Source"
                              id="c23">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.VerSource}"
+                                          id="it42" placeholder="Search Source">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.VerSource.inputValue}"
                                         label="#{row.bindings.VerSource.label}"
                                         required="#{bindings.MmpTrainingMonFarmerView2.hints.VerSource.mandatory}"
@@ -519,8 +576,13 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.PerChange.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonFarmerView2.hints.PerChange.label}"
-                             id="c24">
+                             sortable="true" headerText="Permanent Change"
+                             id="c24" width="120">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.PerChange}"
+                                          id="it43" placeholder="Search Permanent Change">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.PerChange.inputValue}"
                                         label="#{row.bindings.PerChange.label}"
                                         required="#{bindings.MmpTrainingMonFarmerView2.hints.PerChange.mandatory}"
@@ -531,8 +593,13 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Remarks.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonFarmerView2.hints.Remarks.label}"
-                             id="c25">
+                             sortable="true" headerText="Remarks"
+                             id="c25" width="200">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                          id="it44" placeholder="Search Remarks">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Remarks.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.Remarks.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.Remarks.mandatory}"
@@ -683,15 +750,22 @@
                   </af:column>-->
                   <af:column sortProperty="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.label}"
-                             id="c16">
+                             headerText="MMP Monitoring Inspection ID"
+                             id="c16" align="center">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MmpTrainingMonInspId}"
+                                          id="it18" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:inputText value="#{row.bindings.MmpTrainingMonInspId.inputValue}" readOnly="true"
                                   label="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.label}"
                                   required="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.mandatory}"
                                   columns="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.precision}"
                                   shortDesc="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.tooltip}"
-                                  id="it19">
+                                  id="it19" 
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.MmpTrainingMonInspId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.format}"/>
@@ -699,30 +773,46 @@
                   </af:column>
                  
                   <af:column sortProperty="#{bindings.MmpTrainingMonTopicsView2.hints.Name.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonTopicsView2.hints.Name.label}"
+                             sortable="true" headerText="Topic"
                              id="c26">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Name}"
+                                          id="it25" placeholder="Search Topic">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
                                   label="#{bindings.MmpTrainingMonTopicsView2.hints.Name.label}"
                                   required="#{bindings.MmpTrainingMonTopicsView2.hints.Name.mandatory}"
                                   columns="#{bindings.MmpTrainingMonTopicsView2.hints.Name.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonTopicsView2.hints.Name.precision}"
-                                  shortDesc="#{bindings.MmpTrainingMonTopicsView2.hints.Name.tooltip}" id="it20">
+                                  shortDesc="#{bindings.MmpTrainingMonTopicsView2.hints.Name.tooltip}" id="it20" 
+                                  readOnly="true">
                       <f:validator binding="#{row.bindings.Name.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpTrainingMonTopicsView2.hints.TrainerId.label}" id="c15">
+                  <af:column headerText="Trainer" id="c15" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.TrainerId}"
+                                          id="it27" placeholder="Search Trainer">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.TrainerId.inputValue}"
                                         label="#{row.bindings.TrainerId.label}"
                                         required="#{bindings.MmpTrainingMonTopicsView2.hints.TrainerId.mandatory}"
                                         shortDesc="#{bindings.MmpTrainingMonTopicsView2.hints.TrainerId.tooltip}"
-                                        id="soc25">
+                                        id="soc25" readOnly="true">
                       <f:selectItems value="#{row.bindings.TrainerId.items}" id="si26"/>
                       <f:validator binding="#{row.bindings.TrainerId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonTopicsView2.hints.Status.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingMonTopicsView2.hints.Status.label}"
+                             sortable="true" headerText="Status"
                              id="c18">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Status}"
+                                          id="it26" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Status.inputValue}" label="#{row.bindings.Status.label}"
                                         required="#{bindings.MmpTrainingMonTopicsView2.hints.Status.mandatory}"
                                         shortDesc="#{bindings.MmpTrainingMonTopicsView2.hints.Status.tooltip}"

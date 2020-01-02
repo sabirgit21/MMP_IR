@@ -558,7 +558,7 @@
                                                         </af:column>
                                                         <af:column sortProperty="#{bindings.MmpRoleDetailPagesView3.hints.MmpREdit.name}"
                                                                    filterable="true" sortable="true" headertext="Edit"
-                                                                   id="c22" width="60">
+                                                                   id="c22" width="60" headerText="Edit">
                                                             <f:facet name="filter">
                                                                 <af:inputText value="#{vs.filterCriteria.MmpREdit}"
                                                                               id="it34" placeholder="Search Editing"></af:inputText>

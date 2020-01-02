@@ -18,7 +18,7 @@
     <searchRegion Binds="MmpTrainingMonUrfarmerView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="MmpTrainingMonUrfarmerView2Query"/>
-    <iterator Binds="MmpTrainingMonFarmerView2" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="MmpTrainingMonFarmerView2" RangeSize="8" DataControl="AppModuleDataControl"
               id="MmpTrainingMonFarmerView2Iterator"/>
     <searchRegion Binds="MmpTrainingMonFarmerView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpTrainingMonFarmerView2Query"/>

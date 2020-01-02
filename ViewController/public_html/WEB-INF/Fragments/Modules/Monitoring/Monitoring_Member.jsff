@@ -123,7 +123,12 @@
                                   <f:validator binding="#{row.bindings.Cnic.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="Active" id="c4" width="75">
+                  <af:column headerText="Active" id="c4" width="75" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Ast}"
+                                          id="it4" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.Ast.inputValue}" label="#{row.bindings.Ast.label}"
                                         required="#{bindings.MmpMemberRegView1.hints.Ast.mandatory}"
                                         shortDesc="#{bindings.MmpMemberRegView1.hints.Ast.tooltip}" id="soc1">
