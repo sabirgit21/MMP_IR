@@ -110,6 +110,13 @@
     AssociationOtherEnd="model.EO.FkTblGrantApprovalDetailFAssoc.TblGrantApprovalMaster"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblCluster"
+    Association="model.EO.FKTblGrantApprovalMasterClusterFKAssoc"
+    AssociationEnd="model.EO.FKTblGrantApprovalMasterClusterFKAssoc.TblCluster"
+    AssociationOtherEnd="model.EO.FKTblGrantApprovalMasterClusterFKAssoc.TblGrantApprovalMaster"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="PkTblGrantApprovalMasterP"
     PrimaryKey="true">
@@ -148,6 +155,17 @@
       <Attr Name="_referencedKey" Value="PK_TBL_CLUSTER_PK"/>
       <Attr Name="_isForeign" Value="true"/>
       <Attr Name="_DBObjectName" Value="FK_TBL_GRANT_APPROVAL_MASTER_F"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.TblGrantApprovalMaster.ClusterId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TblGrantApprovalMaster">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_TBL_CLUSTER_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TBL_GRANT_APPROVAL_MASTER"/>
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.EO.TblGrantApprovalMaster.ClusterId"/>

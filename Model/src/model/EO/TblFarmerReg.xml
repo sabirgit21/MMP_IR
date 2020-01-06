@@ -343,6 +343,13 @@
     AssociationOtherEnd="model.EO.FkTblFarmerRegLandFkAssoc.TblFarmerReg"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TblGrantApprovalDetail"
+    Association="model.EO.FkTblGrantApprovalDetailFarmerFkAssoc"
+    AssociationEnd="model.EO.FkTblGrantApprovalDetailFarmerFkAssoc.TblGrantApprovalDetail"
+    AssociationOtherEnd="model.EO.FkTblGrantApprovalDetailFarmerFkAssoc.TblFarmerReg"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkTblFarmerRegPk"
     PrimaryKey="true">

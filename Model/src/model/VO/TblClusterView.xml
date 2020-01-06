@@ -389,4 +389,9 @@
     ViewLink="model.VO.Fk2TblClusterAttMasterFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblGrantApprovalMasterView"
+    ViewLink="model.VO.FKTblGrantApprovalMasterClusterFKLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

@@ -204,6 +204,13 @@
     AssociationOtherEnd="model.EO.FKMmpTrainingMonInspFKAssoc2.TblCluster1"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="TblGrantApprovalMaster"
+    Association="model.EO.FKTblGrantApprovalMasterClusterFKAssoc"
+    AssociationEnd="model.EO.FKTblGrantApprovalMasterClusterFKAssoc.TblGrantApprovalMaster"
+    AssociationOtherEnd="model.EO.FKTblGrantApprovalMasterClusterFKAssoc.TblCluster"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkTblClusterPk"
     PrimaryKey="true">

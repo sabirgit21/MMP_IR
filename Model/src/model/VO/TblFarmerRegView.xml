@@ -397,4 +397,9 @@
     ViewLink="model.VO.FkTblFarmerRegLandFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblGrantApprovalDetailView"
+    ViewLink="model.VO.FkTblGrantApprovalDetailFarmerFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>
