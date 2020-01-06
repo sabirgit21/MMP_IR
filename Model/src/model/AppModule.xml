@@ -223,6 +223,9 @@
   <ViewUsage
     Name="TblGrantApprovalDetailView2"
     ViewObjectName="model.VO.TblGrantApprovalDetailView"/>
+  <ViewUsage
+    Name="Inspection_Grant_Approval_Master1"
+    ViewObjectName="model.VO.Inspection_Grant_Approval_Master"/>
   <ViewLinkUsage
     Name="FkMmpMemberRegDepLink1"
     ViewLinkObjectName="model.VO.FkMmpMemberRegDepLink"
