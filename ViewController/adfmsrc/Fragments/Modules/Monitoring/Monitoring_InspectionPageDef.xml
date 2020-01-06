@@ -230,6 +230,11 @@
           <Item Value="VerSource"/>
           <Item Value="PerChange"/>
           <Item Value="Remarks"/>
+          <Item Value="LandDiff"/>
+          <Item Value="VerLandAcre"/>
+          <Item Value="VerLandUnderOrch"/>
+          <Item Value="ArivalTime"/>
+          <Item Value="LeftTime"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -241,8 +246,78 @@
           <Item Value="Status"/>
           <Item Value="Name"/>
           <Item Value="TrainerId"/>
+          <Item Value="TopicCovered"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="ClusterTest">
+      <AttrNames>
+        <Item Value="ClusterTest"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="TrainingSon">
+      <AttrNames>
+        <Item Value="TrainingSon"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ClusterTest" id="ClusterTest1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_TrainingSon" id="TrainingSon1"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="ReciteQuranSt">
+      <AttrNames>
+        <Item Value="ReciteQuranSt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="ReciteQuranEt">
+      <AttrNames>
+        <Item Value="ReciteQuranEt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="PlanModuleSt">
+      <AttrNames>
+        <Item Value="PlanModuleSt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="PlanModuleEt">
+      <AttrNames>
+        <Item Value="PlanModuleEt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="QASessSt">
+      <AttrNames>
+        <Item Value="QASessSt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="QASessEt">
+      <AttrNames>
+        <Item Value="QASessEt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="RevLastTrainingSt">
+      <AttrNames>
+        <Item Value="RevLastTrainingSt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="RevLastTrainingEt">
+      <AttrNames>
+        <Item Value="RevLastTrainingEt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="SummDaySt">
+      <AttrNames>
+        <Item Value="SummDaySt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="SummDayEt">
+      <AttrNames>
+        <Item Value="SummDayEt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="NoOfGroup">
+      <AttrNames>
+        <Item Value="NoOfGroup"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

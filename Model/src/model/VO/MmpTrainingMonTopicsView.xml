@@ -21,6 +21,10 @@
     Name="Trainer_Name_LOV1"
     ViewObjectName="model.LOV.Trainer_Name_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Topics_Covered_LOV1"
+    ViewObjectName="model.LOV.Topics_Covered_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_Status"
     ListVOName="Active_LOV1"
@@ -55,6 +59,24 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="Name"/>
       <Item Value="Mobile"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TopicCovered"
+    ListVOName="Topics_Covered_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TopicCovered"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="PageView"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -158,6 +180,21 @@
     EntityUsage="MmpTrainingMonTopics"
     AliasName="TRAINER_ID"
     LOVName="LOV_TrainerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TopicCovered"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="TopicCovered"
+    EntityUsage="MmpTrainingMonTopics"
+    AliasName="TOPIC_COVERED"
+    LOVName="LOV_TopicCovered">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

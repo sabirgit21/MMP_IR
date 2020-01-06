@@ -79,6 +79,24 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_LandDiff"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="LandDiff"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="MmpTrainingMonFarmer"
     Entity="model.EO.MmpTrainingMonFarmer"/>
@@ -265,6 +283,44 @@
     EntityAttrName="Remarks"
     EntityUsage="MmpTrainingMonFarmer"
     AliasName="REMARKS"/>
+  <ViewAttribute
+    Name="LandDiff"
+    PrecisionRule="true"
+    EntityAttrName="LandDiff"
+    EntityUsage="MmpTrainingMonFarmer"
+    AliasName="LAND_DIFF"
+    LOVName="LOV_LandDiff">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="VerLandAcre"
+    PrecisionRule="true"
+    EntityAttrName="VerLandAcre"
+    EntityUsage="MmpTrainingMonFarmer"
+    AliasName="VER_LAND_ACRE"/>
+  <ViewAttribute
+    Name="VerLandUnderOrch"
+    PrecisionRule="true"
+    EntityAttrName="VerLandUnderOrch"
+    EntityUsage="MmpTrainingMonFarmer"
+    AliasName="VER_LAND_UNDER_ORCH"/>
+  <ViewAttribute
+    Name="LeftTime"
+    PrecisionRule="true"
+    EntityAttrName="LeftTime"
+    EntityUsage="MmpTrainingMonFarmer"
+    AliasName="LEFT_TIME"/>
+  <ViewAttribute
+    Name="ArivalTime"
+    PrecisionRule="true"
+    EntityAttrName="ArivalTime"
+    EntityUsage="MmpTrainingMonFarmer"
+    AliasName="ARIVAL_TIME"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingMonFarmerId"/>
   </AttrArray>

@@ -30,7 +30,22 @@
        MmpTrainingMonInsp.CREATED_BY, 
        MmpTrainingMonInsp.UPDATED_DATE, 
        MmpTrainingMonInsp.UPDATED_BY, 
-       MmpTrainingMonInsp.MEMBER_REG_ID"
+       MmpTrainingMonInsp.MEMBER_REG_ID, 
+       MmpTrainingMonInsp.CLUSTER_TEST, 
+       MmpTrainingMonInsp.TRAINING_SON, 
+       MmpTrainingMonInsp.ECO_SYSTEM_ET, 
+       MmpTrainingMonInsp.ECO_SYSTEM_ST, 
+       MmpTrainingMonInsp.PLAN_MODULE_ET, 
+       MmpTrainingMonInsp.PLAN_MODULE_ST, 
+       MmpTrainingMonInsp.Q_A_SESS_ET, 
+       MmpTrainingMonInsp.Q_A_SESS_ST, 
+       MmpTrainingMonInsp.RECITE_QURAN_ET, 
+       MmpTrainingMonInsp.RECITE_QURAN_ST, 
+       MmpTrainingMonInsp.REV_LAST_TRAINING_ET, 
+       MmpTrainingMonInsp.REV_LAST_TRAINING_ST, 
+       MmpTrainingMonInsp.SUMM_DAY_ET, 
+       MmpTrainingMonInsp.SUMM_DAY_ST, 
+       MmpTrainingMonInsp.NO_OF_GROUP"
   FromList="MMP_TRAINING_MON_INSP MmpTrainingMonInsp"
   Where="MmpTrainingMonInsp.MEMBER_REG_ID = :sessMemID">
   <Variable
@@ -338,6 +353,42 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_ClusterTest"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClusterTest"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_TrainingSon"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TrainingSon"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="MmpTrainingMonInsp"
     Entity="model.EO.MmpTrainingMonInsp"/>
@@ -386,7 +437,8 @@
     EntityAttrName="TotTrainer"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="TOT_TRAINER"
-    LOVName="LOV_TotTrainer">
+    LOVName="LOV_TotTrainer"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -400,7 +452,8 @@
     EntityAttrName="AgendaDay"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="AGENDA_DAY"
-    LOVName="LOV_AgendaDay">
+    LOVName="LOV_AgendaDay"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -414,7 +467,8 @@
     EntityAttrName="ReciteQuran"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="RECITE_QURAN"
-    LOVName="LOV_ReciteQuran">
+    LOVName="LOV_ReciteQuran"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -428,7 +482,8 @@
     EntityAttrName="PlanModule"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="PLAN_MODULE"
-    LOVName="LOV_PlanModule">
+    LOVName="LOV_PlanModule"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -442,7 +497,8 @@
     EntityAttrName="EcoSystem"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="ECO_SYSTEM"
-    LOVName="LOV_EcoSystem">
+    LOVName="LOV_EcoSystem"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -456,7 +512,8 @@
     EntityAttrName="RevLastTraining"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="REV_LAST_TRAINING"
-    LOVName="LOV_RevLastTraining">
+    LOVName="LOV_RevLastTraining"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -470,7 +527,8 @@
     EntityAttrName="QASess"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="Q_A_SESS"
-    LOVName="LOV_QASess">
+    LOVName="LOV_QASess"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -484,7 +542,8 @@
     EntityAttrName="SummDay"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="SUMM_DAY"
-    LOVName="LOV_SummDay">
+    LOVName="LOV_SummDay"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -498,7 +557,8 @@
     EntityAttrName="AnyIec"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="ANY_IEC"
-    LOVName="LOV_AnyIec">
+    LOVName="LOV_AnyIec"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -512,7 +572,8 @@
     EntityAttrName="ToolsAdopt"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="TOOLS_ADOPT"
-    LOVName="LOV_ToolsAdopt">
+    LOVName="LOV_ToolsAdopt"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -570,6 +631,114 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="ClusterTest"
+    PrecisionRule="true"
+    EntityAttrName="ClusterTest"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="CLUSTER_TEST"
+    LOVName="LOV_ClusterTest"
+    DefaultValue="N">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TrainingSon"
+    PrecisionRule="true"
+    EntityAttrName="TrainingSon"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="TRAINING_SON"
+    LOVName="LOV_TrainingSon"
+    DefaultValue="N">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EcoSystemEt"
+    PrecisionRule="true"
+    EntityAttrName="EcoSystemEt"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="ECO_SYSTEM_ET"/>
+  <ViewAttribute
+    Name="EcoSystemSt"
+    PrecisionRule="true"
+    EntityAttrName="EcoSystemSt"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="ECO_SYSTEM_ST"/>
+  <ViewAttribute
+    Name="PlanModuleEt"
+    PrecisionRule="true"
+    EntityAttrName="PlanModuleEt"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="PLAN_MODULE_ET"/>
+  <ViewAttribute
+    Name="PlanModuleSt"
+    PrecisionRule="true"
+    EntityAttrName="PlanModuleSt"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="PLAN_MODULE_ST"/>
+  <ViewAttribute
+    Name="QASessEt"
+    PrecisionRule="true"
+    EntityAttrName="QASessEt"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="Q_A_SESS_ET"/>
+  <ViewAttribute
+    Name="QASessSt"
+    PrecisionRule="true"
+    EntityAttrName="QASessSt"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="Q_A_SESS_ST"/>
+  <ViewAttribute
+    Name="ReciteQuranEt"
+    PrecisionRule="true"
+    EntityAttrName="ReciteQuranEt"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="RECITE_QURAN_ET"/>
+  <ViewAttribute
+    Name="ReciteQuranSt"
+    PrecisionRule="true"
+    EntityAttrName="ReciteQuranSt"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="RECITE_QURAN_ST"/>
+  <ViewAttribute
+    Name="RevLastTrainingEt"
+    PrecisionRule="true"
+    EntityAttrName="RevLastTrainingEt"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="REV_LAST_TRAINING_ET"/>
+  <ViewAttribute
+    Name="RevLastTrainingSt"
+    PrecisionRule="true"
+    EntityAttrName="RevLastTrainingSt"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="REV_LAST_TRAINING_ST"/>
+  <ViewAttribute
+    Name="SummDayEt"
+    PrecisionRule="true"
+    EntityAttrName="SummDayEt"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="SUMM_DAY_ET"/>
+  <ViewAttribute
+    Name="SummDaySt"
+    PrecisionRule="true"
+    EntityAttrName="SummDaySt"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="SUMM_DAY_ST"/>
+  <ViewAttribute
+    Name="NoOfGroup"
+    PrecisionRule="true"
+    EntityAttrName="NoOfGroup"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="NO_OF_GROUP"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingMonInspId"/>
   </AttrArray>

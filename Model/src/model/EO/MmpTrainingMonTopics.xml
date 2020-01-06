@@ -83,6 +83,21 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_MON_TOPICS"/>
+  <Attribute
+    Name="TopicCovered"
+    IsNotNull="true"
+    Precision="3"
+    ColumnName="TOPIC_COVERED"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="MMP_TRAINING_MON_TOPICS"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="MmpTrainingMonInsp"
     Association="model.EO.FkMmpTrainingMonTopicsInspAssoc"

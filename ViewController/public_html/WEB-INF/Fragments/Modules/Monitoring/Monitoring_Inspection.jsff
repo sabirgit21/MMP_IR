@@ -135,7 +135,7 @@
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               
               <af:showDetailItem text="Technical Detail" id="sdi1" inflexibleHeight="100">
-                <af:panelFormLayout id="pfl2" maxColumns="2" rows="10">
+                <af:panelFormLayout id="pfl2" maxColumns="3" rows="10">
                   <af:inputDate value="#{bindings.StartTraining1.inputValue}"
                                 label="Start Training"
                                 required="#{bindings.StartTraining1.hints.mandatory}"
@@ -152,6 +152,29 @@
                     <f:validator binding="#{bindings.EndTraining1.validator}"/>
                     <af:convertDateTime pattern="MM/dd/yyyy hh:mm:ss a"/>
                   </af:inputDate>
+                  <af:inputText value="#{bindings.NoOfGroup.inputValue}" label="No. of Group"
+                                required="#{bindings.NoOfGroup.hints.mandatory}"
+                                columns="#{bindings.NoOfGroup.hints.displayWidth}"
+                                maximumLength="#{bindings.NoOfGroup.hints.precision}"
+                                shortDesc="#{bindings.NoOfGroup.hints.tooltip}" id="it64"
+                                contentStyle="width:250px;">
+                    <f:validator binding="#{bindings.NoOfGroup.validator}"/>
+                    
+                  </af:inputText>
+                  <af:selectOneChoice value="#{bindings.ClusterTest1.inputValue}" label="Cluster Test"
+                                      required="#{bindings.ClusterTest1.hints.mandatory}"
+                                      shortDesc="#{bindings.ClusterTest1.hints.tooltip}" id="soc27"
+                                      contentStyle="width:250px;">
+                    <f:selectItems value="#{bindings.ClusterTest1.items}" id="si28"/>
+                    <f:validator binding="#{bindings.ClusterTest1.validator}"/>
+                  </af:selectOneChoice>
+                  <af:selectOneChoice value="#{bindings.TrainingSon1.inputValue}" label="Training Start on Time"
+                                      required="#{bindings.TrainingSon1.hints.mandatory}"
+                                      shortDesc="#{bindings.TrainingSon1.hints.tooltip}" id="soc28"
+                                      contentStyle="width:250px;">
+                    <f:selectItems value="#{bindings.TrainingSon1.items}" id="si29"/>
+                    <f:validator binding="#{bindings.TrainingSon1.validator}"/>
+                  </af:selectOneChoice>
                   <af:selectOneChoice value="#{bindings.TotTrainer1.inputValue}" label="TOT of Trainer Conducted"
                                       required="#{bindings.TotTrainer1.hints.mandatory}"
                                       shortDesc="#{bindings.TotTrainer1.hints.tooltip}" id="soc10"
@@ -167,6 +190,7 @@
                     <f:selectItems value="#{bindings.AgendaDay1.items}" id="si11"/>
                     <f:validator binding="#{bindings.AgendaDay1.validator}"/>
                   </af:selectOneChoice>
+                  
                   <af:selectOneChoice value="#{bindings.ReciteQuran1.inputValue}" label="Recite Of Quran"
                                       required="#{bindings.ReciteQuran1.hints.mandatory}"
                                       shortDesc="#{bindings.ReciteQuran1.hints.tooltip}" id="soc12"
@@ -174,6 +198,26 @@
                     <f:selectItems value="#{bindings.ReciteQuran1.items}" id="si12"/>
                     <f:validator binding="#{bindings.ReciteQuran1.validator}"/>
                   </af:selectOneChoice>
+                  <af:inputText value="#{bindings.ReciteQuranSt.inputValue}"
+                                label="Start Time"
+                                required="#{bindings.ReciteQuranSt.hints.mandatory}"
+                                columns="#{bindings.ReciteQuranSt.hints.displayWidth}"
+                                maximumLength="#{bindings.ReciteQuranSt.hints.precision}"
+                                shortDesc="#{bindings.ReciteQuranSt.hints.tooltip}" id="it51">
+                    <f:validator binding="#{bindings.ReciteQuranSt.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.ReciteQuranSt.format}"/>
+                    <af:convertDateTime pattern="hh:mm:ss a"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.ReciteQuranEt.inputValue}"
+                                label="End Time"
+                                required="#{bindings.ReciteQuranEt.hints.mandatory}"
+                                columns="#{bindings.ReciteQuranEt.hints.displayWidth}"
+                                maximumLength="#{bindings.ReciteQuranEt.hints.precision}"
+                                shortDesc="#{bindings.ReciteQuranEt.hints.tooltip}" id="it52">
+                    <f:validator binding="#{bindings.ReciteQuranEt.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.ReciteQuranEt.format}"/>
+                    <af:convertDateTime pattern="hh:mm:ss a"/>
+                  </af:inputText>
                   <af:selectOneChoice value="#{bindings.PlanModule1.inputValue}" label="Planned Module"
                                       required="#{bindings.PlanModule1.hints.mandatory}"
                                       shortDesc="#{bindings.PlanModule1.hints.tooltip}" id="soc13"
@@ -181,6 +225,24 @@
                     <f:selectItems value="#{bindings.PlanModule1.items}" id="si13"/>
                     <f:validator binding="#{bindings.PlanModule1.validator}"/>
                   </af:selectOneChoice>
+                  <af:inputText value="#{bindings.PlanModuleSt.inputValue}" label="Start Time"
+                                required="#{bindings.PlanModuleSt.hints.mandatory}"
+                                columns="#{bindings.PlanModuleSt.hints.displayWidth}"
+                                maximumLength="#{bindings.PlanModuleSt.hints.precision}"
+                                shortDesc="#{bindings.PlanModuleSt.hints.tooltip}" id="it53">
+                    <f:validator binding="#{bindings.PlanModuleSt.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.PlanModuleSt.format}"/>
+                    <af:convertDateTime pattern="hh:mm:ss a"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.PlanModuleEt.inputValue}" label="End Time"
+                                required="#{bindings.PlanModuleEt.hints.mandatory}"
+                                columns="#{bindings.PlanModuleEt.hints.displayWidth}"
+                                maximumLength="#{bindings.PlanModuleEt.hints.precision}"
+                                shortDesc="#{bindings.PlanModuleEt.hints.tooltip}" id="it54">
+                    <f:validator binding="#{bindings.PlanModuleEt.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.PlanModuleEt.format}"/>
+                    <af:convertDateTime pattern="hh:mm:ss a"/>
+                  </af:inputText>
                   <af:selectOneChoice value="#{bindings.EcoSystem1.inputValue}" label="Eco System Analysis"
                                       required="#{bindings.EcoSystem1.hints.mandatory}"
                                       shortDesc="#{bindings.EcoSystem1.hints.tooltip}" id="soc14"
@@ -188,6 +250,24 @@
                     <f:selectItems value="#{bindings.EcoSystem1.items}" id="si14"/>
                     <f:validator binding="#{bindings.EcoSystem1.validator}"/>
                   </af:selectOneChoice>
+                  <af:inputText value="#{bindings.QASessSt.inputValue}" label="Start Time"
+                                required="#{bindings.QASessSt.hints.mandatory}"
+                                columns="#{bindings.QASessSt.hints.displayWidth}"
+                                maximumLength="#{bindings.QASessSt.hints.precision}"
+                                shortDesc="#{bindings.QASessSt.hints.tooltip}" id="it55">
+                    <f:validator binding="#{bindings.QASessSt.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.QASessSt.format}"/>
+                    <af:convertDateTime pattern="hh:mm:ss a"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.QASessEt.inputValue}" label="End Time"
+                                required="#{bindings.QASessEt.hints.mandatory}"
+                                columns="#{bindings.QASessEt.hints.displayWidth}"
+                                maximumLength="#{bindings.QASessEt.hints.precision}"
+                                shortDesc="#{bindings.QASessEt.hints.tooltip}" id="it56">
+                    <f:validator binding="#{bindings.QASessEt.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.QASessEt.format}"/>
+                    <af:convertDateTime pattern="hh:mm:ss a"/>
+                  </af:inputText>
                   <af:selectOneChoice value="#{bindings.RevLastTraining1.inputValue}"
                                       label="Review Of Last Training"
                                       required="#{bindings.RevLastTraining1.hints.mandatory}"
@@ -196,6 +276,26 @@
                     <f:selectItems value="#{bindings.RevLastTraining1.items}" id="si15"/>
                     <f:validator binding="#{bindings.RevLastTraining1.validator}"/>
                   </af:selectOneChoice>
+                  <af:inputText value="#{bindings.RevLastTrainingSt.inputValue}"
+                                label="Start Time"
+                                required="#{bindings.RevLastTrainingSt.hints.mandatory}"
+                                columns="#{bindings.RevLastTrainingSt.hints.displayWidth}"
+                                maximumLength="#{bindings.RevLastTrainingSt.hints.precision}"
+                                shortDesc="#{bindings.RevLastTrainingSt.hints.tooltip}" id="it57">
+                    <f:validator binding="#{bindings.RevLastTrainingSt.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.RevLastTrainingSt.format}"/>
+                    <af:convertDateTime pattern="hh:mm:ss a"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.RevLastTrainingEt.inputValue}"
+                                label="End Time"
+                                required="#{bindings.RevLastTrainingEt.hints.mandatory}"
+                                columns="#{bindings.RevLastTrainingEt.hints.displayWidth}"
+                                maximumLength="#{bindings.RevLastTrainingEt.hints.precision}"
+                                shortDesc="#{bindings.RevLastTrainingEt.hints.tooltip}" id="it58">
+                    <f:validator binding="#{bindings.RevLastTrainingEt.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.RevLastTrainingEt.format}"/>
+                    <af:convertDateTime pattern="hh:mm:ss a"/>
+                  </af:inputText>
                   <af:selectOneChoice value="#{bindings.QASess1.inputValue}" label="Question Answere Session Held"
                                       required="#{bindings.QASess1.hints.mandatory}"
                                       shortDesc="#{bindings.QASess1.hints.tooltip}" id="soc16"
@@ -203,6 +303,24 @@
                     <f:selectItems value="#{bindings.QASess1.items}" id="si16"/>
                     <f:validator binding="#{bindings.QASess1.validator}"/>
                   </af:selectOneChoice>
+                  <af:inputText value="#{bindings.QASessSt.inputValue}" label="Start Time "
+                                required="#{bindings.QASessSt.hints.mandatory}"
+                                columns="#{bindings.QASessSt.hints.displayWidth}"
+                                maximumLength="#{bindings.QASessSt.hints.precision}"
+                                shortDesc="#{bindings.QASessSt.hints.tooltip}" id="it59">
+                    <f:validator binding="#{bindings.QASessSt.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.QASessSt.format}"/>
+                    <af:convertDateTime pattern="hh:mm:ss a"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.QASessEt.inputValue}" label="End Time"
+                                required="#{bindings.QASessEt.hints.mandatory}"
+                                columns="#{bindings.QASessEt.hints.displayWidth}"
+                                maximumLength="#{bindings.QASessEt.hints.precision}"
+                                shortDesc="#{bindings.QASessEt.hints.tooltip}" id="it60">
+                    <f:validator binding="#{bindings.QASessEt.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.QASessEt.format}"/>
+                    <af:convertDateTime pattern="hh:mm:ss a"/>
+                  </af:inputText>
                   <af:selectOneChoice value="#{bindings.SummDay1.inputValue}" label="Summary of the Day"
                                       required="#{bindings.SummDay1.hints.mandatory}"
                                       shortDesc="#{bindings.SummDay1.hints.tooltip}" id="soc17"
@@ -210,6 +328,24 @@
                     <f:selectItems value="#{bindings.SummDay1.items}" id="si17"/>
                     <f:validator binding="#{bindings.SummDay1.validator}"/>
                   </af:selectOneChoice>
+                  <af:inputText value="#{bindings.SummDaySt.inputValue}" label="Start Time"
+                                required="#{bindings.SummDaySt.hints.mandatory}"
+                                columns="#{bindings.SummDaySt.hints.displayWidth}"
+                                maximumLength="#{bindings.SummDaySt.hints.precision}"
+                                shortDesc="#{bindings.SummDaySt.hints.tooltip}" id="it61">
+                    <f:validator binding="#{bindings.SummDaySt.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.SummDaySt.format}"/>
+                    <af:convertDateTime pattern="hh:mm:ss a"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.SummDayEt.inputValue}" label="End Time"
+                                required="#{bindings.SummDayEt.hints.mandatory}"
+                                columns="#{bindings.SummDayEt.hints.displayWidth}"
+                                maximumLength="#{bindings.SummDayEt.hints.precision}"
+                                shortDesc="#{bindings.SummDayEt.hints.tooltip}" id="it62">
+                    <f:validator binding="#{bindings.SummDayEt.validator}"/>
+                    <af:convertDateTime pattern="#{bindings.SummDayEt.format}"/>
+                    <af:convertDateTime pattern="hh:mm:ss a"/>
+                  </af:inputText>
                   <af:selectOneChoice value="#{bindings.AnyIec1.inputValue}" label="Any IEC Material"
                                       required="#{bindings.AnyIec1.hints.mandatory}"
                                       shortDesc="#{bindings.AnyIec1.hints.tooltip}" id="soc18"
@@ -541,12 +677,65 @@
                                         pattern="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="Land Difference" id="c27" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.LandDiff}"
+                                          id="it48" placeholder="Search Land Difference">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.LandDiff.inputValue}"
+                                        label="#{row.bindings.LandDiff.label}"
+                                        required="#{bindings.MmpTrainingMonFarmerView2.hints.LandDiff.mandatory}"
+                                        shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.LandDiff.tooltip}"
+                                        id="soc26">
+                      <f:selectItems value="#{row.bindings.LandDiff.items}" id="si27"/>
+                      <f:validator binding="#{row.bindings.LandDiff.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Verified Land Acre" id="c28" align="center" sortable="true" filterable="true"
+                             width="120">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.VerLandAcre}"
+                                          id="it49" placeholder="Search Verified Acre">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.VerLandAcre.inputValue}"
+                                  label="#{bindings.MmpTrainingMonFarmerView2.hints.VerLandAcre.label}"
+                                  required="#{bindings.MmpTrainingMonFarmerView2.hints.VerLandAcre.mandatory}"
+                                  columns="#{bindings.MmpTrainingMonFarmerView2.hints.VerLandAcre.displayWidth}"
+                                  maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.VerLandAcre.precision}"
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.VerLandAcre.tooltip}" 
+                                  id="it46" contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.VerLandAcre.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.MmpTrainingMonFarmerView2.hints.VerLandAcre.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Verified Land Under Orchard" id="c29" align="center" sortable="true"
+                             filterable="true" width="150">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.VerLandUnderOrch}"
+                                          id="it50" placeholder="Search Verified Orchard">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.VerLandUnderOrch.inputValue}"
+                                  label="#{bindings.MmpTrainingMonFarmerView2.hints.VerLandUnderOrch.label}"
+                                  required="#{bindings.MmpTrainingMonFarmerView2.hints.VerLandUnderOrch.mandatory}"
+                                  columns="#{bindings.MmpTrainingMonFarmerView2.hints.VerLandUnderOrch.displayWidth}"
+                                  maximumLength="#{bindings.MmpTrainingMonFarmerView2.hints.VerLandUnderOrch.precision}"
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.VerLandUnderOrch.tooltip}"
+                                  id="it47" contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.VerLandUnderOrch.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.MmpTrainingMonFarmerView2.hints.VerLandUnderOrch.format}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerStatus.name}"
                              filterable="true" sortable="true"
                              headerText="Farmer Status" id="c22">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.FarmerStatus}"
-                                          id="it39" placeholder="Search Status">
+                                          id="it45" placeholder="Search Status">
                            </af:inputText>
                              </f:facet>
                     <af:selectOneChoice value="#{row.bindings.FarmerStatus.inputValue}"
@@ -559,8 +748,8 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.VerSource.name}" filterable="true"
-                             sortable="true" headerText="Verified Source"
-                             id="c23">
+                             sortable="true" headerText="Land Verified Source"
+                             id="c23" width="140">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.VerSource}"
                                           id="it42" placeholder="Search Source">
@@ -592,12 +781,46 @@
                       <f:validator binding="#{row.bindings.PerChange.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                  <af:column headerText="Arrival Time" id="c31" sortable="true" filterable="true" align="center">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ArivalTime}"
+                                          id="it44" placeholder="Search Arrival Time">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputDate value="#{row.bindings.ArivalTime.inputValue}"
+                                  label="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.label}"
+                                  required="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.mandatory}"
+                                  columns="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.displayWidth}"
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.tooltip}" 
+                                  id="id1" contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.ArivalTime.validator}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
+                      <af:convertDateTime pattern="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column headerText="Left Time" id="c32" sortable="true" filterable="true" align="center">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.LeftTime}"
+                                          id="it66" placeholder="Search Left Time">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputDate value="#{row.bindings.LeftTime.inputValue}"
+                                  label="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.label}"
+                                  required="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.mandatory}"
+                                  columns="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.displayWidth}"
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.tooltip}" 
+                                  id="id6" contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.LeftTime.validator}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
+                      <af:convertDateTime pattern="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.format}"/>
+                    </af:inputDate>
+                  </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Remarks.name}" filterable="true"
                              sortable="true" headerText="Remarks"
                              id="c25" width="200">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Remarks}"
-                                          id="it44" placeholder="Search Remarks">
+                                          id="it65" placeholder="Search Remarks">
                            </af:inputText>
                              </f:facet>
                     <af:inputText value="#{row.bindings.Remarks.inputValue}"
@@ -805,6 +1028,21 @@
                       <f:validator binding="#{row.bindings.TrainerId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                   <af:column headerText="Topics Covered" id="c30" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Status}"
+                                          id="it63" placeholder="Search Topics Covered">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.TopicCovered.inputValue}"
+                                        label="#{row.bindings.TopicCovered.label}"
+                                        required="#{bindings.MmpTrainingMonTopicsView2.hints.TopicCovered.mandatory}"
+                                        shortDesc="#{bindings.MmpTrainingMonTopicsView2.hints.TopicCovered.tooltip}"
+                                        id="soc29">
+                      <f:selectItems value="#{row.bindings.TopicCovered.items}" id="si30"/>
+                      <f:validator binding="#{row.bindings.TopicCovered.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonTopicsView2.hints.Status.name}" filterable="true"
                              sortable="true" headerText="Status"
                              id="c18">
@@ -821,6 +1059,7 @@
                       <f:validator binding="#{row.bindings.Status.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                 
                 </af:table>
                 <af:panelGroupLayout id="pgl5" layout="horizontal">
                             <af:spacer width="190" height="10" id="s3"/>

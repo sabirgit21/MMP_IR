@@ -116,6 +116,48 @@
       <Attr Name="_DisplaySize" Value="250"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="LandDiff"
+    Precision="1"
+    ColumnName="LAND_DIFF"
+    SQLType="CHAR"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    TableName="MMP_TRAINING_MON_FARMER"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="VerLandAcre"
+    ColumnName="VER_LAND_ACRE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_TRAINING_MON_FARMER"/>
+  <Attribute
+    Name="VerLandUnderOrch"
+    ColumnName="VER_LAND_UNDER_ORCH"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_TRAINING_MON_FARMER"/>
+  <Attribute
+    Name="ArivalTime"
+    ColumnName="ARIVAL_TIME"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="MMP_TRAINING_MON_FARMER"/>
+  <Attribute
+    Name="LeftTime"
+    ColumnName="LEFT_TIME"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="MMP_TRAINING_MON_FARMER"/>
   <AccessorAttribute
     Name="MmpTrainingMonInsp"
     Association="model.EO.FkMmpTrainingMonFarmerInspAssoc"
