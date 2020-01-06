@@ -208,6 +208,21 @@
   <ViewUsage
     Name="MmpTrainingCheckOutView1"
     ViewObjectName="model.VO.MmpTrainingCheckOutView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDView1"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailView1"
+    ViewObjectName="model.VO.TblGrantApprovalDetailView"/>
+  <ViewUsage
+    Name="TblGrantApprovalMasterView1"
+    ViewObjectName="model.VO.TblGrantApprovalMasterView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDView2"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailView2"
+    ViewObjectName="model.VO.TblGrantApprovalDetailView"/>
   <ViewLinkUsage
     Name="FkMmpMemberRegDepLink1"
     ViewLinkObjectName="model.VO.FkMmpMemberRegDepLink"
@@ -417,5 +432,17 @@
     ViewLinkObjectName="model.VO.FKMmpFarmerRegDVerifLandFKLinkA"
     SrcViewUsageName="model.AppModule.MmpFarmerRegVerifLandView2"
     DstViewUsageName="model.AppModule.MmpFarmerRegDVerifLandView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkDetailDGrantApprovalDetLink1"
+    ViewLinkObjectName="model.VO.FkDetailDGrantApprovalDetLink"
+    SrcViewUsageName="model.AppModule.TblGrantApprovalDetailView1"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblGrantApprovalDetailFLink1"
+    ViewLinkObjectName="model.VO.FkTblGrantApprovalDetailFLink"
+    SrcViewUsageName="model.AppModule.TblGrantApprovalMasterView1"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailView2"
     Reversed="false"/>
 </AppModule>
