@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="MMP_TRAINING_CHECK_IN"
   AliasName="MmpTrainingCheckIn"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.MmpTrainingCheckInImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="MmpTrainingCheckInId"
     ColumnName="MMP_TRAINING_CHECK_IN_ID"
@@ -80,12 +85,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_CHECK_IN"/>
+    TableName="MMP_TRAINING_CHECK_IN"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_CHECK_IN"/>
   <Attribute
@@ -94,12 +101,13 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_CHECK_IN"/>
+    TableName="MMP_TRAINING_CHECK_IN"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_CHECK_IN"/>
   <Attribute

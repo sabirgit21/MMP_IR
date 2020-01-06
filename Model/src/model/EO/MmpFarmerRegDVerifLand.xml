@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName='"MMP_FARMER_REG_D_Verif_LAND"'
   AliasName="MmpFarmerRegDVerifLand"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.MmpFarmerRegDVerifLandImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="FarmerRegDVerifLandId"
     IsNotNull="true"
@@ -158,12 +163,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <Attribute
@@ -172,12 +179,13 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
+    TableName='"MMP_FARMER_REG_D_Verif_LAND"'
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName='"MMP_FARMER_REG_D_Verif_LAND"'/>
   <AccessorAttribute

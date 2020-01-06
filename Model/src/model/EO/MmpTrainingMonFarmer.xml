@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="MMP_TRAINING_MON_FARMER"
   AliasName="MmpTrainingMonFarmer"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.MmpTrainingMonFarmerImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="MmpTrainingMonFarmerId"
     ColumnName="MMP_TRAINING_MON_FARMER_ID"
@@ -54,12 +59,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_MON_FARMER"/>
+    TableName="MMP_TRAINING_MON_FARMER"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_MON_FARMER"/>
   <Attribute
@@ -68,12 +75,13 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_MON_FARMER"/>
+    TableName="MMP_TRAINING_MON_FARMER"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_MON_FARMER"/>
   <Attribute

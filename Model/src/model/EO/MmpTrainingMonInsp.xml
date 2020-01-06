@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="MMP_TRAINING_MON_INSP"
   AliasName="MmpTrainingMonInsp"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.MmpTrainingMonInspImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="MmpTrainingMonInspId"
     ColumnName="MMP_TRAINING_MON_INSP_ID"
@@ -222,12 +227,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_MON_INSP"/>
+    TableName="MMP_TRAINING_MON_INSP"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_MON_INSP"/>
   <Attribute
@@ -236,12 +243,13 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_MON_INSP"/>
+    TableName="MMP_TRAINING_MON_INSP"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_MON_INSP"/>
   <Attribute

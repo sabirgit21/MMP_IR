@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="MMP_TRAINING_CHECK_OUT"
   AliasName="MmpTrainingCheckOut"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.MmpTrainingCheckOutImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="MmpTrainingCheckOutId"
     ColumnName="MMP_TRAINING_CHECK_OUT_ID"
@@ -45,12 +50,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_CHECK_OUT"/>
+    TableName="MMP_TRAINING_CHECK_OUT"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_CHECK_OUT"/>
   <Attribute
@@ -59,12 +66,13 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_CHECK_OUT"/>
+    TableName="MMP_TRAINING_CHECK_OUT"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_CHECK_OUT"/>
   <Attribute

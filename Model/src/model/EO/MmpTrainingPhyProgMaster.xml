@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="MMP_TRAINING_PHY_PROG_MASTER"
   AliasName="MmpTrainingPhyProgMaster"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.MmpTrainingPhyProgMasterImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="MmpTrngPhyProgMstId"
     ColumnName="MMP_TRNG_PHY_PROG_MST_ID"
@@ -52,12 +57,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_PHY_PROG_MASTER"/>
+    TableName="MMP_TRAINING_PHY_PROG_MASTER"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_PHY_PROG_MASTER"/>
   <Attribute
@@ -66,12 +73,13 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_PHY_PROG_MASTER"/>
+    TableName="MMP_TRAINING_PHY_PROG_MASTER"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_PHY_PROG_MASTER"/>
   <AccessorAttribute

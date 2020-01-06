@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="MMP_FARMER_REG_VERIF"
   AliasName="MmpFarmerRegVerif"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.MmpFarmerRegVerifImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="FarmerRegVerifId"
     ColumnName="FARMER_REG_VERIF_ID"
@@ -268,12 +273,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_FARMER_REG_VERIF"/>
+    TableName="MMP_FARMER_REG_VERIF"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="CreatedBy"
     ColumnName="CREATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="MMP_FARMER_REG_VERIF"/>
   <Attribute
@@ -282,12 +289,13 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_FARMER_REG_VERIF"/>
+    TableName="MMP_FARMER_REG_VERIF"
+    HistoryColumn="DateHistory"/>
   <Attribute
     Name="UpdatedBy"
     ColumnName="UPDATED_BY"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="MMP_FARMER_REG_VERIF"/>
   <Attribute
