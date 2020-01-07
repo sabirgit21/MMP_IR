@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="MMP_ROLE_DETAIL_MODULES"
   AliasName="MmpRoleDetailModules"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="model.EO.MmpRoleDetailModulesImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="MmpRoleDetailModulesId"
     ColumnName="MMP_ROLE_DETAIL_MODULES_ID"
@@ -50,6 +55,37 @@
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>
   </Attribute>
+  <Attribute
+    Name="CreatedBy"
+    ColumnName="CREATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MMP_ROLE_DETAIL_MODULES"/>
+  <Attribute
+    Name="CreatedDate"
+    ColumnName="CREATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="MMP_ROLE_DETAIL_MODULES"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory"/>
+  <Attribute
+    Name="UpdatedBy"
+    ColumnName="UPDATED_BY"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="MMP_ROLE_DETAIL_MODULES"/>
+  <Attribute
+    Name="UpdatedDate"
+    ColumnName="UPDATED_DATE"
+    SQLType="TIMESTAMP"
+    Type="java.sql.Timestamp"
+    ColumnType="TIMESTAMP"
+    TableName="MMP_ROLE_DETAIL_MODULES"
+    HistoryColumn="DateHistory"/>
   <AccessorAttribute
     Name="MmpRoleMaster"
     Association="model.EO.Fk2MmpRoleDetailModulesAssoc"
