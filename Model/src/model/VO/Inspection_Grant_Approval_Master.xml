@@ -89,6 +89,11 @@ AND TblGrantApprovalMaster.GRANT_APPROVAL_MASTER_ID in (Select distinct TGAD.GRA
   <AttrArray Name="KeyAttributes">
     <Item Value="GrantApprovalMasterId"/>
   </AttrArray>
+  <ViewLinkAccessor
+    Name="TblGrantApprovalDetailView"
+    ViewLink="model.VO.FkInpectionGrantApprovallMasterDetailFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

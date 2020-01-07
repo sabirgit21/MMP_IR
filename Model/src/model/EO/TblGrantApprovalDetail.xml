@@ -12,13 +12,14 @@
   BindingStyle="OracleName">
   <Attribute
     Name="GrantApprovalDetailId"
-    IsNotNull="true"
     ColumnName="GRANT_APPROVAL_DETAIL_ID"
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_DETAIL"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="GrantApprovalMasterId"
     IsNotNull="true"
@@ -231,6 +232,37 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_DETAIL"/>
+  <Attribute
+    Name="InspBy"
+    ColumnName="INSP_BY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_APPROVAL_DETAIL">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TblGrantApprovalDetailRow"/>
+  </Attribute>
+  <Attribute
+    Name="InspDate"
+    ColumnName="INSP_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TBL_GRANT_APPROVAL_DETAIL"/>
+  <Attribute
+    Name="InspRemarks"
+    Precision="150"
+    ColumnName="INSP_REMARKS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TBL_GRANT_APPROVAL_DETAIL">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </Attribute>
   <AccessorAttribute
     Name="TblGrantApprovalDetailD"
     Association="model.EO.FkDetailDGrantApprovalDetAssoc"

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57"
+                id="RO_Inspection_TaskFlow_RO_Inspection_TaskFlow_ExecutePageDef"
+                Package="Task_Flows.Modules.Monitoring" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="Inspection_Grant_Approval_Master1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="Inspection_Grant_Approval_Master1Iterator" Refresh="never"/>
+  </executables>
+  <bindings>
+    <action IterBinding="Inspection_Grant_Approval_Master1Iterator" id="Execute" RequiresUpdateModel="true"
+            Action="iteratorExecute"/>
+  </bindings>
+</pageDefinition>

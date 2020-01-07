@@ -13,9 +13,50 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
+  <ViewAccessor
+    Name="Session_Member_ID_LOV1"
+    ViewObjectName="model.LOV.Session_Member_ID_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_InspBy"
+    ListVOName="Session_Member_ID_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="InspBy"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MemberRegId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TblGrantApprovalDetail"
     Entity="model.EO.TblGrantApprovalDetail"/>
+  <EntityUsage
+    Name="TblFarmerReg"
+    Entity="model.EO.TblFarmerReg"
+    Association="model.EO.FkTblGrantApprovalDetailFarmerFkAssoc"
+    AssociationEnd="model.EO.FkTblGrantApprovalDetailFarmerFkAssoc.TblFarmerReg"
+    SourceUsage="model.VO.TblGrantApprovalDetailView.TblGrantApprovalDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblFarmerReg.FarmerRegId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblGrantApprovalDetail.FarmerRegId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="GrantApprovalDetailId"
     IsNotNull="true"
@@ -169,6 +210,61 @@
     EntityAttrName="RoVno"
     EntityUsage="TblGrantApprovalDetail"
     AliasName="RO_VNO"/>
+  <ViewAttribute
+    Name="FatherName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FatherName"
+    EntityUsage="TblFarmerReg"
+    AliasName="FATHER_NAME"/>
+  <ViewAttribute
+    Name="FarmerRegId1"
+    PrecisionRule="true"
+    EntityAttrName="FarmerRegId"
+    EntityUsage="TblFarmerReg"
+    AliasName="FARMER_REG_ID1"/>
+  <ViewAttribute
+    Name="FarmerName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblFarmerReg"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="FarmerNo"
+    PrecisionRule="true"
+    EntityAttrName="FarmerNo"
+    EntityUsage="TblFarmerReg"
+    AliasName="FARMER_NO"/>
+  <ViewAttribute
+    Name="InspBy"
+    PrecisionRule="true"
+    EntityAttrName="InspBy"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="INSP_BY"
+    LOVName="LOV_InspBy">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="InspDate"
+    PrecisionRule="true"
+    EntityAttrName="InspDate"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="INSP_DATE"/>
+  <ViewAttribute
+    Name="InspRemarks"
+    PrecisionRule="true"
+    EntityAttrName="InspRemarks"
+    EntityUsage="TblGrantApprovalDetail"
+    AliasName="INSP_REMARKS"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="GrantApprovalDetailId"/>
+  </AttrArray>
   <ViewLinkAccessor
     Name="TblGrantApprovalDetailDView"
     ViewLink="model.VO.FkDetailDGrantApprovalDetLink"

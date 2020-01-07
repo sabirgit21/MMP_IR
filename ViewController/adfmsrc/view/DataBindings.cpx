@@ -55,6 +55,8 @@
     <page path="/WEB-INF/Task_Flows/Modules/Monitoring/RO_Inspection_TaskFlow.xml#RO_Inspection_TaskFlow@ExecuteWithParams"
           usageId="view_RO_Inspection_TaskFlow_RO_Inspection_TaskFlow_ExecuteWithParamsPageDef"/>
     <page path="/WEB-INF/Fragments/Modules/Monitoring/RO_Inspection.jsff" usageId="view_RO_InspectionPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Monitoring/RO_Inspection_TaskFlow.xml#RO_Inspection_TaskFlow@Execute"
+          usageId="view_RO_Inspection_TaskFlow_RO_Inspection_TaskFlow_ExecutePageDef"/>
   </pageMap>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"
@@ -110,5 +112,7 @@
     <page id="view_RO_Inspection_TaskFlow_RO_Inspection_TaskFlow_ExecuteWithParamsPageDef"
           path="Task_Flows.Modules.Monitoring.RO_Inspection_TaskFlow_RO_Inspection_TaskFlow_ExecuteWithParamsPageDef"/>
     <page id="view_RO_InspectionPageDef" path="Fragments.Modules.Monitoring.RO_InspectionPageDef"/>
+    <page id="view_RO_Inspection_TaskFlow_RO_Inspection_TaskFlow_ExecutePageDef"
+          path="Task_Flows.Modules.Monitoring.RO_Inspection_TaskFlow_RO_Inspection_TaskFlow_ExecutePageDef"/>
   </pageDefinitionUsages>
 </Application>

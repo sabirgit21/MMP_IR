@@ -226,6 +226,18 @@
   <ViewUsage
     Name="Inspection_Grant_Approval_Master1"
     ViewObjectName="model.VO.Inspection_Grant_Approval_Master"/>
+  <ViewUsage
+    Name="TblGrantApprovalMasterView2"
+    ViewObjectName="model.VO.TblGrantApprovalMasterView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailView3"
+    ViewObjectName="model.VO.TblGrantApprovalDetailView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailView4"
+    ViewObjectName="model.VO.TblGrantApprovalDetailView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDView3"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDView"/>
   <ViewLinkUsage
     Name="FkMmpMemberRegDepLink1"
     ViewLinkObjectName="model.VO.FkMmpMemberRegDepLink"
@@ -447,5 +459,23 @@
     ViewLinkObjectName="model.VO.FkTblGrantApprovalDetailFLink"
     SrcViewUsageName="model.AppModule.TblGrantApprovalMasterView1"
     DstViewUsageName="model.AppModule.TblGrantApprovalDetailView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkTblGrantApprovalDetailFLink2"
+    ViewLinkObjectName="model.VO.FkTblGrantApprovalDetailFLink"
+    SrcViewUsageName="model.AppModule.TblGrantApprovalMasterView2"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkInpectionGrantApprovallMasterDetailFkLink1"
+    ViewLinkObjectName="model.VO.FkInpectionGrantApprovallMasterDetailFkLink"
+    SrcViewUsageName="model.AppModule.Inspection_Grant_Approval_Master1"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailView4"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkDetailDGrantApprovalDetLink2"
+    ViewLinkObjectName="model.VO.FkDetailDGrantApprovalDetLink"
+    SrcViewUsageName="model.AppModule.TblGrantApprovalDetailView4"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDView3"
     Reversed="false"/>
 </AppModule>
