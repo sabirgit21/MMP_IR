@@ -154,7 +154,7 @@
                       <f:validator binding="#{row.bindings.Remarks.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.InspBy.label}" id="c24">
+                  <!--<af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.InspBy.label}" id="c24">
                     <af:selectOneChoice value="#{row.bindings.InspBy.inputValue}" label="#{row.bindings.InspBy.label}"
                                         required="#{bindings.TblGrantApprovalDetailView4.hints.InspBy.mandatory}"
                                         shortDesc="#{bindings.TblGrantApprovalDetailView4.hints.InspBy.tooltip}"
@@ -162,7 +162,7 @@
                       <f:selectItems value="#{row.bindings.InspBy.items}" id="si3"/>
                       <f:validator binding="#{row.bindings.InspBy.validator}"/>
                     </af:selectOneChoice>
-                  </af:column>
+                  </af:column>-->
                   <af:column headerText="#{bindings.TblGrantApprovalDetailView4.hints.InspDate.label}" id="c25">
                     <af:inputDate value="#{row.bindings.InspDate.inputValue}"
                                   label="#{bindings.TblGrantApprovalDetailView4.hints.InspDate.label}"

@@ -13,28 +13,6 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full">
-  <ViewAccessor
-    Name="Session_Member_ID_LOV1"
-    ViewObjectName="model.LOV.Session_Member_ID_LOV"
-    RowLevelBinds="true"/>
-  <ListBinding
-    Name="LOV_InspBy"
-    ListVOName="Session_Member_ID_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="InspBy"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="MemberRegId"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="Name"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
   <EntityUsage
     Name="TblGrantApprovalDetail"
     Entity="model.EO.TblGrantApprovalDetail"/>
@@ -241,15 +219,7 @@
     PrecisionRule="true"
     EntityAttrName="InspBy"
     EntityUsage="TblGrantApprovalDetail"
-    AliasName="INSP_BY"
-    LOVName="LOV_InspBy">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="INSP_BY"/>
   <ViewAttribute
     Name="InspDate"
     PrecisionRule="true"
