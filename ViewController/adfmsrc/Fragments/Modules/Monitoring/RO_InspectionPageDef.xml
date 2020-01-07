@@ -8,12 +8,12 @@
               id="USERS_CRUD_OPERATIONS1Iterator"/>
     <iterator Binds="Inspection_Grant_Approval_Master1" DataControl="AppModuleDataControl"
               id="Inspection_Grant_Approval_Master1Iterator" Refresh="always" CacheResults="false"/>
-    <iterator Binds="TblGrantApprovalDetailView4" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="TblGrantApprovalDetailView4" RangeSize="8" DataControl="AppModuleDataControl"
               id="TblGrantApprovalDetailView4Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="TblGrantApprovalDetailView4Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblGrantApprovalDetailView4Query"/>
-    <iterator Binds="TblGrantApprovalDetailDView3" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="TblGrantApprovalDetailDView3" RangeSize="8" DataControl="AppModuleDataControl"
               id="TblGrantApprovalDetailDView3Iterator"/>
     <searchRegion Binds="TblGrantApprovalDetailDView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
