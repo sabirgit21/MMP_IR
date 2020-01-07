@@ -247,6 +247,7 @@
           <Item Value="Name"/>
           <Item Value="TrainerId"/>
           <Item Value="TopicCovered"/>
+          <Item Value="Module_Name"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

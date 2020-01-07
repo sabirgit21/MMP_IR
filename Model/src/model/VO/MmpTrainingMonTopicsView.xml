@@ -102,6 +102,25 @@
       </AttrArray>
     </DesignTime>
   </EntityUsage>
+  <EntityUsage
+    Name="TblModule"
+    Entity="model.EO.TblModule"
+    Association="model.EO.FkTblTopicsFkAssoc"
+    AssociationEnd="model.EO.FkTblTopicsFkAssoc.TblModule"
+    SourceUsage="model.VO.MmpTrainingMonTopicsView.TblTopics"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblModule.ModuleId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblTopics.ModuleId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="MmpTrainingMonTopicsId"
     IsNotNull="true"
@@ -140,7 +159,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="MmpTrainingMonTopics"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -152,7 +172,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="MmpTrainingMonTopics"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
@@ -202,6 +223,20 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Module_Name"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblModule"
+    AliasName="NAME1"/>
+  <ViewAttribute
+    Name="ModuleId"
+    PrecisionRule="true"
+    EntityAttrName="ModuleId"
+    EntityUsage="TblModule"
+    AliasName="MODULE_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingMonTopicsId"/>
   </AttrArray>
