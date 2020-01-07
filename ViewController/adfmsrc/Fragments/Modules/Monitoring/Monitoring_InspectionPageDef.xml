@@ -320,5 +320,41 @@
         <Item Value="NoOfGroup"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_EsaExamPlant" id="EsaExamPlant"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_EsaIdenDis" id="EsaIdenDis"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_EsaIdenVar" id="EsaIdenVar"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_EsaObsGen" id="EsaObsGen"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_EsaOthers" id="EsaOthers"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_EsaStuPlant" id="EsaStuPlant"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_IecBanner" id="IecBanner"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_IecBroch" id="IecBroch"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_IecCards" id="IecCards"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_IecInform" id="IecInform"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_IecNill" id="IecNill"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_IecPamp" id="IecPamp"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ToolsAdopt1" id="ToolsAdopt11"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ToolsDemo" id="ToolsDemo"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ToolsDiscus" id="ToolsDiscus"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ToolsGroup" id="ToolsGroup"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ToolsLecture" id="ToolsLecture"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ToolsOthers" id="ToolsOthers"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
   </bindings>
 </pageDefinition>

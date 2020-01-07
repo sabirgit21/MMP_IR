@@ -254,14 +254,6 @@
                   </af:panelGroupLayout>
                   
                   
-                  <!--<af:panelGroupLayout id="pgl9" layout="vertical" inlineStyle="border: 2px solid black;">
-                    <af:outputLabel value="Module Planned" id="ol2"
-                                    inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
-                    <af:spacer width="10" height="10" id="s23"/>
-                  
-                  <af:spacer width="10" height="10" id="s24"/>
-                  </af:panelGroupLayout>-->
-                  
                   <af:panelGroupLayout id="pgl10" layout="vertical" inlineStyle="border: 2px solid black;">
                     <af:outputLabel value="Module Planned" id="ol3"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
@@ -462,11 +454,242 @@
                     <f:selectItems value="#{bindings.ToolsAdopt1.items}" id="si19"/>
                     <f:validator binding="#{bindings.ToolsAdopt1.validator}"/>
                   </af:selectOneChoice>-->
+          
+                  
+                  
+                  
+                  <!--<af:panelGroupLayout id="pgl9" layout="vertical" inlineStyle="border: 2px solid black;">
+                    <af:outputLabel value="Module Planned" id="ol2"
+                                    inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
+                    <af:spacer width="10" height="10" id="s23"/>
+                  
+                  <af:spacer width="10" height="10" id="s24"/>
+                  </af:panelGroupLayout>-->
+                 
                  
                   
                   <f:facet name="footer">
                  
-                    <af:panelGroupLayout layout="horizontal" id="pgl7">
+                   
+                  </f:facet>
+                </af:panelFormLayout>
+                
+                <af:panelGridLayout id="pgl14">
+                  <af:gridRow marginTop="5px" height="auto" id="gr6">
+                    <af:gridCell marginStart="5px" width="34%" id="gc6">
+                      <af:panelGroupLayout id="pgl17" layout="vertical" inlineStyle="border: 2px solid black;">
+                    <af:outputLabel value="ECO System Analysis" id="ol9"
+                                    inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
+                    <af:spacer width="10" height="10" id="s56"/>
+                        <af:panelFormLayout id="pfl3">
+                          <af:selectOneChoice value="#{bindings.EsaExamPlant.inputValue}"
+                                              label="#{bindings.EsaExamPlant.label}"
+                                              required="#{bindings.EsaExamPlant.hints.mandatory}"
+                                      contentStyle="width:250px;"
+                                              shortDesc="#{bindings.EsaExamPlant.hints.tooltip}" id="soc18">
+                            <f:selectItems value="#{bindings.EsaExamPlant.items}" id="si18"/>
+                            <f:validator binding="#{bindings.EsaExamPlant.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.EsaIdenDis.inputValue}"
+                                              label="#{bindings.EsaIdenDis.label}"
+                                      contentStyle="width:250px;"
+                                              required="#{bindings.EsaIdenDis.hints.mandatory}"
+                                              shortDesc="#{bindings.EsaIdenDis.hints.tooltip}" id="soc19">
+                            <f:selectItems value="#{bindings.EsaIdenDis.items}" id="si19"/>
+                            <f:validator binding="#{bindings.EsaIdenDis.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.EsaIdenVar.inputValue}"
+                                              label="#{bindings.EsaIdenVar.label}"
+                                      contentStyle="width:250px;"
+                                              required="#{bindings.EsaIdenVar.hints.mandatory}"
+                                              shortDesc="#{bindings.EsaIdenVar.hints.tooltip}" id="soc30">
+                            <f:selectItems value="#{bindings.EsaIdenVar.items}" id="si31"/>
+                            <f:validator binding="#{bindings.EsaIdenVar.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.EsaObsGen.inputValue}"
+                                              label="#{bindings.EsaObsGen.label}"
+                                      contentStyle="width:250px;"
+                                              required="#{bindings.EsaObsGen.hints.mandatory}"
+                                              shortDesc="#{bindings.EsaObsGen.hints.tooltip}" id="soc31">
+                            <f:selectItems value="#{bindings.EsaObsGen.items}" id="si32"/>
+                            <f:validator binding="#{bindings.EsaObsGen.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.EsaOthers.inputValue}"
+                                              label="#{bindings.EsaOthers.label}"
+                                      contentStyle="width:250px;"
+                                              required="#{bindings.EsaOthers.hints.mandatory}"
+                                              shortDesc="#{bindings.EsaOthers.hints.tooltip}" id="soc32">
+                            <f:selectItems value="#{bindings.EsaOthers.items}" id="si33"/>
+                            <f:validator binding="#{bindings.EsaOthers.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.EsaStuPlant.inputValue}"
+                                              label="#{bindings.EsaStuPlant.label}"
+                                      contentStyle="width:250px;"
+                                              required="#{bindings.EsaStuPlant.hints.mandatory}"
+                                              shortDesc="#{bindings.EsaStuPlant.hints.tooltip}" id="soc33">
+                            <f:selectItems value="#{bindings.EsaStuPlant.items}" id="si34"/>
+                            <f:validator binding="#{bindings.EsaStuPlant.validator}"/>
+                          </af:selectOneChoice>
+                          <!--<f:facet name="footer">
+                            <af:panelGroupLayout layout="horizontal" id="pgl18">
+                              <af:button actionListener="#{bindings.First2.execute}" text="First2"
+                                         disabled="#{!bindings.First2.enabled}" partialSubmit="true" id="b2"/>
+                              <af:button actionListener="#{bindings.Previous2.execute}" text="Previous2"
+                                         disabled="#{!bindings.Previous2.enabled}" partialSubmit="true" id="b3"/>
+                              <af:button actionListener="#{bindings.Next2.execute}" text="Next2"
+                                         disabled="#{!bindings.Next2.enabled}" partialSubmit="true" id="b4"/>
+                              <af:button actionListener="#{bindings.Last2.execute}" text="Last2"
+                                         disabled="#{!bindings.Last2.enabled}" partialSubmit="true" id="b5"/>
+                            </af:panelGroupLayout>
+                          </f:facet>-->
+                        </af:panelFormLayout>
+                        <af:spacer width="10" height="10" id="s55"/>
+                  </af:panelGroupLayout>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" id="gc7">
+                      <af:panelGroupLayout id="pgl16" layout="vertical" inlineStyle="border: 2px solid black;">
+                    <af:outputLabel value="IEC Materials" id="ol8"
+                                    inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
+                    <af:spacer width="10" height="10" id="s54"/>
+                        <af:panelFormLayout id="pfl4">
+                          <af:selectOneChoice value="#{bindings.IecBanner.inputValue}"
+                                              label="#{bindings.IecBanner.label}"
+                                      contentStyle="width:250px;"
+                                              required="#{bindings.IecBanner.hints.mandatory}"
+                                              shortDesc="#{bindings.IecBanner.hints.tooltip}" id="soc34">
+                            <f:selectItems value="#{bindings.IecBanner.items}" id="si35"/>
+                            <f:validator binding="#{bindings.IecBanner.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.IecBroch.inputValue}" label="#{bindings.IecBroch.label}"
+                                              required="#{bindings.IecBroch.hints.mandatory}"
+                                      contentStyle="width:250px;"
+                                              shortDesc="#{bindings.IecBroch.hints.tooltip}" id="soc35">
+                            <f:selectItems value="#{bindings.IecBroch.items}" id="si36"/>
+                            <f:validator binding="#{bindings.IecBroch.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.IecCards.inputValue}" label="#{bindings.IecCards.label}"
+                                              required="#{bindings.IecCards.hints.mandatory}"
+                                      contentStyle="width:250px;"
+                                              shortDesc="#{bindings.IecCards.hints.tooltip}" id="soc36">
+                            <f:selectItems value="#{bindings.IecCards.items}" id="si37"/>
+                            <f:validator binding="#{bindings.IecCards.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.IecInform.inputValue}"
+                                              label="#{bindings.IecInform.label}"
+                                      contentStyle="width:250px;"
+                                              required="#{bindings.IecInform.hints.mandatory}"
+                                              shortDesc="#{bindings.IecInform.hints.tooltip}" id="soc37">
+                            <f:selectItems value="#{bindings.IecInform.items}" id="si38"/>
+                            <f:validator binding="#{bindings.IecInform.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.IecNill.inputValue}" label="#{bindings.IecNill.label}"
+                                              required="#{bindings.IecNill.hints.mandatory}"
+                                      contentStyle="width:250px;"
+                                              shortDesc="#{bindings.IecNill.hints.tooltip}" id="soc38">
+                            <f:selectItems value="#{bindings.IecNill.items}" id="si39"/>
+                            <f:validator binding="#{bindings.IecNill.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.IecPamp.inputValue}" label="#{bindings.IecPamp.label}"
+                                              required="#{bindings.IecPamp.hints.mandatory}"
+                                      contentStyle="width:250px;"
+                                              shortDesc="#{bindings.IecPamp.hints.tooltip}" id="soc39">
+                            <f:selectItems value="#{bindings.IecPamp.items}" id="si40"/>
+                            <f:validator binding="#{bindings.IecPamp.validator}"/>
+                          </af:selectOneChoice>
+                          <f:facet name="footer">
+                            <!--<af:panelGroupLayout layout="horizontal" id="pgl18">
+                              <af:button actionListener="#{bindings.First2.execute}" text="First2"
+                                         disabled="#{!bindings.First2.enabled}" partialSubmit="true" id="b2"/>
+                              <af:button actionListener="#{bindings.Previous2.execute}" text="Previous2"
+                                         disabled="#{!bindings.Previous2.enabled}" partialSubmit="true" id="b3"/>
+                              <af:button actionListener="#{bindings.Next2.execute}" text="Next2"
+                                         disabled="#{!bindings.Next2.enabled}" partialSubmit="true" id="b4"/>
+                              <af:button actionListener="#{bindings.Last2.execute}" text="Last2"
+                                         disabled="#{!bindings.Last2.enabled}" partialSubmit="true" id="b5"/>
+                            </af:panelGroupLayout>-->
+                          </f:facet>
+                        </af:panelFormLayout>
+                        <af:spacer width="10" height="10" id="s53"/>
+                  </af:panelGroupLayout>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc8">
+                      <af:panelGroupLayout id="pgl15" layout="vertical" inlineStyle="border: 2px solid black;">
+                    <af:outputLabel value="Tools Adopted" id="ol7"
+                                    inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
+                    <af:spacer width="10" height="10" id="s52"/>
+                        <af:panelFormLayout id="pfl5">
+                          <af:selectOneChoice value="#{bindings.ToolsAdopt11.inputValue}"
+                                              label="#{bindings.ToolsAdopt11.label}"
+                                      contentStyle="width:250px;"
+                                              required="#{bindings.ToolsAdopt11.hints.mandatory}"
+                                              shortDesc="#{bindings.ToolsAdopt11.hints.tooltip}" id="soc40">
+                            <f:selectItems value="#{bindings.ToolsAdopt11.items}" id="si41"/>
+                            <f:validator binding="#{bindings.ToolsAdopt11.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.ToolsDemo.inputValue}"
+                                              label="#{bindings.ToolsDemo.label}"
+                                      contentStyle="width:250px;"
+                                              required="#{bindings.ToolsDemo.hints.mandatory}"
+                                              shortDesc="#{bindings.ToolsDemo.hints.tooltip}" id="soc41">
+                            <f:selectItems value="#{bindings.ToolsDemo.items}" id="si42"/>
+                            <f:validator binding="#{bindings.ToolsDemo.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.ToolsDiscus.inputValue}"
+                                              label="#{bindings.ToolsDiscus.label}"
+                                      contentStyle="width:250px;"
+                                              required="#{bindings.ToolsDiscus.hints.mandatory}"
+                                              shortDesc="#{bindings.ToolsDiscus.hints.tooltip}" id="soc42">
+                            <f:selectItems value="#{bindings.ToolsDiscus.items}" id="si43"/>
+                            <f:validator binding="#{bindings.ToolsDiscus.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.ToolsGroup.inputValue}"
+                                              label="#{bindings.ToolsGroup.label}"
+                                      contentStyle="width:250px;"
+                                              required="#{bindings.ToolsGroup.hints.mandatory}"
+                                              shortDesc="#{bindings.ToolsGroup.hints.tooltip}" id="soc43">
+                            <f:selectItems value="#{bindings.ToolsGroup.items}" id="si44"/>
+                            <f:validator binding="#{bindings.ToolsGroup.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.ToolsLecture.inputValue}"
+                                              label="#{bindings.ToolsLecture.label}"
+                                      contentStyle="width:250px;"
+                                              required="#{bindings.ToolsLecture.hints.mandatory}"
+                                              shortDesc="#{bindings.ToolsLecture.hints.tooltip}" id="soc44">
+                            <f:selectItems value="#{bindings.ToolsLecture.items}" id="si45"/>
+                            <f:validator binding="#{bindings.ToolsLecture.validator}"/>
+                          </af:selectOneChoice>
+                          <af:selectOneChoice value="#{bindings.ToolsOthers.inputValue}"
+                                              label="#{bindings.ToolsOthers.label}"
+                                      contentStyle="width:250px;"
+                                              required="#{bindings.ToolsOthers.hints.mandatory}"
+                                              shortDesc="#{bindings.ToolsOthers.hints.tooltip}" id="soc45">
+                            <f:selectItems value="#{bindings.ToolsOthers.items}" id="si46"/>
+                            <f:validator binding="#{bindings.ToolsOthers.validator}"/>
+                          </af:selectOneChoice>
+                          <f:facet name="footer">
+                            <!--<af:panelGroupLayout layout="horizontal" id="pgl19">
+                              <af:button actionListener="#{bindings.First2.execute}" text="First2"
+                                         disabled="#{!bindings.First2.enabled}" partialSubmit="true" id="b6"/>
+                              <af:button actionListener="#{bindings.Previous2.execute}" text="Previous2"
+                                         disabled="#{!bindings.Previous2.enabled}" partialSubmit="true" id="b7"/>
+                              <af:button actionListener="#{bindings.Next2.execute}" text="Next2"
+                                         disabled="#{!bindings.Next2.enabled}" partialSubmit="true" id="b8"/>
+                              <af:button actionListener="#{bindings.Last2.execute}" text="Last2"
+                                         disabled="#{!bindings.Last2.enabled}" partialSubmit="true" id="b9"/>
+                            </af:panelGroupLayout>-->
+                          </f:facet>
+                        </af:panelFormLayout>
+                        <af:spacer width="10" height="10" id="s51"/>
+                  </af:panelGroupLayout>
+                    </af:gridCell>
+                  </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+                    <af:gridCell marginStart="5px" width="34%" id="gc9"/>
+                    <af:gridCell marginStart="5px" width="33%" id="gc10"/>
+                    <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc11"/>
+                  </af:gridRow>
+                </af:panelGridLayout>
+                 <af:panelGroupLayout layout="horizontal" id="pgl7">
                     
                             <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
@@ -478,9 +701,7 @@
                                 <af:spacer width="5" height="10" id="s5"/>
                             </af:iterator>
                     </af:panelGroupLayout>
-                  </f:facet>
-                </af:panelFormLayout>
-               </af:showDetailItem>
+              </af:showDetailItem>
                <af:showDetailItem id="tab2" text="Cluster Detail">
                 <af:panelFormLayout id="pfl1" maxColumns="2" rows="5">
                  <af:selectOneChoice value="#{bindings.PhaseId.inputValue}" label="Phase"

@@ -60,6 +60,23 @@ public class MmpTrainingMonInspImpl extends EntityImpl {
         SummDaySt,
         TrainingSon,
         NoOfGroup,
+        EsaExamPlant,
+        EsaIdenDis,
+        EsaIdenVar,
+        EsaObsGen,
+        EsaOthers,
+        EsaStuPlant,
+        IecBanner,
+        IecBroch,
+        IecCards,
+        IecInform,
+        IecNill,
+        IecPamp,
+        ToolsDemo,
+        ToolsDiscus,
+        ToolsGroup,
+        ToolsLecture,
+        ToolsOthers,
         MmpTrainingMonFarmer,
         MmpTrainingMonTopics,
         MmpTrainingMonUrfarmer,
@@ -88,6 +105,7 @@ public class MmpTrainingMonInspImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int MMPTRAININGMONINSPID = AttributesEnum.MmpTrainingMonInspId.index();
     public static final int CLUSTERID = AttributesEnum.ClusterId.index();
     public static final int DATED = AttributesEnum.Dated.index();
@@ -125,6 +143,23 @@ public class MmpTrainingMonInspImpl extends EntityImpl {
     public static final int SUMMDAYST = AttributesEnum.SummDaySt.index();
     public static final int TRAININGSON = AttributesEnum.TrainingSon.index();
     public static final int NOOFGROUP = AttributesEnum.NoOfGroup.index();
+    public static final int ESAEXAMPLANT = AttributesEnum.EsaExamPlant.index();
+    public static final int ESAIDENDIS = AttributesEnum.EsaIdenDis.index();
+    public static final int ESAIDENVAR = AttributesEnum.EsaIdenVar.index();
+    public static final int ESAOBSGEN = AttributesEnum.EsaObsGen.index();
+    public static final int ESAOTHERS = AttributesEnum.EsaOthers.index();
+    public static final int ESASTUPLANT = AttributesEnum.EsaStuPlant.index();
+    public static final int IECBANNER = AttributesEnum.IecBanner.index();
+    public static final int IECBROCH = AttributesEnum.IecBroch.index();
+    public static final int IECCARDS = AttributesEnum.IecCards.index();
+    public static final int IECINFORM = AttributesEnum.IecInform.index();
+    public static final int IECNILL = AttributesEnum.IecNill.index();
+    public static final int IECPAMP = AttributesEnum.IecPamp.index();
+    public static final int TOOLSDEMO = AttributesEnum.ToolsDemo.index();
+    public static final int TOOLSDISCUS = AttributesEnum.ToolsDiscus.index();
+    public static final int TOOLSGROUP = AttributesEnum.ToolsGroup.index();
+    public static final int TOOLSLECTURE = AttributesEnum.ToolsLecture.index();
+    public static final int TOOLSOTHERS = AttributesEnum.ToolsOthers.index();
     public static final int MMPTRAININGMONFARMER = AttributesEnum.MmpTrainingMonFarmer.index();
     public static final int MMPTRAININGMONTOPICS = AttributesEnum.MmpTrainingMonTopics.index();
     public static final int MMPTRAININGMONURFARMER = AttributesEnum.MmpTrainingMonUrfarmer.index();
@@ -136,6 +171,13 @@ public class MmpTrainingMonInspImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public MmpTrainingMonInspImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.MmpTrainingMonInsp");
     }
 
     /**
@@ -715,6 +757,278 @@ public class MmpTrainingMonInspImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for EsaExamPlant, using the alias name EsaExamPlant.
+     * @return the value of EsaExamPlant
+     */
+    public String getEsaExamPlant() {
+        return (String) getAttributeInternal(ESAEXAMPLANT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EsaExamPlant.
+     * @param value value to set the EsaExamPlant
+     */
+    public void setEsaExamPlant(String value) {
+        setAttributeInternal(ESAEXAMPLANT, value);
+    }
+
+    /**
+     * Gets the attribute value for EsaIdenDis, using the alias name EsaIdenDis.
+     * @return the value of EsaIdenDis
+     */
+    public String getEsaIdenDis() {
+        return (String) getAttributeInternal(ESAIDENDIS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EsaIdenDis.
+     * @param value value to set the EsaIdenDis
+     */
+    public void setEsaIdenDis(String value) {
+        setAttributeInternal(ESAIDENDIS, value);
+    }
+
+    /**
+     * Gets the attribute value for EsaIdenVar, using the alias name EsaIdenVar.
+     * @return the value of EsaIdenVar
+     */
+    public String getEsaIdenVar() {
+        return (String) getAttributeInternal(ESAIDENVAR);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EsaIdenVar.
+     * @param value value to set the EsaIdenVar
+     */
+    public void setEsaIdenVar(String value) {
+        setAttributeInternal(ESAIDENVAR, value);
+    }
+
+    /**
+     * Gets the attribute value for EsaObsGen, using the alias name EsaObsGen.
+     * @return the value of EsaObsGen
+     */
+    public String getEsaObsGen() {
+        return (String) getAttributeInternal(ESAOBSGEN);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EsaObsGen.
+     * @param value value to set the EsaObsGen
+     */
+    public void setEsaObsGen(String value) {
+        setAttributeInternal(ESAOBSGEN, value);
+    }
+
+    /**
+     * Gets the attribute value for EsaOthers, using the alias name EsaOthers.
+     * @return the value of EsaOthers
+     */
+    public String getEsaOthers() {
+        return (String) getAttributeInternal(ESAOTHERS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EsaOthers.
+     * @param value value to set the EsaOthers
+     */
+    public void setEsaOthers(String value) {
+        setAttributeInternal(ESAOTHERS, value);
+    }
+
+    /**
+     * Gets the attribute value for EsaStuPlant, using the alias name EsaStuPlant.
+     * @return the value of EsaStuPlant
+     */
+    public String getEsaStuPlant() {
+        return (String) getAttributeInternal(ESASTUPLANT);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for EsaStuPlant.
+     * @param value value to set the EsaStuPlant
+     */
+    public void setEsaStuPlant(String value) {
+        setAttributeInternal(ESASTUPLANT, value);
+    }
+
+    /**
+     * Gets the attribute value for IecBanner, using the alias name IecBanner.
+     * @return the value of IecBanner
+     */
+    public String getIecBanner() {
+        return (String) getAttributeInternal(IECBANNER);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for IecBanner.
+     * @param value value to set the IecBanner
+     */
+    public void setIecBanner(String value) {
+        setAttributeInternal(IECBANNER, value);
+    }
+
+    /**
+     * Gets the attribute value for IecBroch, using the alias name IecBroch.
+     * @return the value of IecBroch
+     */
+    public String getIecBroch() {
+        return (String) getAttributeInternal(IECBROCH);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for IecBroch.
+     * @param value value to set the IecBroch
+     */
+    public void setIecBroch(String value) {
+        setAttributeInternal(IECBROCH, value);
+    }
+
+    /**
+     * Gets the attribute value for IecCards, using the alias name IecCards.
+     * @return the value of IecCards
+     */
+    public String getIecCards() {
+        return (String) getAttributeInternal(IECCARDS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for IecCards.
+     * @param value value to set the IecCards
+     */
+    public void setIecCards(String value) {
+        setAttributeInternal(IECCARDS, value);
+    }
+
+    /**
+     * Gets the attribute value for IecInform, using the alias name IecInform.
+     * @return the value of IecInform
+     */
+    public String getIecInform() {
+        return (String) getAttributeInternal(IECINFORM);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for IecInform.
+     * @param value value to set the IecInform
+     */
+    public void setIecInform(String value) {
+        setAttributeInternal(IECINFORM, value);
+    }
+
+    /**
+     * Gets the attribute value for IecNill, using the alias name IecNill.
+     * @return the value of IecNill
+     */
+    public String getIecNill() {
+        return (String) getAttributeInternal(IECNILL);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for IecNill.
+     * @param value value to set the IecNill
+     */
+    public void setIecNill(String value) {
+        setAttributeInternal(IECNILL, value);
+    }
+
+    /**
+     * Gets the attribute value for IecPamp, using the alias name IecPamp.
+     * @return the value of IecPamp
+     */
+    public String getIecPamp() {
+        return (String) getAttributeInternal(IECPAMP);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for IecPamp.
+     * @param value value to set the IecPamp
+     */
+    public void setIecPamp(String value) {
+        setAttributeInternal(IECPAMP, value);
+    }
+
+    /**
+     * Gets the attribute value for ToolsDemo, using the alias name ToolsDemo.
+     * @return the value of ToolsDemo
+     */
+    public String getToolsDemo() {
+        return (String) getAttributeInternal(TOOLSDEMO);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ToolsDemo.
+     * @param value value to set the ToolsDemo
+     */
+    public void setToolsDemo(String value) {
+        setAttributeInternal(TOOLSDEMO, value);
+    }
+
+    /**
+     * Gets the attribute value for ToolsDiscus, using the alias name ToolsDiscus.
+     * @return the value of ToolsDiscus
+     */
+    public String getToolsDiscus() {
+        return (String) getAttributeInternal(TOOLSDISCUS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ToolsDiscus.
+     * @param value value to set the ToolsDiscus
+     */
+    public void setToolsDiscus(String value) {
+        setAttributeInternal(TOOLSDISCUS, value);
+    }
+
+    /**
+     * Gets the attribute value for ToolsGroup, using the alias name ToolsGroup.
+     * @return the value of ToolsGroup
+     */
+    public String getToolsGroup() {
+        return (String) getAttributeInternal(TOOLSGROUP);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ToolsGroup.
+     * @param value value to set the ToolsGroup
+     */
+    public void setToolsGroup(String value) {
+        setAttributeInternal(TOOLSGROUP, value);
+    }
+
+    /**
+     * Gets the attribute value for ToolsLecture, using the alias name ToolsLecture.
+     * @return the value of ToolsLecture
+     */
+    public String getToolsLecture() {
+        return (String) getAttributeInternal(TOOLSLECTURE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ToolsLecture.
+     * @param value value to set the ToolsLecture
+     */
+    public void setToolsLecture(String value) {
+        setAttributeInternal(TOOLSLECTURE, value);
+    }
+
+    /**
+     * Gets the attribute value for ToolsOthers, using the alias name ToolsOthers.
+     * @return the value of ToolsOthers
+     */
+    public String getToolsOthers() {
+        return (String) getAttributeInternal(TOOLSOTHERS);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ToolsOthers.
+     * @param value value to set the ToolsOthers
+     */
+    public void setToolsOthers(String value) {
+        setAttributeInternal(TOOLSOTHERS, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
     public RowIterator getMmpTrainingMonFarmer() {
@@ -763,6 +1077,7 @@ public class MmpTrainingMonInspImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(MMPTRAININGCHECKOUT);
     }
 
+
     /**
      * @param mmpTrainingMonInspId key constituent
 
@@ -770,13 +1085,6 @@ public class MmpTrainingMonInspImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal mmpTrainingMonInspId) {
         return new Key(new Object[] { mmpTrainingMonInspId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.MmpTrainingMonInsp");
     }
 
     /**

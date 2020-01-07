@@ -45,7 +45,25 @@
        MmpTrainingMonInsp.REV_LAST_TRAINING_ST, 
        MmpTrainingMonInsp.SUMM_DAY_ET, 
        MmpTrainingMonInsp.SUMM_DAY_ST, 
-       MmpTrainingMonInsp.NO_OF_GROUP"
+       MmpTrainingMonInsp.NO_OF_GROUP, 
+       MmpTrainingMonInsp.ESA_EXAM_PLANT, 
+       MmpTrainingMonInsp.ESA_IDEN_DIS, 
+       MmpTrainingMonInsp.ESA_IDEN_VAR, 
+       MmpTrainingMonInsp.ESA_OBS_GEN, 
+       MmpTrainingMonInsp.ESA_OTHERS, 
+       MmpTrainingMonInsp.ESA_STU_PLANT, 
+       MmpTrainingMonInsp.IEC_BANNER, 
+       MmpTrainingMonInsp.IEC_BROCH, 
+       MmpTrainingMonInsp.IEC_CARDS, 
+       MmpTrainingMonInsp.IEC_INFORM, 
+       MmpTrainingMonInsp.IEC_NILL, 
+       MmpTrainingMonInsp.IEC_PAMP, 
+       MmpTrainingMonInsp.TOOLS_ADOPT AS TOOLS_ADOPT1, 
+       MmpTrainingMonInsp.TOOLS_DEMO, 
+       MmpTrainingMonInsp.TOOLS_DISCUS, 
+       MmpTrainingMonInsp.TOOLS_GROUP, 
+       MmpTrainingMonInsp.TOOLS_LECTURE, 
+       MmpTrainingMonInsp.TOOLS_OTHERS"
   FromList="MMP_TRAINING_MON_INSP MmpTrainingMonInsp"
   Where="MmpTrainingMonInsp.MEMBER_REG_ID = :sessMemID">
   <Variable
@@ -389,6 +407,332 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_EsaExamPlant"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EsaExamPlant"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EsaIdenDis"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EsaIdenDis"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EsaIdenVar"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EsaIdenVar"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EsaObsGen"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EsaObsGen"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EsaOthers"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EsaOthers"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_EsaStuPlant"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="EsaStuPlant"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IecBanner"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IecBanner"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IecBroch"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IecBroch"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IecCards"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IecCards"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IecInform"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IecInform"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IecNill"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IecNill"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_IecPamp"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="IecPamp"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ToolsAdopt1"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ToolsAdopt1"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ToolsDemo"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ToolsDemo"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ToolsDiscus"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ToolsDiscus"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ToolsGroup"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ToolsGroup"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ToolsLecture"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ToolsLecture"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ToolsOthers"
+    ListVOName="Active_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ToolsOthers"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="DBView"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAst"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="MmpTrainingMonInsp"
     Entity="model.EO.MmpTrainingMonInsp"/>
@@ -598,7 +942,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="MmpTrainingMonInsp"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -610,7 +955,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="MmpTrainingMonInsp"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
@@ -739,6 +1085,258 @@
     EntityAttrName="NoOfGroup"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="NO_OF_GROUP"/>
+  <ViewAttribute
+    Name="EsaExamPlant"
+    PrecisionRule="true"
+    EntityAttrName="EsaExamPlant"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="ESA_EXAM_PLANT"
+    LOVName="LOV_EsaExamPlant">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EsaIdenDis"
+    PrecisionRule="true"
+    EntityAttrName="EsaIdenDis"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="ESA_IDEN_DIS"
+    LOVName="LOV_EsaIdenDis">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EsaIdenVar"
+    PrecisionRule="true"
+    EntityAttrName="EsaIdenVar"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="ESA_IDEN_VAR"
+    LOVName="LOV_EsaIdenVar">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EsaObsGen"
+    PrecisionRule="true"
+    EntityAttrName="EsaObsGen"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="ESA_OBS_GEN"
+    LOVName="LOV_EsaObsGen">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EsaOthers"
+    PrecisionRule="true"
+    EntityAttrName="EsaOthers"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="ESA_OTHERS"
+    LOVName="LOV_EsaOthers">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="EsaStuPlant"
+    PrecisionRule="true"
+    EntityAttrName="EsaStuPlant"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="ESA_STU_PLANT"
+    LOVName="LOV_EsaStuPlant">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IecBanner"
+    PrecisionRule="true"
+    EntityAttrName="IecBanner"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="IEC_BANNER"
+    LOVName="LOV_IecBanner">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IecBroch"
+    PrecisionRule="true"
+    EntityAttrName="IecBroch"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="IEC_BROCH"
+    LOVName="LOV_IecBroch">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IecCards"
+    PrecisionRule="true"
+    EntityAttrName="IecCards"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="IEC_CARDS"
+    LOVName="LOV_IecCards">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IecInform"
+    PrecisionRule="true"
+    EntityAttrName="IecInform"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="IEC_INFORM"
+    LOVName="LOV_IecInform">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IecNill"
+    PrecisionRule="true"
+    EntityAttrName="IecNill"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="IEC_NILL"
+    LOVName="LOV_IecNill">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IecPamp"
+    PrecisionRule="true"
+    EntityAttrName="IecPamp"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="IEC_PAMP"
+    LOVName="LOV_IecPamp">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ToolsAdopt1"
+    PrecisionRule="true"
+    EntityAttrName="ToolsAdopt"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="TOOLS_ADOPT1"
+    LOVName="LOV_ToolsAdopt1">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ToolsDemo"
+    PrecisionRule="true"
+    EntityAttrName="ToolsDemo"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="TOOLS_DEMO"
+    LOVName="LOV_ToolsDemo">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ToolsDiscus"
+    PrecisionRule="true"
+    EntityAttrName="ToolsDiscus"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="TOOLS_DISCUS"
+    LOVName="LOV_ToolsDiscus">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ToolsGroup"
+    PrecisionRule="true"
+    EntityAttrName="ToolsGroup"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="TOOLS_GROUP"
+    LOVName="LOV_ToolsGroup">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ToolsLecture"
+    PrecisionRule="true"
+    EntityAttrName="ToolsLecture"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="TOOLS_LECTURE"
+    LOVName="LOV_ToolsLecture">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ToolsOthers"
+    PrecisionRule="true"
+    EntityAttrName="ToolsOthers"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="TOOLS_OTHERS"
+    LOVName="LOV_ToolsOthers">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingMonInspId"/>
   </AttrArray>
