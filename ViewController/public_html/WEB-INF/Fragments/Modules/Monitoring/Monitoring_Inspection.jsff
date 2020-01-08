@@ -466,7 +466,7 @@
                 
                 <af:panelGridLayout id="pgl14">
                   <af:gridRow marginTop="5px" height="auto" id="gr6">
-                    <af:gridCell marginStart="5px" width="34%" id="gc6">
+                    <af:gridCell marginStart="5px" width="38%" id="gc6">
                       <af:panelGroupLayout id="pgl17" layout="vertical" inlineStyle="border: 2px solid black;">
                     <af:outputLabel value="ECO System Analysis" id="ol9"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
@@ -475,7 +475,7 @@
                           <af:selectOneChoice value="#{bindings.EsaExamPlant.inputValue}"
                                               label="Examined plant Health"
                                               required="#{bindings.EsaExamPlant.hints.mandatory}"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               shortDesc="#{bindings.EsaExamPlant.hints.tooltip}" id="soc18">
                             <f:selectItems value="#{bindings.EsaExamPlant.items}" id="si18"/>
                             <f:validator binding="#{bindings.EsaExamPlant.validator}"/>
@@ -483,7 +483,7 @@
                           <af:spacer  id="s57"/>
                           <af:selectOneChoice value="#{bindings.EsaIdenDis.inputValue}"
                                               label="Identified var diseases"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               required="#{bindings.EsaIdenDis.hints.mandatory}"
                                               shortDesc="#{bindings.EsaIdenDis.hints.tooltip}" id="soc19">
                             <f:selectItems value="#{bindings.EsaIdenDis.items}" id="si19"/>
@@ -492,7 +492,7 @@
                           <af:spacer  id="s58"/>
                           <af:selectOneChoice value="#{bindings.EsaIdenVar.inputValue}"
                                               label="Identified various"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               required="#{bindings.EsaIdenVar.hints.mandatory}"
                                               shortDesc="#{bindings.EsaIdenVar.hints.tooltip}" id="soc30">
                             <f:selectItems value="#{bindings.EsaIdenVar.items}" id="si31"/>
@@ -501,7 +501,7 @@
                           <af:spacer  id="s59"/>
                           <af:selectOneChoice value="#{bindings.EsaObsGen.inputValue}"
                                               label="Observed gen field con"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               required="#{bindings.EsaObsGen.hints.mandatory}"
                                               shortDesc="#{bindings.EsaObsGen.hints.tooltip}" id="soc31">
                             <f:selectItems value="#{bindings.EsaObsGen.items}" id="si32"/>
@@ -510,7 +510,7 @@
                           <af:spacer  id="s60"/>
                           <af:selectOneChoice value="#{bindings.EsaOthers.inputValue}"
                                               label="Other (If any)"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               required="#{bindings.EsaOthers.hints.mandatory}"
                                               shortDesc="#{bindings.EsaOthers.hints.tooltip}" id="soc32">
                             <f:selectItems value="#{bindings.EsaOthers.items}" id="si33"/>
@@ -519,7 +519,7 @@
                           <af:spacer  id="s61"/>
                           <af:selectOneChoice value="#{bindings.EsaStuPlant.inputValue}"
                                               label="Studied plant growth"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               required="#{bindings.EsaStuPlant.hints.mandatory}"
                                               shortDesc="#{bindings.EsaStuPlant.hints.tooltip}" id="soc33">
                             <f:selectItems value="#{bindings.EsaStuPlant.items}" id="si34"/>
@@ -541,7 +541,7 @@
                         <af:spacer width="10" height="10" id="s55"/>
                   </af:panelGroupLayout>
                     </af:gridCell>
-                    <af:gridCell marginStart="5px" width="33%" id="gc7">
+                    <af:gridCell marginStart="5px" width="35%" id="gc7">
                       <af:panelGroupLayout id="pgl16" layout="vertical" inlineStyle="border: 2px solid black;">
                     <af:outputLabel value="IEC Materials" id="ol8"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
@@ -549,7 +549,7 @@
                         <af:panelFormLayout id="pfl4">
                           <af:selectOneChoice value="#{bindings.IecBanner.inputValue}"
                                               label="Banners"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               required="#{bindings.IecBanner.hints.mandatory}"
                                               shortDesc="#{bindings.IecBanner.hints.tooltip}" id="soc34">
                             <f:selectItems value="#{bindings.IecBanner.items}" id="si35"/>
@@ -558,7 +558,7 @@
                           <af:spacer  id="s62"/>
                           <af:selectOneChoice value="#{bindings.IecBroch.inputValue}" label="Brochure"
                                               required="#{bindings.IecBroch.hints.mandatory}"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               shortDesc="#{bindings.IecBroch.hints.tooltip}" id="soc35">
                             <f:selectItems value="#{bindings.IecBroch.items}" id="si36"/>
                             <f:validator binding="#{bindings.IecBroch.validator}"/>
@@ -566,15 +566,15 @@
                           <af:spacer  id="s63"/>
                           <af:selectOneChoice value="#{bindings.IecCards.inputValue}" label="Cards"
                                               required="#{bindings.IecCards.hints.mandatory}"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               shortDesc="#{bindings.IecCards.hints.tooltip}" id="soc36">
                             <f:selectItems value="#{bindings.IecCards.items}" id="si37"/>
                             <f:validator binding="#{bindings.IecCards.validator}"/>
                           </af:selectOneChoice>
                           <af:spacer  id="s64"/>
                           <af:selectOneChoice value="#{bindings.IecInform.inputValue}"
-                                              label="Informative material"
-                                      contentStyle="width:250px;"
+                                              label="Info material"
+                                      contentStyle="width:200px;"
                                               required="#{bindings.IecInform.hints.mandatory}"
                                               shortDesc="#{bindings.IecInform.hints.tooltip}" id="soc37">
                             <f:selectItems value="#{bindings.IecInform.items}" id="si38"/>
@@ -583,7 +583,7 @@
                           <af:spacer  id="s65"/>
                           <af:selectOneChoice value="#{bindings.IecNill.inputValue}" label="Nill"
                                               required="#{bindings.IecNill.hints.mandatory}"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               shortDesc="#{bindings.IecNill.hints.tooltip}" id="soc38">
                             <f:selectItems value="#{bindings.IecNill.items}" id="si39"/>
                             <f:validator binding="#{bindings.IecNill.validator}"/>
@@ -591,7 +591,7 @@
                           <af:spacer  id="s66"/>
                           <af:selectOneChoice value="#{bindings.IecPamp.inputValue}" label="Pamphlets"
                                               required="#{bindings.IecPamp.hints.mandatory}"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               shortDesc="#{bindings.IecPamp.hints.tooltip}" id="soc39">
                             <f:selectItems value="#{bindings.IecPamp.items}" id="si40"/>
                             <f:validator binding="#{bindings.IecPamp.validator}"/>
@@ -620,7 +620,7 @@
                         <af:panelFormLayout id="pfl5">
                           <af:selectOneChoice value="#{bindings.ToolsAdopt11.inputValue}"
                                               label="Adopted"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               required="#{bindings.ToolsAdopt11.hints.mandatory}"
                                               shortDesc="#{bindings.ToolsAdopt11.hints.tooltip}" id="soc40">
                             <f:selectItems value="#{bindings.ToolsAdopt11.items}" id="si41"/>
@@ -629,7 +629,7 @@
                           <af:spacer  id="s67"/>
                           <af:selectOneChoice value="#{bindings.ToolsDemo.inputValue}"
                                               label="Demonstration / Field"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               required="#{bindings.ToolsDemo.hints.mandatory}"
                                               shortDesc="#{bindings.ToolsDemo.hints.tooltip}" id="soc41">
                             <f:selectItems value="#{bindings.ToolsDemo.items}" id="si42"/>
@@ -638,7 +638,7 @@
                           <af:spacer  id="s68"/>
                           <af:selectOneChoice value="#{bindings.ToolsDiscus.inputValue}"
                                               label="Discussions"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               required="#{bindings.ToolsDiscus.hints.mandatory}"
                                               shortDesc="#{bindings.ToolsDiscus.hints.tooltip}" id="soc42">
                             <f:selectItems value="#{bindings.ToolsDiscus.items}" id="si43"/>
@@ -647,7 +647,7 @@
                           <af:spacer  id="s69"/>
                           <af:selectOneChoice value="#{bindings.ToolsGroup.inputValue}"
                                               label="Group Work"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               required="#{bindings.ToolsGroup.hints.mandatory}"
                                               shortDesc="#{bindings.ToolsGroup.hints.tooltip}" id="soc43">
                             <f:selectItems value="#{bindings.ToolsGroup.items}" id="si44"/>
@@ -656,7 +656,7 @@
                           <af:spacer  id="s70"/>
                           <af:selectOneChoice value="#{bindings.ToolsLecture.inputValue}"
                                               label="Lectures"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               required="#{bindings.ToolsLecture.hints.mandatory}"
                                               shortDesc="#{bindings.ToolsLecture.hints.tooltip}" id="soc44">
                             <f:selectItems value="#{bindings.ToolsLecture.items}" id="si45"/>
@@ -665,7 +665,7 @@
                           <af:spacer  id="s71"/>
                           <af:selectOneChoice value="#{bindings.ToolsOthers.inputValue}"
                                               label="Others"
-                                      contentStyle="width:250px;"
+                                      contentStyle="width:200px;"
                                               required="#{bindings.ToolsOthers.hints.mandatory}"
                                               shortDesc="#{bindings.ToolsOthers.hints.tooltip}" id="soc45">
                             <f:selectItems value="#{bindings.ToolsOthers.items}" id="si46"/>
