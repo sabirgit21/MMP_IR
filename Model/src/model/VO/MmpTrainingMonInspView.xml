@@ -1091,7 +1091,8 @@
     EntityAttrName="EsaExamPlant"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="ESA_EXAM_PLANT"
-    LOVName="LOV_EsaExamPlant">
+    LOVName="LOV_EsaExamPlant"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1105,7 +1106,8 @@
     EntityAttrName="EsaIdenDis"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="ESA_IDEN_DIS"
-    LOVName="LOV_EsaIdenDis">
+    LOVName="LOV_EsaIdenDis"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1119,7 +1121,8 @@
     EntityAttrName="EsaIdenVar"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="ESA_IDEN_VAR"
-    LOVName="LOV_EsaIdenVar">
+    LOVName="LOV_EsaIdenVar"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1133,7 +1136,8 @@
     EntityAttrName="EsaObsGen"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="ESA_OBS_GEN"
-    LOVName="LOV_EsaObsGen">
+    LOVName="LOV_EsaObsGen"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1147,7 +1151,8 @@
     EntityAttrName="EsaOthers"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="ESA_OTHERS"
-    LOVName="LOV_EsaOthers">
+    LOVName="LOV_EsaOthers"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1161,7 +1166,8 @@
     EntityAttrName="EsaStuPlant"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="ESA_STU_PLANT"
-    LOVName="LOV_EsaStuPlant">
+    LOVName="LOV_EsaStuPlant"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1175,7 +1181,8 @@
     EntityAttrName="IecBanner"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="IEC_BANNER"
-    LOVName="LOV_IecBanner">
+    LOVName="LOV_IecBanner"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1189,7 +1196,8 @@
     EntityAttrName="IecBroch"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="IEC_BROCH"
-    LOVName="LOV_IecBroch">
+    LOVName="LOV_IecBroch"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1203,7 +1211,8 @@
     EntityAttrName="IecCards"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="IEC_CARDS"
-    LOVName="LOV_IecCards">
+    LOVName="LOV_IecCards"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1217,7 +1226,8 @@
     EntityAttrName="IecInform"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="IEC_INFORM"
-    LOVName="LOV_IecInform">
+    LOVName="LOV_IecInform"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1231,7 +1241,8 @@
     EntityAttrName="IecNill"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="IEC_NILL"
-    LOVName="LOV_IecNill">
+    LOVName="LOV_IecNill"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1245,7 +1256,8 @@
     EntityAttrName="IecPamp"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="IEC_PAMP"
-    LOVName="LOV_IecPamp">
+    LOVName="LOV_IecPamp"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1259,7 +1271,8 @@
     EntityAttrName="ToolsAdopt"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="TOOLS_ADOPT1"
-    LOVName="LOV_ToolsAdopt1">
+    LOVName="LOV_ToolsAdopt1"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1273,7 +1286,8 @@
     EntityAttrName="ToolsDemo"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="TOOLS_DEMO"
-    LOVName="LOV_ToolsDemo">
+    LOVName="LOV_ToolsDemo"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1287,7 +1301,8 @@
     EntityAttrName="ToolsDiscus"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="TOOLS_DISCUS"
-    LOVName="LOV_ToolsDiscus">
+    LOVName="LOV_ToolsDiscus"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1301,7 +1316,8 @@
     EntityAttrName="ToolsGroup"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="TOOLS_GROUP"
-    LOVName="LOV_ToolsGroup">
+    LOVName="LOV_ToolsGroup"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1315,7 +1331,8 @@
     EntityAttrName="ToolsLecture"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="TOOLS_LECTURE"
-    LOVName="LOV_ToolsLecture">
+    LOVName="LOV_ToolsLecture"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -1329,7 +1346,8 @@
     EntityAttrName="ToolsOthers"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="TOOLS_OTHERS"
-    LOVName="LOV_ToolsOthers">
+    LOVName="LOV_ToolsOthers"
+    DefaultValue="N">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
