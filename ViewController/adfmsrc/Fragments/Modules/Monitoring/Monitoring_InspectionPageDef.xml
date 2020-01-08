@@ -356,5 +356,15 @@
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ToolsOthers" id="ToolsOthers"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="EcoSystemSt">
+      <AttrNames>
+        <Item Value="EcoSystemSt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MmpTrainingMonInspView1Iterator" id="EcoSystemEt">
+      <AttrNames>
+        <Item Value="EcoSystemEt"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

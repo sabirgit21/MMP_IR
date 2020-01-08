@@ -229,30 +229,28 @@
                     <f:validator binding="#{bindings.ReciteQuran1.validator}"/>
                   </af:selectOneChoice>
                   <af:spacer width="10" height="10" id="s20"/>
-                  <af:inputText value="#{bindings.ReciteQuranSt.inputValue}"
-                                label="Start Time"
-                                required="#{bindings.ReciteQuranSt.hints.mandatory}"
-                                columns="#{bindings.ReciteQuranSt.hints.displayWidth}"
-                                maximumLength="#{bindings.ReciteQuranSt.hints.precision}"
-                                shortDesc="#{bindings.ReciteQuranSt.hints.tooltip}" id="it51"
-                                contentStyle="width:250px;">
-                    <f:validator binding="#{bindings.ReciteQuranSt.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.ReciteQuranSt.format}"/>
-                    <af:convertDateTime pattern="hh:mm:ss a"/>
-                  </af:inputText>
-                  <af:spacer width="10" height="10" id="s21"/>
-                  <af:inputText value="#{bindings.ReciteQuranEt.inputValue}"
-                                label="End Time"
-                                required="#{bindings.ReciteQuranEt.hints.mandatory}"
-                                columns="#{bindings.ReciteQuranEt.hints.displayWidth}"
-                                maximumLength="#{bindings.ReciteQuranEt.hints.precision}"
-                                shortDesc="#{bindings.ReciteQuranEt.hints.tooltip}" id="it52"
-                                contentStyle="width:250px;">
-                    <f:validator binding="#{bindings.ReciteQuranEt.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.ReciteQuranEt.format}"/>
-                    <af:convertDateTime pattern="hh:mm:ss a"/>
-                  </af:inputText>
-                  <af:spacer width="10" height="10" id="s22"/>
+                    <af:inputDate value="#{bindings.ReciteQuranSt.inputValue}"
+                                  label="Start Time"
+                                  required="#{bindings.ReciteQuranSt.hints.mandatory}"
+                                  columns="#{bindings.ReciteQuranSt.hints.displayWidth}"
+                                  shortDesc="#{bindings.ReciteQuranSt.hints.tooltip}" id="id7"
+                                  contentStyle="width:250px;">
+                      <f:validator binding="#{bindings.ReciteQuranSt.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.ReciteQuranSt.format}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
+                    </af:inputDate>
+                    <af:spacer width="10" height="10" id="s21"/>
+                    <af:inputDate value="#{bindings.ReciteQuranEt.inputValue}"
+                                  label="End time"
+                                  required="#{bindings.ReciteQuranEt.hints.mandatory}"
+                                  columns="#{bindings.ReciteQuranEt.hints.displayWidth}"
+                                  shortDesc="#{bindings.ReciteQuranEt.hints.tooltip}" 
+                                  id="id8" contentStyle="width:250px;">
+                      <f:validator binding="#{bindings.ReciteQuranEt.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.ReciteQuranEt.format}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
+                    </af:inputDate>
+                    <af:spacer width="10" height="10" id="s22"/>
                   </af:panelGroupLayout>
                   
                   
@@ -268,28 +266,28 @@
                     <f:validator binding="#{bindings.PlanModule1.validator}"/>
                   </af:selectOneChoice>
                     <af:spacer width="10" height="10" id="s23"/>
-                    <af:inputText value="#{bindings.PlanModuleSt.inputValue}" label="Start Time"
-                                required="#{bindings.PlanModuleSt.hints.mandatory}"
-                                columns="#{bindings.PlanModuleSt.hints.displayWidth}"
-                                maximumLength="#{bindings.PlanModuleSt.hints.precision}"
-                                shortDesc="#{bindings.PlanModuleSt.hints.tooltip}" id="it53"
-                                contentStyle="width:250px;">
-                    <f:validator binding="#{bindings.PlanModuleSt.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.PlanModuleSt.format}"/>
-                    <af:convertDateTime pattern="hh:mm:ss a"/>
-                  </af:inputText>
+                    <af:inputDate value="#{bindings.PlanModuleSt.inputValue}"
+                                  label="Start Time"
+                                  required="#{bindings.PlanModuleSt.hints.mandatory}"
+                                  columns="#{bindings.PlanModuleSt.hints.displayWidth}"
+                                  shortDesc="#{bindings.PlanModuleSt.hints.tooltip}" id="id9"
+                                  contentStyle="width:250px;">
+                      <f:validator binding="#{bindings.PlanModuleSt.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.PlanModuleSt.format}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
+                    </af:inputDate>
                     <af:spacer width="10" height="10" id="s24"/>
-                    <af:inputText value="#{bindings.PlanModuleEt.inputValue}" label="End Time"
-                                required="#{bindings.PlanModuleEt.hints.mandatory}"
-                                columns="#{bindings.PlanModuleEt.hints.displayWidth}"
-                                maximumLength="#{bindings.PlanModuleEt.hints.precision}"
-                                shortDesc="#{bindings.PlanModuleEt.hints.tooltip}" id="it54"
-                                contentStyle="width:250px;">
-                    <f:validator binding="#{bindings.PlanModuleEt.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.PlanModuleEt.format}"/>
-                    <af:convertDateTime pattern="hh:mm:ss a"/>
-                  </af:inputText>
-                  <af:spacer width="10" height="10" id="s25"/>
+                    <af:inputDate value="#{bindings.PlanModuleEt.inputValue}"
+                                  label="End Time"
+                                  required="#{bindings.PlanModuleEt.hints.mandatory}"
+                                  columns="#{bindings.PlanModuleEt.hints.displayWidth}"
+                                  shortDesc="#{bindings.PlanModuleEt.hints.tooltip}" id="id10"
+                                  contentStyle="width:250px;">
+                      <f:validator binding="#{bindings.PlanModuleEt.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.PlanModuleEt.format}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
+                    </af:inputDate>
+                    <af:spacer width="10" height="10" id="s25"/>
                   </af:panelGroupLayout>
                   
                   
@@ -305,28 +303,26 @@
                     <f:validator binding="#{bindings.EcoSystem1.validator}"/>
                   </af:selectOneChoice>
                     <af:spacer width="10" height="10" id="s29"/>
-                    <af:inputText value="#{bindings.QASessSt.inputValue}" label="Start Time"
-                                required="#{bindings.QASessSt.hints.mandatory}"
-                                columns="#{bindings.QASessSt.hints.displayWidth}"
-                                contentStyle="width:250px;"
-                                maximumLength="#{bindings.QASessSt.hints.precision}"
-                                shortDesc="#{bindings.QASessSt.hints.tooltip}" id="it55">
-                    <f:validator binding="#{bindings.QASessSt.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.QASessSt.format}"/>
-                    <af:convertDateTime pattern="hh:mm:ss a"/>
-                  </af:inputText>
+                    <af:inputDate value="#{bindings.EcoSystemSt.inputValue}" label="Start Time"
+                                  required="#{bindings.EcoSystemSt.hints.mandatory}"
+                                  columns="#{bindings.EcoSystemSt.hints.displayWidth}"
+                                  shortDesc="#{bindings.EcoSystemSt.hints.tooltip}" id="id11"
+                                  contentStyle="width:250px;">
+                      <f:validator binding="#{bindings.EcoSystemSt.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.EcoSystemSt.format}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
+                    </af:inputDate>
                     <af:spacer width="10" height="10" id="s30"/>
-                    <af:inputText value="#{bindings.QASessEt.inputValue}" label="End Time"
-                                required="#{bindings.QASessEt.hints.mandatory}"
-                                columns="#{bindings.QASessEt.hints.displayWidth}"
-                                contentStyle="width:250px;"
-                                maximumLength="#{bindings.QASessEt.hints.precision}"
-                                shortDesc="#{bindings.QASessEt.hints.tooltip}" id="it56">
-                    <f:validator binding="#{bindings.QASessEt.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.QASessEt.format}"/>
-                    <af:convertDateTime pattern="hh:mm:ss a"/>
-                  </af:inputText>
-                  <af:spacer width="10" height="10" id="s28"/>
+                    <af:inputDate value="#{bindings.EcoSystemEt.inputValue}" label="End Time"
+                                  required="#{bindings.EcoSystemEt.hints.mandatory}"
+                                  columns="#{bindings.EcoSystemEt.hints.displayWidth}"
+                                  shortDesc="#{bindings.EcoSystemEt.hints.tooltip}" id="id12"
+                                  contentStyle="width:250px;">
+                      <f:validator binding="#{bindings.EcoSystemEt.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.EcoSystemEt.format}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
+                    </af:inputDate>
+                    <af:spacer width="10" height="10" id="s28"/>
                   </af:panelGroupLayout>
                   
                   <af:panelGroupLayout id="pgl11" layout="vertical" inlineStyle="border: 2px solid black;">
@@ -342,30 +338,29 @@
                     <f:validator binding="#{bindings.RevLastTraining1.validator}"/>
                   </af:selectOneChoice>
                     <af:spacer width="10" height="10" id="s33"/>
-                    <af:inputText value="#{bindings.RevLastTrainingSt.inputValue}"
-                                label="Start Time"
-                                contentStyle="width:250px;"
-                                required="#{bindings.RevLastTrainingSt.hints.mandatory}"
-                                columns="#{bindings.RevLastTrainingSt.hints.displayWidth}"
-                                maximumLength="#{bindings.RevLastTrainingSt.hints.precision}"
-                                shortDesc="#{bindings.RevLastTrainingSt.hints.tooltip}" id="it57">
-                    <f:validator binding="#{bindings.RevLastTrainingSt.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.RevLastTrainingSt.format}"/>
-                    <af:convertDateTime pattern="hh:mm:ss a"/>
-                  </af:inputText>
+                    <af:inputDate value="#{bindings.RevLastTrainingSt.inputValue}"
+                                  label="Start Time "
+                                  required="#{bindings.RevLastTrainingSt.hints.mandatory}"
+                                  columns="#{bindings.RevLastTrainingSt.hints.displayWidth}"
+                                  shortDesc="#{bindings.RevLastTrainingSt.hints.tooltip}" 
+                                  id="id13" contentStyle="width:250px;">
+                      <f:validator binding="#{bindings.RevLastTrainingSt.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.RevLastTrainingSt.format}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
+                    </af:inputDate>
                     <af:spacer width="10" height="10" id="s34"/>
-                    <af:inputText value="#{bindings.RevLastTrainingEt.inputValue}"
+                    
+                  <af:spacer width="10" height="10" id="s32"/>
+                  <af:inputDate value="#{bindings.RevLastTrainingEt.inputValue}"
                                 label="End Time"
-                                contentStyle="width:250px;"
                                 required="#{bindings.RevLastTrainingEt.hints.mandatory}"
                                 columns="#{bindings.RevLastTrainingEt.hints.displayWidth}"
-                                maximumLength="#{bindings.RevLastTrainingEt.hints.precision}"
-                                shortDesc="#{bindings.RevLastTrainingEt.hints.tooltip}" id="it58">
+                                shortDesc="#{bindings.RevLastTrainingEt.hints.tooltip}" id="id14"
+                                contentStyle="width:250px;">
                     <f:validator binding="#{bindings.RevLastTrainingEt.validator}"/>
                     <af:convertDateTime pattern="#{bindings.RevLastTrainingEt.format}"/>
                     <af:convertDateTime pattern="hh:mm:ss a"/>
-                  </af:inputText>
-                  <af:spacer width="10" height="10" id="s32"/>
+                  </af:inputDate>
                   </af:panelGroupLayout>
                   
                   <af:panelGroupLayout id="pgl12" layout="vertical" inlineStyle="border: 2px solid black;">
@@ -380,28 +375,26 @@
                     <f:validator binding="#{bindings.QASess1.validator}"/>
                   </af:selectOneChoice>
                     <af:spacer width="10" height="10" id="s37"/>
-                    <af:inputText value="#{bindings.QASessSt.inputValue}" label="Start Time "
-                                required="#{bindings.QASessSt.hints.mandatory}"
-                                columns="#{bindings.QASessSt.hints.displayWidth}"
-                                contentStyle="width:250px;"
-                                maximumLength="#{bindings.QASessSt.hints.precision}"
-                                shortDesc="#{bindings.QASessSt.hints.tooltip}" id="it59">
-                    <f:validator binding="#{bindings.QASessSt.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.QASessSt.format}"/>
-                    <af:convertDateTime pattern="hh:mm:ss a"/>
-                  </af:inputText>
+                    <af:inputDate value="#{bindings.QASessSt.inputValue}" label="Start Time"
+                                  required="#{bindings.QASessSt.hints.mandatory}"
+                                  columns="#{bindings.QASessSt.hints.displayWidth}"
+                                  shortDesc="#{bindings.QASessSt.hints.tooltip}" id="id15"
+                                  contentStyle="width:250px;">
+                      <f:validator binding="#{bindings.QASessSt.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.QASessSt.format}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
+                    </af:inputDate>
                     <af:spacer width="10" height="10" id="s38"/>
-                    <af:inputText value="#{bindings.QASessEt.inputValue}" label="End Time"
-                                required="#{bindings.QASessEt.hints.mandatory}"
-                                columns="#{bindings.QASessEt.hints.displayWidth}"
-                                contentStyle="width:250px;"
-                                maximumLength="#{bindings.QASessEt.hints.precision}"
-                                shortDesc="#{bindings.QASessEt.hints.tooltip}" id="it60">
-                    <f:validator binding="#{bindings.QASessEt.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.QASessEt.format}"/>
-                    <af:convertDateTime pattern="hh:mm:ss a"/>
-                  </af:inputText>
-                  <af:spacer width="10" height="10" id="s35"/>
+                    <af:inputDate value="#{bindings.QASessEt.inputValue}" label="End Time"
+                                  required="#{bindings.QASessEt.hints.mandatory}"
+                                  columns="#{bindings.QASessEt.hints.displayWidth}"
+                                  shortDesc="#{bindings.QASessEt.hints.tooltip}" id="id16"
+                                  contentStyle="width:250px;">
+                      <f:validator binding="#{bindings.QASessEt.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.QASessEt.format}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
+                    </af:inputDate>
+                    <af:spacer width="10" height="10" id="s35"/>
                   </af:panelGroupLayout>
                   
                   <af:panelGroupLayout id="pgl13" layout="vertical" inlineStyle="border: 2px solid black;">
@@ -416,28 +409,26 @@
                     <f:validator binding="#{bindings.SummDay1.validator}"/>
                   </af:selectOneChoice>
                     <af:spacer width="10" height="10" id="s41"/>
-                    <af:inputText value="#{bindings.SummDaySt.inputValue}" label="Start Time"
-                                required="#{bindings.SummDaySt.hints.mandatory}"
-                                columns="#{bindings.SummDaySt.hints.displayWidth}"
-                                maximumLength="#{bindings.SummDaySt.hints.precision}"
-                                shortDesc="#{bindings.SummDaySt.hints.tooltip}" id="it61"
-                                contentStyle="width:250px;">
-                    <f:validator binding="#{bindings.SummDaySt.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.SummDaySt.format}"/>
-                    <af:convertDateTime pattern="hh:mm:ss a"/>
-                  </af:inputText>
+                    <af:inputDate value="#{bindings.SummDaySt.inputValue}" label="Start Time"
+                                  required="#{bindings.SummDaySt.hints.mandatory}"
+                                  columns="#{bindings.SummDaySt.hints.displayWidth}"
+                                  shortDesc="#{bindings.SummDaySt.hints.tooltip}" id="id17"
+                                  contentStyle="width:250px;">
+                      <f:validator binding="#{bindings.SummDaySt.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.SummDaySt.format}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
+                    </af:inputDate>
                     <af:spacer width="10" height="10" id="s42"/>
-                    <af:inputText value="#{bindings.SummDayEt.inputValue}" label="End Time"
-                                required="#{bindings.SummDayEt.hints.mandatory}"
-                                columns="#{bindings.SummDayEt.hints.displayWidth}"
-                                maximumLength="#{bindings.SummDayEt.hints.precision}"
-                                shortDesc="#{bindings.SummDayEt.hints.tooltip}" id="it62"
-                                contentStyle="width:250px;">
-                    <f:validator binding="#{bindings.SummDayEt.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.SummDayEt.format}"/>
-                    <af:convertDateTime pattern="hh:mm:ss a"/>
-                  </af:inputText>
-                  <af:spacer width="10" height="10" id="s39"/>
+                    <af:inputDate value="#{bindings.SummDayEt.inputValue}" label="End Time"
+                                  required="#{bindings.SummDayEt.hints.mandatory}"
+                                  columns="#{bindings.SummDayEt.hints.displayWidth}"
+                                  shortDesc="#{bindings.SummDayEt.hints.tooltip}" id="id18"
+                                  contentStyle="width:250px;">
+                      <f:validator binding="#{bindings.SummDayEt.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.SummDayEt.format}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
+                    </af:inputDate>
+                    <af:spacer width="10" height="10" id="s39"/>
                   </af:panelGroupLayout>
                   
                   </af:panelFormLayout>
@@ -482,47 +473,52 @@
                     <af:spacer width="10" height="10" id="s56"/>
                         <af:panelFormLayout id="pfl3">
                           <af:selectOneChoice value="#{bindings.EsaExamPlant.inputValue}"
-                                              label="#{bindings.EsaExamPlant.label}"
+                                              label="Examined plant Health"
                                               required="#{bindings.EsaExamPlant.hints.mandatory}"
                                       contentStyle="width:250px;"
                                               shortDesc="#{bindings.EsaExamPlant.hints.tooltip}" id="soc18">
                             <f:selectItems value="#{bindings.EsaExamPlant.items}" id="si18"/>
                             <f:validator binding="#{bindings.EsaExamPlant.validator}"/>
                           </af:selectOneChoice>
+                          <af:spacer  id="s57"/>
                           <af:selectOneChoice value="#{bindings.EsaIdenDis.inputValue}"
-                                              label="#{bindings.EsaIdenDis.label}"
+                                              label="Identified var diseases"
                                       contentStyle="width:250px;"
                                               required="#{bindings.EsaIdenDis.hints.mandatory}"
                                               shortDesc="#{bindings.EsaIdenDis.hints.tooltip}" id="soc19">
                             <f:selectItems value="#{bindings.EsaIdenDis.items}" id="si19"/>
                             <f:validator binding="#{bindings.EsaIdenDis.validator}"/>
                           </af:selectOneChoice>
+                          <af:spacer  id="s58"/>
                           <af:selectOneChoice value="#{bindings.EsaIdenVar.inputValue}"
-                                              label="#{bindings.EsaIdenVar.label}"
+                                              label="Identified various"
                                       contentStyle="width:250px;"
                                               required="#{bindings.EsaIdenVar.hints.mandatory}"
                                               shortDesc="#{bindings.EsaIdenVar.hints.tooltip}" id="soc30">
                             <f:selectItems value="#{bindings.EsaIdenVar.items}" id="si31"/>
                             <f:validator binding="#{bindings.EsaIdenVar.validator}"/>
                           </af:selectOneChoice>
+                          <af:spacer  id="s59"/>
                           <af:selectOneChoice value="#{bindings.EsaObsGen.inputValue}"
-                                              label="#{bindings.EsaObsGen.label}"
+                                              label="Observed gen field con"
                                       contentStyle="width:250px;"
                                               required="#{bindings.EsaObsGen.hints.mandatory}"
                                               shortDesc="#{bindings.EsaObsGen.hints.tooltip}" id="soc31">
                             <f:selectItems value="#{bindings.EsaObsGen.items}" id="si32"/>
                             <f:validator binding="#{bindings.EsaObsGen.validator}"/>
                           </af:selectOneChoice>
+                          <af:spacer  id="s60"/>
                           <af:selectOneChoice value="#{bindings.EsaOthers.inputValue}"
-                                              label="#{bindings.EsaOthers.label}"
+                                              label="Other (If any)"
                                       contentStyle="width:250px;"
                                               required="#{bindings.EsaOthers.hints.mandatory}"
                                               shortDesc="#{bindings.EsaOthers.hints.tooltip}" id="soc32">
                             <f:selectItems value="#{bindings.EsaOthers.items}" id="si33"/>
                             <f:validator binding="#{bindings.EsaOthers.validator}"/>
                           </af:selectOneChoice>
+                          <af:spacer  id="s61"/>
                           <af:selectOneChoice value="#{bindings.EsaStuPlant.inputValue}"
-                                              label="#{bindings.EsaStuPlant.label}"
+                                              label="Studied plant growth"
                                       contentStyle="width:250px;"
                                               required="#{bindings.EsaStuPlant.hints.mandatory}"
                                               shortDesc="#{bindings.EsaStuPlant.hints.tooltip}" id="soc33">
@@ -552,43 +548,48 @@
                     <af:spacer width="10" height="10" id="s54"/>
                         <af:panelFormLayout id="pfl4">
                           <af:selectOneChoice value="#{bindings.IecBanner.inputValue}"
-                                              label="#{bindings.IecBanner.label}"
+                                              label="Banners"
                                       contentStyle="width:250px;"
                                               required="#{bindings.IecBanner.hints.mandatory}"
                                               shortDesc="#{bindings.IecBanner.hints.tooltip}" id="soc34">
                             <f:selectItems value="#{bindings.IecBanner.items}" id="si35"/>
                             <f:validator binding="#{bindings.IecBanner.validator}"/>
                           </af:selectOneChoice>
-                          <af:selectOneChoice value="#{bindings.IecBroch.inputValue}" label="#{bindings.IecBroch.label}"
+                          <af:spacer  id="s62"/>
+                          <af:selectOneChoice value="#{bindings.IecBroch.inputValue}" label="Brochure"
                                               required="#{bindings.IecBroch.hints.mandatory}"
                                       contentStyle="width:250px;"
                                               shortDesc="#{bindings.IecBroch.hints.tooltip}" id="soc35">
                             <f:selectItems value="#{bindings.IecBroch.items}" id="si36"/>
                             <f:validator binding="#{bindings.IecBroch.validator}"/>
                           </af:selectOneChoice>
-                          <af:selectOneChoice value="#{bindings.IecCards.inputValue}" label="#{bindings.IecCards.label}"
+                          <af:spacer  id="s63"/>
+                          <af:selectOneChoice value="#{bindings.IecCards.inputValue}" label="Cards"
                                               required="#{bindings.IecCards.hints.mandatory}"
                                       contentStyle="width:250px;"
                                               shortDesc="#{bindings.IecCards.hints.tooltip}" id="soc36">
                             <f:selectItems value="#{bindings.IecCards.items}" id="si37"/>
                             <f:validator binding="#{bindings.IecCards.validator}"/>
                           </af:selectOneChoice>
+                          <af:spacer  id="s64"/>
                           <af:selectOneChoice value="#{bindings.IecInform.inputValue}"
-                                              label="#{bindings.IecInform.label}"
+                                              label="Informative material"
                                       contentStyle="width:250px;"
                                               required="#{bindings.IecInform.hints.mandatory}"
                                               shortDesc="#{bindings.IecInform.hints.tooltip}" id="soc37">
                             <f:selectItems value="#{bindings.IecInform.items}" id="si38"/>
                             <f:validator binding="#{bindings.IecInform.validator}"/>
                           </af:selectOneChoice>
-                          <af:selectOneChoice value="#{bindings.IecNill.inputValue}" label="#{bindings.IecNill.label}"
+                          <af:spacer  id="s65"/>
+                          <af:selectOneChoice value="#{bindings.IecNill.inputValue}" label="Nill"
                                               required="#{bindings.IecNill.hints.mandatory}"
                                       contentStyle="width:250px;"
                                               shortDesc="#{bindings.IecNill.hints.tooltip}" id="soc38">
                             <f:selectItems value="#{bindings.IecNill.items}" id="si39"/>
                             <f:validator binding="#{bindings.IecNill.validator}"/>
                           </af:selectOneChoice>
-                          <af:selectOneChoice value="#{bindings.IecPamp.inputValue}" label="#{bindings.IecPamp.label}"
+                          <af:spacer  id="s66"/>
+                          <af:selectOneChoice value="#{bindings.IecPamp.inputValue}" label="Pamphlets"
                                               required="#{bindings.IecPamp.hints.mandatory}"
                                       contentStyle="width:250px;"
                                               shortDesc="#{bindings.IecPamp.hints.tooltip}" id="soc39">
@@ -618,47 +619,52 @@
                     <af:spacer width="10" height="10" id="s52"/>
                         <af:panelFormLayout id="pfl5">
                           <af:selectOneChoice value="#{bindings.ToolsAdopt11.inputValue}"
-                                              label="#{bindings.ToolsAdopt11.label}"
+                                              label="Adopted"
                                       contentStyle="width:250px;"
                                               required="#{bindings.ToolsAdopt11.hints.mandatory}"
                                               shortDesc="#{bindings.ToolsAdopt11.hints.tooltip}" id="soc40">
                             <f:selectItems value="#{bindings.ToolsAdopt11.items}" id="si41"/>
                             <f:validator binding="#{bindings.ToolsAdopt11.validator}"/>
                           </af:selectOneChoice>
+                          <af:spacer  id="s67"/>
                           <af:selectOneChoice value="#{bindings.ToolsDemo.inputValue}"
-                                              label="#{bindings.ToolsDemo.label}"
+                                              label="Demonstration / Field"
                                       contentStyle="width:250px;"
                                               required="#{bindings.ToolsDemo.hints.mandatory}"
                                               shortDesc="#{bindings.ToolsDemo.hints.tooltip}" id="soc41">
                             <f:selectItems value="#{bindings.ToolsDemo.items}" id="si42"/>
                             <f:validator binding="#{bindings.ToolsDemo.validator}"/>
                           </af:selectOneChoice>
+                          <af:spacer  id="s68"/>
                           <af:selectOneChoice value="#{bindings.ToolsDiscus.inputValue}"
-                                              label="#{bindings.ToolsDiscus.label}"
+                                              label="Discussions"
                                       contentStyle="width:250px;"
                                               required="#{bindings.ToolsDiscus.hints.mandatory}"
                                               shortDesc="#{bindings.ToolsDiscus.hints.tooltip}" id="soc42">
                             <f:selectItems value="#{bindings.ToolsDiscus.items}" id="si43"/>
                             <f:validator binding="#{bindings.ToolsDiscus.validator}"/>
                           </af:selectOneChoice>
+                          <af:spacer  id="s69"/>
                           <af:selectOneChoice value="#{bindings.ToolsGroup.inputValue}"
-                                              label="#{bindings.ToolsGroup.label}"
+                                              label="Group Work"
                                       contentStyle="width:250px;"
                                               required="#{bindings.ToolsGroup.hints.mandatory}"
                                               shortDesc="#{bindings.ToolsGroup.hints.tooltip}" id="soc43">
                             <f:selectItems value="#{bindings.ToolsGroup.items}" id="si44"/>
                             <f:validator binding="#{bindings.ToolsGroup.validator}"/>
                           </af:selectOneChoice>
+                          <af:spacer  id="s70"/>
                           <af:selectOneChoice value="#{bindings.ToolsLecture.inputValue}"
-                                              label="#{bindings.ToolsLecture.label}"
+                                              label="Lectures"
                                       contentStyle="width:250px;"
                                               required="#{bindings.ToolsLecture.hints.mandatory}"
                                               shortDesc="#{bindings.ToolsLecture.hints.tooltip}" id="soc44">
                             <f:selectItems value="#{bindings.ToolsLecture.items}" id="si45"/>
                             <f:validator binding="#{bindings.ToolsLecture.validator}"/>
                           </af:selectOneChoice>
+                          <af:spacer  id="s71"/>
                           <af:selectOneChoice value="#{bindings.ToolsOthers.inputValue}"
-                                              label="#{bindings.ToolsOthers.label}"
+                                              label="Others"
                                       contentStyle="width:250px;"
                                               required="#{bindings.ToolsOthers.hints.mandatory}"
                                               shortDesc="#{bindings.ToolsOthers.hints.tooltip}" id="soc45">
