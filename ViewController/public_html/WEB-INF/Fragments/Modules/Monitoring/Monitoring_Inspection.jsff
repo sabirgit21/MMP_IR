@@ -135,7 +135,7 @@
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               
               <af:showDetailItem text="Technical Detail" id="sdi1" inflexibleHeight="100">
-                <af:panelFormLayout id="pfl2" maxColumns="2" rows="17">
+                <af:panelFormLayout id="pfl2" maxColumns="3" rows="7">
                   
                   <af:inputDate value="#{bindings.StartTraining1.inputValue}"
                                 label="Start Training"
@@ -214,7 +214,9 @@
                                 shortDesc="#{bindings.DetailAboutOutcome1.hints.tooltip}" id="it6" rows="5">
                     <f:validator binding="#{bindings.DetailAboutOutcome1.validator}"/>
                   </af:inputText>
+                  </af:panelFormLayout>
                   
+                  <af:panelFormLayout id="pfl6" maxColumns="3" rows="2">
                   <af:panelGroupLayout id="pgl8" layout="vertical" inlineStyle="border: 2px solid black;">
                     <af:outputLabel value="Quran Recitation" id="ol1"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
@@ -438,7 +440,7 @@
                   <af:spacer width="10" height="10" id="s39"/>
                   </af:panelGroupLayout>
                   
-                  
+                  </af:panelFormLayout>
                   <!--<af:selectOneChoice value="#{bindings.AnyIec1.inputValue}" label="Any IEC Material"
                                       required="#{bindings.AnyIec1.hints.mandatory}"
                                       shortDesc="#{bindings.AnyIec1.hints.tooltip}" id="soc18"
@@ -468,11 +470,8 @@
                  
                  
                   
-                  <f:facet name="footer">
-                 
-                   
-                  </f:facet>
-                </af:panelFormLayout>
+                  
+                
                 
                 <af:panelGridLayout id="pgl14">
                   <af:gridRow marginTop="5px" height="auto" id="gr6">
