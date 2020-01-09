@@ -111,7 +111,7 @@
                   </af:column>
                 </af:table>
                 <af:panelGroupLayout layout="horizontal" id="pgl7">
-              <af:spacer width="230" height="10" id="s72"/>
+              <af:spacer width="190" height="10" id="s72"/>
               <af:iterator id="i2" var="index" varStatus="status"
                                          value="#{bindings.USERS_CRUD_OPERATIONS1.collectionModel}">
                                 <af:button id="btn#{status.index+1}" text="#{index.MmpOperation}"
@@ -1311,13 +1311,19 @@
                                         pattern="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonInspId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpTrainingMonTopicsView2.hints.Module_Name.label}" id="c33">
+                  <af:column headerText="Module" id="c33" sortable="true" filterable="true" width="150">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Module_Name}"
+                                          id="it25" placeholder="Search Module">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.Module_Name.inputValue}"
                                   label="#{bindings.MmpTrainingMonTopicsView2.hints.Module_Name.label}"
                                   required="#{bindings.MmpTrainingMonTopicsView2.hints.Module_Name.mandatory}"
                                   columns="#{bindings.MmpTrainingMonTopicsView2.hints.Module_Name.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingMonTopicsView2.hints.Module_Name.precision}"
-                                  shortDesc="#{bindings.MmpTrainingMonTopicsView2.hints.Module_Name.tooltip}" id="it67">
+                                  shortDesc="#{bindings.MmpTrainingMonTopicsView2.hints.Module_Name.tooltip}" 
+                                  id="it67" readOnly="true">
                       <f:validator binding="#{row.bindings.Module_Name.validator}"/>
                     </af:inputText>
                   </af:column>
@@ -1326,7 +1332,7 @@
                              id="c26">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Name}"
-                                          id="it25" placeholder="Search Topic">
+                                          id="it51" placeholder="Search Topic">
                            </af:inputText>
                              </f:facet>
                     <af:inputText value="#{row.bindings.Name.inputValue}"
