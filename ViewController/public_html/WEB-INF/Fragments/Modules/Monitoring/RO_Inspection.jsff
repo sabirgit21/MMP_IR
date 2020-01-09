@@ -512,7 +512,7 @@
                                   required="#{bindings.TblGrantApprovalDetailDView3.hints.Qty.mandatory}"
                                   columns="#{bindings.TblGrantApprovalDetailDView3.hints.Qty.displayWidth}"
                                   maximumLength="#{bindings.TblGrantApprovalDetailDView3.hints.Qty.precision}"
-                                  shortDesc="#{bindings.TblGrantApprovalDetailDView3.hints.Qty.tooltip}" \
+                                  shortDesc="#{bindings.TblGrantApprovalDetailDView3.hints.Qty.tooltip}" 
                                   id="it19" readOnly="true"
                                   contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Qty.validator}"/>
