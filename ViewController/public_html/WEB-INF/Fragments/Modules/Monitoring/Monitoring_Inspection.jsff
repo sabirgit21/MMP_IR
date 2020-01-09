@@ -310,7 +310,7 @@
                     <af:outputLabel value="Eco System Analysis" id="ol2"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
                     <af:spacer width="10" height="10" id="s27"/>
-                  <af:selectOneChoice value="#{bindings.EcoSystem1.inputValue}" label="Eco System Analysis"
+                  <af:selectOneChoice value="#{bindings.EcoSystem1.inputValue}" label="Eco Sys Analysis"
                                       required="#{bindings.EcoSystem1.hints.mandatory}"
                                 contentStyle="width:250px;"
                                       shortDesc="#{bindings.EcoSystem1.hints.tooltip}" id="soc14">
@@ -345,7 +345,7 @@
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
                     <af:spacer width="10" height="10" id="s31"/>
                   <af:selectOneChoice value="#{bindings.RevLastTraining1.inputValue}"
-                                      label="Review Of Last Training"
+                                      label="Review Last Training"
                                       required="#{bindings.RevLastTraining1.hints.mandatory}"
                                       shortDesc="#{bindings.RevLastTraining1.hints.tooltip}" id="soc15"
                                       contentStyle="width:250px;">
@@ -382,7 +382,7 @@
                     <af:outputLabel value="Question Answer Session" id="ol5"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
                     <af:spacer width="10" height="10" id="s36"/>
-                  <af:selectOneChoice value="#{bindings.QASess1.inputValue}" label="Question Answer Session Held"
+                  <af:selectOneChoice value="#{bindings.QASess1.inputValue}" label="Q/A Session Held"
                                       required="#{bindings.QASess1.hints.mandatory}"
                                 contentStyle="width:250px;"
                                       shortDesc="#{bindings.QASess1.hints.tooltip}" id="soc16">
