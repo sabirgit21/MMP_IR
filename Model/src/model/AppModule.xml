@@ -238,6 +238,9 @@
   <ViewUsage
     Name="TblGrantApprovalDetailDView3"
     ViewObjectName="model.VO.TblGrantApprovalDetailDView"/>
+  <ViewUsage
+    Name="MmpMonSchDetailView4"
+    ViewObjectName="model.VO.MmpMonSchDetailView"/>
   <ViewLinkUsage
     Name="FkMmpMemberRegDepLink1"
     ViewLinkObjectName="model.VO.FkMmpMemberRegDepLink"
@@ -477,5 +480,11 @@
     ViewLinkObjectName="model.VO.FkDetailDGrantApprovalDetLink"
     SrcViewUsageName="model.AppModule.TblGrantApprovalDetailView4"
     DstViewUsageName="model.AppModule.TblGrantApprovalDetailDView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FkMmpMonSchDetailTrngSchFkLink1"
+    ViewLinkObjectName="model.VO.FkMmpMonSchDetailTrngSchFkLink"
+    SrcViewUsageName="model.AppModule.TblTrainingSchDetailView1"
+    DstViewUsageName="model.AppModule.MmpMonSchDetailView4"
     Reversed="false"/>
 </AppModule>

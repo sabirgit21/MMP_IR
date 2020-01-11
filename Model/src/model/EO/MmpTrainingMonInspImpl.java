@@ -8,6 +8,7 @@ import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
+import oracle.jbo.domain.NClobDomain;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
@@ -77,12 +78,16 @@ public class MmpTrainingMonInspImpl extends EntityImpl {
         ToolsGroup,
         ToolsLecture,
         ToolsOthers,
+        ModuleId,
+        TrainingSchDetailId,
+        MmpTrainingCheckInId,
         MmpTrainingMonFarmer,
         MmpTrainingMonTopics,
         MmpTrainingMonUrfarmer,
         TblCluster,
         TblCluster1,
-        MmpTrainingCheckOut;
+        MmpTrainingCheckOut,
+        MmpTrainingCheckIn;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -105,6 +110,7 @@ public class MmpTrainingMonInspImpl extends EntityImpl {
             return vals;
         }
     }
+
 
     public static final int MMPTRAININGMONINSPID = AttributesEnum.MmpTrainingMonInspId.index();
     public static final int CLUSTERID = AttributesEnum.ClusterId.index();
@@ -160,12 +166,16 @@ public class MmpTrainingMonInspImpl extends EntityImpl {
     public static final int TOOLSGROUP = AttributesEnum.ToolsGroup.index();
     public static final int TOOLSLECTURE = AttributesEnum.ToolsLecture.index();
     public static final int TOOLSOTHERS = AttributesEnum.ToolsOthers.index();
+    public static final int MODULEID = AttributesEnum.ModuleId.index();
+    public static final int TRAININGSCHDETAILID = AttributesEnum.TrainingSchDetailId.index();
+    public static final int MMPTRAININGCHECKINID = AttributesEnum.MmpTrainingCheckInId.index();
     public static final int MMPTRAININGMONFARMER = AttributesEnum.MmpTrainingMonFarmer.index();
     public static final int MMPTRAININGMONTOPICS = AttributesEnum.MmpTrainingMonTopics.index();
     public static final int MMPTRAININGMONURFARMER = AttributesEnum.MmpTrainingMonUrfarmer.index();
     public static final int TBLCLUSTER = AttributesEnum.TblCluster.index();
     public static final int TBLCLUSTER1 = AttributesEnum.TblCluster1.index();
     public static final int MMPTRAININGCHECKOUT = AttributesEnum.MmpTrainingCheckOut.index();
+    public static final int MMPTRAININGCHECKIN = AttributesEnum.MmpTrainingCheckIn.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -179,6 +189,7 @@ public class MmpTrainingMonInspImpl extends EntityImpl {
     public static synchronized EntityDefImpl getDefinitionObject() {
         return EntityDefImpl.findDefObject("model.EO.MmpTrainingMonInsp");
     }
+
 
     /**
      * Gets the attribute value for MmpTrainingMonInspId, using the alias name MmpTrainingMonInspId.
@@ -744,15 +755,15 @@ public class MmpTrainingMonInspImpl extends EntityImpl {
      * Gets the attribute value for NoOfGroup, using the alias name NoOfGroup.
      * @return the value of NoOfGroup
      */
-    public Timestamp getNoOfGroup() {
-        return (Timestamp) getAttributeInternal(NOOFGROUP);
+    public Number getNoOfGroup() {
+        return (Number) getAttributeInternal(NOOFGROUP);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for NoOfGroup.
      * @param value value to set the NoOfGroup
      */
-    public void setNoOfGroup(Timestamp value) {
+    public void setNoOfGroup(Number value) {
         setAttributeInternal(NOOFGROUP, value);
     }
 
@@ -1028,6 +1039,55 @@ public class MmpTrainingMonInspImpl extends EntityImpl {
         setAttributeInternal(TOOLSOTHERS, value);
     }
 
+
+    /**
+     * Gets the attribute value for ModuleId, using the alias name ModuleId.
+     * @return the value of ModuleId
+     */
+    public BigDecimal getModuleId() {
+        return (BigDecimal) getAttributeInternal(MODULEID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ModuleId.
+     * @param value value to set the ModuleId
+     */
+    public void setModuleId(BigDecimal value) {
+        setAttributeInternal(MODULEID, value);
+    }
+
+    /**
+     * Gets the attribute value for TrainingSchDetailId, using the alias name TrainingSchDetailId.
+     * @return the value of TrainingSchDetailId
+     */
+    public BigDecimal getTrainingSchDetailId() {
+        return (BigDecimal) getAttributeInternal(TRAININGSCHDETAILID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TrainingSchDetailId.
+     * @param value value to set the TrainingSchDetailId
+     */
+    public void setTrainingSchDetailId(BigDecimal value) {
+        setAttributeInternal(TRAININGSCHDETAILID, value);
+    }
+
+    /**
+     * Gets the attribute value for MmpTrainingCheckInId, using the alias name MmpTrainingCheckInId.
+     * @return the value of MmpTrainingCheckInId
+     */
+    public BigDecimal getMmpTrainingCheckInId() {
+        return (BigDecimal) getAttributeInternal(MMPTRAININGCHECKINID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for MmpTrainingCheckInId.
+     * @param value value to set the MmpTrainingCheckInId
+     */
+    public void setMmpTrainingCheckInId(BigDecimal value) {
+        setAttributeInternal(MMPTRAININGCHECKINID, value);
+    }
+
     /**
      * @return the associated entity oracle.jbo.RowIterator.
      */
@@ -1075,6 +1135,21 @@ public class MmpTrainingMonInspImpl extends EntityImpl {
      */
     public RowIterator getMmpTrainingCheckOut() {
         return (RowIterator) getAttributeInternal(MMPTRAININGCHECKOUT);
+    }
+
+
+    /**
+     * @return the associated entity MmpTrainingCheckInImpl.
+     */
+    public MmpTrainingCheckInImpl getMmpTrainingCheckIn() {
+        return (MmpTrainingCheckInImpl) getAttributeInternal(MMPTRAININGCHECKIN);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity MmpTrainingCheckInImpl.
+     */
+    public void setMmpTrainingCheckIn(MmpTrainingCheckInImpl value) {
+        setAttributeInternal(MMPTRAININGCHECKIN, value);
     }
 
 

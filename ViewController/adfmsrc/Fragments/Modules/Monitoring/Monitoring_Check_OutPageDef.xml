@@ -8,6 +8,8 @@
               id="USERS_CRUD_OPERATIONS1Iterator"/>
     <iterator Binds="MmpTrainingCheckOutView1" RangeSize="25" DataControl="AppModuleDataControl"
               id="MmpTrainingCheckOutView1Iterator"/>
+    <searchRegion Binds="MmpTrainingCheckOutView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpTrainingCheckOutView1Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -27,12 +29,15 @@
       <nodeDefinition DefName="model.VO.MmpTrainingCheckOutView" Name="MmpTrainingCheckOutView10">
         <AttrNames>
           <Item Value="MmpTrainingCheckOutId"/>
+          <Item Value="MmpTrainingMonInspId"/>
           <Item Value="Remarks"/>
           <Item Value="TrainingEnd"/>
           <Item Value="TrainingStart"/>
           <Item Value="MemberRegId1"/>
           <Item Value="Dated1"/>
           <Item Value="ClusterId1"/>
+          <Item Value="EndTraining"/>
+          <Item Value="MmpTrainingMonInspId1"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

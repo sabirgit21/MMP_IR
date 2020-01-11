@@ -57,6 +57,7 @@ public class MmpTrainingCheckOutImpl extends EntityImpl {
             return vals;
         }
     }
+
     public static final int MMPTRAININGCHECKOUTID = AttributesEnum.MmpTrainingCheckOutId.index();
     public static final int MMPTRAININGMONINSPID = AttributesEnum.MmpTrainingMonInspId.index();
     public static final int REMARKS = AttributesEnum.Remarks.index();
@@ -75,6 +76,13 @@ public class MmpTrainingCheckOutImpl extends EntityImpl {
      * This is the default constructor (do not remove).
      */
     public MmpTrainingCheckOutImpl() {
+    }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.MmpTrainingCheckOut");
     }
 
     /**
@@ -256,16 +264,17 @@ public class MmpTrainingCheckOutImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getMmpTrainingMonInsp() {
-        return (EntityImpl) getAttributeInternal(MMPTRAININGMONINSP);
+    public MmpTrainingMonInspImpl getMmpTrainingMonInsp() {
+        return (MmpTrainingMonInspImpl) getAttributeInternal(MMPTRAININGMONINSP);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setMmpTrainingMonInsp(EntityImpl value) {
+    public void setMmpTrainingMonInsp(MmpTrainingMonInspImpl value) {
         setAttributeInternal(MMPTRAININGMONINSP, value);
     }
+
 
     /**
      * @param mmpTrainingCheckOutId key constituent
@@ -274,13 +283,6 @@ public class MmpTrainingCheckOutImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal mmpTrainingCheckOutId) {
         return new Key(new Object[] { mmpTrainingCheckOutId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.MmpTrainingCheckOut");
     }
 
     /**

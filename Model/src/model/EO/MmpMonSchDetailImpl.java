@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import oracle.adf.share.ADFContext;
 
 import oracle.jbo.Key;
+import oracle.jbo.RowIterator;
 import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
@@ -30,8 +31,12 @@ public class MmpMonSchDetailImpl extends EntityImpl {
         CreatedBy,
         UpdatedDate,
         UpdatedBy,
+        TrainingSchDetailId,
+        ClassType,
         MmpMonSchMaster,
-        TblCluster;
+        TblCluster,
+        TblTrainingSchDetail,
+        MmpTrainingCheckIn;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -54,6 +59,8 @@ public class MmpMonSchDetailImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int MMPMONSCHDETAILID = AttributesEnum.MmpMonSchDetailId.index();
     public static final int MMPMONSCHMASTERID = AttributesEnum.MmpMonSchMasterId.index();
     public static final int CLUSTERID = AttributesEnum.ClusterId.index();
@@ -62,14 +69,26 @@ public class MmpMonSchDetailImpl extends EntityImpl {
     public static final int CREATEDBY = AttributesEnum.CreatedBy.index();
     public static final int UPDATEDDATE = AttributesEnum.UpdatedDate.index();
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
+    public static final int TRAININGSCHDETAILID = AttributesEnum.TrainingSchDetailId.index();
+    public static final int CLASSTYPE = AttributesEnum.ClassType.index();
     public static final int MMPMONSCHMASTER = AttributesEnum.MmpMonSchMaster.index();
     public static final int TBLCLUSTER = AttributesEnum.TblCluster.index();
+    public static final int TBLTRAININGSCHDETAIL = AttributesEnum.TblTrainingSchDetail.index();
+    public static final int MMPTRAININGCHECKIN = AttributesEnum.MmpTrainingCheckIn.index();
 
     /**
      * This is the default constructor (do not remove).
      */
     public MmpMonSchDetailImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("model.EO.MmpMonSchDetail");
+    }
+
 
     /**
      * Gets the attribute value for MmpMonSchDetailId, using the alias name MmpMonSchDetailId.
@@ -184,16 +203,48 @@ public class MmpMonSchDetailImpl extends EntityImpl {
     }
 
     /**
+     * Gets the attribute value for TrainingSchDetailId, using the alias name TrainingSchDetailId.
+     * @return the value of TrainingSchDetailId
+     */
+    public BigDecimal getTrainingSchDetailId() {
+        return (BigDecimal) getAttributeInternal(TRAININGSCHDETAILID);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for TrainingSchDetailId.
+     * @param value value to set the TrainingSchDetailId
+     */
+    public void setTrainingSchDetailId(BigDecimal value) {
+        setAttributeInternal(TRAININGSCHDETAILID, value);
+    }
+
+    /**
+     * Gets the attribute value for ClassType, using the alias name ClassType.
+     * @return the value of ClassType
+     */
+    public String getClassType() {
+        return (String) getAttributeInternal(CLASSTYPE);
+    }
+
+    /**
+     * Sets <code>value</code> as the attribute value for ClassType.
+     * @param value value to set the ClassType
+     */
+    public void setClassType(String value) {
+        setAttributeInternal(CLASSTYPE, value);
+    }
+
+    /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getMmpMonSchMaster() {
-        return (EntityImpl) getAttributeInternal(MMPMONSCHMASTER);
+    public MmpMonSchMasterImpl getMmpMonSchMaster() {
+        return (MmpMonSchMasterImpl) getAttributeInternal(MMPMONSCHMASTER);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setMmpMonSchMaster(EntityImpl value) {
+    public void setMmpMonSchMaster(MmpMonSchMasterImpl value) {
         setAttributeInternal(MMPMONSCHMASTER, value);
     }
 
@@ -211,6 +262,30 @@ public class MmpMonSchDetailImpl extends EntityImpl {
         setAttributeInternal(TBLCLUSTER, value);
     }
 
+
+    /**
+     * @return the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public EntityImpl getTblTrainingSchDetail() {
+        return (EntityImpl) getAttributeInternal(TBLTRAININGSCHDETAIL);
+    }
+
+    /**
+     * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
+     */
+    public void setTblTrainingSchDetail(EntityImpl value) {
+        setAttributeInternal(TBLTRAININGSCHDETAIL, value);
+    }
+
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getMmpTrainingCheckIn() {
+        return (RowIterator) getAttributeInternal(MMPTRAININGCHECKIN);
+    }
+
+
     /**
      * @param mmpMonSchDetailId key constituent
 
@@ -218,13 +293,6 @@ public class MmpMonSchDetailImpl extends EntityImpl {
      */
     public static Key createPrimaryKey(BigDecimal mmpMonSchDetailId) {
         return new Key(new Object[] { mmpMonSchDetailId });
-    }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("model.EO.MmpMonSchDetail");
     }
 
     /**

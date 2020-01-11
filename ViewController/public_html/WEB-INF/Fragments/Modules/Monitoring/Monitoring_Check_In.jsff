@@ -151,6 +151,17 @@
                                                               pattern="#{bindings.MmpTrainingCheckInView1.hints.Longitude.format}"/>
                                         </af:inputText>
                                     </af:column>
+                                    <af:column headerText="#{bindings.MmpTrainingCheckInView1.hints.ClassType.label}"
+                                               id="c4">
+                                        <af:selectOneChoice value="#{row.bindings.ClassType.inputValue}"
+                                                            label="#{row.bindings.ClassType.label}"
+                                                            required="#{bindings.MmpTrainingCheckInView1.hints.ClassType.mandatory}"
+                                                            shortDesc="#{bindings.MmpTrainingCheckInView1.hints.ClassType.tooltip}"
+                                                            id="soc3">
+                                            <f:selectItems value="#{row.bindings.ClassType.items}" id="si3"/>
+                                            <f:validator binding="#{row.bindings.ClassType.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
                                 </af:table>
                             </af:showDetailItem>
                         </af:panelTabbed>

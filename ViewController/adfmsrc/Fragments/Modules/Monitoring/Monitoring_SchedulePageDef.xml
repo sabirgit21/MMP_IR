@@ -37,6 +37,7 @@
           <Item Value="MmpMonSchMasterId"/>
           <Item Value="ClusterId"/>
           <Item Value="Dated"/>
+          <Item Value="ClassType"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

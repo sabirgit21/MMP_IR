@@ -20,9 +20,14 @@
        MmpTrainingCheckIn.CREATED_BY, 
        MmpTrainingCheckIn.UPDATED_DATE, 
        MmpTrainingCheckIn.UPDATED_BY, 
-       MmpTrainingCheckIn.MEMBER_REG_ID"
-  FromList="MMP_TRAINING_CHECK_IN MmpTrainingCheckIn"
-  Where="MmpTrainingCheckIn.MEMBER_REG_ID = :sessMemID"
+       MmpTrainingCheckIn.MEMBER_REG_ID, 
+       MmpTrainingCheckIn.TRAINING_SCH_DETAIL_ID, 
+       MmpTrainingCheckIn.MMP_MON_SCH_DETAIL_ID, 
+       MmpMonSchDetail.CLASS_TYPE, 
+       MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID AS MMP_MON_SCH_DETAIL_ID1"
+  FromList="MMP_TRAINING_CHECK_IN MmpTrainingCheckIn, MMP_MON_SCH_DETAIL MmpMonSchDetail"
+  Where="MmpTrainingCheckIn.MMP_MON_SCH_DETAIL_ID = MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID(+) 
+AND MmpTrainingCheckIn.MEMBER_REG_ID = :sessMemID"
   AutoRefresh="true">
   <Variable
     Name="sessMemID"
@@ -48,6 +53,10 @@
     Name="Session_Member_ID_LOV1"
     ViewObjectName="model.LOV.Session_Member_ID_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Class_Type_Mon_Insp_LOV1"
+    ViewObjectName="model.LOV.Class_Type_Mon_Insp_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ClusterId"
     ListVOName="Member_Depn_Cluster_LOV1"
@@ -58,8 +67,14 @@
       <Item Value="ClusterId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="TrainingSchDetailId"/>
+      <Item Value="MmpMonSchDetailId"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ClusterId"/>
+      <Item Value="TrainingSchDetailIdLOV"/>
+      <Item Value="MmpMonSchDetailId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
@@ -84,9 +99,46 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_ClassType"
+    ListVOName="Class_Type_Mon_Insp_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClassType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="MmpTrainingCheckIn"
     Entity="model.EO.MmpTrainingCheckIn"/>
+  <EntityUsage
+    Name="MmpMonSchDetail"
+    Entity="model.EO.MmpMonSchDetail"
+    Association="model.EO.FkMmpTrainingCheckInMonSchFkAssoc"
+    AssociationEnd="model.EO.FkMmpTrainingCheckInMonSchFkAssoc.MmpMonSchDetail"
+    SourceUsage="model.VO.MmpTrainingCheckInView.MmpTrainingCheckIn"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.MmpMonSchDetail.MmpMonSchDetailId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.MmpTrainingCheckIn.MmpMonSchDetailId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="MmpTrainingCheckInId"
     IsNotNull="true"
@@ -143,7 +195,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="MmpTrainingCheckIn"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -155,7 +208,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="MmpTrainingCheckIn"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
@@ -176,6 +230,46 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="TrainingSchDetailId"
+    PrecisionRule="true"
+    EntityAttrName="TrainingSchDetailId"
+    EntityUsage="MmpTrainingCheckIn"
+    AliasName="TRAINING_SCH_DETAIL_ID"/>
+  <ViewAttribute
+    Name="MmpMonSchDetailId"
+    PrecisionRule="true"
+    EntityAttrName="MmpMonSchDetailId"
+    EntityUsage="MmpTrainingCheckIn"
+    AliasName="MMP_MON_SCH_DETAIL_ID"/>
+  <ViewAttribute
+    Name="ClassType"
+    PrecisionRule="true"
+    EntityAttrName="ClassType"
+    EntityUsage="MmpMonSchDetail"
+    AliasName="CLASS_TYPE"
+    LOVName="LOV_ClassType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpMonSchDetailId1"
+    PrecisionRule="true"
+    EntityAttrName="MmpMonSchDetailId"
+    EntityUsage="MmpMonSchDetail"
+    AliasName="MMP_MON_SCH_DETAIL_ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="MmpTrainingCheckInId"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="MmpTrainingMonInspView"
+    ViewLink="model.VO.FkMmpTrainingMonInspChkInFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>

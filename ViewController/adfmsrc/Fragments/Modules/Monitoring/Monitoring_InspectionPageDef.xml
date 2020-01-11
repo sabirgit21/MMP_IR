@@ -80,6 +80,7 @@
           <Item Value="ClusterId"/>
           <Item Value="Dated"/>
           <Item Value="MemberRegId"/>
+          <Item Value="ClassType"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

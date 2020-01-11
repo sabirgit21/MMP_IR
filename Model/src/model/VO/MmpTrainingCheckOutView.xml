@@ -11,20 +11,21 @@
   PageIterMode="Full"
   SelectList="MmpTrainingCheckOut.MMP_TRAINING_CHECK_OUT_ID, 
        MmpTrainingCheckOut.MMP_TRAINING_MON_INSP_ID, 
+       MmpTrainingCheckOut.DATED AS DATED1, 
        MmpTrainingCheckOut.REMARKS, 
-       MmpTrainingCheckOut.TRAINING_END, 
+       MmpTrainingCheckOut.CLUSTER_ID AS CLUSTER_ID1, 
        MmpTrainingCheckOut.TRAINING_START, 
+       MmpTrainingCheckOut.TRAINING_END, 
+       MmpTrainingCheckOut.MEMBER_REG_ID AS MEMBER_REG_ID1, 
+       MmpTrainingMonInsp.END_TRAINING, 
+       MmpTrainingMonInsp.MMP_TRAINING_MON_INSP_ID AS MMP_TRAINING_MON_INSP_ID1, 
        MmpTrainingCheckOut.CREATED_DATE, 
        MmpTrainingCheckOut.CREATED_BY, 
        MmpTrainingCheckOut.UPDATED_DATE, 
-       MmpTrainingCheckOut.UPDATED_BY, 
-       MmpTrainingCheckOut.MEMBER_REG_ID AS MEMBER_REG_ID1, 
-       MmpTrainingCheckOut.DATED AS DATED1, 
-       MmpTrainingCheckOut.CLUSTER_ID AS CLUSTER_ID1, 
-       MmpTrainingMonInsp.END_TRAINING, 
-       MmpTrainingMonInsp.MMP_TRAINING_MON_INSP_ID AS MMP_TRAINING_MON_INSP_ID1"
+       MmpTrainingCheckOut.UPDATED_BY"
   FromList="MMP_TRAINING_CHECK_OUT MmpTrainingCheckOut, MMP_TRAINING_MON_INSP MmpTrainingMonInsp"
-  Where="MmpTrainingCheckOut.MEMBER_REG_ID = :sessMemID">
+  Where="MmpTrainingCheckOut.MMP_TRAINING_MON_INSP_ID = MmpTrainingMonInsp.MMP_TRAINING_MON_INSP_ID(+)       
+AND MmpTrainingCheckOut.MEMBER_REG_ID = :sessMemID">
   <Variable
     Name="sessMemID"
     Kind="where"
@@ -65,10 +66,12 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
       <Item Value="TrainingStart"/>
+      <Item Value="MmpTrainingMonInspId"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ClusterId"/>
       <Item Value="StartTraining"/>
+      <Item Value="MmpTrainingMonInspId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
@@ -129,56 +132,24 @@
     EntityUsage="MmpTrainingCheckOut"
     AliasName="MMP_TRAINING_MON_INSP_ID"/>
   <ViewAttribute
+    Name="Dated1"
+    PrecisionRule="true"
+    EntityAttrName="Dated"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="DATED1"/>
+  <ViewAttribute
     Name="Remarks"
     PrecisionRule="true"
     EntityAttrName="Remarks"
     EntityUsage="MmpTrainingCheckOut"
     AliasName="REMARKS"/>
   <ViewAttribute
-    Name="TrainingEnd"
-    IsNotNull="true"
+    Name="ClusterId1"
     PrecisionRule="true"
-    EntityAttrName="TrainingEnd"
+    EntityAttrName="ClusterId"
     EntityUsage="MmpTrainingCheckOut"
-    AliasName="TRAINING_END"/>
-  <ViewAttribute
-    Name="TrainingStart"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="TrainingStart"
-    EntityUsage="MmpTrainingCheckOut"
-    AliasName="TRAINING_START"/>
-  <ViewAttribute
-    Name="CreatedDate"
-    PrecisionRule="true"
-    EntityAttrName="CreatedDate"
-    EntityUsage="MmpTrainingCheckOut"
-    AliasName="CREATED_DATE"/>
-  <ViewAttribute
-    Name="CreatedBy"
-    PrecisionRule="true"
-    EntityAttrName="CreatedBy"
-    EntityUsage="MmpTrainingCheckOut"
-    AliasName="CREATED_BY"/>
-  <ViewAttribute
-    Name="UpdatedDate"
-    PrecisionRule="true"
-    EntityAttrName="UpdatedDate"
-    EntityUsage="MmpTrainingCheckOut"
-    AliasName="UPDATED_DATE"/>
-  <ViewAttribute
-    Name="UpdatedBy"
-    PrecisionRule="true"
-    EntityAttrName="UpdatedBy"
-    EntityUsage="MmpTrainingCheckOut"
-    AliasName="UPDATED_BY"/>
-  <ViewAttribute
-    Name="MemberRegId1"
-    PrecisionRule="true"
-    EntityAttrName="MemberRegId"
-    EntityUsage="MmpTrainingCheckOut"
-    AliasName="MEMBER_REG_ID1"
-    LOVName="LOV_MemberRegId1">
+    AliasName="CLUSTER_ID1"
+    LOVName="LOV_ClusterId1">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -187,18 +158,26 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
-    Name="Dated1"
+    Name="TrainingStart"
+    IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="Dated"
+    EntityAttrName="TrainingStart"
     EntityUsage="MmpTrainingCheckOut"
-    AliasName="DATED1"/>
+    AliasName="TRAINING_START"/>
   <ViewAttribute
-    Name="ClusterId1"
+    Name="TrainingEnd"
+    IsNotNull="true"
     PrecisionRule="true"
-    EntityAttrName="ClusterId"
+    EntityAttrName="TrainingEnd"
     EntityUsage="MmpTrainingCheckOut"
-    AliasName="CLUSTER_ID1"
-    LOVName="LOV_ClusterId1">
+    AliasName="TRAINING_END"/>
+  <ViewAttribute
+    Name="MemberRegId1"
+    PrecisionRule="true"
+    EntityAttrName="MemberRegId"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="MEMBER_REG_ID1"
+    LOVName="LOV_MemberRegId1">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
@@ -219,6 +198,32 @@
     EntityAttrName="MmpTrainingMonInspId"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="MMP_TRAINING_MON_INSP_ID1"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="MmpTrainingCheckOut"
+    AliasName="UPDATED_BY"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingCheckOutId"/>
   </AttrArray>

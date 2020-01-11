@@ -3,39 +3,39 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FKTblTrainingCheckOutFKLink"
+  Name="FkMmpMonSchDetailTrngSchFkLink"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  EntityAssociation="model.EO.FKTblTrainingCheckOutFKAssoc">
+  EntityAssociation="model.EO.FkMmpMonSchDetailTrngSchFkAssoc">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
-        ResId="model.VO.FKTblTrainingCheckOutFKLink_LABEL"/>
+        ResId="model.VO.FkMmpMonSchDetailTrngSchFkLink_LABEL"/>
     </SchemaBasedProperties>
   </Properties>
   <ViewLinkDefEnd
-    Name="MmpTrainingCheckInView"
+    Name="TblTrainingSchDetailView"
     Cardinality="1"
     Source="true"
-    Owner="model.VO.MmpTrainingCheckInView">
+    Owner="model.VO.TblTrainingSchDetailView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="MmpTrainingCheckInView"/>
+      <Attr Name="_finderName" Value="TblTrainingSchDetailView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.VO.MmpTrainingCheckInView.MmpTrainingCheckInId"/>
+      <Item Value="model.VO.TblTrainingSchDetailView.TrainingSchDetailId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
-    Name="MmpTrainingCheckOutView"
+    Name="MmpMonSchDetailView"
     Cardinality="-1"
-    Owner="model.VO.MmpTrainingCheckOutView">
+    Owner="model.VO.MmpMonSchDetailView">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="MmpTrainingCheckOutView"/>
+      <Attr Name="_finderName" Value="MmpMonSchDetailView"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.VO.MmpTrainingCheckOutView.MmpTrainingCheckInId"/>
+      <Item Value="model.VO.MmpMonSchDetailView.TrainingSchDetailId"/>
     </AttrArray>
   </ViewLinkDefEnd>
   <ResourceBundle>

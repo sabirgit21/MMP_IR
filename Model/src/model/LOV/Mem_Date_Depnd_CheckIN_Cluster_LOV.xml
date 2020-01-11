@@ -14,7 +14,8 @@
        TblCluster.CLUSTER_NO, 
        TblCluster.CLUSTER_ID AS CLUSTER_ID1, 
        MmpTrainingCheckIn.DATED, 
-       MmpTrainingCheckIn.MEMBER_REG_ID"
+       MmpTrainingCheckIn.MEMBER_REG_ID, 
+       MmpTrainingCheckIn.TRAINING_SCH_DETAIL_ID"
   FromList="MMP_TRAINING_CHECK_IN MmpTrainingCheckIn, TBL_CLUSTER TblCluster"
   Where="MmpTrainingCheckIn.CLUSTER_ID = TblCluster.CLUSTER_ID(+)    
 AND MmpTrainingCheckIn.MEMBER_REG_ID = :getmemRegID      
@@ -35,7 +36,6 @@ AND MmpTrainingCheckIn.DATED = :getDate">
     Type="java.math.BigDecimal">
     <TransientExpression
       Name="VariableScript"
-      trustMode="trusted"
       CodeSourceName="Mem_Date_Depnd_CheckIN_Cluster_LOV"/>
   </Variable>
   <EntityUsage
@@ -99,6 +99,12 @@ AND MmpTrainingCheckIn.DATED = :getDate">
     EntityAttrName="MemberRegId"
     EntityUsage="MmpTrainingCheckIn"
     AliasName="MEMBER_REG_ID"/>
+  <ViewAttribute
+    Name="TrainingSchDetailIdLOV"
+    PrecisionRule="true"
+    EntityAttrName="TrainingSchDetailId"
+    EntityUsage="MmpTrainingCheckIn"
+    AliasName="TRAINING_SCH_DETAIL_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingCheckInId"/>
   </AttrArray>

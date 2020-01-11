@@ -133,7 +133,7 @@
     EntityUsage="TblTrainingSchDetail"
     AliasName="DATED_D"/>
   <ViewAttribute
-    Name="TrainingSchDetailId"
+    Name="TrainingSchDetailIdLOV"
     PrecisionRule="true"
     EntityAttrName="TrainingSchDetailId"
     EntityUsage="TblTrainingSchDetail"

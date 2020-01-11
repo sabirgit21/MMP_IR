@@ -107,6 +107,13 @@
     AssociationOtherEnd="model.EO.TblClusterAttMasterFk1Assoc.TblTrainingSchDetail"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="MmpMonSchDetail"
+    Association="model.EO.FkMmpMonSchDetailTrngSchFkAssoc"
+    AssociationEnd="model.EO.FkMmpMonSchDetailTrngSchFkAssoc.MmpMonSchDetail"
+    AssociationOtherEnd="model.EO.FkMmpMonSchDetailTrngSchFkAssoc.TblTrainingSchDetail"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkTblTrainingSchDetailPk"
     PrimaryKey="true">

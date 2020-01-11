@@ -3,40 +3,40 @@
 <!---->
 <Association
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FKTblTrainingCheckOutFKAssoc"
+  Name="FkMmpTrainingCheckInMonSchFkAssoc"
   Version="12.2.1.11.57"
   InheritPersonalization="merge">
   <DesignTime>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <AssociationEnd
-    Name="MmpTrainingCheckIn"
+    Name="MmpMonSchDetail"
     Cardinality="1"
     Source="true"
-    Owner="model.EO.MmpTrainingCheckIn"
+    Owner="model.EO.MmpMonSchDetail"
     LockLevel="NONE">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="MmpTrainingCheckIn"/>
-      <Attr Name="_foreignKey" Value="model.EO.MmpTrainingCheckIn.PkMmpTrainingCheckIn"/>
+      <Attr Name="_finderName" Value="MmpMonSchDetail"/>
+      <Attr Name="_foreignKey" Value="model.EO.MmpMonSchDetail.PkMmpMonSchDetail"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.EO.MmpTrainingCheckIn.MmpTrainingCheckInId"/>
+      <Item Value="model.EO.MmpMonSchDetail.MmpMonSchDetailId"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
-    Name="MmpTrainingCheckOut"
+    Name="MmpTrainingCheckIn"
     Cardinality="-1"
-    Owner="model.EO.MmpTrainingCheckOut">
+    Owner="model.EO.MmpTrainingCheckIn">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="MmpTrainingCheckOut"/>
-      <Attr Name="_foreignKey" Value="model.EO.MmpTrainingCheckOut.fk_MmpTrainingCheckOut"/>
+      <Attr Name="_finderName" Value="MmpTrainingCheckIn"/>
+      <Attr Name="_foreignKey" Value="model.EO.MmpTrainingCheckIn.fk_MmpTrainingCheckIn"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="model.EO.MmpTrainingCheckOut.MmpTrainingCheckInId"/>
+      <Item Value="model.EO.MmpTrainingCheckIn.MmpMonSchDetailId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

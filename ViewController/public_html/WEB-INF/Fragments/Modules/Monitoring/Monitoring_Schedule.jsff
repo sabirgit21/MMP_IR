@@ -222,6 +222,15 @@
                       <af:convertDateTime pattern="#{bindings.MmpMonSchDetailView2.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>-->
+                  <af:column headerText="#{bindings.MmpMonSchDetailView2.hints.ClassType.label}" id="c8">
+                    <af:selectOneChoice value="#{row.bindings.ClassType.inputValue}"
+                                        label="#{row.bindings.ClassType.label}" readOnly="true"
+                                        required="#{bindings.MmpMonSchDetailView2.hints.ClassType.mandatory}"
+                                        shortDesc="#{bindings.MmpMonSchDetailView2.hints.ClassType.tooltip}" id="soc4">
+                      <f:selectItems value="#{row.bindings.ClassType.items}" id="si4"/>
+                      <f:validator binding="#{row.bindings.ClassType.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>

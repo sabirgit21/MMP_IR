@@ -32,6 +32,10 @@
       </PIMap>
     </ParameterMap>
   </ViewAccessor>
+  <ViewAccessor
+    Name="Class_Type_Mon_Insp_LOV1"
+    ViewObjectName="model.LOV.Class_Type_Mon_Insp_LOV"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_ClusterId"
     ListVOName="Cluster_ID_Depen_Phase_ID_LOV1"
@@ -42,12 +46,34 @@
       <Item Value="ClusterId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="TrainingSchDetailId"/>
+    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ClusterId"/>
+      <Item Value="TrainingSchDetailIdLOV"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
       <Item Value="ModuleName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ClassType"
+    ListVOName="Class_Type_Mon_Insp_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClassType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
@@ -111,7 +137,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="MmpMonSchDetail"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -123,7 +150,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="MmpMonSchDetail"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"
@@ -142,7 +170,32 @@
     EntityAttrName="MmpMonSchMasterId"
     EntityUsage="MmpMonSchMaster"
     AliasName="MMP_MON_SCH_MASTER_ID1"/>
+  <ViewAttribute
+    Name="TrainingSchDetailId"
+    PrecisionRule="true"
+    EntityAttrName="TrainingSchDetailId"
+    EntityUsage="MmpMonSchDetail"
+    AliasName="TRAINING_SCH_DETAIL_ID"/>
+  <ViewAttribute
+    Name="ClassType"
+    PrecisionRule="true"
+    EntityAttrName="ClassType"
+    EntityUsage="MmpMonSchDetail"
+    AliasName="CLASS_TYPE"
+    LOVName="LOV_ClassType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpMonSchDetailId"/>
   </AttrArray>
+  <ViewLinkAccessor
+    Name="MmpTrainingCheckInView"
+    ViewLink="model.VO.FkMmpTrainingCheckInMonSchFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

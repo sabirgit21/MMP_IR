@@ -117,6 +117,20 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="MMP_TRAINING_CHECK_IN"/>
+  <Attribute
+    Name="TrainingSchDetailId"
+    ColumnName="TRAINING_SCH_DETAIL_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_TRAINING_CHECK_IN"/>
+  <Attribute
+    Name="MmpMonSchDetailId"
+    ColumnName="MMP_MON_SCH_DETAIL_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="MMP_TRAINING_CHECK_IN"/>
   <AccessorAttribute
     Name="TblCluster"
     Association="model.EO.FkMmpTrainingCheckInAssoc"
@@ -124,6 +138,20 @@
     AssociationOtherEnd="model.EO.FkMmpTrainingCheckInAssoc.MmpTrainingCheckIn"
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="MmpMonSchDetail"
+    Association="model.EO.FkMmpTrainingCheckInMonSchFkAssoc"
+    AssociationEnd="model.EO.FkMmpTrainingCheckInMonSchFkAssoc.MmpMonSchDetail"
+    AssociationOtherEnd="model.EO.FkMmpTrainingCheckInMonSchFkAssoc.MmpTrainingCheckIn"
+    Type="model.EO.MmpMonSchDetailImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="MmpTrainingMonInsp"
+    Association="model.EO.FkMmpTrainingMonInspChkInFkAssoc"
+    AssociationEnd="model.EO.FkMmpTrainingMonInspChkInFkAssoc.MmpTrainingMonInsp"
+    AssociationOtherEnd="model.EO.FkMmpTrainingMonInspChkInFkAssoc.MmpTrainingCheckIn"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="PkMmpTrainingCheckIn"
     PrimaryKey="true">
@@ -143,6 +171,17 @@
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="model.EO.MmpTrainingCheckIn.ClusterId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_MmpTrainingCheckIn">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_MMP_MON_SCH_DETAIL"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_MMP_TRAINING_CHECK_IN"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.EO.MmpTrainingCheckIn.MmpMonSchDetailId"/>
     </AttrArray>
   </Key>
 </Entity>

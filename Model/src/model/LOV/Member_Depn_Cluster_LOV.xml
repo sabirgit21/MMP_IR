@@ -15,7 +15,8 @@
        TblCluster.CLUSTER_NO, 
        TblCluster.CLUSTER_ID AS CLUSTER_ID1, 
        MmpMonSchMaster.MEMBER_REG_ID, 
-       MmpMonSchMaster.MMP_MON_SCH_MASTER_ID"
+       MmpMonSchMaster.MMP_MON_SCH_MASTER_ID, 
+       MmpMonSchDetail.TRAINING_SCH_DETAIL_ID"
   FromList="MMP_MON_SCH_DETAIL MmpMonSchDetail, TBL_CLUSTER TblCluster, MMP_MON_SCH_MASTER MmpMonSchMaster"
   Where="(MmpMonSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID)     
 AND (MmpMonSchDetail.MMP_MON_SCH_MASTER_ID = MmpMonSchMaster.MMP_MON_SCH_MASTER_ID(+))    
@@ -125,6 +126,12 @@ AND MmpMonSchDetail.DATED = :schDate">
     EntityAttrName="MmpMonSchMasterId"
     EntityUsage="MmpMonSchMaster"
     AliasName="MMP_MON_SCH_MASTER_ID"/>
+  <ViewAttribute
+    Name="TrainingSchDetailIdLOV"
+    PrecisionRule="true"
+    EntityAttrName="TrainingSchDetailId"
+    EntityUsage="MmpMonSchDetail"
+    AliasName="TRAINING_SCH_DETAIL_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpMonSchDetailId"/>
   </AttrArray>

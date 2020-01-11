@@ -109,6 +109,16 @@
                       <f:validator binding="#{row.bindings.ClusterId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                  <af:column headerText="#{bindings.MmpTrainingMonInspView1.hints.ClassType.label}" id="c34">
+                    <af:selectOneChoice value="#{row.bindings.ClassType.inputValue}"
+                                        label="#{row.bindings.ClassType.label}"
+                                        required="#{bindings.MmpTrainingMonInspView1.hints.ClassType.mandatory}"
+                                        shortDesc="#{bindings.MmpTrainingMonInspView1.hints.ClassType.tooltip}"
+                                        id="soc46">
+                      <f:selectItems value="#{row.bindings.ClassType.items}" id="si47"/>
+                      <f:validator binding="#{row.bindings.ClassType.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
                 </af:table>
                 <af:panelGroupLayout layout="horizontal" id="pgl7">
               <af:spacer width="190" height="10" id="s72"/>
@@ -150,7 +160,7 @@
             <af:panelTabbed position="above" id="pt2" styleClass="tabel_pannel_tab">
               
               <af:showDetailItem text="Technical Detail" id="sdi1" inflexibleHeight="100">
-                <af:panelFormLayout id="pfl2" maxColumns="3" rows="7">
+                <af:panelFormLayout id="pfl2" maxColumns="2" rows="12">
                   
                   <af:inputDate value="#{bindings.StartTraining1.inputValue}"
                                 label="Start Training"
@@ -170,7 +180,7 @@
                     <af:convertDateTime pattern="MM/dd/yyyy hh:mm:ss a"/>
                   </af:inputDate>
                   <af:spacer width="10" height="10" id="s44"/>
-                  <af:inputText value="#{bindings.NoOfGroup.inputValue}" label="No. of Group"
+                  <!--<af:inputText value="#{bindings.NoOfGroup.inputValue}" label="No. of Group"
                                 required="#{bindings.NoOfGroup.hints.mandatory}"
                                 columns="#{bindings.NoOfGroup.hints.displayWidth}"
                                 maximumLength="#{bindings.NoOfGroup.hints.precision}"
@@ -178,6 +188,15 @@
                                 contentStyle="width:250px;">
                     <f:validator binding="#{bindings.NoOfGroup.validator}"/>
                     
+                  </af:inputText>-->
+                  <af:inputText value="#{bindings.NoOfGroup.inputValue}" label="No. of Group"
+                                required="#{bindings.NoOfGroup.hints.mandatory}"
+                                columns="#{bindings.NoOfGroup.hints.displayWidth}"
+                                maximumLength="#{bindings.NoOfGroup.hints.precision}"
+                                shortDesc="#{bindings.NoOfGroup.hints.tooltip}" id="it52"
+                                contentStyle="width:250px;">
+                    <f:validator binding="#{bindings.NoOfGroup.validator}"/>
+                    <af:convertNumber groupingUsed="false" pattern="#{bindings.NoOfGroup.format}"/>
                   </af:inputText>
                   <af:spacer width="10" height="10" id="s45"/>
                   <af:selectOneChoice value="#{bindings.ClusterTest1.inputValue}" label="Cluster Test"
@@ -231,7 +250,7 @@
                   </af:inputText>
                   </af:panelFormLayout>
                   
-                  <af:panelFormLayout id="pfl6" maxColumns="3" rows="2">
+                  <af:panelFormLayout id="pfl6" maxColumns="2" rows="3">
                   <af:panelGroupLayout id="pgl8" layout="vertical" inlineStyle="border: 2px solid black;">
                     <af:outputLabel value="Quran Recitation" id="ol1"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
@@ -481,7 +500,7 @@
                 
                 <af:panelGridLayout id="pgl14">
                   <af:gridRow marginTop="5px" height="auto" id="gr6">
-                    <af:gridCell marginStart="5px" width="38%" id="gc6">
+                    <af:gridCell marginStart="5px" width="50%" id="gc6">
                       <af:panelGroupLayout id="pgl17" layout="vertical" inlineStyle="border: 2px solid black;">
                     <af:outputLabel value="ECO System Analysis" id="ol9"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
@@ -556,7 +575,7 @@
                         <af:spacer width="10" height="10" id="s55"/>
                   </af:panelGroupLayout>
                     </af:gridCell>
-                    <af:gridCell marginStart="5px" width="35%" id="gc7">
+                    <af:gridCell marginStart="5px" width="50%" id="gc7">
                       <af:panelGroupLayout id="pgl16" layout="vertical" inlineStyle="border: 2px solid black;">
                     <af:outputLabel value="IEC Materials" id="ol8"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
@@ -627,7 +646,9 @@
                         <af:spacer width="10" height="10" id="s53"/>
                   </af:panelGroupLayout>
                     </af:gridCell>
-                    <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc8">
+                    </af:gridRow>
+                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
+                     <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc8">
                       <af:panelGroupLayout id="pgl15" layout="vertical" inlineStyle="border: 2px solid black;">
                     <af:outputLabel value="Tools Adopted" id="ol7"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
@@ -702,11 +723,7 @@
                         <af:spacer width="10" height="10" id="s51"/>
                   </af:panelGroupLayout>
                     </af:gridCell>
-                  </af:gridRow>
-                  <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr7">
-                    <af:gridCell marginStart="5px" width="34%" id="gc9"/>
-                    <af:gridCell marginStart="5px" width="33%" id="gc10"/>
-                    <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="gc11"/>
+                    <af:gridCell marginStart="5px" width="50%" id="gc10"/>
                   </af:gridRow>
                 </af:panelGridLayout>
                  
