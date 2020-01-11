@@ -256,7 +256,7 @@
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
                     <af:spacer width="10" height="10" id="s19"/>
                     <af:selectOneChoice value="#{bindings.ReciteQuran1.inputValue}" label="Recite Of Quran"
-                                      required="#{bindings.ReciteQuran1.hints.mandatory}"
+                                      required="#{bindings.ReciteQuran1.hints.mandatory}" autoSubmit="true"
                                       shortDesc="#{bindings.ReciteQuran1.hints.tooltip}" id="soc12"
                                       contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.ReciteQuran1.items}" id="si12"/>
@@ -268,7 +268,7 @@
                                   required="#{bindings.ReciteQuranSt.hints.mandatory}"
                                   columns="#{bindings.ReciteQuranSt.hints.displayWidth}"
                                   shortDesc="#{bindings.ReciteQuranSt.hints.tooltip}" id="id7"
-                                  contentStyle="width:250px;">
+                                  contentStyle="width:250px;" disabled="#{bindings.ReciteQuran1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.ReciteQuranSt.validator}"/>
                       <af:convertDateTime pattern="#{bindings.ReciteQuranSt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
@@ -279,7 +279,7 @@
                                   required="#{bindings.ReciteQuranEt.hints.mandatory}"
                                   columns="#{bindings.ReciteQuranEt.hints.displayWidth}"
                                   shortDesc="#{bindings.ReciteQuranEt.hints.tooltip}" 
-                                  id="id8" contentStyle="width:250px;">
+                                  id="id8" contentStyle="width:250px;" disabled="#{bindings.ReciteQuran1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.ReciteQuranEt.validator}"/>
                       <af:convertDateTime pattern="#{bindings.ReciteQuranEt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
@@ -293,7 +293,7 @@
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
                     <af:spacer width="10" height="10" id="s26"/>
                   <af:selectOneChoice value="#{bindings.PlanModule1.inputValue}" label="Planned Module"
-                                      required="#{bindings.PlanModule1.hints.mandatory}"
+                                      required="#{bindings.PlanModule1.hints.mandatory}" autoSubmit="true"
                                       shortDesc="#{bindings.PlanModule1.hints.tooltip}" id="soc13"
                                       contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.PlanModule1.items}" id="si13"/>
@@ -305,7 +305,8 @@
                                   required="#{bindings.PlanModuleSt.hints.mandatory}"
                                   columns="#{bindings.PlanModuleSt.hints.displayWidth}"
                                   shortDesc="#{bindings.PlanModuleSt.hints.tooltip}" id="id9"
-                                  contentStyle="width:250px;">
+                                  contentStyle="width:250px;"
+                                  disabled="#{bindings.PlanModule1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.PlanModuleSt.validator}"/>
                       <af:convertDateTime pattern="#{bindings.PlanModuleSt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
@@ -316,7 +317,8 @@
                                   required="#{bindings.PlanModuleEt.hints.mandatory}"
                                   columns="#{bindings.PlanModuleEt.hints.displayWidth}"
                                   shortDesc="#{bindings.PlanModuleEt.hints.tooltip}" id="id10"
-                                  contentStyle="width:250px;">
+                                  contentStyle="width:250px;"
+                                  disabled="#{bindings.PlanModule1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.PlanModuleEt.validator}"/>
                       <af:convertDateTime pattern="#{bindings.PlanModuleEt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
@@ -331,7 +333,7 @@
                     <af:spacer width="10" height="10" id="s27"/>
                   <af:selectOneChoice value="#{bindings.EcoSystem1.inputValue}" label="Eco Sys Analysis"
                                       required="#{bindings.EcoSystem1.hints.mandatory}"
-                                contentStyle="width:250px;"
+                                contentStyle="width:250px;" autoSubmit="true"
                                       shortDesc="#{bindings.EcoSystem1.hints.tooltip}" id="soc14">
                     <f:selectItems value="#{bindings.EcoSystem1.items}" id="si14"/>
                     <f:validator binding="#{bindings.EcoSystem1.validator}"/>
@@ -341,7 +343,8 @@
                                   required="#{bindings.EcoSystemSt.hints.mandatory}"
                                   columns="#{bindings.EcoSystemSt.hints.displayWidth}"
                                   shortDesc="#{bindings.EcoSystemSt.hints.tooltip}" id="id11"
-                                  contentStyle="width:250px;">
+                                  contentStyle="width:250px;"
+                                  disabled="#{bindings.EcoSystem1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.EcoSystemSt.validator}"/>
                       <af:convertDateTime pattern="#{bindings.EcoSystemSt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
@@ -351,7 +354,8 @@
                                   required="#{bindings.EcoSystemEt.hints.mandatory}"
                                   columns="#{bindings.EcoSystemEt.hints.displayWidth}"
                                   shortDesc="#{bindings.EcoSystemEt.hints.tooltip}" id="id12"
-                                  contentStyle="width:250px;">
+                                  contentStyle="width:250px;"
+                                  disabled="#{bindings.EcoSystem1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.EcoSystemEt.validator}"/>
                       <af:convertDateTime pattern="#{bindings.EcoSystemEt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
@@ -364,7 +368,7 @@
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
                     <af:spacer width="10" height="10" id="s31"/>
                   <af:selectOneChoice value="#{bindings.RevLastTraining1.inputValue}"
-                                      label="Review Last Training"
+                                      label="Review Last Training" autoSubmit="true"
                                       required="#{bindings.RevLastTraining1.hints.mandatory}"
                                       shortDesc="#{bindings.RevLastTraining1.hints.tooltip}" id="soc15"
                                       contentStyle="width:250px;">
@@ -377,7 +381,8 @@
                                   required="#{bindings.RevLastTrainingSt.hints.mandatory}"
                                   columns="#{bindings.RevLastTrainingSt.hints.displayWidth}"
                                   shortDesc="#{bindings.RevLastTrainingSt.hints.tooltip}" 
-                                  id="id13" contentStyle="width:250px;">
+                                  id="id13" contentStyle="width:250px;"
+                                   disabled="#{bindings.RevLastTraining1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.RevLastTrainingSt.validator}"/>
                       <af:convertDateTime pattern="#{bindings.RevLastTrainingSt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
@@ -390,7 +395,8 @@
                                 required="#{bindings.RevLastTrainingEt.hints.mandatory}"
                                 columns="#{bindings.RevLastTrainingEt.hints.displayWidth}"
                                 shortDesc="#{bindings.RevLastTrainingEt.hints.tooltip}" id="id14"
-                                contentStyle="width:250px;">
+                                contentStyle="width:250px;"
+                                disabled="#{bindings.RevLastTraining1.inputValue == 'N'}">
                     <f:validator binding="#{bindings.RevLastTrainingEt.validator}"/>
                     <af:convertDateTime pattern="#{bindings.RevLastTrainingEt.format}"/>
                     <af:convertDateTime pattern="hh:mm:ss a"/>
@@ -403,7 +409,7 @@
                     <af:spacer width="10" height="10" id="s36"/>
                   <af:selectOneChoice value="#{bindings.QASess1.inputValue}" label="Q/A Session Held"
                                       required="#{bindings.QASess1.hints.mandatory}"
-                                contentStyle="width:250px;"
+                                contentStyle="width:250px;" autoSubmit="true"
                                       shortDesc="#{bindings.QASess1.hints.tooltip}" id="soc16">
                     <f:selectItems value="#{bindings.QASess1.items}" id="si16"/>
                     <f:validator binding="#{bindings.QASess1.validator}"/>
@@ -413,7 +419,8 @@
                                   required="#{bindings.QASessSt.hints.mandatory}"
                                   columns="#{bindings.QASessSt.hints.displayWidth}"
                                   shortDesc="#{bindings.QASessSt.hints.tooltip}" id="id15"
-                                  contentStyle="width:250px;">
+                                  contentStyle="width:250px;"
+                                  disabled="#{bindings.QASess1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.QASessSt.validator}"/>
                       <af:convertDateTime pattern="#{bindings.QASessSt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
@@ -423,7 +430,8 @@
                                   required="#{bindings.QASessEt.hints.mandatory}"
                                   columns="#{bindings.QASessEt.hints.displayWidth}"
                                   shortDesc="#{bindings.QASessEt.hints.tooltip}" id="id16"
-                                  contentStyle="width:250px;">
+                                  contentStyle="width:250px;"
+                                  disabled="#{bindings.QASess1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.QASessEt.validator}"/>
                       <af:convertDateTime pattern="#{bindings.QASessEt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
@@ -436,7 +444,7 @@
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
                     <af:spacer width="10" height="10" id="s40"/>
                   <af:selectOneChoice value="#{bindings.SummDay1.inputValue}" label="Summary of the Day"
-                                      required="#{bindings.SummDay1.hints.mandatory}"
+                                      required="#{bindings.SummDay1.hints.mandatory}" autoSubmit="true"
                                       shortDesc="#{bindings.SummDay1.hints.tooltip}" id="soc17"
                                       contentStyle="width:250px;">
                     <f:selectItems value="#{bindings.SummDay1.items}" id="si17"/>
@@ -447,7 +455,8 @@
                                   required="#{bindings.SummDaySt.hints.mandatory}"
                                   columns="#{bindings.SummDaySt.hints.displayWidth}"
                                   shortDesc="#{bindings.SummDaySt.hints.tooltip}" id="id17"
-                                  contentStyle="width:250px;">
+                                  contentStyle="width:250px;"
+                                  disabled="#{bindings.SummDay1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.SummDaySt.validator}"/>
                       <af:convertDateTime pattern="#{bindings.SummDaySt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
@@ -457,7 +466,8 @@
                                   required="#{bindings.SummDayEt.hints.mandatory}"
                                   columns="#{bindings.SummDayEt.hints.displayWidth}"
                                   shortDesc="#{bindings.SummDayEt.hints.tooltip}" id="id18"
-                                  contentStyle="width:250px;">
+                                  contentStyle="width:250px;"
+                                  disabled="#{bindings.SummDay1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.SummDayEt.validator}"/>
                       <af:convertDateTime pattern="#{bindings.SummDayEt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
