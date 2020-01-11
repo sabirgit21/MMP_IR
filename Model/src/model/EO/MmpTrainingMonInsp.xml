@@ -10,7 +10,8 @@
   DBObjectName="MMP_TRAINING_MON_INSP"
   AliasName="MmpTrainingMonInsp"
   BindingStyle="OracleName"
-  RowClass="model.EO.MmpTrainingMonInspImpl">
+  RowClass="model.EO.MmpTrainingMonInspImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <DesignTime>
     <Attr Name="_codeGenFlag2" Value="Access|DML"/>
     <Attr Name="_isCodegen" Value="true"/>
@@ -283,7 +284,18 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_MON_INSP"/>
+    TableName="MMP_TRAINING_MON_INSP">
+    <validation:CompareValidationBean
+      Name="EcoSystemEtRule"
+      ResId="model.EO.MmpTrainingMonInsp.EcoSystemEt_Rule_0"
+      MessageFlavor="IGNORE_DETAILS"
+      Description="End Time Should Be Greater Or Equal To Start Time"
+      OnAttribute="EcoSystemEt"
+      OperandType="JBO"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO"
+      CompareValue="model.VO.MmpTrainingMonInspView.EcoSystemSt"/>
+  </Attribute>
   <Attribute
     Name="EcoSystemSt"
     ColumnName="ECO_SYSTEM_ST"
@@ -297,7 +309,18 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_MON_INSP"/>
+    TableName="MMP_TRAINING_MON_INSP">
+    <validation:CompareValidationBean
+      Name="PlanModuleEtRule"
+      ResId="model.EO.MmpTrainingMonInsp.PlanModuleEt_Rule_0"
+      MessageFlavor="IGNORE_DETAILS"
+      Description="End Time Should Be Greater Or Equal To Start Time"
+      OnAttribute="PlanModuleEt"
+      OperandType="JBO"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO"
+      CompareValue="model.VO.MmpTrainingMonInspView.PlanModuleSt"/>
+  </Attribute>
   <Attribute
     Name="PlanModuleSt"
     ColumnName="PLAN_MODULE_ST"
@@ -325,7 +348,18 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_MON_INSP"/>
+    TableName="MMP_TRAINING_MON_INSP">
+    <validation:CompareValidationBean
+      Name="ReciteQuranEtRule"
+      ResId="model.EO.MmpTrainingMonInsp.ReciteQuranEt_Rule_0"
+      MessageFlavor="IGNORE_DETAILS"
+      Description="End Time Should Be Greater Or Equal To Start Time"
+      OnAttribute="ReciteQuranEt"
+      OperandType="JBO"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO"
+      CompareValue="model.VO.MmpTrainingMonInspView.ReciteQuranSt"/>
+  </Attribute>
   <Attribute
     Name="ReciteQuranSt"
     ColumnName="RECITE_QURAN_ST"
@@ -339,7 +373,18 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_MON_INSP"/>
+    TableName="MMP_TRAINING_MON_INSP">
+    <validation:CompareValidationBean
+      Name="RevLastTrainingEtRule"
+      ResId="model.EO.MmpTrainingMonInsp.RevLastTrainingEt_Rule_0"
+      MessageFlavor="IGNORE_DETAILS"
+      Description="End Time Should Be Greater Or Equal To Start Time"
+      OnAttribute="RevLastTrainingEt"
+      OperandType="JBO"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO"
+      CompareValue="model.VO.MmpTrainingMonInspView.RevLastTrainingSt"/>
+  </Attribute>
   <Attribute
     Name="RevLastTrainingSt"
     ColumnName="REV_LAST_TRAINING_ST"
@@ -353,7 +398,18 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_MON_INSP"/>
+    TableName="MMP_TRAINING_MON_INSP">
+    <validation:CompareValidationBean
+      Name="SummDayEtRule"
+      ResId="model.EO.MmpTrainingMonInsp.SummDayEt_Rule_0"
+      MessageFlavor="IGNORE_DETAILS"
+      Description="End Time Should Be Greater Or Equal To Start Time"
+      OnAttribute="SummDayEt"
+      OperandType="JBO"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO"
+      CompareValue="model.VO.MmpTrainingMonInspView.SummDaySt"/>
+  </Attribute>
   <Attribute
     Name="SummDaySt"
     ColumnName="SUMM_DAY_ST"
@@ -722,4 +778,8 @@
       <Item Value="model.EO.MmpTrainingMonInsp.MmpTrainingCheckInId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>
