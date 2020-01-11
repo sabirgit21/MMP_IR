@@ -67,11 +67,13 @@ AND MmpTrainingCheckOut.MEMBER_REG_ID = :sessMemID">
     <AttrArray Name="DerivedAttrNames">
       <Item Value="TrainingStart"/>
       <Item Value="MmpTrainingMonInspId"/>
+      <Item Value="TrainingEnd"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ClusterId"/>
       <Item Value="StartTraining"/>
       <Item Value="MmpTrainingMonInspId"/>
+      <Item Value="SummDayEt"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>

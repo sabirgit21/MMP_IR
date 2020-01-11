@@ -1131,8 +1131,27 @@
                       <f:validator binding="#{row.bindings.PerChange.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  
-                 <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Remarks.name}" filterable="true"
+                  <af:column headerText="Arival Time" id="c31">
+                    <af:inputDate value="#{row.bindings.ArivalTime.inputValue}"
+                                  label="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.label}"
+                                  required="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.mandatory}"
+                                  columns="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.displayWidth}"
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.tooltip}" id="id1">
+                      <f:validator binding="#{row.bindings.ArivalTime.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column headerText="Left Time" id="c32">
+                    <af:inputDate value="#{row.bindings.LeftTime.inputValue}"
+                                  label="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.label}"
+                                  required="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.mandatory}"
+                                  columns="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.displayWidth}"
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.tooltip}" id="id6">
+                      <f:validator binding="#{row.bindings.LeftTime.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Remarks.name}" filterable="true"
                              sortable="true" headerText="Remarks"
                              id="c25" width="200">
                              <f:facet name="filter">

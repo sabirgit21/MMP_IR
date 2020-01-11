@@ -134,7 +134,7 @@
                         <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.format}"/>
                       </af:inputDate>
                     </f:facet>
-                    <af:inputDate value="#{row.bindings.TrainingEnd.inputValue}"
+                    <af:inputDate value="#{row.bindings.TrainingEnd.inputValue}" readOnly="true"
                                   label="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.label}"
                                   required="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.mandatory}"
                                   columns="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.displayWidth}"

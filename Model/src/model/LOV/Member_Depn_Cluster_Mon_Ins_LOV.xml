@@ -16,7 +16,8 @@
        MmpTrainingMonInsp.DATED, 
        MmpTrainingMonInsp.MEMBER_REG_ID, 
        MmpTrainingMonInsp.START_TRAINING, 
-       MmpTrainingMonInsp.END_TRAINING"
+       MmpTrainingMonInsp.END_TRAINING, 
+       MmpTrainingMonInsp.SUMM_DAY_ET"
   FromList="MMP_TRAINING_MON_INSP MmpTrainingMonInsp, TBL_CLUSTER TblCluster"
   Where="MmpTrainingMonInsp.CLUSTER_ID = TblCluster.CLUSTER_ID(+)   
 AND MmpTrainingMonInsp.MEMBER_REG_ID = :mmRegID     
@@ -113,6 +114,12 @@ And MmpTrainingMonInsp.END_TRAINING is Null">
     EntityAttrName="EndTraining"
     EntityUsage="MmpTrainingMonInsp"
     AliasName="END_TRAINING"/>
+  <ViewAttribute
+    Name="SummDayEt"
+    PrecisionRule="true"
+    EntityAttrName="SummDayEt"
+    EntityUsage="MmpTrainingMonInsp"
+    AliasName="SUMM_DAY_ET"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingMonInspId"/>
   </AttrArray>
