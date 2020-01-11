@@ -31,89 +31,38 @@
                           selectionListener="#{bindings.MmpTrainingCheckOutView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.MmpTrainingCheckOutView1.rangeSize}"
                           filterModel="#{bindings.MmpTrainingCheckOutView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.MmpTrainingCheckOutView1Query.processQuery}" varStatus="vs" id="t1">
+                          queryListener="#{bindings.MmpTrainingCheckOutView1Query.processQuery}" varStatus="vs" 
+                           id="t1" >
                   <af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.label}"
-                             id="c1">
+                             headerText="MMP Training Check Out ID"
+                             id="c1" align="center" width="80">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MmpTrainingCheckOutId}"
+                                          id="id4" placeholder="Search ID">
+                           </af:inputText>
+                             </f:facet>
+
                     <af:inputText value="#{row.bindings.MmpTrainingCheckOutId.inputValue}" readOnly="true"
                                   label="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.label}"
                                   required="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.mandatory}"
                                   columns="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.displayWidth}"
                                   maximumLength="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.precision}"
                                   shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.tooltip}"
-                                  id="it1">
+                                  id="it1" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.MmpTrainingCheckOutId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.label}" id="c2">
-                    <af:inputText value="#{row.bindings.MmpTrainingMonInspId.inputValue}"
-                                  label="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.label}"
-                                  required="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.mandatory}"
-                                  columns="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.displayWidth}"
-                                  maximumLength="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.precision}"
-                                  shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.tooltip}"
-                                  id="it2">
-                      <f:validator binding="#{row.bindings.MmpTrainingMonInspId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.format}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.label}"
-                             id="c3">
-                    <af:inputText value="#{row.bindings.Remarks.inputValue}"
-                                  label="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.label}"
-                                  required="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.mandatory}"
-                                  columns="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.displayWidth}"
-                                  maximumLength="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.precision}"
-                                  shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.tooltip}" id="it3">
-                      <f:validator binding="#{row.bindings.Remarks.validator}"/>
-                    </af:inputText>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.label}" id="c4">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.MmpTrainingCheckOutView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.TrainingEnd.value}"
-                                    id="id1">
-                        <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.TrainingEnd.inputValue}"
-                                  label="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.label}"
-                                  required="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.mandatory}"
-                                  columns="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.displayWidth}"
-                                  shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.tooltip}" id="id2">
-                      <f:validator binding="#{row.bindings.TrainingEnd.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.name}"
-                             filterable="true" sortable="true"
-                             headerText="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.label}" id="c5">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.MmpTrainingCheckOutView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.TrainingStart.value}"
-                                    id="id3">
-                        <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.TrainingStart.inputValue}" readOnly="true"
-                                  label="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.label}"
-                                  required="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.mandatory}"
-                                  columns="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.displayWidth}"
-                                  shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.tooltip}" id="id4">
-                      <f:validator binding="#{row.bindings.TrainingStart.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.format}"/>
-                    </af:inputDate>
-                  </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.MemberRegId1.name}"
                              filterable="true" sortable="true"
-                             headerText="#{bindings.MmpTrainingCheckOutView1.hints.MemberRegId1.label}" id="c6">
+                             headerText="Member" id="c6" width="290">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MemberRegId1}"
+                                          id="it5" placeholder="Search Member">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.MemberRegId1.inputValue}"
                                         label="#{row.bindings.MemberRegId1.label}"
                                         required="#{bindings.MmpTrainingCheckOutView1.hints.MemberRegId1.mandatory}"
@@ -124,7 +73,7 @@
                     </af:selectOneChoice>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.Dated1.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingCheckOutView1.hints.Dated1.label}"
+                             sortable="true" headerText="Dated"
                              id="c7">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.MmpTrainingCheckOutView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated1.value}"
@@ -141,9 +90,14 @@
                       <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.Dated1.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.ClusterId1.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpTrainingCheckOutView1.hints.ClusterId1.label}"
-                             id="c8">
+                   <af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.ClusterId1.name}" filterable="true"
+                             sortable="true" headerText="Cluster"
+                             id="c8" width="290">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ClusterId1}"
+                                          id="it6" placeholder="Search Cluster">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.ClusterId1.inputValue}"
                                         label="#{row.bindings.ClusterId1.label}"
                                         required="#{bindings.MmpTrainingCheckOutView1.hints.ClusterId1.mandatory}"
@@ -152,6 +106,75 @@
                       <f:selectItems value="#{row.bindings.ClusterId1.items}" id="si2"/>
                       <f:validator binding="#{row.bindings.ClusterId1.validator}"/>
                     </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.name}"
+                             filterable="true" sortable="true"
+                             headerText="Training Start" id="c5">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.MmpTrainingCheckOutView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.TrainingStart.value}"
+                                    id="id3">
+                        <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.TrainingStart.inputValue}" readOnly="true"
+                                  label="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.label}"
+                                  required="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.mandatory}"
+                                  columns="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.displayWidth}"
+                                  shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.tooltip}" id="id9">
+                      <f:validator binding="#{row.bindings.TrainingStart.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.TrainingStart.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.name}"
+                             filterable="true" sortable="true"
+                             headerText="Training End" id="c4">
+                    <f:facet name="filter">
+                      <af:inputDate value="#{bindings.MmpTrainingCheckOutView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.TrainingEnd.value}"
+                                    id="id1">
+                        <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.format}"/>
+                      </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.TrainingEnd.inputValue}"
+                                  label="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.label}"
+                                  required="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.mandatory}"
+                                  columns="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.displayWidth}"
+                                  shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.tooltip}" id="id2">
+                      <f:validator binding="#{row.bindings.TrainingEnd.validator}"/>
+                      <af:convertDateTime pattern="#{bindings.MmpTrainingCheckOutView1.hints.TrainingEnd.format}"/>
+                    </af:inputDate>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.name}" filterable="true"
+                             sortable="true" headerText="Remarks"
+                             id="c3" width="200">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.Remarks}"
+                                          id="it7" placeholder="Search Remarks">
+                           </af:inputText>
+                             </f:facet>
+                    <af:inputText value="#{row.bindings.Remarks.inputValue}"
+                                  label="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.label}"
+                                  required="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.mandatory}"
+                                  columns="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.displayWidth}"
+                                  maximumLength="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.precision}"
+                                  shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.Remarks.tooltip}" id="it3">
+                      <f:validator binding="#{row.bindings.Remarks.validator}"/>
+                    </af:inputText>
+                  </af:column>
+                  <!--<af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.name}"
+                             filterable="true" sortable="true"
+                             headerText="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.label}" id="c2">
+                             
+                    <af:inputText value="#{row.bindings.MmpTrainingMonInspId.inputValue}"
+                                  label="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.label}"
+                                  required="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.mandatory}"
+                                  columns="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.displayWidth}"
+                                  maximumLength="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.precision}"
+                                  shortDesc="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.tooltip}"
+                                  id="it2">
+                      <f:validator binding="#{row.bindings.MmpTrainingMonInspId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId.format}"/>
+                    </af:inputText>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.EndTraining.name}"
                              filterable="true" sortable="true"
@@ -186,7 +209,7 @@
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingMonInspId1.format}"/>
                     </af:inputText>
-                  </af:column>
+                  </af:column>-->
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>

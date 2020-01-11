@@ -222,7 +222,12 @@
                       <af:convertDateTime pattern="#{bindings.MmpMonSchDetailView2.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>-->
-                  <af:column headerText="#{bindings.MmpMonSchDetailView2.hints.ClassType.label}" id="c8">
+                  <af:column headerText="Class Type" id="c8" sortable="true" filterable="true">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ClassType}"
+                                          id="it8" placeholder="Search Class Type">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.ClassType.inputValue}"
                                         label="#{row.bindings.ClassType.label}" readOnly="true"
                                         required="#{bindings.MmpMonSchDetailView2.hints.ClassType.mandatory}"

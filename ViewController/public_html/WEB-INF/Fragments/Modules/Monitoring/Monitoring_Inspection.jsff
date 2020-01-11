@@ -109,7 +109,13 @@
                       <f:validator binding="#{row.bindings.ClusterId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpTrainingMonInspView1.hints.ClassType.label}" id="c34">
+                  <af:column headerText="Class Type" id="c34"
+                             sortable="true" filterable="true">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ClassType}"
+                                          id="it54" placeholder="Search Class Type">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.ClassType.inputValue}"
                                         label="#{row.bindings.ClassType.label}"
                                         required="#{bindings.MmpTrainingMonInspView1.hints.ClassType.mandatory}"
@@ -292,7 +298,7 @@
                     <af:outputLabel value="Module Planned" id="ol3"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
                     <af:spacer width="10" height="10" id="s26"/>
-                  <af:selectOneChoice value="#{bindings.PlanModule1.inputValue}" label="Planned Module"
+                  <af:selectOneChoice value="#{bindings.PlanModule1.inputValue}" label="Planned Module followed"
                                       required="#{bindings.PlanModule1.hints.mandatory}" autoSubmit="true"
                                       shortDesc="#{bindings.PlanModule1.hints.tooltip}" id="soc13"
                                       contentStyle="width:250px;">
@@ -331,7 +337,7 @@
                     <af:outputLabel value="Eco System Analysis" id="ol2"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
                     <af:spacer width="10" height="10" id="s27"/>
-                  <af:selectOneChoice value="#{bindings.EcoSystem1.inputValue}" label="Eco Sys Analysis"
+                  <af:selectOneChoice value="#{bindings.EcoSystem1.inputValue}" label="Eco System Analysis (ESA)"
                                       required="#{bindings.EcoSystem1.hints.mandatory}"
                                 contentStyle="width:250px;" autoSubmit="true"
                                       shortDesc="#{bindings.EcoSystem1.hints.tooltip}" id="soc14">
@@ -368,7 +374,7 @@
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
                     <af:spacer width="10" height="10" id="s31"/>
                   <af:selectOneChoice value="#{bindings.RevLastTraining1.inputValue}"
-                                      label="Review Last Training" autoSubmit="true"
+                                      label="Review of Last Training Held" autoSubmit="true"
                                       required="#{bindings.RevLastTraining1.hints.mandatory}"
                                       shortDesc="#{bindings.RevLastTraining1.hints.tooltip}" id="soc15"
                                       contentStyle="width:250px;">
@@ -407,7 +413,7 @@
                     <af:outputLabel value="Question Answer Session" id="ol5"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
                     <af:spacer width="10" height="10" id="s36"/>
-                  <af:selectOneChoice value="#{bindings.QASess1.inputValue}" label="Q/A Session Held"
+                  <af:selectOneChoice value="#{bindings.QASess1.inputValue}" label="Question Answer Session Held"
                                       required="#{bindings.QASess1.hints.mandatory}"
                                 contentStyle="width:250px;" autoSubmit="true"
                                       shortDesc="#{bindings.QASess1.hints.tooltip}" id="soc16">
@@ -510,7 +516,7 @@
                 
                 <af:panelGridLayout id="pgl14">
                   <af:gridRow marginTop="5px" height="auto" id="gr6">
-                    <af:gridCell marginStart="5px" width="50%" id="gc6">
+                    <af:gridCell marginStart="5px" width="0%" id="gc6">
                       <af:panelGroupLayout id="pgl17" layout="vertical" inlineStyle="border: 2px solid black;">
                     <af:outputLabel value="ECO System Analysis" id="ol9"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
@@ -526,7 +532,7 @@
                           </af:selectOneChoice>
                           <af:spacer  id="s57"/>
                           <af:selectOneChoice value="#{bindings.EsaIdenDis.inputValue}"
-                                              label="Identified var diseases"
+                                              label="Identified various diseases"
                                       contentStyle="width:200px;"
                                               required="#{bindings.EsaIdenDis.hints.mandatory}"
                                               shortDesc="#{bindings.EsaIdenDis.hints.tooltip}" id="soc19">
@@ -535,7 +541,7 @@
                           </af:selectOneChoice>
                           <af:spacer  id="s58"/>
                           <af:selectOneChoice value="#{bindings.EsaIdenVar.inputValue}"
-                                              label="Identified various"
+                                              label="Identified various insects/pests/predators"
                                       contentStyle="width:200px;"
                                               required="#{bindings.EsaIdenVar.hints.mandatory}"
                                               shortDesc="#{bindings.EsaIdenVar.hints.tooltip}" id="soc30">
@@ -544,7 +550,7 @@
                           </af:selectOneChoice>
                           <af:spacer  id="s59"/>
                           <af:selectOneChoice value="#{bindings.EsaObsGen.inputValue}"
-                                              label="Observed gen field con"
+                                              label="Observed general field conditions"
                                       contentStyle="width:200px;"
                                               required="#{bindings.EsaObsGen.hints.mandatory}"
                                               shortDesc="#{bindings.EsaObsGen.hints.tooltip}" id="soc31">
@@ -585,7 +591,7 @@
                         <af:spacer width="10" height="10" id="s55"/>
                   </af:panelGroupLayout>
                     </af:gridCell>
-                    <af:gridCell marginStart="5px" width="50%" id="gc7">
+                    <af:gridCell marginStart="5px" width="0%" id="gc7">
                       <af:panelGroupLayout id="pgl16" layout="vertical" inlineStyle="border: 2px solid black;">
                     <af:outputLabel value="IEC Materials" id="ol8"
                                     inlineStyle="font-size:large; font-weight:bold; text-decoration:underline;"/>
@@ -617,7 +623,7 @@
                           </af:selectOneChoice>
                           <af:spacer  id="s64"/>
                           <af:selectOneChoice value="#{bindings.IecInform.inputValue}"
-                                              label="Info material"
+                                              label="Informative material"
                                       contentStyle="width:200px;"
                                               required="#{bindings.IecInform.hints.mandatory}"
                                               shortDesc="#{bindings.IecInform.hints.tooltip}" id="soc37">
@@ -1125,41 +1131,8 @@
                       <f:validator binding="#{row.bindings.PerChange.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Arrival Time" id="c31" sortable="true" filterable="true" align="center">
-                   <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.ArivalTime}"
-                                          id="it44" placeholder="Search Arrival Time">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputDate value="#{row.bindings.ArivalTime.inputValue}"
-                                  label="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.label}"
-                                  required="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.mandatory}"
-                                  columns="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.displayWidth}"
-                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.tooltip}" 
-                                  id="id1" contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.ArivalTime.validator}"/>
-                      <af:convertDateTime pattern="hh:mm:ss a"/>
-                      <af:convertDateTime pattern="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column headerText="Left Time" id="c32" sortable="true" filterable="true" align="center">
-                  <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.LeftTime}"
-                                          id="it66" placeholder="Search Left Time">
-                           </af:inputText>
-                             </f:facet>
-                    <af:inputDate value="#{row.bindings.LeftTime.inputValue}"
-                                  label="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.label}"
-                                  required="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.mandatory}"
-                                  columns="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.displayWidth}"
-                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.tooltip}" 
-                                  id="id6" contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.LeftTime.validator}"/>
-                      <af:convertDateTime pattern="hh:mm:ss a"/>
-                      <af:convertDateTime pattern="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.format}"/>
-                    </af:inputDate>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Remarks.name}" filterable="true"
+                  
+                 <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Remarks.name}" filterable="true"
                              sortable="true" headerText="Remarks"
                              id="c25" width="200">
                              <f:facet name="filter">
