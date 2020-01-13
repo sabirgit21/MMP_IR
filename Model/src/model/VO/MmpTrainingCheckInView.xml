@@ -26,15 +26,53 @@
        MmpMonSchDetail.CLASS_TYPE, 
        MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID AS MMP_MON_SCH_DETAIL_ID1"
   FromList="MMP_TRAINING_CHECK_IN MmpTrainingCheckIn, MMP_MON_SCH_DETAIL MmpMonSchDetail"
-  Where="MmpTrainingCheckIn.MMP_MON_SCH_DETAIL_ID = MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID(+) 
-AND MmpTrainingCheckIn.MEMBER_REG_ID = :sessMemID"
-  AutoRefresh="true">
+  Where="MmpTrainingCheckIn.MMP_MON_SCH_DETAIL_ID = MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID(+)  
+AND MmpTrainingCheckIn.MEMBER_REG_ID = :sessMemID 
+ 
+union  
+ 
+SELECT MmpTrainingCheckIn.MMP_TRAINING_CHECK_IN_ID,  
+       MmpTrainingCheckIn.CLUSTER_ID,  
+       MmpTrainingCheckIn.DATED,  
+       MmpTrainingCheckIn.TRAINING_STARTED,  
+       MmpTrainingCheckIn.REMARKS,  
+       MmpTrainingCheckIn.LATITUDE,  
+       MmpTrainingCheckIn.LONGITUDE,  
+       MmpTrainingCheckIn.CREATED_DATE,  
+       MmpTrainingCheckIn.CREATED_BY,  
+       MmpTrainingCheckIn.UPDATED_DATE,  
+       MmpTrainingCheckIn.UPDATED_BY,  
+       MmpTrainingCheckIn.MEMBER_REG_ID,  
+       MmpTrainingCheckIn.TRAINING_SCH_DETAIL_ID,  
+       MmpTrainingCheckIn.MMP_MON_SCH_DETAIL_ID,  
+       MmpMonSchDetail.CLASS_TYPE,  
+       MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID AS MMP_MON_SCH_DETAIL_ID1 
+FROM  MMP_TRAINING_CHECK_IN MmpTrainingCheckIn, MMP_MON_SCH_DETAIL MmpMonSchDetail 
+ 
+Where MmpTrainingCheckIn.MMP_MON_SCH_DETAIL_ID = MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID(+)  
+ 
+AND 0 &lt;>  
+(select count(um.MEMBER_REG_ID) 
+from mmp_user_master um, mmp_role_master rm 
+where um.mmp_ROLE_MASTER_ID = rm.mmp_ROLE_MASTER_ID 
+and rm.AST = 'Y' 
+and um.AST = 'Y' 
+and rm.MMP_ROLE_MASTER_NAME = 'Super Administrator' 
+and um.MEMBER_REG_ID = :sessMemID2)">
   <Variable
     Name="sessMemID"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
+      Name="VariableScript"><![CDATA[adf.context.current.sessionScope.get('sessMemID')]]></TransientExpression>
+  </Variable>
+  <Variable
+    Name="sessMemID2"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
       Name="VariableScript"
+      trustMode="trusted"
       CodeSourceName="MmpTrainingCheckInView"/>
   </Variable>
   <ViewAccessor

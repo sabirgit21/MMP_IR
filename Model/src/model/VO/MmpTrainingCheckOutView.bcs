@@ -10,3 +10,10 @@ def sessMemID_VariableScript_Variable()
 adf.context.current.sessionScope.get('sessMemID')
 }
 
+
+@VariableExpression(path="sessMemID2")
+def sessMemID2_VariableScript_Variable()
+{
+adf.context.current.sessionScope.get('sessMemID')
+}
+

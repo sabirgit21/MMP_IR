@@ -70,11 +70,92 @@
        MmpMonSchDetail.CLASS_TYPE, 
        MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID"
   FromList="MMP_TRAINING_MON_INSP MmpTrainingMonInsp, MMP_TRAINING_CHECK_IN MmpTrainingCheckIn, MMP_MON_SCH_DETAIL MmpMonSchDetail"
-  Where="(MmpTrainingMonInsp.MMP_TRAINING_CHECK_IN_ID = MmpTrainingCheckIn.MMP_TRAINING_CHECK_IN_ID(+))  
-AND (MmpTrainingCheckIn.MMP_MON_SCH_DETAIL_ID = MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID(+)) 
-AND MmpTrainingMonInsp.MEMBER_REG_ID = :sessMemID">
+  Where="(MmpTrainingMonInsp.MMP_TRAINING_CHECK_IN_ID = MmpTrainingCheckIn.MMP_TRAINING_CHECK_IN_ID(+))     
+AND (MmpTrainingCheckIn.MMP_MON_SCH_DETAIL_ID = MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID(+))    
+AND MmpTrainingMonInsp.MEMBER_REG_ID = :sessMemID   
+ union  
+ 
+SELECT MmpTrainingMonInsp.MMP_TRAINING_MON_INSP_ID,  
+       MmpTrainingMonInsp.CLUSTER_ID,  
+       MmpTrainingMonInsp.DATED,  
+       MmpTrainingMonInsp.START_TRAINING,  
+       MmpTrainingMonInsp.END_TRAINING,  
+       MmpTrainingMonInsp.TOT_TRAINER,  
+       MmpTrainingMonInsp.AGENDA_DAY,  
+       MmpTrainingMonInsp.RECITE_QURAN,  
+       MmpTrainingMonInsp.PLAN_MODULE,  
+       MmpTrainingMonInsp.ECO_SYSTEM,  
+       MmpTrainingMonInsp.REV_LAST_TRAINING,  
+       MmpTrainingMonInsp.Q_A_SESS,  
+       MmpTrainingMonInsp.SUMM_DAY,  
+       MmpTrainingMonInsp.ANY_IEC,  
+       MmpTrainingMonInsp.TOOLS_ADOPT,  
+       MmpTrainingMonInsp.ISS_CHL_REC,  
+       MmpTrainingMonInsp.DETAIL_ABOUT_OUTCOME,  
+       MmpTrainingMonInsp.CREATED_DATE,  
+       MmpTrainingMonInsp.CREATED_BY,  
+       MmpTrainingMonInsp.UPDATED_DATE,  
+       MmpTrainingMonInsp.UPDATED_BY,  
+       MmpTrainingMonInsp.MEMBER_REG_ID,  
+       MmpTrainingMonInsp.CLUSTER_TEST,  
+       MmpTrainingMonInsp.TRAINING_SON,  
+       MmpTrainingMonInsp.ECO_SYSTEM_ET,  
+       MmpTrainingMonInsp.ECO_SYSTEM_ST,  
+       MmpTrainingMonInsp.PLAN_MODULE_ET,  
+       MmpTrainingMonInsp.PLAN_MODULE_ST,  
+       MmpTrainingMonInsp.Q_A_SESS_ET,  
+       MmpTrainingMonInsp.Q_A_SESS_ST,  
+       MmpTrainingMonInsp.RECITE_QURAN_ET,  
+       MmpTrainingMonInsp.RECITE_QURAN_ST,  
+       MmpTrainingMonInsp.REV_LAST_TRAINING_ET,  
+       MmpTrainingMonInsp.REV_LAST_TRAINING_ST,  
+       MmpTrainingMonInsp.SUMM_DAY_ET,  
+       MmpTrainingMonInsp.SUMM_DAY_ST,  
+       MmpTrainingMonInsp.NO_OF_GROUP,  
+       MmpTrainingMonInsp.ESA_EXAM_PLANT,  
+       MmpTrainingMonInsp.ESA_IDEN_DIS,  
+       MmpTrainingMonInsp.ESA_IDEN_VAR,  
+       MmpTrainingMonInsp.ESA_OBS_GEN,  
+       MmpTrainingMonInsp.ESA_OTHERS,  
+       MmpTrainingMonInsp.ESA_STU_PLANT,  
+       MmpTrainingMonInsp.IEC_BANNER,  
+       MmpTrainingMonInsp.IEC_BROCH,  
+       MmpTrainingMonInsp.IEC_CARDS,  
+       MmpTrainingMonInsp.IEC_INFORM,  
+       MmpTrainingMonInsp.IEC_NILL,  
+       MmpTrainingMonInsp.IEC_PAMP,  
+       MmpTrainingMonInsp.TOOLS_ADOPT AS TOOLS_ADOPT1,  
+       MmpTrainingMonInsp.TOOLS_DEMO,  
+       MmpTrainingMonInsp.TOOLS_DISCUS,  
+       MmpTrainingMonInsp.TOOLS_GROUP,  
+       MmpTrainingMonInsp.TOOLS_LECTURE,  
+       MmpTrainingMonInsp.TOOLS_OTHERS,  
+       MmpTrainingMonInsp.MODULE_ID,  
+       MmpTrainingMonInsp.TRAINING_SCH_DETAIL_ID,  
+       MmpTrainingMonInsp.MMP_TRAINING_CHECK_IN_ID,  
+       MmpMonSchDetail.CLASS_TYPE,  
+       MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID 
+FROM  MMP_TRAINING_MON_INSP MmpTrainingMonInsp, MMP_TRAINING_CHECK_IN MmpTrainingCheckIn, MMP_MON_SCH_DETAIL MmpMonSchDetail 
+where (MmpTrainingMonInsp.MMP_TRAINING_CHECK_IN_ID = MmpTrainingCheckIn.MMP_TRAINING_CHECK_IN_ID(+))     
+AND (MmpTrainingCheckIn.MMP_MON_SCH_DETAIL_ID = MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID(+))   
+ 
+AND 0 &lt;>  
+(select count(um.MEMBER_REG_ID)  
+from mmp_user_master um, mmp_role_master rm  
+where um.mmp_ROLE_MASTER_ID = rm.mmp_ROLE_MASTER_ID  
+and rm.AST = 'Y'  
+and um.AST = 'Y'  
+and rm.MMP_ROLE_MASTER_NAME = 'Super Administrator'  
+and um.MEMBER_REG_ID = :sessMemID2)">
   <Variable
     Name="sessMemID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"><![CDATA[adf.context.current.sessionScope.get('sessMemID')]]></TransientExpression>
+  </Variable>
+  <Variable
+    Name="sessMemID2"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression

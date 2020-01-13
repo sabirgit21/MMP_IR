@@ -288,13 +288,13 @@
     <validation:CompareValidationBean
       Name="EcoSystemEtRule"
       ResId="model.EO.MmpTrainingMonInsp.EcoSystemEt_Rule_0"
-      MessageFlavor="IGNORE_DETAILS"
       Description="End Time Should Be Greater Or Equal To Start Time"
       OnAttribute="EcoSystemEt"
       OperandType="JBO"
       Inverse="false"
       CompareType="GREATERTHANEQUALTO"
-      CompareValue="model.VO.MmpTrainingMonInspView.EcoSystemSt"/>
+      CompareValue="model.VO.MmpTrainingMonInspView.EcoSystemSt"
+      MessageFlavor="IGNORE_DETAILS"/>
   </Attribute>
   <Attribute
     Name="EcoSystemSt"
@@ -334,7 +334,18 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="MMP_TRAINING_MON_INSP"/>
+    TableName="MMP_TRAINING_MON_INSP">
+    <validation:CompareValidationBean
+      Name="QASessEtRule"
+      ResId="model.EO.MmpTrainingMonInsp.QASessEt_Rule_0"
+      MessageFlavor="IGNORE_DETAILS"
+      Description="End Time Should Be Greater Or Equal To Start Time"
+      OnAttribute="QASessEt"
+      OperandType="JBO"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO"
+      CompareValue="model.VO.MmpTrainingMonInspView.QASessSt"/>
+  </Attribute>
   <Attribute
     Name="QASessSt"
     ColumnName="Q_A_SESS_ST"

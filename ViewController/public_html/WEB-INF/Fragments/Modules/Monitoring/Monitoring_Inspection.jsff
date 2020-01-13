@@ -276,7 +276,6 @@
                                   shortDesc="#{bindings.ReciteQuranSt.hints.tooltip}" id="id7"
                                   contentStyle="width:250px;" disabled="#{bindings.ReciteQuran1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.ReciteQuranSt.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.ReciteQuranSt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>
                     <af:spacer width="10" height="10" id="s21"/>
@@ -287,7 +286,6 @@
                                   shortDesc="#{bindings.ReciteQuranEt.hints.tooltip}" 
                                   id="id8" contentStyle="width:250px;" disabled="#{bindings.ReciteQuran1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.ReciteQuranEt.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.ReciteQuranEt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>
                     <af:spacer width="10" height="10" id="s22"/>
@@ -314,7 +312,6 @@
                                   contentStyle="width:250px;"
                                   disabled="#{bindings.PlanModule1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.PlanModuleSt.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.PlanModuleSt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>
                     <af:spacer width="10" height="10" id="s24"/>
@@ -326,7 +323,6 @@
                                   contentStyle="width:250px;" autoSubmit="true"
                                   disabled="#{bindings.PlanModule1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.PlanModuleEt.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.PlanModuleEt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>
                     <af:spacer width="10" height="10" id="s25"/>
@@ -352,7 +348,6 @@
                                   contentStyle="width:250px;"
                                   disabled="#{bindings.EcoSystem1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.EcoSystemSt.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.EcoSystemSt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>
                     <af:spacer width="10" height="10" id="s30"/>
@@ -363,7 +358,6 @@
                                   contentStyle="width:250px;" autoSubmit="true"
                                   disabled="#{bindings.EcoSystem1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.EcoSystemEt.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.EcoSystemEt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>
                     <af:spacer width="10" height="10" id="s28"/>
@@ -390,7 +384,6 @@
                                   id="id13" contentStyle="width:250px;"
                                    disabled="#{bindings.RevLastTraining1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.RevLastTrainingSt.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.RevLastTrainingSt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>
                     <af:spacer width="10" height="10" id="s34"/>
@@ -404,7 +397,6 @@
                                 contentStyle="width:250px;" autoSubmit="true"
                                 disabled="#{bindings.RevLastTraining1.inputValue == 'N'}">
                     <f:validator binding="#{bindings.RevLastTrainingEt.validator}"/>
-                    <af:convertDateTime pattern="#{bindings.RevLastTrainingEt.format}"/>
                     <af:convertDateTime pattern="hh:mm:ss a"/>
                   </af:inputDate>
                   </af:panelGroupLayout>
@@ -428,7 +420,6 @@
                                   contentStyle="width:250px;"
                                   disabled="#{bindings.QASess1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.QASessSt.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.QASessSt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>
                     <af:spacer width="10" height="10" id="s38"/>
@@ -439,7 +430,6 @@
                                   contentStyle="width:250px;" autoSubmit="true"
                                   disabled="#{bindings.QASess1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.QASessEt.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.QASessEt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>
                     <af:spacer width="10" height="10" id="s35"/>
@@ -464,7 +454,6 @@
                                   contentStyle="width:250px;"
                                   disabled="#{bindings.SummDay1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.SummDaySt.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.SummDaySt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>
                     <af:spacer width="10" height="10" id="s42"/>
@@ -475,7 +464,6 @@
                                   contentStyle="width:250px;" autoSubmit="true"
                                   disabled="#{bindings.SummDay1.inputValue == 'N'}">
                       <f:validator binding="#{bindings.SummDayEt.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.SummDayEt.format}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>
                     <af:spacer width="10" height="10" id="s39"/>
@@ -1138,7 +1126,7 @@
                                   columns="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.displayWidth}"
                                   shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.tooltip}" id="id1">
                       <f:validator binding="#{row.bindings.ArivalTime.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.format}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>
                   </af:column>
                   <af:column headerText="Left Time" id="c32">
@@ -1148,7 +1136,7 @@
                                   columns="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.displayWidth}"
                                   shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.tooltip}" id="id6">
                       <f:validator binding="#{row.bindings.LeftTime.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.format}"/>
+                      <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.Remarks.name}" filterable="true"
