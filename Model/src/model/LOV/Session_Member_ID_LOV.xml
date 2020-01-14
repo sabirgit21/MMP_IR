@@ -12,7 +12,22 @@
   SelectList="MmpMemberReg.MEMBER_REG_ID, 
        MmpMemberReg.NAME"
   FromList="MMP_MEMBER_REG MmpMemberReg"
-  Where="MmpMemberReg.MEMBER_REG_ID = :getSessMemID">
+  Where="MmpMemberReg.MEMBER_REG_ID = :getSessMemID  
+  
+union 
+ 
+SELECT MmpMemberReg.MEMBER_REG_ID,  
+       MmpMemberReg.NAME 
+FROM  MMP_MEMBER_REG MmpMemberReg 
+where  
+0 &lt;> 
+(select count(um.MEMBER_REG_ID) 
+from mmp_user_master um, mmp_role_master rm 
+where um.mmp_ROLE_MASTER_ID = rm.mmp_ROLE_MASTER_ID 
+and rm.AST = 'Y' 
+and um.AST = 'Y' 
+and rm.MMP_ROLE_MASTER_NAME = 'Super Administrator' 
+and um.MEMBER_REG_ID = :getSessMemID2 )">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -21,6 +36,14 @@
   </Properties>
   <Variable
     Name="getSessMemID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      CodeSourceName="Session_Member_ID_LOV"/>
+  </Variable>
+  <Variable
+    Name="getSessMemID2"
     Kind="where"
     Type="java.math.BigDecimal">
     <TransientExpression
