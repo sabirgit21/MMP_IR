@@ -3,6 +3,7 @@
 package model.EO
 
 import oracle.jbo.script.annotation.TransientValueExpression;
+import oracle.jbo.script.annotation.ValidatorConditionExpression;
 
 @TransientValueExpression(attributeName="MemberRegId")
 def MemberRegId_ExpressionScript_Expression()
