@@ -17,9 +17,31 @@
        MmpTrainingCheckIn.MEMBER_REG_ID, 
        MmpTrainingCheckIn.TRAINING_SCH_DETAIL_ID"
   FromList="MMP_TRAINING_CHECK_IN MmpTrainingCheckIn, TBL_CLUSTER TblCluster"
-  Where="MmpTrainingCheckIn.CLUSTER_ID = TblCluster.CLUSTER_ID(+)    
-AND MmpTrainingCheckIn.MEMBER_REG_ID = :getmemRegID      
-AND MmpTrainingCheckIn.DATED = :getDate">
+  Where="MmpTrainingCheckIn.CLUSTER_ID = TblCluster.CLUSTER_ID(+)     
+AND MmpTrainingCheckIn.MEMBER_REG_ID = :getmemRegID       
+AND MmpTrainingCheckIn.DATED = :getDate 
+union 
+SELECT MmpTrainingCheckIn.CLUSTER_ID,  
+       MmpTrainingCheckIn.MMP_TRAINING_CHECK_IN_ID,  
+       TblCluster.CLUSTER_NO,  
+       TblCluster.CLUSTER_ID AS CLUSTER_ID1,  
+       MmpTrainingCheckIn.DATED,  
+       MmpTrainingCheckIn.MEMBER_REG_ID,  
+       MmpTrainingCheckIn.TRAINING_SCH_DETAIL_ID 
+FROM  MMP_TRAINING_CHECK_IN MmpTrainingCheckIn, TBL_CLUSTER TblCluster 
+where 
+MmpTrainingCheckIn.CLUSTER_ID = TblCluster.CLUSTER_ID(+)       
+AND MmpTrainingCheckIn.DATED = :getDate  
+ 
+ 
+AND 0 &lt;>      
+(select count(um.MEMBER_REG_ID)      
+from mmp_user_master um, mmp_role_master rm      
+where um.mmp_ROLE_MASTER_ID = rm.mmp_ROLE_MASTER_ID      
+and rm.AST = 'Y'      
+and um.AST = 'Y'      
+and rm.MMP_ROLE_MASTER_NAME = 'Super Administrator'      
+and um.MEMBER_REG_ID = :getmemRegID)">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

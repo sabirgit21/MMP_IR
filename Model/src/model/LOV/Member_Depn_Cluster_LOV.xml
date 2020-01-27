@@ -18,10 +18,35 @@
        MmpMonSchMaster.MMP_MON_SCH_MASTER_ID, 
        MmpMonSchDetail.TRAINING_SCH_DETAIL_ID"
   FromList="MMP_MON_SCH_DETAIL MmpMonSchDetail, TBL_CLUSTER TblCluster, MMP_MON_SCH_MASTER MmpMonSchMaster"
-  Where="(MmpMonSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID)     
-AND (MmpMonSchDetail.MMP_MON_SCH_MASTER_ID = MmpMonSchMaster.MMP_MON_SCH_MASTER_ID(+))    
-AND MmpMonSchMaster.MEMBER_REG_ID = :mmRegID  
-AND MmpMonSchDetail.DATED = :schDate">
+  Where="(MmpMonSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID)      
+AND (MmpMonSchDetail.MMP_MON_SCH_MASTER_ID = MmpMonSchMaster.MMP_MON_SCH_MASTER_ID(+))     
+AND MmpMonSchMaster.MEMBER_REG_ID = :mmRegID   
+AND MmpMonSchDetail.DATED = :schDate 
+ 
+union  
+  
+SELECT MmpMonSchDetail.CLUSTER_ID,  
+       MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID,  
+       MmpMonSchDetail.DATED,  
+       TblCluster.CLUSTER_NO,  
+       TblCluster.CLUSTER_ID AS CLUSTER_ID1,  
+       MmpMonSchMaster.MEMBER_REG_ID,  
+       MmpMonSchMaster.MMP_MON_SCH_MASTER_ID,  
+       MmpMonSchDetail.TRAINING_SCH_DETAIL_ID 
+FROM  MMP_MON_SCH_DETAIL MmpMonSchDetail, TBL_CLUSTER TblCluster, MMP_MON_SCH_MASTER MmpMonSchMaster 
+where 
+(MmpMonSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID)      
+AND (MmpMonSchDetail.MMP_MON_SCH_MASTER_ID = MmpMonSchMaster.MMP_MON_SCH_MASTER_ID(+)) 
+AND MmpMonSchDetail.DATED = :schDate 
+ 
+AND 0 &lt;>      
+(select count(um.MEMBER_REG_ID)      
+from mmp_user_master um, mmp_role_master rm      
+where um.mmp_ROLE_MASTER_ID = rm.mmp_ROLE_MASTER_ID      
+and rm.AST = 'Y'      
+and um.AST = 'Y'      
+and rm.MMP_ROLE_MASTER_NAME = 'Super Administrator'      
+and um.MEMBER_REG_ID = :mmRegID)">
   <Properties>
     <SchemaBasedProperties>
       <LABEL

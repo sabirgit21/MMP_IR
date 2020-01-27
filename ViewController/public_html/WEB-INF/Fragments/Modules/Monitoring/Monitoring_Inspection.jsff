@@ -1016,6 +1016,23 @@
                                         pattern="#{bindings.MmpTrainingMonFarmerView2.hints.LandUnderOrch.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerStatus.name}"
+                             filterable="true" sortable="true"
+                             headerText="Farmer Status" id="c22">
+                              <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.FarmerStatus}"
+                                          id="it45" placeholder="Search Status">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.FarmerStatus.inputValue}"
+                                        label="#{row.bindings.FarmerStatus.label}"
+                                        required="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerStatus.mandatory}"
+                                        shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerStatus.tooltip}"
+                                        id="soc20">
+                      <f:selectItems value="#{row.bindings.FarmerStatus.items}" id="si20"/>
+                      <f:validator binding="#{row.bindings.FarmerStatus.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
                   <af:column headerText="Land Difference" id="c27" sortable="true" filterable="true">
                   <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.LandDiff}"
@@ -1029,6 +1046,23 @@
                                         id="soc26">
                       <f:selectItems value="#{row.bindings.LandDiff.items}" id="si27"/>
                       <f:validator binding="#{row.bindings.LandDiff.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.VerSource.name}" filterable="true"
+                             sortable="true" headerText="Land Verified Source"
+                             id="c23" width="140">
+                             <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.VerSource}"
+                                          id="it42" placeholder="Search Source">
+                           </af:inputText>
+                             </f:facet>
+                    <af:selectOneChoice value="#{row.bindings.VerSource.inputValue}"
+                                        label="#{row.bindings.VerSource.label}"
+                                        required="#{bindings.MmpTrainingMonFarmerView2.hints.VerSource.mandatory}"
+                                        shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.VerSource.tooltip}"
+                                        id="soc22">
+                      <f:selectItems value="#{row.bindings.VerSource.items}" id="si23"/>
+                      <f:validator binding="#{row.bindings.VerSource.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="Verified Land Acre" id="c28" align="center" sortable="true" filterable="true"
@@ -1069,40 +1103,8 @@
                                         pattern="#{bindings.MmpTrainingMonFarmerView2.hints.VerLandUnderOrch.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerStatus.name}"
-                             filterable="true" sortable="true"
-                             headerText="Farmer Status" id="c22">
-                              <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.FarmerStatus}"
-                                          id="it45" placeholder="Search Status">
-                           </af:inputText>
-                             </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.FarmerStatus.inputValue}"
-                                        label="#{row.bindings.FarmerStatus.label}"
-                                        required="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerStatus.mandatory}"
-                                        shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.FarmerStatus.tooltip}"
-                                        id="soc20">
-                      <f:selectItems value="#{row.bindings.FarmerStatus.items}" id="si20"/>
-                      <f:validator binding="#{row.bindings.FarmerStatus.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.VerSource.name}" filterable="true"
-                             sortable="true" headerText="Land Verified Source"
-                             id="c23" width="140">
-                             <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.VerSource}"
-                                          id="it42" placeholder="Search Source">
-                           </af:inputText>
-                             </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.VerSource.inputValue}"
-                                        label="#{row.bindings.VerSource.label}"
-                                        required="#{bindings.MmpTrainingMonFarmerView2.hints.VerSource.mandatory}"
-                                        shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.VerSource.tooltip}"
-                                        id="soc22">
-                      <f:selectItems value="#{row.bindings.VerSource.items}" id="si23"/>
-                      <f:validator binding="#{row.bindings.VerSource.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
+                  
+                  
                   <af:column sortProperty="#{bindings.MmpTrainingMonFarmerView2.hints.PerChange.name}" filterable="true"
                              sortable="true" headerText="Permanent Change"
                              id="c24" width="120">

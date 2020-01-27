@@ -48,7 +48,8 @@
     ColumnType="CHAR"
     TableName="MMP_TRAINING_MON_FARMER"
     RetrievedOnUpdate="true"
-    RetrievedOnInsert="true">
+    RetrievedOnInsert="true"
+    DefaultValue="A">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="1"/>
     </DesignTime>

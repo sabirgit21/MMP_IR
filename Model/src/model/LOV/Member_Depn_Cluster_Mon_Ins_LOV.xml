@@ -19,10 +19,37 @@
        MmpTrainingMonInsp.END_TRAINING, 
        MmpTrainingMonInsp.SUMM_DAY_ET"
   FromList="MMP_TRAINING_MON_INSP MmpTrainingMonInsp, TBL_CLUSTER TblCluster"
-  Where="MmpTrainingMonInsp.CLUSTER_ID = TblCluster.CLUSTER_ID(+)   
-AND MmpTrainingMonInsp.MEMBER_REG_ID = :mmRegID     
-AND MmpTrainingMonInsp.DATED = :schDate 
-And MmpTrainingMonInsp.END_TRAINING is Null">
+  Where="MmpTrainingMonInsp.CLUSTER_ID = TblCluster.CLUSTER_ID(+)    
+AND MmpTrainingMonInsp.MEMBER_REG_ID = :mmRegID      
+AND MmpTrainingMonInsp.DATED = :schDate  
+And MmpTrainingMonInsp.END_TRAINING is Null 
+ 
+ 
+union  
+ 
+SELECT MmpTrainingMonInsp.CLUSTER_ID,  
+       MmpTrainingMonInsp.MMP_TRAINING_MON_INSP_ID,  
+       TblCluster.CLUSTER_NO,  
+       TblCluster.CLUSTER_ID AS CLUSTER_ID1,  
+       MmpTrainingMonInsp.DATED,  
+       MmpTrainingMonInsp.MEMBER_REG_ID,  
+       MmpTrainingMonInsp.START_TRAINING,  
+       MmpTrainingMonInsp.END_TRAINING,  
+       MmpTrainingMonInsp.SUMM_DAY_ET 
+FROM  MMP_TRAINING_MON_INSP MmpTrainingMonInsp, TBL_CLUSTER TblCluster 
+where 
+MmpTrainingMonInsp.CLUSTER_ID = TblCluster.CLUSTER_ID(+)       
+AND MmpTrainingMonInsp.DATED = :schDate  
+And MmpTrainingMonInsp.END_TRAINING is Null 
+ 
+AND 0 &lt;>      
+(select count(um.MEMBER_REG_ID)      
+from mmp_user_master um, mmp_role_master rm      
+where um.mmp_ROLE_MASTER_ID = rm.mmp_ROLE_MASTER_ID      
+and rm.AST = 'Y'      
+and um.AST = 'Y'      
+and rm.MMP_ROLE_MASTER_NAME = 'Super Administrator'      
+and um.MEMBER_REG_ID = :mmRegID)">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
