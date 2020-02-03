@@ -6,7 +6,7 @@
     <variableIterator id="variables"/>
     <iterator Binds="USERS_CRUD_OPERATIONS1" RangeSize="25" DataControl="AppModuleDataControl1"
               id="USERS_CRUD_OPERATIONS1Iterator"/>
-    <iterator Binds="MmpTrainingCheckInView1" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="MmpTrainingCheckInView1" RangeSize="8" DataControl="AppModuleDataControl"
               id="MmpTrainingCheckInView1Iterator" Refresh="always" CacheResults="false"/>
     <searchRegion Binds="MmpTrainingCheckInView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpTrainingCheckInView1Query"/>

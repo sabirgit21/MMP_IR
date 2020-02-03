@@ -4,12 +4,12 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="MmpTrainingPhyProgMasterView1" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="MmpTrainingPhyProgMasterView1" RangeSize="8" DataControl="AppModuleDataControl"
               id="MmpTrainingPhyProgMasterView1Iterator"/>
     <searchRegion Binds="MmpTrainingPhyProgMasterView1Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="MmpTrainingPhyProgMasterView1Query"/>
-    <iterator Binds="MmpTrainingPhyProgDetailView2" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="MmpTrainingPhyProgDetailView2" RangeSize="8" DataControl="AppModuleDataControl"
               id="MmpTrainingPhyProgDetailView2Iterator"/>
     <searchRegion Binds="MmpTrainingPhyProgDetailView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"

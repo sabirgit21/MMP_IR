@@ -32,7 +32,7 @@
                           rowSelection="single" fetchSize="#{bindings.MmpTrainingCheckOutView1.rangeSize}"
                           filterModel="#{bindings.MmpTrainingCheckOutView1Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MmpTrainingCheckOutView1Query.processQuery}" varStatus="vs" 
-                           id="t1" >
+                           id="t1" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpTrainingCheckOutView1.hints.MmpTrainingCheckOutId.name}"
                              filterable="true" sortable="true"
                              headerText="MMP Training Check Out ID"

@@ -1183,7 +1183,7 @@
                           rowSelection="single" fetchSize="#{bindings.MmpTrainingMonUrfarmerView2.rangeSize}"
                           filterModel="#{bindings.MmpTrainingMonUrfarmerView2Query.queryDescriptor}"
                           filterVisible="true" queryListener="#{bindings.MmpTrainingMonUrfarmerView2Query.processQuery}"
-                          varStatus="vs" id="t3">
+                          varStatus="vs" id="t3" scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpTrainingMonUrfarmerView2.hints.MmpTrainingMonUrfarmerId.name}"
                              filterable="true" sortable="true"
                              headerText="Un-Registered farmer ID"
@@ -1281,7 +1281,7 @@
                           rowSelection="single" fetchSize="#{bindings.MmpTrainingMonTopicsView2.rangeSize}"
                           filterModel="#{bindings.MmpTrainingMonTopicsView2Query.queryDescriptor}" filterVisible="true"
                           queryListener="#{bindings.MmpTrainingMonTopicsView2Query.processQuery}" varStatus="vs"
-                          id="t4">
+                          id="t4" scrollPolicy="page" autoHeightRows="0">
                   <!--<af:column sortProperty="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonTopicsId.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.MmpTrainingMonTopicsView2.hints.MmpTrainingMonTopicsId.label}"

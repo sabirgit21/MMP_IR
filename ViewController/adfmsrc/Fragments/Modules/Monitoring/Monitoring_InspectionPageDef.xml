@@ -13,7 +13,8 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpTrainingMonInspView1Query"
                   Refresh="always"/>
     <iterator Binds="MmpTrainingMonInspView2" RangeSize="25" DataControl="AppModuleDataControl"
-              id="MmpTrainingMonInspView2Iterator" Refresh="always" CacheResults="false"/><iterator Binds="MmpTrainingMonUrfarmerView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="MmpTrainingMonInspView2Iterator" Refresh="always" CacheResults="false"/><iterator Binds="MmpTrainingMonUrfarmerView2"
+                                                                                                    RangeSize="8" DataControl="AppModuleDataControl"
               id="MmpTrainingMonUrfarmerView2Iterator"/>
     <searchRegion Binds="MmpTrainingMonUrfarmerView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
@@ -22,7 +23,7 @@
               id="MmpTrainingMonFarmerView2Iterator"/>
     <searchRegion Binds="MmpTrainingMonFarmerView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpTrainingMonFarmerView2Query"/>
-    <iterator Binds="MmpTrainingMonTopicsView2" RangeSize="25" DataControl="AppModuleDataControl"
+    <iterator Binds="MmpTrainingMonTopicsView2" RangeSize="8" DataControl="AppModuleDataControl"
               id="MmpTrainingMonTopicsView2Iterator"/>
     <searchRegion Binds="MmpTrainingMonTopicsView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="MmpTrainingMonTopicsView2Query"/>
