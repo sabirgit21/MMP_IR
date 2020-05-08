@@ -94,7 +94,7 @@
       </AttrNames>
       <ValueList>
         <Item Value="insp ver"/>
-        <Item Value="dlvrd"/>
+        <Item Value="vctat insp"/>
       </ValueList>
     </button>
     <action IterBinding="Inspection_Grant_Approval_Master1Iterator" id="Execute1" RequiresUpdateModel="true"
