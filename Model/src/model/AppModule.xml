@@ -247,6 +247,12 @@
   <ViewUsage
     Name="Map_Farmer_Detail_Att1"
     ViewObjectName="model.VO.Map_Farmer_Detail_Att"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDDView1"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDDView"/>
+  <ViewUsage
+    Name="TblGrantApprovalDetailDDView2"
+    ViewObjectName="model.VO.TblGrantApprovalDetailDDView"/>
   <ViewLinkUsage
     Name="FkMmpMemberRegDepLink1"
     ViewLinkObjectName="model.VO.FkMmpMemberRegDepLink"
@@ -498,5 +504,11 @@
     ViewLinkObjectName="model.VO.FKMapFarmerDetailAttFKLink"
     SrcViewUsageName="model.AppModule.Map_Cluster_Detail1"
     DstViewUsageName="model.AppModule.Map_Farmer_Detail_Att1"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FKTblGrantApprovalDetailDFkLink1"
+    ViewLinkObjectName="model.VO.FKTblGrantApprovalDetailDFkLink"
+    SrcViewUsageName="model.AppModule.TblGrantApprovalDetailView4"
+    DstViewUsageName="model.AppModule.TblGrantApprovalDetailDDView2"
     Reversed="false"/>
 </AppModule>

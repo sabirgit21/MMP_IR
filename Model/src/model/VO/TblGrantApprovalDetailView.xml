@@ -240,4 +240,9 @@
     ViewLink="model.VO.FkDetailDGrantApprovalDetLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TblGrantApprovalDetailDDView"
+    ViewLink="model.VO.FKTblGrantApprovalDetailDFkLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

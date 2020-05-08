@@ -18,6 +18,11 @@
     <searchRegion Binds="TblGrantApprovalDetailDView3Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   id="TblGrantApprovalDetailDView3Query"/>
+    <iterator Binds="TblGrantApprovalDetailDDView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="TblGrantApprovalDetailDDView2Iterator"/>
+    <searchRegion Binds="TblGrantApprovalDetailDDView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TblGrantApprovalDetailDDView2Query"/>
   </executables>
   <bindings>
     <tree IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="USERS_CRUD_OPERATIONS1">
@@ -99,5 +104,19 @@
     </button>
     <action IterBinding="Inspection_Grant_Approval_Master1Iterator" id="Execute1" RequiresUpdateModel="true"
             Action="iteratorExecute"/>
+    <tree IterBinding="TblGrantApprovalDetailDDView2Iterator" id="TblGrantApprovalDetailDDView2">
+      <nodeDefinition DefName="model.VO.TblGrantApprovalDetailDDView" Name="TblGrantApprovalDetailDDView20">
+        <AttrNames>
+          <Item Value="MmpVisitDate"/>
+          <Item Value="MmpMembers"/>
+          <Item Value="SupplierId"/>
+          <Item Value="ItemL4Id"/>
+          <Item Value="InvNo"/>
+          <Item Value="InvPrice"/>
+          <Item Value="HalfInv"/>
+          <Item Value="Qty"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TblGrantApprovalDetailDDView"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <ViewAccessor
+    Name="Supplier_Name_LOV1"
+    ViewObjectName="model.LOV.Supplier_Name_LOV"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="L4_Name_LOV1"
+    ViewObjectName="model.LOV.L4_Name_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_SupplierId"
+    ListVOName="Supplier_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="SupplierId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="SupplierId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ItemL4Id"
+    ListVOName="L4_Name_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ItemL4Id"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="TblGrantApprovalDetailDD"
+    Entity="model.EO.TblGrantApprovalDetailDD"/>
+  <ViewAttribute
+    Name="GrantApprovalDetailDDId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GrantApprovalDetailDDId"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="GRANT_APPROVAL_DETAIL_D_D_ID"/>
+  <ViewAttribute
+    Name="GrantApprovalDetailId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GrantApprovalDetailId"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="GRANT_APPROVAL_DETAIL_ID"/>
+  <ViewAttribute
+    Name="MmpVisitDate"
+    PrecisionRule="true"
+    EntityAttrName="MmpVisitDate"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="MMP_VISIT_DATE"/>
+  <ViewAttribute
+    Name="MmpMembers"
+    PrecisionRule="true"
+    EntityAttrName="MmpMembers"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="MMP_MEMBERS"/>
+  <ViewAttribute
+    Name="SupplierId"
+    PrecisionRule="true"
+    EntityAttrName="SupplierId"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="SUPPLIER_ID"
+    LOVName="LOV_SupplierId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ItemL4Id"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ItemL4Id"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="ITEM_L4_ID"
+    LOVName="LOV_ItemL4Id">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="InvNo"
+    PrecisionRule="true"
+    EntityAttrName="InvNo"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="INV_NO"/>
+  <ViewAttribute
+    Name="InvPrice"
+    PrecisionRule="true"
+    EntityAttrName="InvPrice"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="INV_PRICE"/>
+  <ViewAttribute
+    Name="HalfInv"
+    PrecisionRule="true"
+    EntityAttrName="HalfInv"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="HALF_INV"/>
+  <ViewAttribute
+    Name="Qty"
+    PrecisionRule="true"
+    EntityAttrName="Qty"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="QTY"/>
+  <ViewAttribute
+    Name="CreatedDate"
+    PrecisionRule="true"
+    EntityAttrName="CreatedDate"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="CREATED_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="UpdatedDate"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedDate"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="UPDATED_DATE"/>
+  <ViewAttribute
+    Name="UpdatedBy"
+    PrecisionRule="true"
+    EntityAttrName="UpdatedBy"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="UPDATED_BY"/>
+</ViewObject>
