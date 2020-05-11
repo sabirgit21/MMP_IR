@@ -10,7 +10,7 @@
   <bindings>
     <action IterBinding="USERS_CRUD_OPERATIONS1Iterator" id="ExecuteWithParams" RequiresUpdateModel="true"
             Action="executeWithParams">
-      <NamedData NDName="rolePageID" NDValue="8" NDType="java.math.BigDecimal"/>
+      <NamedData NDName="rolePageID" NDValue="10" NDType="java.math.BigDecimal"/>
     </action>
   </bindings>
 </pageDefinition>
