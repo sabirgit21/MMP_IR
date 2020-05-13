@@ -636,7 +636,7 @@
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDView2.hints.ItemL4Id.name}"
                              filterable="true" sortable="true"
                              headerText="#{bindings.TblGrantApprovalDetailDDView2.hints.ItemL4Id.label}" id="c28">
-                    <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}"
+                    <af:selectOneChoice value="#{row.bindings.ItemL4Id.inputValue}" autoSubmit="true"
                                         label="#{row.bindings.ItemL4Id.label}" readOnly="true"
                                         required="#{bindings.TblGrantApprovalDetailDDView2.hints.ItemL4Id.mandatory}"
                                         shortDesc="#{bindings.TblGrantApprovalDetailDDView2.hints.ItemL4Id.tooltip}"
