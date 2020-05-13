@@ -423,6 +423,19 @@
                       <f:validator binding="#{row.bindings.GrantBase.validator}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column headerText="#{bindings.TblGrantApprovalDetailView41.hints.SubsidyAmount.label}" id="c33">
+                    <af:inputText value="#{row.bindings.SubsidyAmount.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantApprovalDetailView41.hints.SubsidyAmount.label}"
+                                  required="#{bindings.TblGrantApprovalDetailView41.hints.SubsidyAmount.mandatory}"
+                                  columns="#{bindings.TblGrantApprovalDetailView41.hints.SubsidyAmount.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantApprovalDetailView41.hints.SubsidyAmount.precision}"
+                                  shortDesc="#{bindings.TblGrantApprovalDetailView41.hints.SubsidyAmount.tooltip}"
+                                  id="it50">
+                      <f:validator binding="#{row.bindings.SubsidyAmount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantApprovalDetailView41.hints.SubsidyAmount.format}"/>
+                    </af:inputText>
+                  </af:column>
                 </af:table>
               </af:showDetailItem>
               <af:showDetailItem id="sdi1" text="Farmer's Machinery">
@@ -632,6 +645,45 @@
                       <f:validator binding="#{row.bindings.ItemL4Id.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.name}" filterable="true"
+                             sortable="true" headerText="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.label}"
+                             id="c32">
+                    <af:inputText value="#{row.bindings.Qty.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.label}"
+                                  required="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.mandatory}"
+                                  columns="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.precision}"
+                                  shortDesc="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.tooltip}" id="it49">
+                      <f:validator binding="#{row.bindings.Qty.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Approval Rate" id="c34">
+                    <af:inputText value="#{row.bindings.AppRate.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantApprovalDetailDDView2.hints.AppRate.label}"
+                                  required="#{bindings.TblGrantApprovalDetailDDView2.hints.AppRate.mandatory}"
+                                  columns="#{bindings.TblGrantApprovalDetailDDView2.hints.AppRate.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantApprovalDetailDDView2.hints.AppRate.precision}"
+                                  shortDesc="#{bindings.TblGrantApprovalDetailDDView2.hints.AppRate.tooltip}" id="it51">
+                      <f:validator binding="#{row.bindings.AppRate.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantApprovalDetailDDView2.hints.AppRate.format}"/>
+                    </af:inputText>
+                  </af:column>
+                  <af:column headerText="Approval Amount" id="c35">
+                    <af:inputText value="#{row.bindings.AppAmount.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantApprovalDetailDDView2.hints.AppAmount.label}"
+                                  required="#{bindings.TblGrantApprovalDetailDDView2.hints.AppAmount.mandatory}"
+                                  columns="#{bindings.TblGrantApprovalDetailDDView2.hints.AppAmount.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantApprovalDetailDDView2.hints.AppAmount.precision}"
+                                  shortDesc="#{bindings.TblGrantApprovalDetailDDView2.hints.AppAmount.tooltip}"
+                                  id="it52">
+                      <f:validator binding="#{row.bindings.AppAmount.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.TblGrantApprovalDetailDDView2.hints.AppAmount.format}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDView2.hints.InvNo.name}" filterable="true"
                              sortable="true" headerText="#{bindings.TblGrantApprovalDetailDDView2.hints.InvNo.label}"
                              id="c29">
@@ -673,18 +725,17 @@
                                         pattern="#{bindings.TblGrantApprovalDetailDDView2.hints.HalfInv.format}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column sortProperty="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.label}"
-                             id="c32">
-                    <af:inputText value="#{row.bindings.Qty.inputValue}" readOnly="true"
-                                  label="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.label}"
-                                  required="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.mandatory}"
-                                  columns="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.displayWidth}"
-                                  maximumLength="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.precision}"
-                                  shortDesc="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.tooltip}" id="it49">
-                      <f:validator binding="#{row.bindings.Qty.validator}"/>
+                  <af:column headerText="Subsidy Amount" id="c36">
+                    <af:inputText value="#{row.bindings.SubsidyAmount.inputValue}" readOnly="true"
+                                  label="#{bindings.TblGrantApprovalDetailDDView2.hints.SubsidyAmount.label}"
+                                  required="#{bindings.TblGrantApprovalDetailDDView2.hints.SubsidyAmount.mandatory}"
+                                  columns="#{bindings.TblGrantApprovalDetailDDView2.hints.SubsidyAmount.displayWidth}"
+                                  maximumLength="#{bindings.TblGrantApprovalDetailDDView2.hints.SubsidyAmount.precision}"
+                                  shortDesc="#{bindings.TblGrantApprovalDetailDDView2.hints.SubsidyAmount.tooltip}"
+                                  id="it53">
+                      <f:validator binding="#{row.bindings.SubsidyAmount.validator}"/>
                       <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.TblGrantApprovalDetailDDView2.hints.Qty.format}"/>
+                                        pattern="#{bindings.TblGrantApprovalDetailDDView2.hints.SubsidyAmount.format}"/>
                     </af:inputText>
                   </af:column>
                 </af:table>

@@ -76,6 +76,7 @@
           <Item Value="FAmount"/>
           <Item Value="GrantAmount"/>
           <Item Value="GrantBase"/>
+          <Item Value="SubsidyAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -115,6 +116,9 @@
           <Item Value="InvPrice"/>
           <Item Value="HalfInv"/>
           <Item Value="Qty"/>
+          <Item Value="AppRate"/>
+          <Item Value="AppAmount"/>
+          <Item Value="SubsidyAmount"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

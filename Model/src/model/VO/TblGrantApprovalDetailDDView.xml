@@ -163,4 +163,22 @@
     EntityAttrName="UpdatedBy"
     EntityUsage="TblGrantApprovalDetailDD"
     AliasName="UPDATED_BY"/>
+  <ViewAttribute
+    Name="AppAmount"
+    PrecisionRule="true"
+    EntityAttrName="AppAmount"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="APP_AMOUNT"/>
+  <ViewAttribute
+    Name="AppRate"
+    PrecisionRule="true"
+    EntityAttrName="AppRate"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="APP_RATE"/>
+  <ViewAttribute
+    Name="SubsidyAmount"
+    PrecisionRule="true"
+    EntityAttrName="SubsidyAmount"
+    EntityUsage="TblGrantApprovalDetailDD"
+    AliasName="SUBSIDY_AMOUNT"/>
 </ViewObject>

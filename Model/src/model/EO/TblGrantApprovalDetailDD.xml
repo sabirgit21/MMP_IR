@@ -122,6 +122,27 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TBL_GRANT_APPROVAL_DETAIL_D_D"/>
+  <Attribute
+    Name="AppAmount"
+    ColumnName="APP_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_APPROVAL_DETAIL_D_D"/>
+  <Attribute
+    Name="AppRate"
+    ColumnName="APP_RATE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_APPROVAL_DETAIL_D_D"/>
+  <Attribute
+    Name="SubsidyAmount"
+    ColumnName="SUBSIDY_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TBL_GRANT_APPROVAL_DETAIL_D_D"/>
   <Key
     Name="PkTblGrantApprovalDetailDD"
     PrimaryKey="true">
