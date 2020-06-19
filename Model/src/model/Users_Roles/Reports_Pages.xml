@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Reports_Pages"
+  Version="12.2.1.11.57"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.Users_Roles.Reports_Pages_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="mangRoleMastID"
+    Kind="where"
+    Type="java.math.BigDecimal">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="Reports_Pages"/>
+  </Variable>
+  <SQLQuery><![CDATA[SELECT               
+TR.MMP_REPORTS_NAME, TR.AST, TR.MMP_REPORT_ICON, TR.MMP_REPORT_LINK, TR.MMP_SR_NO,      
+RDR.MMP_ROLE_MASTER_ID, RDR.MMP_REPORTS_ID, RDR.MMP_ROLE_MASTER_ID, RDR.MMP_R_VIEW              
+FROM               
+MMP_REPORTS TR, MMP_ROLE_DETAIL_REPORTS RDR             
+Where               
+TR.MMP_REPORTS_ID = RDR.MMP_REPORTS_ID              
+AND              
+RDR.MMP_R_VIEW = 'Y'              
+AND              
+TR.AST = 'Y'              
+AND              
+TR.MMP_MODULE_MENU_ID = 3          
+AND              
+RDR.MMP_ROLE_MASTER_ID = :mangRoleMastID  
+ORDER BY TR.MMP_SR_NO ASC]]></SQLQuery>
+  <ViewAttribute
+    Name="MmpReportsName"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MMP_REPORTS_NAME"
+    Expression="MMP_REPORTS_NAME"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="150"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Ast"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="AST"
+    Expression="AST"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpReportIcon"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MMP_REPORT_ICON"
+    Expression="MMP_REPORT_ICON"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpReportLink"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="200"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="MMP_REPORT_LINK"
+    Expression="MMP_REPORT_LINK"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="MmpSrNo"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="MMP_SR_NO"
+    Expression="MMP_SR_NO"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="MmpRoleMasterId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="MMP_ROLE_MASTER_ID"
+    Expression="MMP_ROLE_MASTER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="MmpReportsId"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="MMP_REPORTS_ID"
+    Expression="MMP_REPORTS_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="MmpRoleMasterId1"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="MMP_ROLE_MASTER_ID"
+    Expression="MMP_ROLE_MASTER_ID"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="MmpRView"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="1"
+    Type="java.lang.String"
+    ColumnType="CHAR"
+    AliasName="MMP_R_VIEW"
+    Expression="MMP_R_VIEW"
+    SQLType="CHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </ViewAttribute>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="MmpReportsId"/>
+  </AttrArray>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

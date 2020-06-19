@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.11.57" id="ReportsPageDef"
+                Package="Reports">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Reports_Pages1" RangeSize="25" DataControl="AppModuleDataControl1" id="Reports_Pages1Iterator"/>
+    <taskFlow id="dynamicRegion1" taskFlowId="${viewScope.ReportsSidebarBean.dynamicTaskFlowId}" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Reports_Pages1Iterator" id="Reports_Pages1">
+      <nodeDefinition DefName="model.Users_Roles.Reports_Pages" Name="Reports_Pages10">
+        <AttrNames>
+          <Item Value="MmpReportsName"/>
+          <Item Value="Ast"/>
+          <Item Value="MmpReportIcon"/>
+          <Item Value="MmpReportLink"/>
+          <Item Value="MmpSrNo"/>
+          <Item Value="MmpRoleMasterId"/>
+          <Item Value="MmpReportsId"/>
+          <Item Value="MmpRoleMasterId1"/>
+          <Item Value="MmpRView"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

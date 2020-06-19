@@ -1,0 +1,24 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">Trng_Mon_Insp_Com</property>
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="x">612.0</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>Trng_Mon_Insp_Com&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">220.5459</property>
+      <property
+         name="page">/WEB-INF/Fragments/Reports/Trng_Mon_Insp_Com.jsff</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+</SDM>

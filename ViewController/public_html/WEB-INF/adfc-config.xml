@@ -21,4 +21,9 @@
     <managed-bean-class>view.ManagementSidebar</managed-bean-class>
     <managed-bean-scope>view</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__5">
+    <managed-bean-name>ReportsSidebarBean</managed-bean-name>
+    <managed-bean-class>view.ReportsSidebar</managed-bean-class>
+    <managed-bean-scope>view</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

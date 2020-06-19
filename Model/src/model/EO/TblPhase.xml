@@ -14,7 +14,7 @@
     Name="PhaseId"
     ColumnName="PHASE_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.Number"
     ColumnType="NUMBER"
     TableName="TBL_PHASE"
     PrimaryKey="true"

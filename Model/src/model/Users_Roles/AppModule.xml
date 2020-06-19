@@ -61,6 +61,9 @@
   <ViewUsage
     Name="MmpPagesView2"
     ViewObjectName="model.Users_Roles.MmpPagesView"/>
+  <ViewUsage
+    Name="Reports_Pages1"
+    ViewObjectName="model.Users_Roles.Reports_Pages"/>
   <ViewLinkUsage
     Name="Fk2MmpRoleDetailModulesLink1"
     ViewLinkObjectName="model.Users_Roles.Fk2MmpRoleDetailModulesLink"
