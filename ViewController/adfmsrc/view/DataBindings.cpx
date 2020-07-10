@@ -59,6 +59,10 @@
           usageId="view_RO_Inspection_TaskFlow_RO_Inspection_TaskFlow_ExecutePageDef"/>
     <page path="/Reports/Reports.jsf" usageId="view_ReportsPageDef"/>
     <page path="/WEB-INF/Fragments/Reports/Trng_Mon_Insp_Com.jsff" usageId="view_Trng_Mon_Insp_ComPageDef"/>
+    <page path="/WEB-INF/Task_Flows/Modules/Monitoring/Monitoring_Re_Schedule_TaskFlow.xml#Monitoring_Re_Schedule_TaskFlow@ExecuteWithParams"
+          usageId="view_Monitoring_Re_Schedule_TaskFlow_Monitoring_Re_Schedule_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page path="/WEB-INF/Fragments/Modules/Monitoring/Monitoring_Re_Schedule.jsff"
+          usageId="view_Monitoring_Re_SchedulePageDef"/>
   </pageMap>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model"
@@ -118,5 +122,8 @@
           path="Task_Flows.Modules.Monitoring.RO_Inspection_TaskFlow_RO_Inspection_TaskFlow_ExecutePageDef"/>
     <page id="view_ReportsPageDef" path="Reports.ReportsPageDef"/>
     <page id="view_Trng_Mon_Insp_ComPageDef" path="Fragments.Reports.Trng_Mon_Insp_ComPageDef"/>
+    <page id="view_Monitoring_Re_Schedule_TaskFlow_Monitoring_Re_Schedule_TaskFlow_ExecuteWithParamsPageDef"
+          path="Task_Flows.Modules.Monitoring.Monitoring_Re_Schedule_TaskFlow_Monitoring_Re_Schedule_TaskFlow_ExecuteWithParamsPageDef"/>
+    <page id="view_Monitoring_Re_SchedulePageDef" path="Fragments.Modules.Monitoring.Monitoring_Re_SchedulePageDef"/>
   </pageDefinitionUsages>
 </Application>

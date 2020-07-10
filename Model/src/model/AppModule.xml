@@ -253,6 +253,9 @@
   <ViewUsage
     Name="TblGrantApprovalDetailDDView2"
     ViewObjectName="model.VO.TblGrantApprovalDetailDDView"/>
+  <ViewUsage
+    Name="MmpMonReschView1"
+    ViewObjectName="model.VO.MmpMonReschView"/>
   <ViewLinkUsage
     Name="FkMmpMemberRegDepLink1"
     ViewLinkObjectName="model.VO.FkMmpMemberRegDepLink"

@@ -6,13 +6,24 @@
   Name="MmpMemberRegDepView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  SelectList="MmpMemberRegDep.MEMBER_REG_DEP_ID, 
+       MmpMemberRegDep.MEMBER_REG_ID, 
+       MmpMemberRegDep.NAME, 
+       MmpMemberRegDep.FATHER_NAME, 
+       MmpMemberRegDep.DOB, 
+       MmpMemberRegDep.CNIC, 
+       MmpMemberRegDep.TELEPHONE, 
+       MmpMemberRegDep.MOBILE, 
+       MmpMemberRegDep.RELATION, 
+       MmpMemberRegDep.RELIGION, 
+       MmpMemberRegDep.CREATED_DATE, 
+       MmpMemberRegDep.CREATED_BY, 
+       MmpMemberRegDep.UPDATED_DATE, 
+       MmpMemberRegDep.UPDATED_BY"
+  FromList="MMP_MEMBER_REG_DEP MmpMemberRegDep">
   <EntityUsage
     Name="MmpMemberRegDep"
     Entity="model.EO.MmpMemberRegDep"/>
@@ -85,7 +96,8 @@
     PrecisionRule="true"
     EntityAttrName="CreatedDate"
     EntityUsage="MmpMemberRegDep"
-    AliasName="CREATED_DATE"/>
+    AliasName="CREATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="CreatedBy"
     PrecisionRule="true"
@@ -97,7 +109,8 @@
     PrecisionRule="true"
     EntityAttrName="UpdatedDate"
     EntityUsage="MmpMemberRegDep"
-    AliasName="UPDATED_DATE"/>
+    AliasName="UPDATED_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="UpdatedBy"
     PrecisionRule="true"

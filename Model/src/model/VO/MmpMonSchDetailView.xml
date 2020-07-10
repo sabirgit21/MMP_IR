@@ -6,36 +6,49 @@
   Name="MmpMonSchDetailView"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
   BindingStyle="OracleName"
   CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
-  <ViewAccessor
-    Name="Cluster_ID_Depen_Phase_ID_LOV1"
-    ViewObjectName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV"
-    RowLevelBinds="true">
-    <ViewCriteriaUsage
-      Name="Cluster_ID_Depen_Phase_ID_LOVCriteria"
-      FullName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV.Cluster_ID_Depen_Phase_ID_LOVCriteria"/>
-    <ParameterMap>
-      <PIMap Variable="getphaseID">
-        <TransientExpression
-          Name="ExpressionScript"><![CDATA[MmpPhaseId]]></TransientExpression>
-      </PIMap>
-      <PIMap Variable="getDate">
-        <TransientExpression
-          trustMode="untrusted"
-          Name="ExpressionScript"><![CDATA[Dated]]></TransientExpression>
-      </PIMap>
-    </ParameterMap>
-  </ViewAccessor>
+  PageIterMode="Full"
+  SelectList="MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID, 
+       MmpMonSchDetail.MMP_MON_SCH_MASTER_ID, 
+       MmpMonSchDetail.CLUSTER_ID, 
+       MmpMonSchDetail.DATED, 
+       MmpMonSchDetail.CREATED_DATE, 
+       MmpMonSchDetail.CREATED_BY, 
+       MmpMonSchDetail.UPDATED_DATE, 
+       MmpMonSchDetail.UPDATED_BY, 
+       MmpMonSchMaster.MMP_PHASE_ID, 
+       MmpMonSchMaster.MMP_MON_SCH_MASTER_ID AS MMP_MON_SCH_MASTER_ID1, 
+       MmpMonSchDetail.TRAINING_SCH_DETAIL_ID, 
+       MmpMonSchDetail.CLASS_TYPE"
+  FromList="MMP_MON_SCH_DETAIL MmpMonSchDetail, MMP_MON_SCH_MASTER MmpMonSchMaster"
+  Where="MmpMonSchDetail.MMP_MON_SCH_MASTER_ID = MmpMonSchMaster.MMP_MON_SCH_MASTER_ID(+)">
   <ViewAccessor
     Name="Class_Type_Mon_Insp_LOV1"
     ViewObjectName="model.LOV.Class_Type_Mon_Insp_LOV"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="Cluster_ID_Depen_Phase_ID_LOV1"
+    ViewObjectName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ClassType"
+    ListVOName="Class_Type_Mon_Insp_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClassType"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="dbAttr"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ViewAttr"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <ListBinding
     Name="LOV_ClusterId"
     ListVOName="Cluster_ID_Depen_Phase_ID_LOV1"
@@ -56,24 +69,6 @@
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
       <Item Value="ModuleName"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
-    Name="LOV_ClassType"
-    ListVOName="Class_Type_Mon_Insp_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="ClassType"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="dbAttr"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ViewAttr"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>

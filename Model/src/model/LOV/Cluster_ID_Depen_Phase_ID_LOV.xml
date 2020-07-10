@@ -6,13 +6,13 @@
   Name="Cluster_ID_Depen_Phase_ID_LOV"
   Version="12.2.1.11.57"
   InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
   SelectListFlags="1"
   FromListFlags="1"
   WhereFlags="1"
-  BindingStyle="OracleName"
-  CustomQuery="false"
-  SelectAllAttributes="false"
-  PageIterMode="Full">
+  SelectAllAttributes="false">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -28,37 +28,9 @@
     Kind="viewcriteria"
     Type="java.sql.Timestamp"/>
   <EntityUsage
-    Name="TblCluster"
-    Entity="model.EO.TblCluster"/>
-  <EntityUsage
-    Name="TblPhase"
-    Entity="model.EO.TblPhase"
-    Association="model.EO.Fk9TblClusterFkAssoc"
-    AssociationEnd="model.EO.Fk9TblClusterFkAssoc.TblPhase"
-    SourceUsage="model.LOV.Cluster_ID_Depen_Phase_ID_LOV.TblCluster"
-    ReadOnly="true"
-    Reference="true"
-    DeleteParticipant="false"
-    JoinType="LEFT OUTER JOIN">
-    <DesignTime>
-      <AttrArray Name="_dstAttributes">
-        <Item Value="model.EO.TblPhase.PhaseId"/>
-      </AttrArray>
-      <AttrArray Name="_srcAttributes">
-        <Item Value="model.EO.TblCluster.PhaseId"/>
-      </AttrArray>
-    </DesignTime>
-  </EntityUsage>
-  <EntityUsage
     Name="TblTrainingSchDetail"
     Entity="model.EO.TblTrainingSchDetail"
-    Association="model.EO.Fk2TblTrainingSchDetailFkAssoc"
-    AssociationEnd="model.EO.Fk2TblTrainingSchDetailFkAssoc.TblTrainingSchDetail"
-    SourceUsage="model.LOV.Cluster_ID_Depen_Phase_ID_LOV.TblCluster"
-    ReadOnly="true"
-    Reference="true"
-    DeleteParticipant="false"
-    JoinType="INNER JOIN">
+    DeleteParticipant="false">
     <DesignTime>
       <AttrArray Name="_dstAttributes">
         <Item Value="model.EO.TblTrainingSchDetail.ClusterId"/>
@@ -106,25 +78,44 @@
       </AttrArray>
     </DesignTime>
   </EntityUsage>
-  <ViewAttribute
-    Name="ClusterNo"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="ClusterNo"
-    EntityUsage="TblCluster"
-    AliasName="CLUSTER_NO"/>
-  <ViewAttribute
-    Name="ClusterId"
-    PrecisionRule="true"
-    EntityAttrName="ClusterId"
-    EntityUsage="TblCluster"
-    AliasName="CLUSTER_ID"/>
-  <ViewAttribute
-    Name="PhaseId"
-    PrecisionRule="true"
-    EntityAttrName="PhaseId"
-    EntityUsage="TblPhase"
-    AliasName="PHASE_ID"/>
+  <EntityUsage
+    Name="TblCluster"
+    Entity="model.EO.TblCluster"
+    Association="model.EO.Fk2TblTrainingSchDetailFkAssoc"
+    AssociationEnd="model.EO.Fk2TblTrainingSchDetailFkAssoc.TblCluster"
+    SourceUsage="model.LOV.Cluster_ID_Depen_Phase_ID_LOV.TblTrainingSchDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblCluster.ClusterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblTrainingSchDetail.ClusterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblPhase"
+    Entity="model.EO.TblPhase"
+    Association="model.EO.Fk9TblClusterFkAssoc"
+    AssociationEnd="model.EO.Fk9TblClusterFkAssoc.TblPhase"
+    SourceUsage="model.LOV.Cluster_ID_Depen_Phase_ID_LOV.TblCluster"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblPhase.PhaseId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblCluster.PhaseId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
   <ViewAttribute
     Name="DatedD"
     IsNotNull="true"
@@ -165,6 +156,25 @@
     EntityAttrName="ModuleId"
     EntityUsage="TblModule"
     AliasName="MODULE_ID1"/>
+  <ViewAttribute
+    Name="PhaseId"
+    PrecisionRule="true"
+    EntityAttrName="PhaseId"
+    EntityUsage="TblPhase"
+    AliasName="PHASE_ID"/>
+  <ViewAttribute
+    Name="ClusterNo"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ClusterNo"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_NO"/>
+  <ViewAttribute
+    Name="ClusterId"
+    PrecisionRule="true"
+    EntityAttrName="ClusterId"
+    EntityUsage="TblCluster"
+    AliasName="CLUSTER_ID"/>
   <ViewCriteria
     Name="Cluster_ID_Depen_Phase_ID_LOVCriteria"
     ViewObjectName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV"
@@ -192,14 +202,6 @@
       Name="Cluster_ID_Depen_Phase_ID_LOVCriteria_row_0"
       UpperColumns="1">
       <ViewCriteriaItem
-        Name="PhaseId"
-        ViewAttribute="PhaseId"
-        Operator="="
-        Conjunction="AND"
-        Value=":getphaseID"
-        IsBindVarValue="true"
-        Required="Optional"/>
-      <ViewCriteriaItem
         Name="DatedD"
         ViewAttribute="DatedD"
         Operator="="
@@ -207,10 +209,18 @@
         Value=":getDate"
         IsBindVarValue="true"
         Required="Optional"/>
+      <ViewCriteriaItem
+        Name="PhaseId"
+        ViewAttribute="PhaseId"
+        Operator="="
+        Conjunction="AND"
+        Value=":getphaseID"
+        IsBindVarValue="true"
+        Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
   <AttrArray Name="KeyAttributes">
-    <Item Value="ClusterId"/>
+    <Item Value="TrainingSchDetailIdLOV"/>
   </AttrArray>
   <ResourceBundle>
     <PropertiesBundle
