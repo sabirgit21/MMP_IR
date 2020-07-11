@@ -31,25 +31,54 @@
                           selectionListener="#{bindings.MmpMonReschView1.collectionModel.makeCurrent}"
                           rowSelection="single" fetchSize="#{bindings.MmpMonReschView1.rangeSize}"
                           filterModel="#{bindings.MmpMonReschView1Query.queryDescriptor}" filterVisible="true"
-                          queryListener="#{bindings.MmpMonReschView1Query.processQuery}" varStatus="vs" id="t1">
+                          queryListener="#{bindings.MmpMonReschView1Query.processQuery}" varStatus="vs" id="t1"
+                          scrollPolicy="page" autoHeightRows="0">
                   <af:column sortProperty="#{bindings.MmpMonReschView1.hints.MmpReschId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMonReschView1.hints.MmpReschId.label}" id="c1">
+                             sortable="true" headerText="Re Schedule ID" id="c1" align="center" width="80">
+                             <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.MmpReschId}"
+       id="id4" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.MmpReschId.inputValue}"
                                   label="#{bindings.MmpMonReschView1.hints.MmpReschId.label}"
                                   required="#{bindings.MmpMonReschView1.hints.MmpReschId.mandatory}"
                                   columns="#{bindings.MmpMonReschView1.hints.MmpReschId.displayWidth}"
                                   maximumLength="#{bindings.MmpMonReschView1.hints.MmpReschId.precision}"
-                                  shortDesc="#{bindings.MmpMonReschView1.hints.MmpReschId.tooltip}" id="it1">
+                                  shortDesc="#{bindings.MmpMonReschView1.hints.MmpReschId.tooltip}" id="it1"
+                                  readOnly="true"
+                                    contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.MmpReschId.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.MmpMonReschView1.hints.MmpReschId.format}"/>
                     </af:inputText>
                   </af:column>
+                  <af:column sortProperty="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.name}" filterable="true"
+                             sortable="true" headerText="Monitoring Schedule Detal ID" id="c5" align="center"
+                             width="80">
+                              <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.MmpMonSchDetailId}"
+       id="it4" placeholder="Search ID">
+      </af:inputText>
+</f:facet>
+                    <af:inputText value="#{row.bindings.MmpMonSchDetailId.inputValue}"
+                                  label="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.label}"
+                                  required="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.mandatory}"
+                                  columns="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.displayWidth}"
+                                  maximumLength="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.precision}"
+                                  shortDesc="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.tooltip}" id="it2"
+                                  readOnly="true"
+                                    contentStyle='text-align: center'>
+                      <f:validator binding="#{row.bindings.MmpMonSchDetailId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.format}"/>
+                    </af:inputText>
+                  </af:column>
                   <af:column sortProperty="#{bindings.MmpMonReschView1.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMonReschView1.hints.Dated.label}" id="c2">
+                             sortable="true" headerText="Date" id="c2" align="center">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.MmpMonReschView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id1">
+                                    id="id1" placeholder="Search Date">
                         <af:convertDateTime pattern="#{bindings.MmpMonReschView1.hints.Dated.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -57,16 +86,16 @@
                                   label="#{bindings.MmpMonReschView1.hints.Dated.label}"
                                   required="#{bindings.MmpMonReschView1.hints.Dated.mandatory}"
                                   columns="#{bindings.MmpMonReschView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.MmpMonReschView1.hints.Dated.tooltip}" id="id2">
+                                  shortDesc="#{bindings.MmpMonReschView1.hints.Dated.tooltip}" id="id2" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.MmpMonReschView1.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMonReschView1.hints.DatedResch.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMonReschView1.hints.DatedResch.label}" id="c3">
+                             sortable="true" headerText="Date Re Schedule" id="c3" width="120">
                     <f:facet name="filter">
                       <af:inputDate value="#{bindings.MmpMonReschView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.DatedResch.value}"
-                                    id="id3">
+                                    id="id3" placeholder="Search Date">
                         <af:convertDateTime pattern="#{bindings.MmpMonReschView1.hints.DatedResch.format}"/>
                       </af:inputDate>
                     </f:facet>
@@ -74,13 +103,18 @@
                                   label="#{bindings.MmpMonReschView1.hints.DatedResch.label}"
                                   required="#{bindings.MmpMonReschView1.hints.DatedResch.mandatory}"
                                   columns="#{bindings.MmpMonReschView1.hints.DatedResch.displayWidth}"
-                                  shortDesc="#{bindings.MmpMonReschView1.hints.DatedResch.tooltip}" id="id4">
+                                  shortDesc="#{bindings.MmpMonReschView1.hints.DatedResch.tooltip}" id="id5" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.DatedResch.validator}"/>
                       <af:convertDateTime pattern="#{bindings.MmpMonReschView1.hints.DatedResch.format}"/>
                     </af:inputDate>
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMonReschView1.hints.ClusterId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMonReschView1.hints.ClusterId.label}" id="c4">
+                             sortable="true" headerText="Cluster" id="c4" width="100">
+                                <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.ClusterId}"
+       id="it5" placeholder="Search Cluster">
+      </af:inputText>
+</f:facet>
                     <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
                                         label="#{row.bindings.ClusterId.label}"
                                         required="#{bindings.MmpMonReschView1.hints.ClusterId.mandatory}"
@@ -89,22 +123,13 @@
                       <f:validator binding="#{row.bindings.ClusterId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.label}"
-                             id="c5">
-                    <af:inputText value="#{row.bindings.MmpMonSchDetailId.inputValue}"
-                                  label="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.label}"
-                                  required="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.mandatory}"
-                                  columns="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.displayWidth}"
-                                  maximumLength="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.precision}"
-                                  shortDesc="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.tooltip}" id="it2">
-                      <f:validator binding="#{row.bindings.MmpMonSchDetailId.validator}"/>
-                      <af:convertNumber groupingUsed="false"
-                                        pattern="#{bindings.MmpMonReschView1.hints.MmpMonSchDetailId.format}"/>
-                    </af:inputText>
-                  </af:column>
                   <af:column sortProperty="#{bindings.MmpMonReschView1.hints.Remarks.name}" filterable="true"
-                             sortable="true" headerText="#{bindings.MmpMonReschView1.hints.Remarks.label}" id="c6">
+                             sortable="true" headerText="Remarks" id="c6" width="300">
+                               <f:facet name="filter">
+      <af:inputText value="#{vs.filterCriteria.Remarks}"
+       id="it6" placeholder="Search Remarks">
+      </af:inputText>
+</f:facet>
                     <af:inputText value="#{row.bindings.Remarks.inputValue}"
                                   label="#{bindings.MmpMonReschView1.hints.Remarks.label}"
                                   required="#{bindings.MmpMonReschView1.hints.Remarks.mandatory}"
