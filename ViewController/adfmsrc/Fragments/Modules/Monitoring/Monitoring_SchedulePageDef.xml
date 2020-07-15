@@ -38,6 +38,8 @@
           <Item Value="ClusterId"/>
           <Item Value="Dated"/>
           <Item Value="ClassType"/>
+          <Item Value="TrainingSchDetailId"/>
+          <Item Value="ModuleId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -172,7 +172,7 @@
                     </af:selectOneChoice>
                   </af:column>-->
                   <af:column headerText="Dated" id="c7" sortable="true"
-                             filterable="true">
+                             filterable="true" width="100">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Dated}"
                                           id="it7" placeholder="Search Dated">
@@ -189,7 +189,7 @@
                   </af:column>
                   <af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.ClusterId.name}"
                              filterable="true" sortable="true"
-                             headerText="Cluster" id="c4" width="300">
+                             headerText="Cluster" id="c4" width="74">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ClusterId}"
                                           id="it5" placeholder="Search Cluster">
@@ -203,26 +203,16 @@
                       <f:validator binding="#{row.bindings.ClusterId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <!--<af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.Dated.name}" filterable="true"
-                             sortable="true" headerText="Date" id="c8"
-                             width="100" align="center">
-                    <f:facet name="filter">
-                      <af:inputDate value="#{bindings.MmpMonSchDetailView2Query.queryDescriptor.filterConjunctionCriterion.criterionMap.Dated.value}"
-                                    id="id3">
-                        <af:convertDateTime pattern="#{bindings.MmpMonSchDetailView2.hints.Dated.format}"/>
-                      </af:inputDate>
-                    </f:facet>
-                    <af:inputDate value="#{row.bindings.Dated.inputValue}"
-                                  label="#{bindings.MmpMonSchDetailView2.hints.Dated.label}"
-                                  required="#{bindings.MmpMonSchDetailView2.hints.Dated.mandatory}"
-                                  columns="#{bindings.MmpMonSchDetailView2.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.MmpMonSchDetailView2.hints.Dated.tooltip}" 
-                                  id="id5" contentStyle='text-align: center'>
-                      <f:validator binding="#{row.bindings.Dated.validator}"/>
-                      <af:convertDateTime pattern="#{bindings.MmpMonSchDetailView2.hints.Dated.format}"/>
-                    </af:inputDate>
-                  </af:column>-->
-                  <af:column headerText="Class Type" id="c8" sortable="true" filterable="true">
+                  <af:column headerText="Module" id="c10" width="309">
+                    <af:selectOneChoice value="#{row.bindings.ModuleId.inputValue}"
+                                        label="#{row.bindings.ModuleId.label}" readOnly="true"
+                                        required="#{bindings.MmpMonSchDetailView2.hints.ModuleId.mandatory}"
+                                        shortDesc="#{bindings.MmpMonSchDetailView2.hints.ModuleId.tooltip}" id="soc5">
+                      <f:selectItems value="#{row.bindings.ModuleId.items}" id="si5"/>
+                      <f:validator binding="#{row.bindings.ModuleId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>
+                  <af:column headerText="Class Type" id="c8" sortable="true" filterable="true" width="95">
                    <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ClassType}"
                                           id="it8" placeholder="Search Class Type">
@@ -236,6 +226,7 @@
                       <f:validator binding="#{row.bindings.ClassType.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
+                  
                 </af:table>
               </af:showDetailItem>
             </af:panelTabbed>

@@ -20,7 +20,8 @@
        MmpMonSchMaster.MMP_PHASE_ID, 
        MmpMonSchMaster.MMP_MON_SCH_MASTER_ID AS MMP_MON_SCH_MASTER_ID1, 
        MmpMonSchDetail.TRAINING_SCH_DETAIL_ID, 
-       MmpMonSchDetail.CLASS_TYPE"
+       MmpMonSchDetail.CLASS_TYPE, 
+       MmpMonSchDetail.MODULE_ID"
   FromList="MMP_MON_SCH_DETAIL MmpMonSchDetail, MMP_MON_SCH_MASTER MmpMonSchMaster"
   Where="MmpMonSchDetail.MMP_MON_SCH_MASTER_ID = MmpMonSchMaster.MMP_MON_SCH_MASTER_ID(+)">
   <ViewAccessor
@@ -31,16 +32,13 @@
     Name="Cluster_ID_Depen_Phase_ID_LOV1"
     ViewObjectName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV"
     RowLevelBinds="true">
-    <ViewCriteriaUsage
-      Name="Cluster_ID_Depen_Phase_ID_LOVCriteria"
-      FullName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV.Cluster_ID_Depen_Phase_ID_LOVCriteria"/>
     <ParameterMap>
-      <PIMap Variable="getDate">
+      <PIMap Variable="getDateF">
         <TransientExpression
           trustMode="untrusted"
           Name="ExpressionScript"><![CDATA[Dated]]></TransientExpression>
       </PIMap>
-      <PIMap Variable="getphaseID">
+      <PIMap Variable="getphaseF">
         <TransientExpression
           trustMode="untrusted"
           Name="ExpressionScript"><![CDATA[MmpPhaseId]]></TransientExpression>
@@ -77,13 +75,33 @@
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="DerivedAttrNames">
       <Item Value="TrainingSchDetailId"/>
+      <Item Value="ModuleId"/>
     </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ClusterId"/>
       <Item Value="TrainingSchDetailIdLOV"/>
+      <Item Value="ModuleId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
+      <Item Value="ModuleName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ModuleId"
+    ListVOName="Cluster_ID_Depen_Phase_ID_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ModuleId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ModuleId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ModuleName"/>
     </AttrArray>
     <DisplayCriteria/>
@@ -194,6 +212,20 @@
     EntityUsage="MmpMonSchDetail"
     AliasName="CLASS_TYPE"
     LOVName="LOV_ClassType">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ModuleId"
+    PrecisionRule="true"
+    EntityAttrName="ModuleId"
+    EntityUsage="MmpMonSchDetail"
+    AliasName="MODULE_ID"
+    LOVName="LOV_ModuleId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE

@@ -9,10 +9,22 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
-  SelectAllAttributes="false">
+  SelectList="TblTrainingSchDetail.DATED_D, 
+       TblTrainingSchDetail.TRAINING_SCH_DETAIL_ID, 
+       TblTrainingSchMaster.MODULE_ID, 
+       TblTrainingSchMaster.TRAINING_SCH_MASTER_ID, 
+       TblModule.NAME, 
+       TblModule.MODULE_ID AS MODULE_ID1, 
+       TblPhase.PHASE_ID, 
+       TblCluster.CLUSTER_NO, 
+       TblCluster.CLUSTER_ID"
+  FromList="TBL_TRAINING_SCH_DETAIL TblTrainingSchDetail, TBL_TRAINING_SCH_MASTER TblTrainingSchMaster, TBL_MODULE TblModule, TBL_CLUSTER TblCluster, TBL_PHASE TblPhase"
+  Where="(((TblTrainingSchDetail.TRAINING_SCH_MASTER_ID = TblTrainingSchMaster.TRAINING_SCH_MASTER_ID(+))    
+AND (TblTrainingSchMaster.MODULE_ID = TblModule.MODULE_ID(+)))    
+AND (TblTrainingSchDetail.CLUSTER_ID = TblCluster.CLUSTER_ID(+)))    
+AND (TblCluster.PHASE_ID = TblPhase.PHASE_ID(+))   
+AND TblTrainingSchDetail.DATED_D = :getDateF  
+AND TblPhase.PHASE_ID = :getphaseF">
   <Properties>
     <SchemaBasedProperties>
       <LABEL
@@ -20,26 +32,17 @@
     </SchemaBasedProperties>
   </Properties>
   <Variable
-    Name="getphaseID"
-    Kind="viewcriteria"
-    Type="java.math.BigDecimal"/>
-  <Variable
-    Name="getDate"
-    Kind="viewcriteria"
+    Name="getDateF"
+    Kind="where"
     Type="java.sql.Timestamp"/>
+  <Variable
+    Name="getphaseF"
+    Kind="where"
+    Type="java.math.BigDecimal"/>
   <EntityUsage
     Name="TblTrainingSchDetail"
     Entity="model.EO.TblTrainingSchDetail"
-    DeleteParticipant="false">
-    <DesignTime>
-      <AttrArray Name="_dstAttributes">
-        <Item Value="model.EO.TblTrainingSchDetail.ClusterId"/>
-      </AttrArray>
-      <AttrArray Name="_srcAttributes">
-        <Item Value="model.EO.TblCluster.ClusterId"/>
-      </AttrArray>
-    </DesignTime>
-  </EntityUsage>
+    DeleteParticipant="false"/>
   <EntityUsage
     Name="TblTrainingSchMaster"
     Entity="model.EO.TblTrainingSchMaster"
@@ -175,50 +178,6 @@
     EntityAttrName="ClusterId"
     EntityUsage="TblCluster"
     AliasName="CLUSTER_ID"/>
-  <ViewCriteria
-    Name="Cluster_ID_Depen_Phase_ID_LOVCriteria"
-    ViewObjectName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV"
-    Conjunction="AND">
-    <Properties Name="_Props">
-      <CustomProperties>
-        <Property
-          Name="autoExecute"
-          Value="false"/>
-        <Property
-          Name="mode"
-          Value="Basic"/>
-        <Property
-          Name="allowConjunctionOverride"
-          Value="true"/>
-        <Property
-          Name="showInList"
-          Value="true"/>
-        <Property
-          Name="displayOperators"
-          Value="InAdvancedMode"/>
-      </CustomProperties>
-    </Properties>
-    <ViewCriteriaRow
-      Name="Cluster_ID_Depen_Phase_ID_LOVCriteria_row_0"
-      UpperColumns="1">
-      <ViewCriteriaItem
-        Name="DatedD"
-        ViewAttribute="DatedD"
-        Operator="="
-        Conjunction="AND"
-        Value=":getDate"
-        IsBindVarValue="true"
-        Required="Optional"/>
-      <ViewCriteriaItem
-        Name="PhaseId"
-        ViewAttribute="PhaseId"
-        Operator="="
-        Conjunction="AND"
-        Value=":getphaseID"
-        IsBindVarValue="true"
-        Required="Optional"/>
-    </ViewCriteriaRow>
-  </ViewCriteria>
   <AttrArray Name="KeyAttributes">
     <Item Value="TrainingSchDetailIdLOV"/>
   </AttrArray>
