@@ -30,7 +30,23 @@
   <ViewAccessor
     Name="Cluster_ID_Depen_Phase_ID_LOV1"
     ViewObjectName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV"
-    RowLevelBinds="true"/>
+    RowLevelBinds="true">
+    <ViewCriteriaUsage
+      Name="Cluster_ID_Depen_Phase_ID_LOVCriteria"
+      FullName="model.LOV.Cluster_ID_Depen_Phase_ID_LOV.Cluster_ID_Depen_Phase_ID_LOVCriteria"/>
+    <ParameterMap>
+      <PIMap Variable="getDate">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[Dated]]></TransientExpression>
+      </PIMap>
+      <PIMap Variable="getphaseID">
+        <TransientExpression
+          trustMode="untrusted"
+          Name="ExpressionScript"><![CDATA[MmpPhaseId]]></TransientExpression>
+      </PIMap>
+    </ParameterMap>
+  </ViewAccessor>
   <ListBinding
     Name="LOV_ClassType"
     ListVOName="Class_Type_Mon_Insp_LOV1"
