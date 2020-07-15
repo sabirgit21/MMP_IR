@@ -33,12 +33,12 @@ public class MmpMonSchDetailImpl extends EntityImpl {
         UpdatedBy,
         TrainingSchDetailId,
         ClassType,
-        ModuleId,
         MmpMonSchMaster,
         TblCluster,
         TblTrainingSchDetail,
         MmpTrainingCheckIn;
-        private static AttributesEnum[] vals = null;
+        static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         public int index() {
@@ -72,7 +72,6 @@ public class MmpMonSchDetailImpl extends EntityImpl {
     public static final int UPDATEDBY = AttributesEnum.UpdatedBy.index();
     public static final int TRAININGSCHDETAILID = AttributesEnum.TrainingSchDetailId.index();
     public static final int CLASSTYPE = AttributesEnum.ClassType.index();
-    public static final int MODULEID = AttributesEnum.ModuleId.index();
     public static final int MMPMONSCHMASTER = AttributesEnum.MmpMonSchMaster.index();
     public static final int TBLCLUSTER = AttributesEnum.TblCluster.index();
     public static final int TBLTRAININGSCHDETAIL = AttributesEnum.TblTrainingSchDetail.index();
@@ -236,21 +235,6 @@ public class MmpMonSchDetailImpl extends EntityImpl {
         setAttributeInternal(CLASSTYPE, value);
     }
 
-    /**
-     * Gets the attribute value for ModuleId, using the alias name ModuleId.
-     * @return the value of ModuleId
-     */
-    public BigDecimal getModuleId() {
-        return (BigDecimal) getAttributeInternal(MODULEID);
-    }
-
-    /**
-     * Sets <code>value</code> as the attribute value for ModuleId.
-     * @param value value to set the ModuleId
-     */
-    public void setModuleId(BigDecimal value) {
-        setAttributeInternal(MODULEID, value);
-    }
 
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.

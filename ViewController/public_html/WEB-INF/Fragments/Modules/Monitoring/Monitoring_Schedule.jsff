@@ -187,32 +187,17 @@
                       <af:convertDateTime pattern="#{bindings.MmpMonSchDetailView2.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column sortProperty="#{bindings.MmpMonSchDetailView2.hints.ClusterId.name}"
-                             filterable="true" sortable="true"
-                             headerText="Cluster" id="c4" width="74">
-                             <f:facet name="filter">
-                                          <af:inputText value="#{vs.filterCriteria.ClusterId}"
-                                          id="it5" placeholder="Search Cluster">
-                           </af:inputText>
-                             </f:facet>
-                    <af:selectOneChoice value="#{row.bindings.ClusterId.inputValue}"
-                                        label="#{row.bindings.ClusterId.label}" autoSubmit="true"
-                                        required="#{bindings.MmpMonSchDetailView2.hints.ClusterId.mandatory}"
-                                        shortDesc="#{bindings.MmpMonSchDetailView2.hints.ClusterId.tooltip}" id="soc2">
-                      <f:selectItems value="#{row.bindings.ClusterId.items}" id="si2"/>
-                      <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                  <af:column headerText="#{bindings.MmpMonSchDetailView2.hints.TrainingSchDetailId.label}" id="c9">
+                    <af:selectOneChoice value="#{row.bindings.TrainingSchDetailId.inputValue}" autoSubmit="true"
+                                        label="#{row.bindings.TrainingSchDetailId.label}"
+                                        required="#{bindings.MmpMonSchDetailView2.hints.TrainingSchDetailId.mandatory}"
+                                        shortDesc="#{bindings.MmpMonSchDetailView2.hints.TrainingSchDetailId.tooltip}"
+                                        id="soc6">
+                      <f:selectItems value="#{row.bindings.TrainingSchDetailId.items}" id="si6"/>
+                      <f:validator binding="#{row.bindings.TrainingSchDetailId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Module" id="c10" width="309">
-                    <af:selectOneChoice value="#{row.bindings.ModuleId.inputValue}"
-                                        label="#{row.bindings.ModuleId.label}" readOnly="true"
-                                        required="#{bindings.MmpMonSchDetailView2.hints.ModuleId.mandatory}"
-                                        shortDesc="#{bindings.MmpMonSchDetailView2.hints.ModuleId.tooltip}" id="soc5">
-                      <f:selectItems value="#{row.bindings.ModuleId.items}" id="si5"/>
-                      <f:validator binding="#{row.bindings.ModuleId.validator}"/>
-                    </af:selectOneChoice>
-                  </af:column>
-                  <af:column headerText="Class Type" id="c8" sortable="true" filterable="true" width="95">
+                  <af:column headerText="Class Type" id="c8" sortable="true" filterable="true" width="245">
                    <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ClassType}"
                                           id="it8" placeholder="Search Class Type">

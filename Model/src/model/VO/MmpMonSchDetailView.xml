@@ -20,8 +20,7 @@
        MmpMonSchMaster.MMP_PHASE_ID, 
        MmpMonSchMaster.MMP_MON_SCH_MASTER_ID AS MMP_MON_SCH_MASTER_ID1, 
        MmpMonSchDetail.TRAINING_SCH_DETAIL_ID, 
-       MmpMonSchDetail.CLASS_TYPE, 
-       MmpMonSchDetail.MODULE_ID"
+       MmpMonSchDetail.CLASS_TYPE"
   FromList="MMP_MON_SCH_DETAIL MmpMonSchDetail, MMP_MON_SCH_MASTER MmpMonSchMaster"
   Where="MmpMonSchDetail.MMP_MON_SCH_MASTER_ID = MmpMonSchMaster.MMP_MON_SCH_MASTER_ID(+)">
   <ViewAccessor
@@ -73,35 +72,30 @@
       <Item Value="ClusterId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="DerivedAttrNames">
-      <Item Value="TrainingSchDetailId"/>
-      <Item Value="ModuleId"/>
-    </AttrArray>
     <AttrArray Name="ListAttrNames">
       <Item Value="ClusterId"/>
-      <Item Value="TrainingSchDetailIdLOV"/>
-      <Item Value="ModuleId"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
       <Item Value="ClusterNo"/>
-      <Item Value="ModuleName"/>
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_ModuleId"
+    Name="LOV_TrainingSchDetailId"
     ListVOName="Cluster_ID_Depen_Phase_ID_LOV1"
     ListRangeSize="-1"
-    NullValueFlag="none"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
     MRUCount="0">
     <AttrArray Name="AttrNames">
-      <Item Value="ModuleId"/>
+      <Item Value="TrainingSchDetailId"/>
     </AttrArray>
     <AttrArray Name="AttrExpressions"/>
     <AttrArray Name="ListAttrNames">
-      <Item Value="ModuleId"/>
+      <Item Value="TrainingSchDetailIdLOV"/>
     </AttrArray>
     <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="ClusterNo"/>
       <Item Value="ModuleName"/>
     </AttrArray>
     <DisplayCriteria/>
@@ -204,7 +198,15 @@
     PrecisionRule="true"
     EntityAttrName="TrainingSchDetailId"
     EntityUsage="MmpMonSchDetail"
-    AliasName="TRAINING_SCH_DETAIL_ID"/>
+    AliasName="TRAINING_SCH_DETAIL_ID"
+    LOVName="LOV_TrainingSchDetailId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ClassType"
     PrecisionRule="true"
@@ -212,20 +214,6 @@
     EntityUsage="MmpMonSchDetail"
     AliasName="CLASS_TYPE"
     LOVName="LOV_ClassType">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
-  <ViewAttribute
-    Name="ModuleId"
-    PrecisionRule="true"
-    EntityAttrName="ModuleId"
-    EntityUsage="MmpMonSchDetail"
-    AliasName="MODULE_ID"
-    LOVName="LOV_ModuleId">
     <Properties>
       <SchemaBasedProperties>
         <CONTROLTYPE
