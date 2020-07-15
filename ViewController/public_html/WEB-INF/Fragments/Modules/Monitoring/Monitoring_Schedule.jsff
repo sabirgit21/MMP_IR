@@ -171,7 +171,7 @@
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                     </af:selectOneChoice>
                   </af:column>-->
-                  <af:column headerText="Dated" id="c7" sortable="true"
+                  <af:column headerText="Date" id="c7" sortable="true"
                              filterable="true" width="100">
                              <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Dated}"
@@ -187,7 +187,7 @@
                       <af:convertDateTime pattern="#{bindings.MmpMonSchDetailView2.hints.Dated.format}"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="#{bindings.MmpMonSchDetailView2.hints.TrainingSchDetailId.label}" id="c9">
+                  <af:column headerText="CLuster / Module" id="c9">
                     <af:selectOneChoice value="#{row.bindings.TrainingSchDetailId.inputValue}" autoSubmit="true"
                                         label="#{row.bindings.TrainingSchDetailId.label}"
                                         required="#{bindings.MmpMonSchDetailView2.hints.TrainingSchDetailId.mandatory}"
