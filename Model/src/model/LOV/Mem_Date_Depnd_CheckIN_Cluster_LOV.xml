@@ -15,32 +15,45 @@
        TblCluster.CLUSTER_ID AS CLUSTER_ID1, 
        MmpTrainingCheckIn.DATED, 
        MmpTrainingCheckIn.MEMBER_REG_ID, 
-       MmpTrainingCheckIn.TRAINING_SCH_DETAIL_ID"
-  FromList="MMP_TRAINING_CHECK_IN MmpTrainingCheckIn, TBL_CLUSTER TblCluster"
-  Where="MmpTrainingCheckIn.CLUSTER_ID = TblCluster.CLUSTER_ID(+)     
-AND MmpTrainingCheckIn.MEMBER_REG_ID = :getmemRegID       
-AND MmpTrainingCheckIn.DATED = :getDate 
-union 
-SELECT MmpTrainingCheckIn.CLUSTER_ID,  
-       MmpTrainingCheckIn.MMP_TRAINING_CHECK_IN_ID,  
-       TblCluster.CLUSTER_NO,  
-       TblCluster.CLUSTER_ID AS CLUSTER_ID1,  
-       MmpTrainingCheckIn.DATED,  
-       MmpTrainingCheckIn.MEMBER_REG_ID,  
-       MmpTrainingCheckIn.TRAINING_SCH_DETAIL_ID 
-FROM  MMP_TRAINING_CHECK_IN MmpTrainingCheckIn, TBL_CLUSTER TblCluster 
-where 
-MmpTrainingCheckIn.CLUSTER_ID = TblCluster.CLUSTER_ID(+)       
-AND MmpTrainingCheckIn.DATED = :getDate  
- 
- 
-AND 0 &lt;>      
-(select count(um.MEMBER_REG_ID)      
-from mmp_user_master um, mmp_role_master rm      
-where um.mmp_ROLE_MASTER_ID = rm.mmp_ROLE_MASTER_ID      
-and rm.AST = 'Y'      
-and um.AST = 'Y'      
-and rm.MMP_ROLE_MASTER_NAME = 'Super Administrator'      
+       MmpTrainingCheckIn.TRAINING_SCH_DETAIL_ID, 
+       TblModule.NAME, 
+       TblModule.MODULE_ID"
+  FromList="MMP_TRAINING_CHECK_IN MmpTrainingCheckIn, TBL_CLUSTER TblCluster, MMP_MON_SCH_DETAIL MmpMonSchDetail, TBL_TRAINING_SCH_DETAIL TblTrainingSchDetail, TBL_TRAINING_SCH_MASTER TblTrainingSchMaster, TBL_MODULE TblModule"
+  Where="((((MmpTrainingCheckIn.CLUSTER_ID = TblCluster.CLUSTER_ID(+))   
+AND (MmpTrainingCheckIn.MMP_MON_SCH_DETAIL_ID = MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID(+)))   
+AND (MmpMonSchDetail.TRAINING_SCH_DETAIL_ID = TblTrainingSchDetail.TRAINING_SCH_DETAIL_ID(+)))   
+AND (TblTrainingSchDetail.TRAINING_SCH_MASTER_ID = TblTrainingSchMaster.TRAINING_SCH_MASTER_ID(+)))   
+AND (TblTrainingSchMaster.MODULE_ID = TblModule.MODULE_ID(+))     
+           
+AND MmpTrainingCheckIn.MEMBER_REG_ID = :getmemRegID             
+AND MmpTrainingCheckIn.DATED = :getDate       
+union       
+SELECT MmpTrainingCheckIn.CLUSTER_ID,    
+       MmpTrainingCheckIn.MMP_TRAINING_CHECK_IN_ID,    
+       TblCluster.CLUSTER_NO,    
+       TblCluster.CLUSTER_ID AS CLUSTER_ID1,    
+       MmpTrainingCheckIn.DATED,    
+       MmpTrainingCheckIn.MEMBER_REG_ID,    
+       MmpTrainingCheckIn.TRAINING_SCH_DETAIL_ID,    
+       TblModule.NAME,    
+       TblModule.MODULE_ID       
+FROM  MMP_TRAINING_CHECK_IN MmpTrainingCheckIn, TBL_CLUSTER TblCluster , MMP_MON_SCH_DETAIL MmpMonSchDetail, MMP_MON_SCH_MASTER MmpMonSchMaster, TBL_TRAINING_SCH_DETAIL TblTrainingSchDetail, TBL_TRAINING_SCH_MASTER TblTrainingSchMaster, TBL_MODULE TblModule      
+where       
+((((MmpTrainingCheckIn.CLUSTER_ID = TblCluster.CLUSTER_ID(+))   
+AND (MmpTrainingCheckIn.MMP_MON_SCH_DETAIL_ID = MmpMonSchDetail.MMP_MON_SCH_DETAIL_ID(+)))   
+AND (MmpMonSchDetail.TRAINING_SCH_DETAIL_ID = TblTrainingSchDetail.TRAINING_SCH_DETAIL_ID(+)))    
+AND (TblTrainingSchDetail.TRAINING_SCH_MASTER_ID = TblTrainingSchMaster.TRAINING_SCH_MASTER_ID(+)))   
+AND (TblTrainingSchMaster.MODULE_ID = TblModule.MODULE_ID(+))          
+AND MmpTrainingCheckIn.DATED = :getDate        
+       
+       
+AND 0 &lt;>            
+(select count(um.MEMBER_REG_ID)            
+from mmp_user_master um, mmp_role_master rm            
+where um.mmp_ROLE_MASTER_ID = rm.mmp_ROLE_MASTER_ID            
+and rm.AST = 'Y'            
+and um.AST = 'Y'            
+and rm.MMP_ROLE_MASTER_NAME = 'Super Administrator'            
 and um.MEMBER_REG_ID = :getmemRegID)">
   <Properties>
     <SchemaBasedProperties>
@@ -79,6 +92,82 @@ and um.MEMBER_REG_ID = :getmemRegID)">
       </AttrArray>
       <AttrArray Name="_srcAttributes">
         <Item Value="model.EO.MmpTrainingCheckIn.ClusterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="MmpMonSchDetail"
+    Entity="model.EO.MmpMonSchDetail"
+    Association="model.EO.FkMmpTrainingCheckInMonSchFkAssoc"
+    AssociationEnd="model.EO.FkMmpTrainingCheckInMonSchFkAssoc.MmpMonSchDetail"
+    SourceUsage="model.LOV.Mem_Date_Depnd_CheckIN_Cluster_LOV.MmpTrainingCheckIn"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.MmpMonSchDetail.MmpMonSchDetailId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.MmpTrainingCheckIn.MmpMonSchDetailId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblTrainingSchDetail"
+    Entity="model.EO.TblTrainingSchDetail"
+    Association="model.EO.Fk2TblTrainingSchDetailFkAssoc"
+    AssociationEnd="model.EO.Fk2TblTrainingSchDetailFkAssoc.TblTrainingSchDetail"
+    SourceUsage="model.LOV.Mem_Date_Depnd_CheckIN_Cluster_LOV.TblCluster"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblTrainingSchDetail.ClusterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblCluster.ClusterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblTrainingSchMaster"
+    Entity="model.EO.TblTrainingSchMaster"
+    Association="model.EO.FkTblTrainingSchDetailFkAssoc"
+    AssociationEnd="model.EO.FkTblTrainingSchDetailFkAssoc.TblTrainingSchMaster"
+    SourceUsage="model.LOV.Mem_Date_Depnd_CheckIN_Cluster_LOV.TblTrainingSchDetail"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblTrainingSchMaster.TrainingSchMasterId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblTrainingSchDetail.TrainingSchMasterId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="TblModule"
+    Entity="model.EO.TblModule"
+    Association="model.EO.Fk3TblTrainingSchMasterFkAssoc"
+    AssociationEnd="model.EO.Fk3TblTrainingSchMasterFkAssoc.TblModule"
+    SourceUsage="model.LOV.Mem_Date_Depnd_CheckIN_Cluster_LOV.TblTrainingSchMaster"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="LEFT OUTER JOIN">
+    <DesignTime>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="model.EO.TblModule.ModuleId"/>
+      </AttrArray>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="model.EO.TblTrainingSchMaster.ModuleId"/>
       </AttrArray>
     </DesignTime>
   </EntityUsage>
@@ -127,6 +216,20 @@ and um.MEMBER_REG_ID = :getmemRegID)">
     EntityAttrName="TrainingSchDetailId"
     EntityUsage="MmpTrainingCheckIn"
     AliasName="TRAINING_SCH_DETAIL_ID"/>
+  <ViewAttribute
+    Name="Name"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="TblModule"
+    AliasName="NAME"/>
+  <ViewAttribute
+    Name="ModuleId"
+    PrecisionRule="true"
+    EntityAttrName="ModuleId"
+    EntityUsage="TblModule"
+    AliasName="MODULE_ID"/>
   <AttrArray Name="KeyAttributes">
     <Item Value="MmpTrainingCheckInId"/>
   </AttrArray>

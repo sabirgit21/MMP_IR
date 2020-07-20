@@ -92,7 +92,7 @@
                       <af:convertDateTime pattern="#{bindings.MmpTrainingMonInspView1.hints.Dated.format}"/>
                     </af:outputText>
                   </af:column>-->
-                  <af:column sortProperty="#{bindings.MmpTrainingMonInspView1.hints.ClusterId.name}" filterable="true"
+                  <!--<af:column sortProperty="#{bindings.MmpTrainingMonInspView1.hints.ClusterId.name}" filterable="true"
                              sortable="true" headerText="Cluster"
                              id="c2" width="300">
                              <f:facet name="filter">
@@ -107,6 +107,16 @@
                                         id="soc1">
                       <f:selectItems value="#{row.bindings.ClusterId.items}" id="si1"/>
                       <f:validator binding="#{row.bindings.ClusterId.validator}"/>
+                    </af:selectOneChoice>
+                  </af:column>-->
+                  <af:column headerText="Cluster / Module" id="c2">
+                    <af:selectOneChoice value="#{row.bindings.MmpTrainingCheckInId.inputValue}"
+                                        label="#{row.bindings.MmpTrainingCheckInId.label}"
+                                        required="#{bindings.MmpTrainingMonInspView1.hints.MmpTrainingCheckInId.mandatory}"
+                                        shortDesc="#{bindings.MmpTrainingMonInspView1.hints.MmpTrainingCheckInId.tooltip}"
+                                        id="soc1">
+                      <f:selectItems value="#{row.bindings.MmpTrainingCheckInId.items}" id="si1"/>
+                      <f:validator binding="#{row.bindings.MmpTrainingCheckInId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
                   <af:column headerText="Class Type" id="c34"

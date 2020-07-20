@@ -446,30 +446,6 @@ and um.MEMBER_REG_ID = :sessMemID2)">
     <DisplayCriteria/>
   </ListBinding>
   <ListBinding
-    Name="LOV_ClusterId"
-    ListVOName="Mem_Date_Depnd_CheckIN_Cluster_LOV1"
-    ListRangeSize="-1"
-    NullValueFlag="none"
-    MRUCount="0">
-    <AttrArray Name="AttrNames">
-      <Item Value="ClusterId"/>
-    </AttrArray>
-    <AttrArray Name="AttrExpressions"/>
-    <AttrArray Name="DerivedAttrNames">
-      <Item Value="TrainingSchDetailId"/>
-      <Item Value="MmpTrainingCheckInId"/>
-    </AttrArray>
-    <AttrArray Name="ListAttrNames">
-      <Item Value="ClusterId"/>
-      <Item Value="TrainingSchDetailIdLOV"/>
-      <Item Value="MmpTrainingCheckInId"/>
-    </AttrArray>
-    <AttrArray Name="ListDisplayAttrNames">
-      <Item Value="ClusterNo"/>
-    </AttrArray>
-    <DisplayCriteria/>
-  </ListBinding>
-  <ListBinding
     Name="LOV_ClusterTest"
     ListVOName="Active_LOV1"
     ListRangeSize="-1"
@@ -849,6 +825,32 @@ and um.MEMBER_REG_ID = :sessMemID2)">
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_MmpTrainingCheckInId"
+    ListVOName="Mem_Date_Depnd_CheckIN_Cluster_LOV1"
+    ListRangeSize="-1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="MmpTrainingCheckInId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="DerivedAttrNames">
+      <Item Value="ClusterId"/>
+      <Item Value="TrainingSchDetailId"/>
+    </AttrArray>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="MmpTrainingCheckInId"/>
+      <Item Value="ClusterId"/>
+      <Item Value="TrainingSchDetailIdLOV"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="MmpTrainingCheckInId"/>
+      <Item Value="ClusterNo"/>
+      <Item Value="Name"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="MmpTrainingMonInsp"
     Entity="model.EO.MmpTrainingMonInsp"/>
@@ -902,15 +904,7 @@ and um.MEMBER_REG_ID = :sessMemID2)">
     PrecisionRule="true"
     EntityAttrName="ClusterId"
     EntityUsage="MmpTrainingMonInsp"
-    AliasName="CLUSTER_ID"
-    LOVName="LOV_ClusterId">
-    <Properties>
-      <SchemaBasedProperties>
-        <CONTROLTYPE
-          Value="combo"/>
-      </SchemaBasedProperties>
-    </Properties>
-  </ViewAttribute>
+    AliasName="CLUSTER_ID"/>
   <ViewAttribute
     Name="Dated"
     PrecisionRule="true"
@@ -1526,7 +1520,15 @@ and um.MEMBER_REG_ID = :sessMemID2)">
     PrecisionRule="true"
     EntityAttrName="MmpTrainingCheckInId"
     EntityUsage="MmpTrainingMonInsp"
-    AliasName="MMP_TRAINING_CHECK_IN_ID"/>
+    AliasName="MMP_TRAINING_CHECK_IN_ID"
+    LOVName="LOV_MmpTrainingCheckInId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ClassType"
     PrecisionRule="true"

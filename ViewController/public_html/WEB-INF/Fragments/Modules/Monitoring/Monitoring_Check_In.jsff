@@ -88,7 +88,18 @@
                                             <af:convertDateTime pattern="#{bindings.MmpTrainingCheckInView1.hints.Dated.format}"/>
                                         </af:inputDate>
                                     </af:column>
-                                    <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.ClusterId.name}"
+                                    <af:column headerText="Cluster / Module"
+                                               id="c2">
+                                        <af:selectOneChoice value="#{row.bindings.MmpMonSchDetailId.inputValue}"
+                                                            label="#{row.bindings.MmpMonSchDetailId.label}"
+                                                            required="#{bindings.MmpTrainingCheckInView1.hints.MmpMonSchDetailId.mandatory}"
+                                                            shortDesc="#{bindings.MmpTrainingCheckInView1.hints.MmpMonSchDetailId.tooltip}"
+                                                            id="soc1">
+                                            <f:selectItems value="#{row.bindings.MmpMonSchDetailId.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.MmpMonSchDetailId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <!--<af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.ClusterId.name}"
                                                filterable="true" sortable="true" headerText="Cluster" id="c2"
                                                width="200">
                                         <f:facet name="filter">
@@ -103,7 +114,8 @@
                                             <f:selectItems value="#{row.bindings.ClusterId.items}" id="si1"/>
                                             <f:validator binding="#{row.bindings.ClusterId.validator}"/>
                                         </af:selectOneChoice>
-                                    </af:column>
+                                    </af:column>-->
+                                    
                                     <af:column sortProperty="#{bindings.MmpTrainingCheckInView1.hints.Remarks.name}"
                                                filterable="true" sortable="true" headerText="Remarks" id="c5"
                                                width="200">

@@ -38,7 +38,9 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="MMP_TRAINING_CHECK_IN"/>
+    TableName="MMP_TRAINING_CHECK_IN"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="TrainingStarted"
     Precision="1"

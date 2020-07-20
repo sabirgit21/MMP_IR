@@ -42,8 +42,7 @@
     </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
     <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
-    <list IterBinding="MmpTrainingMonInspView1Iterator" StaticList="false" Uses="LOV_ClusterId" id="ClusterId"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
+    
     <list IterBinding="TblClusterView3Iterator" StaticList="false" Uses="LOV_CropId" id="CropId" DTSupportsMRU="false"
           SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TblClusterView3Iterator" id="Name">
@@ -82,6 +81,7 @@
           <Item Value="Dated"/>
           <Item Value="MemberRegId"/>
           <Item Value="ClassType"/>
+          <Item Value="MmpTrainingCheckInId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
@@ -90,8 +90,7 @@
         <Item Value="MmpTrainingMonInspId"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="MmpTrainingMonInspView2Iterator" StaticList="false" Uses="LOV_ClusterId" id="ClusterId2"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+   
     <attributeValues IterBinding="MmpTrainingMonInspView2Iterator" id="StartTraining">
       <AttrNames>
         <Item Value="StartTraining"/>
