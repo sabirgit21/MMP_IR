@@ -71,7 +71,7 @@
                       <f:validator binding="#{row.bindings.MemberRegId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Date" sortable="true" filterable="true" id="c3" >
+                  <af:column headerText="Date" sortable="true" filterable="true" id="c3" align="center">
                   <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.Dated}"
                                           id="it37" placeholder="Search Date">
@@ -81,7 +81,8 @@
                                   label="#{bindings.MmpTrainingMonInspView1.hints.Dated.label}"
                                   required="#{bindings.MmpTrainingMonInspView1.hints.Dated.mandatory}"
                                   columns="#{bindings.MmpTrainingMonInspView1.hints.Dated.displayWidth}"
-                                  shortDesc="#{bindings.MmpTrainingMonInspView1.hints.Dated.tooltip}" id="id2">
+                                  shortDesc="#{bindings.MmpTrainingMonInspView1.hints.Dated.tooltip}" id="id2"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.Dated.validator}"/>
                       <af:convertDateTime pattern="#{bindings.MmpTrainingMonInspView1.hints.Dated.format}"/>
                     </af:inputDate>
@@ -109,7 +110,12 @@
                       <f:validator binding="#{row.bindings.ClusterId.validator}"/>
                     </af:selectOneChoice>
                   </af:column>-->
-                  <af:column headerText="Cluster / Module" id="c2">
+                  <af:column headerText="Cluster / Module" id="c2" sortable="true" filterable="true" width="300">
+                   <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.MmpTrainingCheckInId}"
+                                          id="it54" placeholder="Search Cluster / Module">
+                           </af:inputText>
+                             </f:facet>
                     <af:selectOneChoice value="#{row.bindings.MmpTrainingCheckInId.inputValue}"
                                         label="#{row.bindings.MmpTrainingCheckInId.label}"
                                         required="#{bindings.MmpTrainingMonInspView1.hints.MmpTrainingCheckInId.mandatory}"
@@ -123,7 +129,7 @@
                              sortable="true" filterable="true">
                               <f:facet name="filter">
                                           <af:inputText value="#{vs.filterCriteria.ClassType}"
-                                          id="it54" placeholder="Search Class Type">
+                                          id="it9" placeholder="Search Class Type">
                            </af:inputText>
                              </f:facet>
                     <af:selectOneChoice value="#{row.bindings.ClassType.inputValue}"
@@ -1132,22 +1138,34 @@
                       <f:validator binding="#{row.bindings.PerChange.validator}"/>
                     </af:selectOneChoice>
                   </af:column>
-                  <af:column headerText="Arival Time" id="c31">
+                  <af:column headerText="Arival Time" id="c31" sortable="true" filterable="true" align="center">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.ArivalTime}"
+                                          id="it44" placeholder="Search Arival Time">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputDate value="#{row.bindings.ArivalTime.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.mandatory}"
                                   columns="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.displayWidth}"
-                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.tooltip}" id="id1">
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.ArivalTime.tooltip}" id="id1"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.ArivalTime.validator}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>
                   </af:column>
-                  <af:column headerText="Left Time" id="c32">
+                  <af:column headerText="Left Time" id="c32" sortable="true" filterable="true" align="center">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.LeftTime}"
+                                          id="it53" placeholder="Search Left Time">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputDate value="#{row.bindings.LeftTime.inputValue}"
                                   label="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.label}"
                                   required="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.mandatory}"
                                   columns="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.displayWidth}"
-                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.tooltip}" id="id6">
+                                  shortDesc="#{bindings.MmpTrainingMonFarmerView2.hints.LeftTime.tooltip}" id="id6"
+                                  contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.LeftTime.validator}"/>
                       <af:convertDateTime pattern="hh:mm:ss a"/>
                     </af:inputDate>

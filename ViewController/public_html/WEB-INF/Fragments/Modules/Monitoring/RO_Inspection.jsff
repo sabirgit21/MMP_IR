@@ -423,14 +423,19 @@
                       <f:validator binding="#{row.bindings.GrantBase.validator}"/>
                     </af:inputText>
                   </af:column>
-                  <af:column headerText="#{bindings.TblGrantApprovalDetailView41.hints.SubsidyAmount.label}" id="c33">
+                  <af:column headerText="Subsidy Amount" id="c33" align="center" sortable="true" filterable="true">
+                  <f:facet name="filter">
+                                          <af:inputText value="#{vs.filterCriteria.SubsidyAmount}"
+                                          id="it64" placeholder="Search Amount">
+                           </af:inputText>
+                             </f:facet>
                     <af:inputText value="#{row.bindings.SubsidyAmount.inputValue}" readOnly="true"
                                   label="#{bindings.TblGrantApprovalDetailView41.hints.SubsidyAmount.label}"
                                   required="#{bindings.TblGrantApprovalDetailView41.hints.SubsidyAmount.mandatory}"
                                   columns="#{bindings.TblGrantApprovalDetailView41.hints.SubsidyAmount.displayWidth}"
                                   maximumLength="#{bindings.TblGrantApprovalDetailView41.hints.SubsidyAmount.precision}"
                                   shortDesc="#{bindings.TblGrantApprovalDetailView41.hints.SubsidyAmount.tooltip}"
-                                  id="it50">
+                                  id="it50" contentStyle='text-align: center'>
                       <f:validator binding="#{row.bindings.SubsidyAmount.validator}"/>
                       <af:convertNumber groupingUsed="false"
                                         pattern="#{bindings.TblGrantApprovalDetailView41.hints.SubsidyAmount.format}"/>

@@ -11,6 +11,14 @@
                     <af:gridCell marginStart="5px" width="100%" marginEnd="5px" id="gc2">
                     
                         <af:panelGroupLayout id="pgl3">
+                        <af:selectOneChoice autoSubmit="true"
+                                                label="#{bindings.PhaseId.label}"
+                                                binding="#{backingBeanScope.TrngMonInspComBean.selected_phase}"
+                                                shortDesc="#{bindings.PhaseId.hints.tooltip}" id="soc1">
+                                <f:selectItems value="#{bindings.PhaseId.items}" id="si1"/>
+                                <f:validator binding="#{bindings.PhaseId.validator}"/>
+                            </af:selectOneChoice>
+                            <af:spacer width="20" height="10" id="s3"/>
                             <af:selectOneChoice autoSubmit="true"
                                                 label="#{bindings.ModuleId.label}"
                                                 binding="#{backingBeanScope.TrngMonInspComBean.selected_module}"
@@ -18,14 +26,8 @@
                                 <f:selectItems value="#{bindings.ModuleId.items}" id="si2"/>
                                 <f:validator binding="#{bindings.ModuleId.validator}"/>
                             </af:selectOneChoice>
-                            <af:spacer width="20" height="10" id="s3"/>
-                            <af:selectOneChoice autoSubmit="true"
-                                                label="#{bindings.PhaseId.label}"
-                                                binding="#{backingBeanScope.TrngMonInspComBean.selected_phase}"
-                                                shortDesc="#{bindings.PhaseId.hints.tooltip}" id="soc1">
-                                <f:selectItems value="#{bindings.PhaseId.items}" id="si1"/>
-                                <f:validator binding="#{bindings.PhaseId.validator}"/>
-                            </af:selectOneChoice>
+                            
+                            
                         </af:panelGroupLayout>
                         <af:spacer width="20" height="30" id="s7"/>
                         <af:panelGroupLayout id="pgl6">
@@ -44,7 +46,7 @@
                                                 contentStyle="width:200px"
                                                 binding="#{backingBeanScope.TrngMonInspComBean.format_type}">
                                                  <af:selectItem label="PDF" value="PDF" id="si5"/>
-                                                 <af:selectItem label="SpreadSheet" value="SpreadSheet" id="si6"/>
+                                                 <af:selectItem label="Excel" value="SpreadSheet" id="si6"/>
                             </af:selectOneChoice>
                         <af:spacer width="20" height="10" id="s2"/>
                             
