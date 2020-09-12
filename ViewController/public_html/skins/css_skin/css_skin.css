@@ -25,3 +25,44 @@
     right: 2%;
     z-index: 10;
 }
+
+af|table::navbar {
+    margin-left:38% !important; 
+}
+
+
+/*af|panelFormLayout af|inputText::label{
+    border:10px solid black; 
+    text-align:left;
+}*/
+
+af|panelFormLayout af|inputDate::label, af|inputText::label, af|selectOneChoice::label{
+    /*border:1px solid black;*/ 
+    text-align:left !important;
+    width:150px !important;
+    color: #14739e;
+    background-color: #e8f4f8 !important;
+}
+
+/*af|panelFormLayout af|selectOneChoice::label{
+    border:10px solid black; 
+    text-align:left;
+}*/
+
+/*af|table {
+background: none;
+border: 1px solid #A65B1A;
+}*/
+
+af|table af|column::column-header-cell 
+{   
+/*height:35px;*/
+color:white; 
+/*text-align: center;*/
+font-size: 12px;
+font-weight: bold;
+/*background-image: none;*/
+background-color: #14739e;
+/*vertical-align: middle;*/
+/*border-left: 1px solid #BF691E;*/
+}
