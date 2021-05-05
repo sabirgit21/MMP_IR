@@ -24,7 +24,7 @@ public class DatabaseConnection {
         /* Database credentials >> username , password , hostname , port , SID  */
         setUNamee("emfp");
         setUpasss("emfp");
-        setUipp("192.168.1.2");
+        setUipp("192.168.1.4");
         setUportADF("1521");
         setUSID("orcl");
         /* END  */
