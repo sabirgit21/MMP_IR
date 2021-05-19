@@ -45,7 +45,7 @@ public class TrngMonInspComBean {
         } else {
             
             
-                              reportBean.setReportURLName("userid=emfp/emfp@orcl&domain=classicdomain&report=C:/MMP_Reports/Trng_Mon_Insp_Com&");
+                              reportBean.setReportURLName("userid=emfp/emfpir@orcl&domain=classicdomain&report=C:/MMP_Reports/Trng_Mon_Insp_Com&");
         } 
         reportBean.setReportServerParam(OracleReportBean.RS_PARAM_DESTYPE,
                                         "CACHE"); // which will be one of the [cashe - file - mail - printer]
